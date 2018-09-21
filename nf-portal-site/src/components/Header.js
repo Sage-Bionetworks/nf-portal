@@ -116,7 +116,7 @@ class Header extends Component {
           <a
             href="/"
             className={
-              this.props.hash.includes("#/Organizations")
+              this.props.hash.includes("/Organizations")
                 ? "nav-item main-nav-item active"
                 : "nav-item main-nav-item"
             }
@@ -129,7 +129,7 @@ class Header extends Component {
           </a>
           <div
             className={
-              this.props.hash.includes("#/Organizations")
+              this.props.hash.includes("/Organizations")
               && this.state.activeUnderBar.includes("Organizations")
                 ? "under-bar active"
                 : "under-bar"
@@ -150,9 +150,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="CTF"
-                    to="#/Organizations/CTF"
+                    to="/Organizations/CTF"
                     onClick={() => {
-                      this.closeNavigation("#/Organizations")
+                      this.closeNavigation("/Organizations")
                     }}
                   >
                     CTF
@@ -167,9 +167,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="NTAP"
-                    to="#/Organizations/NTAP"
+                    to="/Organizations/NTAP"
                     onClick={() => {
-                      this.closeNavigation("#/Organizations")
+                      this.closeNavigation("/Organizations")
                     }}
                   >
                     NTAP
@@ -184,9 +184,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="NIH"
-                    to="#/Organizations/NIH"
+                    to="/Organizations/NIH"
                     onClick={() => {
-                      this.closeNavigation("#/Organizations")
+                      this.closeNavigation("/Organizations")
                     }}
                   >
                     NIH

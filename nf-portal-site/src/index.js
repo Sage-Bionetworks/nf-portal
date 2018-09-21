@@ -14,7 +14,6 @@ const login = async () => SynapseClient.login("mikeybkats", "guinness").then((ke
   loginKey = keys
   return keys
 })
-
 login()
   .then((token) => {
     ReactDOM.render(
