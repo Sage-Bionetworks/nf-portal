@@ -12,7 +12,7 @@ import {
 
 import "react-accessible-accordion/dist/minimal-example.css"
 
-const logoImage = require("../images/amp-ad-logo.svg")
+const logoImage = require("../images/rectangle.svg")
 
 class Header extends Component {
   constructor(props) {
@@ -261,14 +261,14 @@ class Header extends Component {
                 <li>{this.Option1Dropdown()}</li>
                 <li>
                   <Link
-                    to="/"
+                    to="/About"
                     className={
-                      this.props.hash.includes === "About"
+                      this.props.hash.includes("/About")
                         ? "home nav-item main-nav-item active"
                         : "home nav-item main-nav-item"
                     }
                     onClick={() => {
-                      this.closeNavigation("#/")
+                      this.closeNavigation("/About")
                     }}
                     onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "About")
                     }
@@ -279,7 +279,7 @@ class Header extends Component {
                   </Link>
                   <div
                     className={
-                      this.props.hash === "#/"
+                      this.props.hash.includes("/About")
                       && this.state.activeUnderBar.includes("About")
                         ? "under-bar active"
                         : "under-bar"

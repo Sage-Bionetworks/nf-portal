@@ -69,6 +69,10 @@ section div.row {
 
 section {
   padding: 25px 50px;
+  border: 1px solid black;
+  >* {
+    border: 1px solid black;
+  }
 }
 
 section.child-page-hero {
@@ -151,11 +155,6 @@ table.markdowntable {
     border-left: unset;
     border-top: unset;
     padding: unset;
-    //font-weight: unset;
-    //font-size: unset;
-  }
-  tr {
-    //all: unset;
   }
   td {
     border-left: 0px solid #dddddd; 
@@ -662,6 +661,12 @@ header {
     }
   }
 }
+
+/////////// home screen //////////////
+section.home-hero {
+  margin-top: 75px;
+}
+
 
 footer {
   background-color: $darkPurple;

@@ -30,6 +30,10 @@ section div.row {
 
 section {
   padding: 25px 50px;
+  border: 1px solid black;
+}
+section > * {
+  border: 1px solid black;
 }
 
 section.child-page-hero {
@@ -594,6 +598,10 @@ header .agora-nav-link .agora-logo {
 header .agora-nav-link div.under-bar {
   width: 140%;
   left: -15px;
+}
+
+section.home-hero {
+  margin-top: 75px;
 }
 
 footer {
