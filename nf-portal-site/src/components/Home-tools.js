@@ -1,5 +1,5 @@
 import React from "react"
-import proptypes from "prop-types"
+import PropTypes from "prop-types"
 
 const Tools = (props) => {
   return (
@@ -13,6 +13,6 @@ const Tools = (props) => {
   )
 }
 
-Tools.proptypes = {}
+Tools.propTypes = {}
 
 export default Tools

@@ -7,7 +7,6 @@ import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
 import * as SynapseClient from "./synapse/SynapseClient"
 
-let rawSynapseData
 let loginKey
 
 const login = async () => SynapseClient.login("mikeybkats", "guinness").then((keys) => {

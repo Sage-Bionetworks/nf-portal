@@ -58,6 +58,7 @@ class App extends Component {
       <AsyncHome
         markdown={this.state.wikiMarkdown}
         markdownSegs={this.state.markdownSegs}
+        token={this.props.loginToken.sessionToken}
       />
     )
   };
@@ -114,7 +115,6 @@ class App extends Component {
 
 App.propTypes = {
   loginToken: PropTypes.object.isRequired,
-  appData: PropTypes.object.isRequired,
 }
 
 export default App

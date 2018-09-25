@@ -13,6 +13,8 @@ const NewPublications = (props) => {
   )
 }
 
-NewPublications.propTypes = {}
+NewPublications.propTypes = {
+  token: PropTypes.string.isRequired,
+}
 
 export default NewPublications

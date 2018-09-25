@@ -663,8 +663,26 @@ header {
 }
 
 /////////// home screen //////////////
-section.home-hero {
+section.hero {
   margin-top: 75px;
+}
+
+section.explore-content {
+  .selectors {
+    h3 {
+      text-transform: uppercase;
+    }
+    button {
+      background: $gray;
+      padding: 0px 10px;
+      transition: all 400ms;
+      border: none;
+    }
+  }
+  .selectors button:hover {
+    background-color: darken($gray, 20%);
+    transition: all 400ms;
+  }
 }
 
 

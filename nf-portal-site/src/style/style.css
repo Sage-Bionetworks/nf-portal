@@ -600,8 +600,22 @@ header .agora-nav-link div.under-bar {
   left: -15px;
 }
 
-section.home-hero {
+section.hero {
   margin-top: 75px;
+}
+
+section.explore-content .selectors h3 {
+  text-transform: uppercase;
+}
+section.explore-content .selectors button {
+  background: #F5F5F5;
+  padding: 0px 10px;
+  transition: all 400ms;
+  border: none;
+}
+section.explore-content .selectors button:hover {
+  background-color: #c2c2c2;
+  transition: all 400ms;
 }
 
 footer {
