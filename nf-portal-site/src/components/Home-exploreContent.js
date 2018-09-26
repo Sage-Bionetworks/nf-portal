@@ -4,33 +4,37 @@ import PropTypes from "prop-types"
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
 
 class ExploreContent extends Component {
-  SynapseTable = (
-    <SynapseComponents.QueryWrapper
-      initQueryRequest={{
-        concreteType: "org.sagebionetworks.repo.model.table.QueryBundleRequest",
-        partMask:
-          SynapseConstants.BUNDLE_MASK_QUERY_COLUMN_MODELS
-          | SynapseConstants.BUNDLE_MASK_QUERY_FACETS
-          | SynapseConstants.BUNDLE_MASK_QUERY_RESULTS,
-        query: {
-          isConsistent: false,
-          sql: "SELECT * FROM syn16787123",
-          limit: 25,
-          offset: 0,
-          selectedFacets: [],
-          sort: [],
-        },
-      }}
-      token={this.props.token}
-      sql="SELECT * FROM syn16787123"
-      alias="Disease"
-      filter="parentId"
-    >
-      <SynapseComponents.Facets />
-      <SynapseComponents.StackedRowHomebrew />
-      <SynapseComponents.SynapseTable />
-    </SynapseComponents.QueryWrapper>
-  );
+  SynapseTable = (token) => {
+    return (
+      <SynapseComponents.QueryWrapper
+        initQueryRequest={{
+          concreteType:
+            "org.sagebionetworks.repo.model.table.QueryBundleRequest",
+          partMask:
+            SynapseConstants.BUNDLE_MASK_QUERY_COLUMN_MODELS
+            | SynapseConstants.BUNDLE_MASK_QUERY_FACETS
+            | SynapseConstants.BUNDLE_MASK_QUERY_RESULTS,
+          synapseId: "syn15661198",
+          query: {
+            isConsistent: false,
+            sql: "SELECT * FROM syn15661198",
+            limit: 25,
+            offset: 0,
+            selectedFacets: [],
+            sort: [],
+          },
+        }}
+        defaultVisibleCount={2}
+        token={token}
+        alias="Disease"
+        filter="parentId"
+      >
+        <SynapseComponents.Facets />
+        <SynapseComponents.StackedRowHomebrew />
+        <SynapseComponents.SynapseTable />
+      </SynapseComponents.QueryWrapper>
+    )
+  };
 
   render() {
     return (
@@ -62,6 +66,7 @@ class ExploreContent extends Component {
             </div>
           </div>
         </div>
+        <this.SynapseTable />
       </section>
     )
   }

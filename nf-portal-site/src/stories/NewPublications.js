@@ -4,15 +4,12 @@ import { storiesOf } from "@storybook/react"
 import { State, Store } from "@sambego/storybook-state"
 
 import { HashRouter as Router } from "react-router-dom"
-import Donuts from "../components/PiesBelowHeader"
+import NewPublications from "../components/Home-newPublications"
 import "../style/style.css"
 
 const store = new Store({
-  biosamplesLoading: false,
-  diagnosesSelection: "All diagnoses",
-  speciesSelection: "All species",
   pageData: {
-    biosamplesassayCount: 11664,
+    token: "",
   },
 })
 
@@ -22,11 +19,8 @@ const handleChanges = (KEY, NEWSTATE) => {
   })
 }
 
-storiesOf("AMP-AD", module).add("donuts", () => (
+storiesOf("NF Portal", module).add("New Publications", () => (
   <Router>
-    <Donuts
-      biosamplesLoading={store.get("biosamplesLoading")}
-      pageData={store.get("pageData")}
-    />
+    <NewPublications token={this.token.sessionToken} />
   </Router>
 ))
