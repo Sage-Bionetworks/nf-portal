@@ -1,9 +1,21 @@
 import { configure } from "@storybook/react";
+import { SynapseClient, SynapseConstants } from "synapse-react-client";
 
-function loadStories() {
-  require("../src/stories");
-  require("../src/stories/navigation.js");
-  require("../src/stories/donuts.js");
+function loadStories(token) {
+  require("../src/stories/");
+
+  const ExploreContent = require("../src/stories/ExploreContent.js");
+  ExploreContent.token = token;
+
+  const NewStudies = require("../src/stories/NewStudies.js");
+  NewStudies.token = token;
 }
 
-configure(loadStories, module);
+const login = async () =>
+  SynapseClient.login("mikeybkats", "guinness").then(keys => {
+    return keys;
+  });
+
+login().then(keys => {
+  configure(() => loadStories(keys), module);
+});
