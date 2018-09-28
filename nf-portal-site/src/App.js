@@ -54,13 +54,7 @@ class App extends Component {
   };
 
   ReturnHome = () => {
-    return (
-      <AsyncHome
-        markdown={this.state.wikiMarkdown}
-        markdownSegs={this.state.markdownSegs}
-        token={this.props.loginToken.sessionToken}
-      />
-    )
+    return <AsyncHome token={this.props.loginToken.sessionToken} />
   };
 
   ReturnAbout = () => {

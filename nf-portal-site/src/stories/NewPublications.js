@@ -19,7 +19,7 @@ const handleChanges = (KEY, NEWSTATE) => {
   })
 }
 
-storiesOf("NF Portal", module).add("New Publications", () => (
+storiesOf("NF Portal - Home", module).add("New Publications", () => (
   <Router>
     <NewPublications token={this.token.sessionToken} />
   </Router>
