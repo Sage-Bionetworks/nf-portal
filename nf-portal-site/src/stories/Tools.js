@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react"
 import { State, Store } from "@sambego/storybook-state"
 
 import { HashRouter as Router } from "react-router-dom"
-import NewStudies from "../components/Home-newStudies"
+import Tools from "../components/Home-tools"
 import "../style/style.css"
 
 const store = new Store({
@@ -19,8 +19,8 @@ const handleChanges = (KEY, NEWSTATE) => {
   })
 }
 
-storiesOf("NF Portal - Home", module).add("New Studies", () => (
+storiesOf("NF Portal - Home", module).add("Tools", () => (
   <Router>
-    <NewStudies token={this.token.sessionToken} />
+    <Tools token={this.token.sessionToken} />
   </Router>
 ))

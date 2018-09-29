@@ -204,10 +204,7 @@ class Header extends Component {
     return (
       <header className="row between-xs header center-xs middle-xs">
         <div className="col-xs-12">
-          <div
-            className="nav-row row between-xs center-xs middle-xs"
-            style={{ backgroundColor: "#fff" }}
-          >
+          <div className="nav-row row between-xs center-xs middle-xs">
             <button
               className={!this.state.Open ? "menu-wall hidden" : "menu-wall"}
               type="button"

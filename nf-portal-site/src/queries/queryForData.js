@@ -1,5 +1,4 @@
-import * as SynapseClient from "../synapse/SynapseClient"
-import * as SynapseConstants from "../synapse/SynapseConstants"
+import { SynapseClient, SynapseConstants } from "synapse-react-client"
 
 const buildRequest = (table, query, offset = 0, limit = 250) => {
   return {
@@ -19,11 +18,6 @@ const buildRequest = (table, query, offset = 0, limit = 250) => {
   }
 }
 
-//const escapeString = (string) => {
-//const newString = string.replace(/'/i, "''")
-//return newString
-//}
-
 const json = (response) => {
   return JSON.stringify(response)
 }
@@ -34,10 +28,9 @@ const processError = (error) => {
 
 const getTable = (table, tokenResponse, query, offset, limit) => {
   const request = buildRequest(table, query, offset, limit)
-  return SynapseClient.getQueryTableResults(
-    request,
-    tokenResponse.sessionToken,
-  ).catch(error => console.log(error))
+  return SynapseClient.getQueryTableResults(request, tokenResponse).catch(
+    error => console.log(error),
+  )
 }
 
 const queryTable = (table, query, token) => {
