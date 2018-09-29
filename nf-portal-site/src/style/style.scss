@@ -654,27 +654,55 @@ body.noScroll, html.noScroll {
     margin-top: 75px;
   }
 
+@mixin hoverFade($color){
+  background: $color;
+  &:hover {
+    background-color: darken($color, 20%);
+  }
+  &.active::after {
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    display: block;
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid $color;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    transition: all 400ms;
+  }
+  &.active:hover:after {
+    transition: all 400ms;
+    border-top: 10px solid darken($color, 20%);
+  }
+}
   section.explore-content {
     .selectors {
+      button {
+        position: relative;
+      }
       margin: 20px 0px;
       .col-sm-2:first-child button {
-        background: #407BA0;
+        @include hoverFade(#407BA0);
       }
       .col-sm-2:nth-child(2) button {
-        background: #5171C0;
+        @include hoverFade(#5171C0);
       }
       .col-sm-2:nth-child(3) button {
-        background: #3C4A63;
+        @include hoverFade(#3C4A63);
       }
       .col-sm-2:nth-child(4) button {
-        background: #109488;
+        @include hoverFade(#109488);
       }
       .col-sm-2:nth-child(5) button {
-        background: #47337D;
+        @include hoverFade(#47337D);
       }
     }
+
+
     .selectors button:hover {
-      background-color: darken(#666666, 20%);
       transition: all 400ms;
       h5 {
         transition: all 400ms;

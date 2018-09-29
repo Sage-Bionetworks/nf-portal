@@ -12,22 +12,37 @@ class ExploreContent extends Component {
     syn16857542: "",
     syn16787123: "",
     loading: true,
+    activeButton: "",
   };
 
   componentDidMount() {
     this.tableQuery("syn16857542", this.props.token).then(() => {
       this.setState({
         loading: false,
+        activeButton: "syn16857542",
       })
     })
   }
 
+  handleChanges = (KEY, NEWSTATE) => {
+    this.setState({
+      [KEY]: NEWSTATE,
+    })
+  };
+
   tableQuery = async (id, token) => {
     queryTable(id, `SELECT * FROM ${id}`, token).then((response) => {
-      this.setState({
-        [id]: response,
-      })
+      this.handleChanges(id, response)
     })
+  };
+
+  handleButtonPress = (id, token) => {
+    this.handleChanges("activeButton", id)
+    return this.state[id] === "" ? () => this.tableQuery(id, token) : () => {}
+  };
+
+  returnButtonClass = (id) => {
+    return `btn-control ${this.state.activeButton === id ? "active" : ""}`
   };
 
   SynapseTable = (props) => {
@@ -73,12 +88,9 @@ class ExploreContent extends Component {
               <div className="row selectors center-xs around-xs">
                 <div className="col-sm-2">
                   <button
-                    className="btn-control"
+                    className={this.returnButtonClass("syn16857542")}
                     type="button"
-                    onClick={
-                      this.state.syn16787123 === ""
-                        ? () => this.tableQuery("syn16857542", this.props.token)
-                        : () => {}
+                    onClick={() => this.handleButtonPress("syn16857542", this.props.token)
                     }
                   >
                     <h5>PUBLICATIONS</h5>
@@ -86,12 +98,9 @@ class ExploreContent extends Component {
                 </div>
                 <div className="col-sm-2">
                   <button
-                    className="btn-control"
+                    className={this.returnButtonClass("syn16859580")}
                     type="button"
-                    onClick={
-                      this.state.syn16787123 === ""
-                        ? () => this.tableQuery("syn16859580", this.props.token)
-                        : () => {}
+                    onClick={() => this.handleButtonPress("syn16859580", this.props.token)
                     }
                   >
                     <h5>DATASETS</h5>
@@ -99,12 +108,9 @@ class ExploreContent extends Component {
                 </div>
                 <div className="col-sm-2">
                   <button
-                    className="btn-control"
+                    className={this.returnButtonClass("syn16858331")}
                     type="button"
-                    onClick={
-                      this.state.syn16858331 === ""
-                        ? () => this.tableQuery("syn16858331", this.props.token)
-                        : () => {}
+                    onClick={() => this.handleButtonPress("syn16858331", this.props.token)
                     }
                   >
                     <h5>DATA</h5>
@@ -112,12 +118,9 @@ class ExploreContent extends Component {
                 </div>
                 <div className="col-sm-2">
                   <button
-                    className="btn-control"
+                    className={this.returnButtonClass("syn16787123")}
                     type="button"
-                    onClick={
-                      this.state.syn16787123 === ""
-                        ? () => this.tableQuery("syn16787123", this.props.token)
-                        : () => {}
+                    onClick={() => this.handleButtonPress("syn16787123", this.props.token)
                     }
                   >
                     <h5>STUDIES</h5>
@@ -125,12 +128,9 @@ class ExploreContent extends Component {
                 </div>
                 <div className="col-sm-2">
                   <button
-                    className="btn-control"
+                    className={this.returnButtonClass("syn16858699")}
                     type="button"
-                    onClick={
-                      this.state.syn16858699
-                        ? () => this.tableQuery("syn16858699", this.props.token)
-                        : () => {}
+                    onClick={() => this.handleButtonPress("syn16858699", this.props.token)
                     }
                   >
                     <h5>FUNDERS</h5>

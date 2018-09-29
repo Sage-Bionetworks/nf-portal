@@ -562,23 +562,130 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors {
   margin: 20px 0px;
 }
+#root section.explore-content .selectors button {
+  position: relative;
+}
 #root section.explore-content .selectors .col-sm-2:first-child button {
   background: #407BA0;
+}
+#root section.explore-content .selectors .col-sm-2:first-child button:hover {
+  background-color: #234357;
+}
+#root section.explore-content .selectors .col-sm-2:first-child button.active::after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #407BA0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 400ms;
+}
+#root section.explore-content .selectors .col-sm-2:first-child button.active:hover:after {
+  transition: all 400ms;
+  border-top: 10px solid #234357;
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(2) button {
   background: #5171C0;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(2) button:hover {
+  background-color: #2d457e;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(2) button.active::after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #5171C0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 400ms;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(2) button.active:hover:after {
+  transition: all 400ms;
+  border-top: 10px solid #2d457e;
+}
 #root section.explore-content .selectors .col-sm-2:nth-child(3) button {
   background: #3C4A63;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(3) button:hover {
+  background-color: #161b23;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(3) button.active::after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #3C4A63;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 400ms;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(3) button.active:hover:after {
+  transition: all 400ms;
+  border-top: 10px solid #161b23;
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(4) button {
   background: #109488;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(4) button:hover {
+  background-color: #063833;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(4) button.active::after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #109488;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 400ms;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(4) button.active:hover:after {
+  transition: all 400ms;
+  border-top: 10px solid #063833;
+}
 #root section.explore-content .selectors .col-sm-2:nth-child(5) button {
   background: #47337D;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(5) button:hover {
+  background-color: #1e1535;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(5) button.active::after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  display: block;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #47337D;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 400ms;
+}
+#root section.explore-content .selectors .col-sm-2:nth-child(5) button.active:hover:after {
+  transition: all 400ms;
+  border-top: 10px solid #1e1535;
+}
 #root section.explore-content .selectors button:hover {
-  background-color: #333333;
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:hover h5 {
