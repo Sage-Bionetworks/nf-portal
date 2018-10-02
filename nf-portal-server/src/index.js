@@ -5,7 +5,7 @@ import queryTable from "./queryForData"
 const app = express()
 
 const writeAllDataFile = () => {  
-  let tables = ["syn16859580", "syn16858699", "syn16858331", "syn16857542", "syn16787123"]
+  let tables = ["syn16859580", "syn16858699", "syn16858331", "syn16857542", "syn16787123", "syn16859448"]
   let query = (table) => { return `SELECT * FROM ${table}` }
   
     tables.map((table) => {

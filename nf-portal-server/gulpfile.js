@@ -3,7 +3,7 @@ const babel = require("gulp-babel")
  
 gulp.task("default", () =>
   gulp.src([
-    "src/queryForData2.js",
+    "src/queryForData.js",
     "src/index.js"
   ])
     .pipe(babel({
