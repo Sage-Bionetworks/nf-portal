@@ -87,19 +87,31 @@ class App extends Component {
         <div className="row amp-ad">
           <this.ReturnHeader />
           <div className="col-xs-12 main">
-            <Route exact path="/" component={this.ReturnHome} />
-            <Route path="/About" component={this.ReturnAbout} />
-            <Route path="/Organizations" component={this.ReturnOrganizations} />
+            <div className="container">
+              <Route exact path="/" component={this.ReturnHome} />
+              <Route path="/About" component={this.ReturnAbout} />
+              <Route
+                path="/Organizations"
+                component={this.ReturnOrganizations}
+              />
+            </div>
           </div>
 
-          <footer className="row center-xs middle-xs">
-            <a href="https://www.synapse.org/#!Synapse:syn2580853/discussion/default">
-              Forum
-            </a>
-            <a href="mailto:ampadportal@sagebionetworks.org">Contact</a>
-            <a href="http://docs.synapse.org/articles/governance.html">
-              Terms & Privacy
-            </a>
+          <footer className="row">
+            <div className="container flex">
+              <div className="col-md-4">
+                <a href="https://www.synapse.org/#!Synapse:syn2580853/discussion/default">
+                  {" "}
+                  NF Portal
+                </a>
+              </div>
+              <div className="col-md-4 col-md-offset-5 flex justify-end right-footer">
+                <a href="mailto:ampadportal@sagebionetworks.org">Contact</a>
+                <a href="http://docs.synapse.org/articles/governance.html">
+                  Terms & Privacy
+                </a>
+              </div>
+            </div>
           </footer>
         </div>
       </Router>

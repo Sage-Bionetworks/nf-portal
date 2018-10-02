@@ -1,6 +1,4 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css);
 @import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700");
-@import url("reset.css");
 body, button, h1, h2, h3, h4, h5, li, ul, p, a {
   font-family: "Lato", sans-serif;
 }
@@ -8,6 +6,10 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+section .container, footer .container, header .container, div.main .container {
+  max-width: 1195px;
 }
 
 div.row.amp-ad {
@@ -56,6 +58,7 @@ body.noScroll, html.noScroll {
 }
 #root a {
   text-decoration: none;
+  font-size: 16px;
 }
 #root li {
   list-style: none;
@@ -88,6 +91,18 @@ body.noScroll, html.noScroll {
 }
 #root button:hover, #root select:hover {
   cursor: pointer;
+}
+#root .flex {
+  display: flex;
+}
+#root .justify-end {
+  justify-content: flex-end;
+}
+#root .justify-start {
+  justify-content: flex-start;
+}
+#root .container {
+  width: 100%;
 }
 #root table {
   font-size: 16px;
@@ -193,10 +208,21 @@ body.noScroll, html.noScroll {
     max-height: fit-content;
   }
 }
+#root header.header .nav li, #root header.header .nav li a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 #root header.header .nav > li > a:hover, #root header.header .nav > li > a:focus, #root header.header a:hover {
   background-color: unset;
   text-decoration: none;
   color: white;
+}
+#root header.header .logo a {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: left;
+  letter-spacing: 2px;
+  font-weight: bolder;
 }
 #root header.header img {
   transition: all 200ms ease;
@@ -346,21 +372,6 @@ body.noScroll, html.noScroll {
 #root header .accordion__title:hover {
   background-color: #cacaca;
 }
-#root header .agora-border {
-  position: absolute;
-  border-left: 1px solid #86D1D5;
-  left: -15px;
-  height: 26px;
-  top: 50%;
-  margin-top: -13px;
-}
-#root header .agora-nav-link .agora-logo {
-  margin-top: unset;
-}
-#root header .agora-nav-link div.under-bar {
-  width: 140%;
-  left: -15px;
-}
 @media only screen and (min-width: 48em) {
   #root .col-sm-9 {
     flex-basis: 80%;
@@ -481,6 +492,7 @@ body.noScroll, html.noScroll {
   margin: 0px;
   display: flex;
   align-items: center;
+  align-content: center;
 }
 #root .nav li:hover {
   cursor: pointer;
@@ -491,7 +503,7 @@ body.noScroll, html.noScroll {
   display: flex;
 }
 #root .nav .nav-item {
-  font-size: 20px;
+  font-size: 16px;
 }
 #root .nav .nav-item.dropdown {
   display: inline-block;
@@ -549,12 +561,20 @@ body.noScroll, html.noScroll {
   margin-top: 50px;
   padding-bottom: 56px;
   padding-top: 30px;
+  display: flex;
 }
 #root footer a {
-  color: white;
+  color: #ffffff;
   margin: 10px;
   display: inline-block;
-  margin: 0px 15px;
+  margin: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+#root footer .right-footer a:first-child {
+  margin-right: 15px;
 }
 #root section.hero {
   margin-top: 75px;

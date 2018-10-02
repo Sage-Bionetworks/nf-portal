@@ -39,4 +39,25 @@ const queryTable = (table, query, token) => {
     .catch(processError)
 }
 
-export { queryTable, getTable }
+const host = "http://static.nf.synapse.org/"
+//const host = "http://localhost:3030/"
+
+const staticTableQuery = async (id, handleChanges) => {
+  return fetch(`${host}${id}.json`, {
+    method: "GET",
+    mode: "cors",
+  })
+    .then((response) => {
+      console.log(response)
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+      handleChanges(id, data)
+    })
+    .catch(processError)
+}
+
+export {
+  staticTableQuery, queryTable, processError, getTable, host,
+}

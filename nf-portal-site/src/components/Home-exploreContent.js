@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
-import { queryTable } from "../queries/queryForData"
+import { staticTableQuery, processError, host } from "../queries/queryForData"
 
 class ExploreContent extends Component {
   state = {
@@ -16,7 +16,7 @@ class ExploreContent extends Component {
   };
 
   componentDidMount() {
-    this.tableQuery("syn16857542", this.props.token).then(() => {
+    staticTableQuery("syn16857542", this.handleChanges).then(() => {
       this.setState({
         loading: false,
         activeButton: "syn16857542",
@@ -30,15 +30,11 @@ class ExploreContent extends Component {
     })
   };
 
-  tableQuery = async (id, token) => {
-    queryTable(id, `SELECT * FROM ${id}`, token).then((response) => {
-      this.handleChanges(id, response)
-    })
-  };
-
   handleButtonPress = (id, token) => {
     this.handleChanges("activeButton", id)
-    return this.state[id] === "" ? () => this.tableQuery(id, token) : () => {}
+    if (this.state[id] === "") {
+      staticTableQuery(id, this.handleChanges)
+    } else return ""
   };
 
   returnButtonClass = (id) => {
