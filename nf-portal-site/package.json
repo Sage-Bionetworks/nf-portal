@@ -8,6 +8,7 @@
     "gh-pages": "^1.2.0",
     "history": "^4.7.2",
     "immutability-helper": "^2.7.1",
+    "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-accessible-accordion": "^2.4.3",

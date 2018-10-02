@@ -12,7 +12,7 @@ import {
 
 import "react-accessible-accordion/dist/minimal-example.css"
 
-const logoImage = require("../images/rectangle.svg")
+//const logoImage = require("../images/rectangle.svg")
 
 class Header extends Component {
   constructor(props) {
@@ -202,88 +202,95 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="row between-xs header center-xs middle-xs">
-        <div className="col-xs-12">
-          <div className="nav-row row between-xs center-xs middle-xs">
-            <button
-              className={!this.state.Open ? "menu-wall hidden" : "menu-wall"}
-              type="button"
-              onClick={() => {
-                this.closeNavigation(this.props.hash)
-              }}
-            />
-            <div className="col-xs-12 col-sm-3">
-              <Link
-                to="/"
-                onClick={() => {
-                  this.closeNavigation("#/")
-                }}
-              >
-                <img
-                  className="logo-header"
-                  src={logoImage}
-                  alt="amp_ad_logo"
+      <header className="header">
+        <div className="container">
+          <div className="row between-xs center-xs middle-xs">
+            <div className="col-xs-12">
+              <div className="nav-row nav row">
+                <button
+                  className={
+                    !this.state.Open ? "menu-wall hidden" : "menu-wall"
+                  }
+                  type="button"
+                  onClick={() => {
+                    this.closeNavigation(this.props.hash)
+                  }}
                 />
-              </Link>
-            </div>
-            <div className="nav-buttons col-xs-12 col-sm-7 col-md-8">
-              <ul className="nav row end-sm center-xs">
-                <li>
+                <div className="logo col-md-9">
                   <Link
                     to="/"
-                    className={
-                      this.props.hash === "#/"
-                        ? "home nav-item main-nav-item active"
-                        : "home nav-item main-nav-item"
-                    }
                     onClick={() => {
                       this.closeNavigation("#/")
                     }}
-                    onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Home")
-                    }
-                    onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
-                    }
                   >
-                    Home
+                    NFPortal
                   </Link>
-                  <div
-                    className={
-                      this.props.hash === "#/"
-                      && this.state.activeUnderBar.includes("#/")
-                        ? "under-bar active"
-                        : "under-bar"
-                    }
-                  />
-                </li>
-                <li>{this.Option1Dropdown()}</li>
-                <li>
-                  <Link
-                    to="/About"
-                    className={
-                      this.props.hash.includes("/About")
-                        ? "home nav-item main-nav-item active"
-                        : "home nav-item main-nav-item"
-                    }
-                    onClick={() => {
-                      this.closeNavigation("/About")
-                    }}
-                    onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "About")
-                    }
-                    onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
-                    }
-                  >
-                    About
-                  </Link>
-                  <div
-                    className={
-                      this.props.hash.includes("/About")
-                      && this.state.activeUnderBar.includes("About")
-                        ? "under-bar active"
-                        : "under-bar"
-                    }
-                  />
-                </li>
-              </ul>
+                </div>
+                <div className="nav-buttons col-md-3 flex justify-end">
+                  <ul className="nav row end-sm center-xs">
+                    <li>
+                      <Link
+                        to="/"
+                        className={
+                          this.props.hash === "#/"
+                            ? "home nav-item main-nav-item active"
+                            : "home nav-item main-nav-item"
+                        }
+                        onClick={() => {
+                          this.closeNavigation("#/")
+                        }}
+                        onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Home")
+                        }
+                        onMouseLeave={() => this.handleLocalChanges(
+                          "activeUnderBar",
+                          this.props.hash,
+                        )
+                        }
+                      >
+                        Home
+                      </Link>
+                      <div
+                        className={
+                          this.props.hash === "#/"
+                          && this.state.activeUnderBar.includes("#/")
+                            ? "under-bar active"
+                            : "under-bar"
+                        }
+                      />
+                    </li>
+                    <li>
+                      <Link
+                        to="/About"
+                        className={
+                          this.props.hash.includes("/About")
+                            ? "home nav-item main-nav-item active"
+                            : "home nav-item main-nav-item"
+                        }
+                        onClick={() => {
+                          this.closeNavigation("/About")
+                        }}
+                        onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "About")
+                        }
+                        onMouseLeave={() => this.handleLocalChanges(
+                          "activeUnderBar",
+                          this.props.hash,
+                        )
+                        }
+                      >
+                        About
+                      </Link>
+                      <div
+                        className={
+                          this.props.hash.includes("/About")
+                          && this.state.activeUnderBar.includes("About")
+                            ? "under-bar active"
+                            : "under-bar"
+                        }
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

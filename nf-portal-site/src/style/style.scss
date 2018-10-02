@@ -1,9 +1,9 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css);
+//@import url(https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css);
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700');
-@import url('reset.css');
 
 $green: #4DB7AD;
 $purple: #4A5E81;
+$white: #ffffff;
 
 @mixin circle($size){
   width: $size;
@@ -24,6 +24,12 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
   //height: 100%;
+}
+
+section, footer, header, div.main {
+  .container {
+    max-width: 1195px;
+  }
 }
 
 div.row.amp-ad {
@@ -76,6 +82,7 @@ body.noScroll, html.noScroll {
 
   a {
     text-decoration: none;
+    font-size: 16px;
   }
 
   li {
@@ -109,6 +116,19 @@ body.noScroll, html.noScroll {
 
   button:focus, input:focus, select:focus, div:focus { outline:none; }
   button:hover, select:hover { cursor: pointer }
+
+  .flex {
+    display: flex;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .container {
+    width: 100%;
+  }
 
   table {
     font-size: 16px;
@@ -202,11 +222,23 @@ body.noScroll, html.noScroll {
     @media screen and (max-width: 1023px){
       max-height: fit-content;
     }
+    .nav li, .nav li a  {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
     .nav > li > a:hover, .nav > li > a:focus, a:hover {
       background-color: unset;
       text-decoration: none;
       color: white;
     }
+    .logo a {
+      font-size: 18px;
+      line-height: 22px;
+      text-align: left;
+      letter-spacing: 2px;
+      font-weight: bolder;
+    }
+    
     max-width: 100vw;
     width: 100vw;
     margin: 0 auto;
@@ -248,12 +280,6 @@ body.noScroll, html.noScroll {
       cursor: pointer;
     }
   }
-  header.header.squish {
-    //padding: 0px 50px;
-    //img {
-      //max-height: 35px;
-    //}
-  }
 
   .hidden {
     display: none !important;
@@ -262,11 +288,6 @@ body.noScroll, html.noScroll {
   }
 
   header { 
-    @media screen and (max-width: 767px){
-      .nav-buttons {
-        //background-color: white;
-      }
-    }
     .nav-buttons {
       height: 100%;
       nav.row {
@@ -338,8 +359,6 @@ body.noScroll, html.noScroll {
         }
       }
     }
-    .accordion__body li:hover {
-    }
     .accordion-body.top-level-accordion {
       position: absolute;
       display: block;
@@ -352,21 +371,7 @@ body.noScroll, html.noScroll {
     .about-dropdown {
       margin-right: 15px;
     }
-    .about-dropdown .top-level-accordion-item .accordion-body.top-level-accordion {
-      //position: absolute;
-      //margin: auto;
-      //right: 0px;
-    }
-    @media screen and (max-width: 1105px){
-      .about-dropdown .top-level-accordion-item .accordion-body.top-level-accordion {
-        //right: 10px; 
-      }
-      .nav li {
-        //margin: 0px 10px;
-      }
-    }
     .accordion__body {
-      //background: white;
       text-align: left;
     }
     a.nav-item {
@@ -375,14 +380,9 @@ body.noScroll, html.noScroll {
     .accordion__title {
       background-color: #e3e3e3;
     }
-    .accordion-title {
-      //transition: all 300ms ease;
-    }
     .accordion-title[aria-selected="true"] a{
-      //background: #e3e3e3;
     }
     .accordion-title.top-level-accordion[aria-selected="true"]{
-      //background: #e3e3e3;
       .under-bar {
         opacity: 0;
       }
@@ -402,23 +402,6 @@ body.noScroll, html.noScroll {
     }
     .accordion__title:hover {
       background-color: darken(#e3e3e3, 10%);
-    }
-    .agora-border {
-      position: absolute;
-      border-left: 1px solid #86D1D5;
-      left: -15px;
-      height: 26px;
-      top: 50%;
-      margin-top: -13px;
-    }
-    .agora-nav-link {
-      .agora-logo {
-        margin-top: unset;
-      }
-      div.under-bar {
-        width: 140%;
-        left: -15px;
-      }
     }
   }
 
@@ -546,7 +529,6 @@ body.noScroll, html.noScroll {
     }
 
   .nav-row {
-    //padding: 5px 0px;
     height: 70px;
   }
   .nav {
@@ -557,6 +539,7 @@ body.noScroll, html.noScroll {
     margin: 0px;
     display: flex;
     align-items: center;
+    align-content: center;
     li:hover{
       cursor: pointer;
     }
@@ -567,7 +550,7 @@ body.noScroll, html.noScroll {
       display: flex;
     }
     .nav-item{
-      font-size: 20px;
+      font-size: 16px;
     }
     .nav-item.dropdown {
       display: inline-block;
@@ -639,13 +622,21 @@ body.noScroll, html.noScroll {
     margin-top: 50px;
     padding-bottom: 56px;
     padding-top: 30px;
-    //position: absolute;
-    //bottom: 0;
+    display: flex;
     a {
-      color: white;
+      color: $white;
       margin: 10px;
       display: inline-block;
-      margin: 0px 15px;
+      margin: 0px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 19px;
+      text-transform: uppercase;
+    }
+    .right-footer {
+      a:first-child {
+        margin-right: 15px;
+      }
     }
   }
 
