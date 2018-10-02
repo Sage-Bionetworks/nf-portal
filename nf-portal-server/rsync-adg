@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "pushing local to staging"
-rsync -avr --exclude '.git' . root@159.65.104.204:/root/amp-ad-server
