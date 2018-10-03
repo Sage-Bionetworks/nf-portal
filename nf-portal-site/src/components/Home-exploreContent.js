@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
-import { staticTableQuery, processError, host } from "../queries/queryForData"
+import { staticTableQuery } from "../queries/queryForData"
 
 class ExploreContent extends Component {
   state = {

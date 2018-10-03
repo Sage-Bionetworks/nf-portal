@@ -87,14 +87,9 @@ class App extends Component {
         <div className="row amp-ad">
           <this.ReturnHeader />
           <div className="col-xs-12 main">
-            <div className="container">
-              <Route exact path="/" component={this.ReturnHome} />
-              <Route path="/About" component={this.ReturnAbout} />
-              <Route
-                path="/Organizations"
-                component={this.ReturnOrganizations}
-              />
-            </div>
+            <Route exact path="/" component={this.ReturnHome} />
+            <Route path="/About" component={this.ReturnAbout} />
+            <Route path="/Organizations" component={this.ReturnOrganizations} />
           </div>
 
           <footer className="row">
