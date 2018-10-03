@@ -577,8 +577,8 @@ body.noScroll, html.noScroll {
   min-height: 83vh;
 }
 #root section.hero {
-  margin-top: 55px;
-  height: 382px;
+  margin-top: 35px;
+  height: 400px;
   background: linear-gradient(to right, #109488, #05635B);
 }
 #root section.hero p, #root section.hero h1 {
@@ -607,7 +607,7 @@ body.noScroll, html.noScroll {
   background-color: #234357;
 }
 #root section.explore-content .selectors .col-sm-2:first-child button.active {
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors .col-sm-2:first-child button.active::after {
   height: 0px;
@@ -635,7 +635,7 @@ body.noScroll, html.noScroll {
   background-color: #2d457e;
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(2) button.active {
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(2) button.active::after {
   height: 0px;
@@ -663,7 +663,7 @@ body.noScroll, html.noScroll {
   background-color: #161b23;
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(3) button.active {
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(3) button.active::after {
   height: 0px;
@@ -691,7 +691,7 @@ body.noScroll, html.noScroll {
   background-color: #063833;
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(4) button.active {
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(4) button.active::after {
   height: 0px;
@@ -719,7 +719,7 @@ body.noScroll, html.noScroll {
   background-color: #1e1535;
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(5) button.active {
-  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors .col-sm-2:nth-child(5) button.active::after {
   height: 0px;
