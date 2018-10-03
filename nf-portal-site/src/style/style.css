@@ -572,6 +572,9 @@ body.noScroll, html.noScroll {
 #root footer .right-footer a:first-child {
   margin-right: 15px;
 }
+#root section.page {
+  margin-top: 50px;
+}
 #root section.hero {
   margin-top: 55px;
   height: 382px;

@@ -10,9 +10,9 @@ const writeAllDataFile = () => {
   
     tables.map((table) => {
       queryTable(table, query(table)).then( data => {
-        fs.writeFile(`./dist/public/${table}.json`, data, err => {
+        fs.writeFile(`./public/${table}.json`, data, err => {
           if (err) throw err
-          console.log("The file has been saved!")
+          console.log(`${table} has been saved!`)
           //process.exit()
         })
       })
@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
   next()
 })
 
-//writeAllDataFile()
+writeAllDataFile()
 
 app.use(express.static( __dirname + "/public"))
 
