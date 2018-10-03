@@ -7,6 +7,13 @@ $white: #ffffff;
 $greenGradientLeft: #109488;
 $greenGradientRight: #05635B;
 
+// explore content buttons 
+$button1: #407BA0; 
+$button2: #5171C0;
+$button3: #3C4A63;
+$button4: #109488;
+$button5: #47337D;
+
 @mixin circle($size){
   width: $size;
   height: $size;
@@ -66,7 +73,10 @@ body.noScroll, html.noScroll {
   }
 
   h1 { font-size: 30px; }
-  h2 { font-size: 24px; }
+  h2 { 
+    font-size: 21px; 
+    text-transform: uppercase;  
+    }
   h3 { font-weight: 300; }
   h4 {}
   h5 { 
@@ -239,7 +249,7 @@ body.noScroll, html.noScroll {
     }
     
     max-width: 100vw;
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
     position: fixed;
     left: 0px;
@@ -535,7 +545,7 @@ body.noScroll, html.noScroll {
     z-index: 1000;
     height: 100%;
     padding: 0px;
-    margin: 0px;
+    //margin: 0px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -641,11 +651,12 @@ body.noScroll, html.noScroll {
 
   section.page {
     margin-top: 50px;
-    min-height: 83vh;
+    min-height: 80vh;
   }
 
   /////////// home screen //////////////
   section.hero {
+    position: relative;
     margin-top: 35px;
     height: 400px;
     background: linear-gradient(to right, $greenGradientLeft, $greenGradientRight);
@@ -657,12 +668,32 @@ body.noScroll, html.noScroll {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      position: absolute;
+      z-index: 100;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      bottom: 20px;
     }
     .hero-message {
       div {
         background-color: unquote('#ffffff10');
         margin-bottom: 30px;
       }
+    }
+    .hero-background {
+      background-image: url('../images/molecules-light.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 50;
+      bottom: 0;
+    }
+    .hero-background:before {
+      filter: blur(5px);
     }
   }
 
@@ -695,7 +726,12 @@ body.noScroll, html.noScroll {
   }
 }
   section.explore-content {
+    .selectors-container {
+      max-width: 650px;
+    }
     .selectors {
+      display: flex;
+      justify-content: space-around;
       button {
         position: relative;
       }
@@ -703,36 +739,31 @@ body.noScroll, html.noScroll {
         
       }
       margin: 20px 0px;
-      .col-sm-2:first-child button {
-        @include hoverFade(#407BA0);
+      button:first-child  {
+        @include hoverFade($button1);
       }
-      .col-sm-2:nth-child(2) button {
-        @include hoverFade(#5171C0);
+      button:nth-child(2) {
+        @include hoverFade($button2);
       }
-      .col-sm-2:nth-child(3) button {
-        @include hoverFade(#3C4A63);
+      button:nth-child(3) {
+        @include hoverFade($button3);
       }
-      .col-sm-2:nth-child(4) button {
-        @include hoverFade(#109488);
+      button:nth-child(4) {
+        @include hoverFade($button4);
       }
-      .col-sm-2:nth-child(5) button {
-        @include hoverFade(#47337D);
+      button:nth-child(5) {
+        @include hoverFade($button5);
       }
     }
 
 
-    .selectors button:hover {
-      transition: all 400ms;
-      h5 {
-        transition: all 400ms;
-        color: white;
-      }
-    }
-    .synapse-table {
-      .container {
-        width: unset;
-      }
-    }
+    //.selectors button:hover {
+      //transition: all 400ms;
+      //h5 {
+        //transition: all 400ms;
+        //color: white;
+      //}
+    //}
   }
 
   .about {

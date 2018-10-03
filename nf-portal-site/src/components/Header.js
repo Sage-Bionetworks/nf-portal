@@ -212,7 +212,7 @@ class Header extends Component {
                 this.closeNavigation(this.props.hash)
               }}
             />
-            <div className="logo col-md-9">
+            <div className="logo col-md-9 col-sm-10 col-xs-12">
               <Link
                 to="/"
                 onClick={() => {
