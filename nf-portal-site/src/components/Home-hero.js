@@ -18,6 +18,7 @@ const Hero = (props) => {
           </div>
         </div>
       </div>
+      <div className="hero-background" />
     </section>
   )
 }

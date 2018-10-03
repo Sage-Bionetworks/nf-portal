@@ -39,7 +39,8 @@ body.noScroll, html.noScroll {
   font-size: 30px;
 }
 #root h2 {
-  font-size: 24px;
+  font-size: 21px;
+  text-transform: uppercase;
 }
 #root h3 {
   font-weight: 300;
@@ -191,7 +192,7 @@ body.noScroll, html.noScroll {
 }
 #root header.header {
   max-width: 100vw;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   position: fixed;
   left: 0px;
@@ -485,7 +486,6 @@ body.noScroll, html.noScroll {
   z-index: 1000;
   height: 100%;
   padding: 0px;
-  margin: 0px;
   display: flex;
   align-items: center;
   align-content: center;
@@ -574,9 +574,10 @@ body.noScroll, html.noScroll {
 }
 #root section.page {
   margin-top: 50px;
-  min-height: 83vh;
+  min-height: 80vh;
 }
 #root section.hero {
+  position: relative;
   margin-top: 35px;
   height: 400px;
   background: linear-gradient(to right, #109488, #05635B);
@@ -589,27 +590,52 @@ body.noScroll, html.noScroll {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: absolute;
+  z-index: 100;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 20px;
 }
 #root section.hero .hero-message div {
   background-color: #ffffff10;
   margin-bottom: 30px;
 }
+#root section.hero .hero-background {
+  background-image: url("../images/molecules-light.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
+  bottom: 0;
+}
+#root section.hero .hero-background:before {
+  filter: blur(5px);
+}
+#root section.explore-content .selectors-container {
+  max-width: 650px;
+}
 #root section.explore-content .selectors {
+  display: flex;
+  justify-content: space-around;
   margin: 20px 0px;
 }
 #root section.explore-content .selectors button {
   position: relative;
 }
-#root section.explore-content .selectors .col-sm-2:first-child button {
+#root section.explore-content .selectors button:first-child {
   background: #407BA0;
 }
-#root section.explore-content .selectors .col-sm-2:first-child button:hover {
+#root section.explore-content .selectors button:first-child:hover {
   background-color: #234357;
 }
-#root section.explore-content .selectors .col-sm-2:first-child button.active {
+#root section.explore-content .selectors button:first-child.active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
-#root section.explore-content .selectors .col-sm-2:first-child button.active::after {
+#root section.explore-content .selectors button:first-child.active::after {
   height: 0px;
   width: 0px;
   position: absolute;
@@ -624,20 +650,20 @@ body.noScroll, html.noScroll {
   transform: translateX(-50%);
   transition: all 400ms;
 }
-#root section.explore-content .selectors .col-sm-2:first-child button.active:hover:after {
+#root section.explore-content .selectors button:first-child.active:hover:after {
   transition: all 400ms;
   border-top: 10px solid #234357;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(2) button {
+#root section.explore-content .selectors button:nth-child(2) {
   background: #5171C0;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(2) button:hover {
+#root section.explore-content .selectors button:nth-child(2):hover {
   background-color: #2d457e;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(2) button.active {
+#root section.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(2) button.active::after {
+#root section.explore-content .selectors button:nth-child(2).active::after {
   height: 0px;
   width: 0px;
   position: absolute;
@@ -652,20 +678,20 @@ body.noScroll, html.noScroll {
   transform: translateX(-50%);
   transition: all 400ms;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(2) button.active:hover:after {
+#root section.explore-content .selectors button:nth-child(2).active:hover:after {
   transition: all 400ms;
   border-top: 10px solid #2d457e;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(3) button {
+#root section.explore-content .selectors button:nth-child(3) {
   background: #3C4A63;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(3) button:hover {
+#root section.explore-content .selectors button:nth-child(3):hover {
   background-color: #161b23;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(3) button.active {
+#root section.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(3) button.active::after {
+#root section.explore-content .selectors button:nth-child(3).active::after {
   height: 0px;
   width: 0px;
   position: absolute;
@@ -680,20 +706,20 @@ body.noScroll, html.noScroll {
   transform: translateX(-50%);
   transition: all 400ms;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(3) button.active:hover:after {
+#root section.explore-content .selectors button:nth-child(3).active:hover:after {
   transition: all 400ms;
   border-top: 10px solid #161b23;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(4) button {
+#root section.explore-content .selectors button:nth-child(4) {
   background: #109488;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(4) button:hover {
+#root section.explore-content .selectors button:nth-child(4):hover {
   background-color: #063833;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(4) button.active {
+#root section.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(4) button.active::after {
+#root section.explore-content .selectors button:nth-child(4).active::after {
   height: 0px;
   width: 0px;
   position: absolute;
@@ -708,20 +734,20 @@ body.noScroll, html.noScroll {
   transform: translateX(-50%);
   transition: all 400ms;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(4) button.active:hover:after {
+#root section.explore-content .selectors button:nth-child(4).active:hover:after {
   transition: all 400ms;
   border-top: 10px solid #063833;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(5) button {
+#root section.explore-content .selectors button:nth-child(5) {
   background: #47337D;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(5) button:hover {
+#root section.explore-content .selectors button:nth-child(5):hover {
   background-color: #1e1535;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(5) button.active {
+#root section.explore-content .selectors button:nth-child(5).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(5) button.active::after {
+#root section.explore-content .selectors button:nth-child(5).active::after {
   height: 0px;
   width: 0px;
   position: absolute;
@@ -736,19 +762,9 @@ body.noScroll, html.noScroll {
   transform: translateX(-50%);
   transition: all 400ms;
 }
-#root section.explore-content .selectors .col-sm-2:nth-child(5) button.active:hover:after {
+#root section.explore-content .selectors button:nth-child(5).active:hover:after {
   transition: all 400ms;
   border-top: 10px solid #1e1535;
-}
-#root section.explore-content .selectors button:hover {
-  transition: all 400ms;
-}
-#root section.explore-content .selectors button:hover h5 {
-  transition: all 400ms;
-  color: white;
-}
-#root section.explore-content .synapse-table .container {
-  width: unset;
 }
 #root .about section {
   text-align: left;

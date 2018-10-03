@@ -79,59 +79,49 @@ class ExploreContent extends Component {
           <div className="row">
             <h2>Explore Content</h2>
           </div>
-          <div className="row center-xs">
-            <div className="col-sm-12">
-              <div className="row selectors center-xs around-xs">
-                <div className="col-sm-2">
-                  <button
-                    className={this.returnButtonClass("syn16857542")}
-                    type="button"
-                    onClick={() => this.handleButtonPress("syn16857542", this.props.token)
-                    }
-                  >
-                    <h5>PUBLICATIONS</h5>
-                  </button>
-                </div>
-                <div className="col-sm-2">
-                  <button
-                    className={this.returnButtonClass("syn16859580")}
-                    type="button"
-                    onClick={() => this.handleButtonPress("syn16859580", this.props.token)
-                    }
-                  >
-                    <h5>DATASETS</h5>
-                  </button>
-                </div>
-                <div className="col-sm-2">
-                  <button
-                    className={this.returnButtonClass("syn16858331")}
-                    type="button"
-                    onClick={() => this.handleButtonPress("syn16858331", this.props.token)
-                    }
-                  >
-                    <h5>DATA</h5>
-                  </button>
-                </div>
-                <div className="col-sm-2">
-                  <button
-                    className={this.returnButtonClass("syn16787123")}
-                    type="button"
-                    onClick={() => this.handleButtonPress("syn16787123", this.props.token)
-                    }
-                  >
-                    <h5>STUDIES</h5>
-                  </button>
-                </div>
-                <div className="col-sm-2">
-                  <button
-                    className={this.returnButtonClass("syn16858699")}
-                    type="button"
-                    onClick={() => this.handleButtonPress("syn16858699", this.props.token)
-                    }
-                  >
-                    <h5>FUNDERS</h5>
-                  </button>
-                </div>
+          <div className="row">
+            <div className="center-block selectors-container">
+              <div className="selectors">
+                <button
+                  className={this.returnButtonClass("syn16857542")}
+                  type="button"
+                  onClick={() => this.handleButtonPress("syn16857542", this.props.token)
+                  }
+                >
+                  <h5>PUBLICATIONS</h5>
+                </button>
+                <button
+                  className={this.returnButtonClass("syn16859580")}
+                  type="button"
+                  onClick={() => this.handleButtonPress("syn16859580", this.props.token)
+                  }
+                >
+                  <h5>DATASETS</h5>
+                </button>
+                <button
+                  className={this.returnButtonClass("syn16858331")}
+                  type="button"
+                  onClick={() => this.handleButtonPress("syn16858331", this.props.token)
+                  }
+                >
+                  <h5>DATA</h5>
+                </button>
+                <button
+                  className={this.returnButtonClass("syn16787123")}
+                  type="button"
+                  onClick={() => this.handleButtonPress("syn16787123", this.props.token)
+                  }
+                >
+                  <h5>STUDIES</h5>
+                </button>
+                <button
+                  className={this.returnButtonClass("syn16858699")}
+                  type="button"
+                  onClick={() => this.handleButtonPress("syn16858699", this.props.token)
+                  }
+                >
+                  <h5>FUNDERS</h5>
+                </button>
               </div>
             </div>
           </div>
