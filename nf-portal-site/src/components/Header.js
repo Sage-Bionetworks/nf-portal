@@ -204,93 +204,81 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="container">
-          <div className="row between-xs center-xs middle-xs">
-            <div className="col-xs-12">
-              <div className="nav-row nav row">
-                <button
-                  className={
-                    !this.state.Open ? "menu-wall hidden" : "menu-wall"
-                  }
-                  type="button"
-                  onClick={() => {
-                    this.closeNavigation(this.props.hash)
-                  }}
-                />
-                <div className="logo col-md-9">
+          <div className="nav-row nav row">
+            <button
+              className={!this.state.Open ? "menu-wall hidden" : "menu-wall"}
+              type="button"
+              onClick={() => {
+                this.closeNavigation(this.props.hash)
+              }}
+            />
+            <div className="logo col-md-9">
+              <Link
+                to="/"
+                onClick={() => {
+                  this.closeNavigation("#/")
+                }}
+              >
+                NFPortal
+              </Link>
+            </div>
+            <div className="nav-buttons col-md-3 flex justify-end">
+              <ul className="nav row end-sm center-xs">
+                <li>
                   <Link
                     to="/"
+                    className={
+                      this.props.hash === "#/"
+                        ? "home nav-item main-nav-item active"
+                        : "home nav-item main-nav-item"
+                    }
                     onClick={() => {
                       this.closeNavigation("#/")
                     }}
+                    onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Home")
+                    }
+                    onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
+                    }
                   >
-                    NFPortal
+                    Home
                   </Link>
-                </div>
-                <div className="nav-buttons col-md-3 flex justify-end">
-                  <ul className="nav row end-sm center-xs">
-                    <li>
-                      <Link
-                        to="/"
-                        className={
-                          this.props.hash === "#/"
-                            ? "home nav-item main-nav-item active"
-                            : "home nav-item main-nav-item"
-                        }
-                        onClick={() => {
-                          this.closeNavigation("#/")
-                        }}
-                        onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Home")
-                        }
-                        onMouseLeave={() => this.handleLocalChanges(
-                          "activeUnderBar",
-                          this.props.hash,
-                        )
-                        }
-                      >
-                        Home
-                      </Link>
-                      <div
-                        className={
-                          this.props.hash === "#/"
-                          && this.state.activeUnderBar.includes("#/")
-                            ? "under-bar active"
-                            : "under-bar"
-                        }
-                      />
-                    </li>
-                    <li>
-                      <Link
-                        to="/About"
-                        className={
-                          this.props.hash.includes("/About")
-                            ? "home nav-item main-nav-item active"
-                            : "home nav-item main-nav-item"
-                        }
-                        onClick={() => {
-                          this.closeNavigation("/About")
-                        }}
-                        onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "About")
-                        }
-                        onMouseLeave={() => this.handleLocalChanges(
-                          "activeUnderBar",
-                          this.props.hash,
-                        )
-                        }
-                      >
-                        About
-                      </Link>
-                      <div
-                        className={
-                          this.props.hash.includes("/About")
-                          && this.state.activeUnderBar.includes("About")
-                            ? "under-bar active"
-                            : "under-bar"
-                        }
-                      />
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                  <div
+                    className={
+                      this.props.hash === "#/"
+                      && this.state.activeUnderBar.includes("#/")
+                        ? "under-bar active"
+                        : "under-bar"
+                    }
+                  />
+                </li>
+                <li>
+                  <Link
+                    to="/About"
+                    className={
+                      this.props.hash.includes("/About")
+                        ? "home nav-item main-nav-item active"
+                        : "home nav-item main-nav-item"
+                    }
+                    onClick={() => {
+                      this.closeNavigation("/About")
+                    }}
+                    onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "About")
+                    }
+                    onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
+                    }
+                  >
+                    About
+                  </Link>
+                  <div
+                    className={
+                      this.props.hash.includes("/About")
+                      && this.state.activeUnderBar.includes("About")
+                        ? "under-bar active"
+                        : "under-bar"
+                    }
+                  />
+                </li>
+              </ul>
             </div>
           </div>
         </div>

@@ -4,6 +4,8 @@
 $green: #4DB7AD;
 $purple: #4A5E81;
 $white: #ffffff;
+$greenGradientLeft: #109488;
+$greenGradientRight: #05635B;
 
 @mixin circle($size){
   width: $size;
@@ -639,13 +641,14 @@ body.noScroll, html.noScroll {
 
   section.page {
     margin-top: 50px;
+    min-height: 83vh;
   }
 
   /////////// home screen //////////////
   section.hero {
     margin-top: 55px;
     height: 382px;
-    background: linear-gradient(to right, #109488, #05635B);
+    background: linear-gradient(to right, $greenGradientLeft, $greenGradientRight);
     p, h1 {
       color: white;
     }
@@ -657,7 +660,7 @@ body.noScroll, html.noScroll {
     }
     .hero-message {
       div {
-        background-color: #ffffff10;
+        background-color: unquote('#ffffff10');
         margin-bottom: 30px;
       }
     }
@@ -668,10 +671,14 @@ body.noScroll, html.noScroll {
   &:hover {
     background-color: darken($color, 20%);
   }
+  &.active{
+    box-shadow: 3px 3px 2px 2px rgba(0,0,0,0.25);
+  }
   &.active::after {
     height: 0px;
     width: 0px;
     position: absolute;
+    z-index: 100;
     display: block;
     content: "";
     border-left: 5px solid transparent;
@@ -691,6 +698,9 @@ body.noScroll, html.noScroll {
     .selectors {
       button {
         position: relative;
+      }
+      button.active {
+        
       }
       margin: 20px 0px;
       .col-sm-2:first-child button {

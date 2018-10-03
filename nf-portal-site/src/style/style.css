@@ -574,6 +574,7 @@ body.noScroll, html.noScroll {
 }
 #root section.page {
   margin-top: 50px;
+  min-height: 83vh;
 }
 #root section.hero {
   margin-top: 55px;
@@ -605,10 +606,14 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors .col-sm-2:first-child button:hover {
   background-color: #234357;
 }
+#root section.explore-content .selectors .col-sm-2:first-child button.active {
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+}
 #root section.explore-content .selectors .col-sm-2:first-child button.active::after {
   height: 0px;
   width: 0px;
   position: absolute;
+  z-index: 100;
   display: block;
   content: "";
   border-left: 5px solid transparent;
@@ -629,10 +634,14 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors .col-sm-2:nth-child(2) button:hover {
   background-color: #2d457e;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(2) button.active {
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+}
 #root section.explore-content .selectors .col-sm-2:nth-child(2) button.active::after {
   height: 0px;
   width: 0px;
   position: absolute;
+  z-index: 100;
   display: block;
   content: "";
   border-left: 5px solid transparent;
@@ -653,10 +662,14 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors .col-sm-2:nth-child(3) button:hover {
   background-color: #161b23;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(3) button.active {
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+}
 #root section.explore-content .selectors .col-sm-2:nth-child(3) button.active::after {
   height: 0px;
   width: 0px;
   position: absolute;
+  z-index: 100;
   display: block;
   content: "";
   border-left: 5px solid transparent;
@@ -677,10 +690,14 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors .col-sm-2:nth-child(4) button:hover {
   background-color: #063833;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(4) button.active {
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+}
 #root section.explore-content .selectors .col-sm-2:nth-child(4) button.active::after {
   height: 0px;
   width: 0px;
   position: absolute;
+  z-index: 100;
   display: block;
   content: "";
   border-left: 5px solid transparent;
@@ -701,10 +718,14 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors .col-sm-2:nth-child(5) button:hover {
   background-color: #1e1535;
 }
+#root section.explore-content .selectors .col-sm-2:nth-child(5) button.active {
+  box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.25);
+}
 #root section.explore-content .selectors .col-sm-2:nth-child(5) button.active::after {
   height: 0px;
   width: 0px;
   position: absolute;
+  z-index: 100;
   display: block;
   content: "";
   border-left: 5px solid transparent;

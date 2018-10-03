@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 
 const NewPublications = (props) => {
   return (
-    <section className="row explore-content center-xs middle-xs">
-      <div className="col-xs-12">
+    <section className="row new-publications">
+      <div className="container">
         <div className="row">
           <h2>New Publications</h2>
         </div>

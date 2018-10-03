@@ -74,13 +74,13 @@ class ExploreContent extends Component {
 
   render() {
     return (
-      <section className="row explore-content center-xs middle-xs">
-        <div className="col-xs-12">
+      <section className="row explore-content">
+        <div className="container">
           <div className="row">
             <h2>Explore Content</h2>
           </div>
           <div className="row center-xs">
-            <div className="col-sm-9">
+            <div className="col-sm-12">
               <div className="row selectors center-xs around-xs">
                 <div className="col-sm-2">
                   <button
@@ -141,8 +141,6 @@ class ExploreContent extends Component {
     )
   }
 }
-
-//<this.SynapseTable props={this.props} />
 
 ExploreContent.propTypes = {
   token: PropTypes.string.isRequired,
