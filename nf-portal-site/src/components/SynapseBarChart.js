@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
 
-const SynapseBarChart = async (props) => {
+const SynapseBarChart = (props) => {
   const sql = `SELECT * FROM ${props.synId}`
   const query = {
     concreteType: "org.sagebionetworks.repo.model.table.QueryBundleRequest",
