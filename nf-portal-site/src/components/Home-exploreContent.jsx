@@ -2,7 +2,10 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
+import { asyncComponent } from "react-async-component"
 import { staticTableQuery } from "../queries/queryForData"
+
+const AsyncSynapseBarChart = asyncComponent({ resolve: () => import("./SynapseBarChart") })
 
 class ExploreContent extends Component {
   state = {
@@ -12,16 +15,23 @@ class ExploreContent extends Component {
     syn16857542: "",
     syn16787123: "",
     loading: true,
-    activeButton: "",
+    activeButton: "syn16858331",
+    activeFilter: "diagnosis",
   };
+  //activeButton: "syn16859580",
+  //activeFilter: "diseaseFocus",
 
   componentDidMount() {
-    staticTableQuery("syn16857542", this.handleChanges).then(() => {
-      this.setState({
-        loading: false,
-        activeButton: "syn16857542",
-      })
-    })
+    //staticTableQuery("syn16858331", this.handleChanges).then(() => {
+    //this.setState({
+    //loading: false,
+    //activeButton: "syn16858331",
+    //})
+    //})
+  }
+
+  componentDidUpdate() {
+    console.log("updated")
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -30,46 +40,43 @@ class ExploreContent extends Component {
     })
   };
 
+  returnFilter = (id) => {
+    switch (id) {
+    case "syn16859580":
+      // datasets
+      return "diseaseFocus"
+    case "syn16858699":
+      // funder
+      return ""
+    case "syn16858331":
+      // files
+      return "projectId"
+    case "syn16857542":
+      // publications
+      return "diseaseFocus"
+    case "syn16787123":
+      // studies
+      return "diseaseFocus"
+    default:
+      return ""
+    }
+  }
+
   handleButtonPress = (id, token) => {
-    this.handleChanges("activeButton", id)
+    const activeFilter = this.returnFilter(id)
+    this.setState({
+      activeButton: id,
+      activeFilter,
+    }, () => {
+
+    })
     if (this.state[id] === "") {
-      staticTableQuery(id, this.handleChanges)
+      //staticTableQuery(id, this.handleChanges)
     } else return ""
   };
 
   returnButtonClass = (id) => {
     return `btn-control ${this.state.activeButton === id ? "active" : ""}`
-  };
-
-  SynapseTable = (props) => {
-    return (
-      <SynapseComponents.QueryWrapper
-        initQueryRequest={{
-          concreteType:
-            "org.sagebionetworks.repo.model.table.QueryBundleRequest",
-          partMask:
-            SynapseConstants.BUNDLE_MASK_QUERY_COLUMN_MODELS
-            | SynapseConstants.BUNDLE_MASK_QUERY_FACETS
-            | SynapseConstants.BUNDLE_MASK_QUERY_RESULTS,
-          query: {
-            isConsistent: false,
-            sql: "SELECT * FROM syn15661198",
-            limit: 25,
-            offset: 0,
-            selectedFacets: [],
-            sort: [],
-          },
-        }}
-        synapseId="syn15661198"
-        token={props.token}
-        alias="Disease"
-        filter="parentId"
-      >
-        <SynapseComponents.Facets />
-        <SynapseComponents.StackedRowHomebrew />
-        <SynapseComponents.SynapseTable />
-      </SynapseComponents.QueryWrapper>
-    )
   };
 
   render() {
@@ -82,14 +89,6 @@ class ExploreContent extends Component {
           <div className="row">
             <div className="center-block selectors-container">
               <div className="selectors">
-                <button
-                  className={this.returnButtonClass("syn16857542")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16857542", this.props.token)
-                  }
-                >
-                  <h5>PUBLICATIONS</h5>
-                </button>
                 <button
                   className={this.returnButtonClass("syn16859580")}
                   type="button"
@@ -122,8 +121,17 @@ class ExploreContent extends Component {
                 >
                   <h5>FUNDERS</h5>
                 </button>
+                <button
+                  className={this.returnButtonClass("syn16857542")}
+                  type="button"
+                  onClick={() => this.handleButtonPress("syn16857542", this.props.token)
+                  }
+                >
+                  <h5>PUBLICATIONS</h5>
+                </button>
               </div>
             </div>
+            <AsyncSynapseBarChart token={this.props.token} synId={this.state.activeButton} filter={this.state.activeFilter} />
           </div>
         </div>
         <div className="col-xs-12 synapse-table">{this.state.json}</div>

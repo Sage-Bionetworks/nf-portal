@@ -4,13 +4,13 @@ import Hero from "./Home-hero"
 import NewPublications from "./Home-newPublications"
 import NewStudies from "./Home-newStudies"
 import NewDatasets from "./Home-newDatasets"
-import ExploreContent from "./Home-exploreContent"
+import ExploreContent from "./Home-exploreContent.jsx"
 import Tools from "./Home-tools"
 import Organizations from "./Home-organizations"
 
 class Home extends Component {
   componentDidMount() {
-    console.log(this.props)
+    //console.log(this.props)
   }
 
   render() {

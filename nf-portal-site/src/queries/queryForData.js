@@ -48,11 +48,11 @@ const staticTableQuery = async (id, handleChanges) => {
     mode: "cors",
   })
     .then((response) => {
-      console.log(response)
+      //console.log(response)
       return response.json()
     })
     .then((data) => {
-      console.log(data)
+      //console.log(data)
       handleChanges(id, data)
     })
     .catch(processError)
