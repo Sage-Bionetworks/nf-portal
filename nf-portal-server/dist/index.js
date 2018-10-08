@@ -16,21 +16,43 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = (0, _express2.default)();
 
-var writeAllDataFile = function writeAllDataFile() {
-  var tables = ["syn16859580", "syn16858699", "syn16858331", "syn16857542", "syn16787123", "syn16859448"];
-  var query = function query(table) {
-    return "SELECT * FROM " + table;
-  };
+var runQueries = function runQueries(tableArray, query) {
+  var appendToName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
 
-  tables.map(function (table) {
+  tableArray.map(function (table) {
+    console.log(query(table));
     (0, _queryForData2.default)(table, query(table)).then(function (data) {
-      _fs2.default.writeFile("./public/" + table + ".json", data, function (err) {
+      _fs2.default.writeFile("public/" + table + (appendToName !== "" ? "_" : "") + appendToName + ".json", data, function (err) {
         if (err) throw err;
-        console.log(table + " has been saved!");
+        console.log("" + table + (appendToName !== "" ? "_" : "") + appendToName + " has been saved!");
         //process.exit()
       });
     });
   });
+};
+
+var writeAllDataFile = function writeAllDataFile() {
+  var tables = ["syn16859580", "syn16858699", "syn16858331", "syn16857542", "syn16787123", "syn16859448"];
+
+  var query = function query(table) {
+    return "SELECT * FROM " + table;
+  };
+  runQueries(tables, query);
+
+  var query2 = function query2(table) {
+    return "SELECT * FROM " + table + " WHERE ( ( \"fundingAgency\" = 'CTF' ) )";
+  };
+  runQueries(tables, query2, "fundingAgency_CTF");
+
+  var query3 = function query3(table) {
+    return "SELECT * FROM " + table + " WHERE ( ( \"fundingAgency\" = 'NTAP' ) )";
+  };
+  runQueries(tables, query2, "fundingAgency_NTAP");
+
+  var query4 = function query4(table) {
+    return "SELECT * FROM " + table + " WHERE ( ( \"fundingAgency\" = 'NIH-NCI' ) )";
+  };
+  runQueries(tables, query2, "fundingAgency_NIH-NCI");
 };
 
 app.all("/", function (req, res, next) {

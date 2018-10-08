@@ -1,35 +1,29 @@
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import Hero from "./Home-hero"
-import NewPublications from "./Home-newPublications"
-import NewStudies from "./Home-newStudies"
-import NewDatasets from "./Home-newDatasets"
-import ExploreContent from "./Home-exploreContent.jsx"
-import Tools from "./Home-tools"
-import Organizations from "./Home-organizations"
+import NewPublications from "./NewPublications"
+import NewStudies from "./NewStudies"
+import NewDatasets from "./NewDatasets"
+import ExploreContent from "./ExploreContent.jsx"
+import Tools from "./Tools"
+import Organizations from "./Organizations"
 
-class Home extends Component {
-  componentDidMount() {
-    //console.log(this.props)
-  }
-
-  render() {
-    return (
-      <div>
-        <Hero />
-        <ExploreContent token={this.props.token} />
-        <NewStudies
-          token={this.props.token}
-          handleChanges={this.props.handleChanges}
-          studies={this.props.studies}
-        />
-        <NewPublications token={this.props.token} publications={this.props.publications} />
-        <NewDatasets token={this.props.token} datasets={this.props.datasets} />
-        <Tools token={this.props.token} tools={this.props.tools} />
-        <Organizations token={this.props.token} organizations={this.props.organizations} />
-      </div>
-    )
-  }
+const Home = (props) => {
+  return (
+    <div>
+      <Hero />
+      <ExploreContent token={props.token} />
+      <NewStudies
+        token={props.token}
+        handleChanges={props.handleChanges}
+        studies={props.studies}
+      />
+      <NewPublications token={props.token} publications={props.publications} />
+      <NewDatasets token={props.token} datasets={props.datasets} />
+      <Tools token={props.token} tools={props.tools} />
+      <Organizations token={props.token} organizations={props.organizations} />
+    </div>
+  )
 }
 
 Home.propTypes = {

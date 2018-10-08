@@ -4,19 +4,34 @@ import queryTable from "./queryForData"
 
 const app = express()
 
-const writeAllDataFile = () => {  
-  let tables = ["syn16859580", "syn16858699", "syn16858331", "syn16857542", "syn16787123", "syn16859448"]
-  let query = (table) => { return `SELECT * FROM ${table}` }
-  
-    tables.map((table) => {
-      queryTable(table, query(table)).then( data => {
-        fs.writeFile(`./public/${table}.json`, data, err => {
-          if (err) throw err
-          console.log(`${table} has been saved!`)
-          //process.exit()
-        })
+const runQueries = (tableArray, query, appendToName = "") => {
+  tableArray.map((table) => {
+    console.log(query(table))
+    queryTable(table, query(table)).then( data => {
+      fs.writeFile(`public/${table}${appendToName !== "" ? "_" : ""}${appendToName}.json`, data, err => {
+        if (err) throw err
+        console.log(`${table}${appendToName !== "" ? "_" : ""}${appendToName} has been saved!`)
+        //process.exit()
       })
     })
+  })
+}
+
+const writeAllDataFile = () => {  
+  let tables = ["syn16859580", "syn16858699", "syn16858331", "syn16857542", "syn16787123", "syn16859448"]
+
+  let query = (table) => { return `SELECT * FROM ${table}` }
+  runQueries(tables, query)
+
+
+  let query2 = (table) => { return `SELECT * FROM ${table} WHERE ( ( "fundingAgency" = 'CTF' ) )` }
+  runQueries(tables, query2, "fundingAgency_CTF")
+
+  let query3 = (table) => { return `SELECT * FROM ${table} WHERE ( ( "fundingAgency" = 'NTAP' ) )` }
+  runQueries(tables, query2, "fundingAgency_NTAP")
+
+  let query4 = (table) => { return `SELECT * FROM ${table} WHERE ( ( "fundingAgency" = 'NIH-NCI' ) )` }
+  runQueries(tables, query2, "fundingAgency_NIH-NCI")
 }
 
 app.all("/", function(req, res, next) {

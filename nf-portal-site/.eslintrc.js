@@ -23,7 +23,8 @@ module.exports = {
     "import/no-extraneous-dependencies": 0,
     "global-require": 0,
     "no-bitwise": 0,
-    "prefer-template": 0
+    "prefer-template": 0,
+    "import/extensions": 0,
   },
   env: {
     browser: true,
