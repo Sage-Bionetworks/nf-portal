@@ -9,11 +9,6 @@ const AsyncSynapseBarChart = asyncComponent({ resolve: () => import("./SynapseBa
 
 class ExploreContent extends Component {
   state = {
-    syn16859580: "",
-    syn16858699: "",
-    syn16858331: "",
-    syn16857542: "",
-    syn16787123: "",
     loading: true,
     activeButton: "syn16858331",
     activeFilter: "diagnosis",
@@ -22,12 +17,6 @@ class ExploreContent extends Component {
   //activeFilter: "diseaseFocus",
 
   componentDidMount() {
-    //staticTableQuery("syn16858331", this.handleChanges).then(() => {
-    //this.setState({
-    //loading: false,
-    //activeButton: "syn16858331",
-    //})
-    //})
   }
 
   componentDidUpdate() {
@@ -62,7 +51,7 @@ class ExploreContent extends Component {
     }
   }
 
-  handleButtonPress = (id, token) => {
+  handleButtonPress = (id) => {
     const activeFilter = this.returnFilter(id)
     this.setState({
       activeButton: id,
@@ -134,7 +123,6 @@ class ExploreContent extends Component {
             <AsyncSynapseBarChart token={this.props.token} synId={this.state.activeButton} filter={this.state.activeFilter} />
           </div>
         </div>
-        <div className="col-xs-12 synapse-table">{this.state.json}</div>
       </section>
     )
   }

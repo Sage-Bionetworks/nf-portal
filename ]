@@ -5,10 +5,10 @@ import SynapseCards from "./SynapseCards"
 
 const NewDatasets = (props) => {
   return (
-    <section className="row new-datasets">
+    <section className="row new-publications">
       <div className="container">
         <div className="row">
-          <h2>New Datasets</h2>
+          <h2>New Publications</h2>
         </div>
         <SynapseCards json={props.datasets} cardType="DATASET" />
       </div>
@@ -17,7 +17,6 @@ const NewDatasets = (props) => {
 }
 
 NewDatasets.propTypes = {
-  datasets: PropTypes.object.isRequired,
 }
 
 export default NewDatasets

@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SynapseCards from "./SynapseCards"
 
 const Organizations = (props) => {
   return (
@@ -9,10 +10,13 @@ const Organizations = (props) => {
           <h2>Organizations</h2>
         </div>
       </div>
+      <SynapseCards json={props.organizations} cardType="FUNDER" />
     </section>
   )
 }
 
-Organizations.propTypes = {}
+Organizations.propTypes = {
+  organizations: PropTypes.object.isRequired,
+}
 
 export default Organizations

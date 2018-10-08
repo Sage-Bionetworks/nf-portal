@@ -42,7 +42,7 @@ const queryTable = (table, query, token) => {
 const host = "http://static.nf.synapse.org/"
 //const host = "http://localhost:3030/"
 
-const staticTableQuery = async (id, handleChanges) => {
+const getStaticJSON = async (id, handleChanges) => {
   return fetch(`${host}${id}.json`, {
     method: "GET",
     mode: "cors",
@@ -53,11 +53,14 @@ const staticTableQuery = async (id, handleChanges) => {
     })
     .then((data) => {
       //console.log(data)
-      handleChanges(id, data)
+      if (handleChanges !== undefined) {
+        handleChanges(id, data)
+      }
+      return data
     })
     .catch(processError)
 }
 
 export {
-  staticTableQuery, queryTable, processError, getTable, host,
+  getStaticJSON, queryTable, processError, getTable, host,
 }

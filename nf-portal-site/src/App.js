@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { HashRouter as Router, Route } from "react-router-dom"
+import { getStaticJSON } from "./queries/queryForData"
 //import ReactGA from "react-ga"
 //import createHistory from "history/createBrowserHistory"
 
@@ -24,18 +25,26 @@ const AsyncOrganizations = asyncComponent(() => import("./components/Organizatio
 
 class App extends Component {
   state = {
-    wikiMarkdown: "",
-    wikiMarkdownSegs: [],
     hash: "",
+    syn16859580: "",
+    syn16858699: "",
+    syn16858331: "",
+    syn16857542: "",
+    syn16787123: "",
+    syn16859448: "",
   };
 
   componentDidMount() {
     this.setState({
       hash: window.location.hash,
     })
+    getStaticJSON("syn16858331", this.handleChanges)
+    getStaticJSON("syn16859580", this.handleChanges)
+    getStaticJSON("syn16858699", this.handleChanges)
+    getStaticJSON("syn16857542", this.handleChanges)
+    getStaticJSON("syn16787123", this.handleChanges)
+    getStaticJSON("syn16859448", this.handleChanges)
   }
-
-  componentDidUpdate() {}
 
   handleChanges = (KEY, NEWSTATE) => {
     this.setState({
@@ -44,7 +53,6 @@ class App extends Component {
   };
 
   handleNestedChanges = (KEY, newStateKey, newState) => {
-    //console.log(KEY, newStateKey, newState)
     const property = this.state[KEY]
     property.push({ [newStateKey]: newState })
     this.setState(prevState => ({
@@ -54,7 +62,17 @@ class App extends Component {
   };
 
   ReturnHome = () => {
-    return <AsyncHome token={this.props.loginToken.sessionToken} />
+    return (
+      <AsyncHome
+        token={this.props.loginToken.sessionToken}
+        handleChanges={this.handleChanges}
+        studies={this.state.syn16787123}
+        publications={this.state.syn16857542}
+        datasets={this.state.syn16859580}
+        tools={this.state.syn16859448}
+        organizations={this.state.syn16858699}
+      />
+    )
   };
 
   ReturnAbout = () => {

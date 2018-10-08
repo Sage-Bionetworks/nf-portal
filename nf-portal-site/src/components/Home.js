@@ -18,11 +18,15 @@ class Home extends Component {
       <div>
         <Hero />
         <ExploreContent token={this.props.token} />
-        <NewStudies token={this.props.token} />
-        <NewPublications token={this.props.token} />
-        <NewDatasets token={this.props.token} />
-        <Tools token={this.props.token} />
-        <Organizations token={this.props.token} />
+        <NewStudies
+          token={this.props.token}
+          handleChanges={this.props.handleChanges}
+          studies={this.props.studies}
+        />
+        <NewPublications token={this.props.token} publications={this.props.publications} />
+        <NewDatasets token={this.props.token} datasets={this.props.datasets} />
+        <Tools token={this.props.token} tools={this.props.tools} />
+        <Organizations token={this.props.token} organizations={this.props.organizations} />
       </div>
     )
   }
@@ -30,6 +34,12 @@ class Home extends Component {
 
 Home.propTypes = {
   token: PropTypes.string.isRequired,
+  handleChanges: PropTypes.func.isRequired,
+  studies: PropTypes.object.isRequired,
+  publications: PropTypes.object.isRequired,
+  datasets: PropTypes.object.isRequired,
+  tools: PropTypes.object.isRequired,
+  organizations: PropTypes.object.isRequired,
 }
 
 export default Home

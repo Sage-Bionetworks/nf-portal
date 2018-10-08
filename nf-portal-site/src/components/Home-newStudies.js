@@ -2,16 +2,9 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
-import { staticTableQuery } from "../queries/queryForData"
 
 class NewStudies extends Component {
   componentDidMount() {
-    staticTableQuery("syn16858331", this.handleChanges).then(() => {
-      this.setState({
-        loading: false,
-        activeButton: "syn16858331",
-      })
-    })
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -33,7 +26,6 @@ class NewStudies extends Component {
     )
   }
 
-  //{this.returnNewStudies()}
   render() {
     return (
       <section className="row new-studies">
@@ -41,7 +33,9 @@ class NewStudies extends Component {
           <div className="row">
             <h2>New Studies</h2>
           </div>
-          <div className="row" />
+          <div className="row">
+            {this.returnNewStudies(this.props.studies)}
+          </div>
         </div>
       </section>
     )
