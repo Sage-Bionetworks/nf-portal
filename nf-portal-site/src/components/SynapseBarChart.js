@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
 
 const SynapseBarChart = (props) => {
@@ -17,11 +17,15 @@ const SynapseBarChart = (props) => {
     },
   }
 
-  console.log(props.synId, props.filter)
-
   return (
-    <SynapseComponents.QueryWrapper initQueryRequest={query} token={props.token}>
-      <SynapseComponents.StackedRowHomebrew filter={props.filter} />
+    <SynapseComponents.QueryWrapper
+      initQueryRequest={query}
+      token={props.token}
+      filter={props.filter}
+      RGB={props.RGB !== undefined ? props.RGB : ""}
+      showMenu={props.showMenu}
+    >
+      <SynapseComponents.StackedRowHomebrew />
     </SynapseComponents.QueryWrapper>
   )
 }

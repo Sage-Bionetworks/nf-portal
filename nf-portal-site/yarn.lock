@@ -12754,8 +12754,8 @@ symbol.prototype.description@^1.0.0:
     has-symbols "^1.0.0"
 
 synapse-react-client@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.6.1.tgz#fb65368ededc639708dff3fa72f7458fbdba23d5"
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.7.0.tgz#36b75f95775bdbb7ddc2467803e1b4f6539b08b2"
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.4"
     "@fortawesome/free-solid-svg-icons" "^5.3.1"

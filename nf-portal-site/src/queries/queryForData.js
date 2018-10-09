@@ -48,11 +48,9 @@ const getStaticJSON = async (id, handleChanges, alternateId = "") => {
     mode: "cors",
   })
     .then((response) => {
-      //console.log(response)
       return response.json()
     })
     .then((data) => {
-      //console.log(data)
       if (handleChanges !== undefined) {
         handleChanges(alternateId || id, data)
       }
