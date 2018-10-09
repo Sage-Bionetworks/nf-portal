@@ -17,7 +17,7 @@ const SynapseCards = (props) => {
 }
 
 SynapseCards.propTypes = {
-  json: PropTypes.string.isRequired,
+  json: PropTypes.object.isRequired,
   cardType: PropTypes.string.isRequired,
 }
 

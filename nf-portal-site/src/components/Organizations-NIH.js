@@ -12,10 +12,10 @@ class NIH extends Component {
   }
 
   componentDidMount() {
-    getStaticJSON("syn16858699_fundingAgency_NIH-NCI", this.handleChanges, "syn16858699_fundingAgency_NIHNCI")
-    getStaticJSON("syn16787123_fundingAgency_NIH-NCI", this.handleChanges, "syn16787123_fundingAgency_NIHNCI")
-    getStaticJSON("syn16857542_fundingAgency_NIH-NCI", this.handleChanges, "syn16857542_fundingAgency_NIHNCI")
-    getStaticJSON("syn16859580_fundingAgency_NIH-NCI", this.handleChanges, "syn16859580_fundingAgency_NIHNCI")
+    getStaticJSON("syn16858699_fundingAgency_NIHNCI", this.handleChanges, "syn16858699_fundingAgency_NIHNCI")
+    getStaticJSON("syn16787123_fundingAgency_NIHNCI", this.handleChanges, "syn16787123_fundingAgency_NIHNCI")
+    getStaticJSON("syn16857542_fundingAgency_NIHNCI", this.handleChanges, "syn16857542_fundingAgency_NIHNCI")
+    getStaticJSON("syn16859580_fundingAgency_NIHNCI", this.handleChanges, "syn16859580_fundingAgency_NIHNCI")
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -29,7 +29,7 @@ class NIH extends Component {
       <section className="row organizations">
         <div className="container">
           <div className="row">
-            <h2>Childrens Tumor Foundation</h2>
+            <h2>The Developmental and Hyperactive RAS Tumor SPORE</h2>
           </div>
         </div>
         <SynapseCards json={this.state.syn16858699_fundingAgency_NIHNCI} cardType="FUNDER" />

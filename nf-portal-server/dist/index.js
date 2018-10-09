@@ -20,7 +20,7 @@ var runQueries = function runQueries(tableArray, query) {
   var appendToName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
 
   tableArray.map(function (table) {
-    console.log(query(table));
+    //console.log(query(table))
     (0, _queryForData2.default)(table, query(table)).then(function (data) {
       _fs2.default.writeFile("public/" + table + (appendToName !== "" ? "_" : "") + appendToName + ".json", data, function (err) {
         if (err) throw err;
@@ -47,30 +47,28 @@ var writeAllDataFile = function writeAllDataFile() {
   var query3 = function query3(table) {
     return "SELECT * FROM " + table + " WHERE ( ( \"fundingAgency\" = 'NTAP' ) )";
   };
-  runQueries(tables, query2, "fundingAgency_NTAP");
+  runQueries(tables, query3, "fundingAgency_NTAP");
 
   var query4 = function query4(table) {
     return "SELECT * FROM " + table + " WHERE ( ( \"fundingAgency\" = 'NIH-NCI' ) )";
   };
-  runQueries(tables, query2, "fundingAgency_NIH-NCI");
+  runQueries(tables, query4, "fundingAgency_NIHNCI");
 };
 
-app.all("/", function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
+//app.all("/", function(req, res, next) {
+//res.header("Access-Control-Allow-Origin", "*")
+//res.header("Access-Control-Allow-Headers", "X-Requested-With")
+//next()
+//})
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
+//app.use(function(req, res, next) {
+//res.header("Access-Control-Allow-Origin", "*")
+//res.header("Access-Control-Allow-Headers", "X-Requested-With")
+//next()
+//})
 
 writeAllDataFile();
 
-app.use(_express2.default.static(__dirname + "/public"));
+//app.use(express.static( __dirname + "/public"))
 
-app.listen(3030, function () {
-  return console.log("Example app listening on port 3030!");
-});
+//app.listen(3030, () => console.log("Example app listening on port 3030!"))

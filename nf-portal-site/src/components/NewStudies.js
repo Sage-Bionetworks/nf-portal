@@ -44,6 +44,7 @@ class NewStudies extends Component {
 
 NewStudies.propTypes = {
   token: PropTypes.string.isRequired,
+  studies: PropTypes.object.isRequired,
 }
 
 export default NewStudies

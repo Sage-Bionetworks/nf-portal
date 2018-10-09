@@ -29,7 +29,7 @@ class NTAP extends Component {
       <section className="row organizations">
         <div className="container">
           <div className="row">
-            <h2>Childrens Tumor Foundation</h2>
+            <h2>The Neurofibromatosis Therapeutic Acceleration Program</h2>
           </div>
         </div>
         <SynapseCards json={this.state.syn16858699_fundingAgency_NTAP} cardType="FUNDER" />

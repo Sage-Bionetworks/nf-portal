@@ -350,6 +350,9 @@ body.noScroll, html.noScroll {
 #root header .accordion__title {
   background-color: #4DB7AD;
 }
+#root header .accordion-title[aria-selected=true], #root header .accordion-title[aria-selected=true] a {
+  background-color: transparent;
+}
 #root header .accordion-title.top-level-accordion[aria-selected=true] .under-bar {
   opacity: 0;
 }
@@ -420,7 +423,7 @@ body.noScroll, html.noScroll {
   text-decoration: underline;
   text-align: left;
 }
-#root .btn {
+#root .btn-cst {
   color: #1A1C29;
   font-size: 20px;
   font-weight: 600;
@@ -431,7 +434,7 @@ body.noScroll, html.noScroll {
   height: 52px;
   transition: all 0.3s ease-in-out;
 }
-#root .btn:hover {
+#root .btn-cst:hover {
   background-color: #C7D6FF;
 }
 #root .btn-lg {

@@ -1,11 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 
-import { SynapseComponents, SynapseConstants } from "synapse-react-client"
-import { asyncComponent } from "react-async-component"
-import { staticTableQuery } from "../queries/queryForData"
-
-const AsyncSynapseBarChart = asyncComponent({ resolve: () => import("./SynapseBarChart") })
+import SynapseBarChart from "./SynapseBarChart"
 
 class ExploreContent extends Component {
   state = {
@@ -13,15 +9,6 @@ class ExploreContent extends Component {
     activeButton: "syn16858331",
     activeFilter: "diagnosis",
   };
-  //activeButton: "syn16859580",
-  //activeFilter: "diseaseFocus",
-
-  componentDidMount() {
-  }
-
-  componentDidUpdate() {
-    console.log("updated")
-  }
 
   handleChanges = (KEY, NEWSTATE) => {
     this.setState({
@@ -38,8 +25,8 @@ class ExploreContent extends Component {
       // funder
       return ""
     case "syn16858331":
-      // files
-      return "projectId"
+      // files // data
+      return "assay"
     case "syn16857542":
       // publications
       return "diseaseFocus"
@@ -67,6 +54,19 @@ class ExploreContent extends Component {
   returnButtonClass = (id) => {
     return `btn-control ${this.state.activeButton === id ? "active" : ""}`
   };
+
+  fundersButton = () => {
+    return (
+      <button
+        className={this.returnButtonClass("syn16858699")}
+        type="button"
+        onClick={() => this.handleButtonPress("syn16858699", this.props.token)
+        }
+      >
+        <h5>FUNDERS</h5>
+      </button>
+    )
+  }
 
   render() {
     return (
@@ -103,14 +103,6 @@ class ExploreContent extends Component {
                   <h5>STUDIES</h5>
                 </button>
                 <button
-                  className={this.returnButtonClass("syn16858699")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16858699", this.props.token)
-                  }
-                >
-                  <h5>FUNDERS</h5>
-                </button>
-                <button
                   className={this.returnButtonClass("syn16857542")}
                   type="button"
                   onClick={() => this.handleButtonPress("syn16857542", this.props.token)
@@ -120,7 +112,13 @@ class ExploreContent extends Component {
                 </button>
               </div>
             </div>
-            <AsyncSynapseBarChart token={this.props.token} synId={this.state.activeButton} filter={this.state.activeFilter} />
+            <SynapseBarChart
+              token={this.props.token}
+              synId={this.state.activeButton}
+              filter={this.state.activeFilter}
+              RGB={[91, 176, 181]}
+              showMenu={false}
+            />
           </div>
         </div>
       </section>
