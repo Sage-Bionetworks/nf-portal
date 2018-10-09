@@ -16,7 +16,7 @@ const Organizations = (props) => {
 }
 
 Organizations.propTypes = {
-  organizations: PropTypes.object.isRequired,
+  organizations: PropTypes.string.isRequired,
 }
 
 export default Organizations

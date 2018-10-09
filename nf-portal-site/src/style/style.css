@@ -348,7 +348,7 @@ body.noScroll, html.noScroll {
   padding: 14px 20px;
 }
 #root header .accordion__title {
-  background-color: #e3e3e3;
+  background-color: #4DB7AD;
 }
 #root header .accordion-title.top-level-accordion[aria-selected=true] .under-bar {
   opacity: 0;

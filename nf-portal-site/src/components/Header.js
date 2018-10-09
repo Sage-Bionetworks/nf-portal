@@ -19,7 +19,7 @@ class Header extends Component {
     super(props)
     this.state = {
       About: false,
-      Organizations: false,
+      Funders: false,
       Home: false,
       Open: false,
       activeUnderBar: "",
@@ -42,7 +42,7 @@ class Header extends Component {
     }
     this.setState(
       {
-        Organizations: false,
+        Funders: false,
         Option2: false,
         Option3: false,
         Home: false,
@@ -111,33 +111,33 @@ class Header extends Component {
       <AccordionItem className="top-level-accordion-item">
         <AccordionItemTitle
           className="accordion-title top-level-accordion"
-          aria-selected={this.state.Organizations}
+          aria-selected={this.state.Funders}
         >
           <a
             href="/"
             className={
-              this.props.hash.includes("/Organizations")
+              this.props.hash.includes("/Funders")
                 ? "nav-item main-nav-item active"
                 : "nav-item main-nav-item"
             }
             onClick={this.dropdownMenuAction}
-            onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Organizations")
+            onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Funders")
             }
             onMouseLeave={this.mouseLeaveBehavior()}
           >
-            Organizations
+            Funders
           </a>
           <div
             className={
-              this.props.hash.includes("/Organizations")
-              && this.state.activeUnderBar.includes("Organizations")
+              this.props.hash.includes("/Funders")
+              && this.state.activeUnderBar.includes("Funders")
                 ? "under-bar active"
                 : "under-bar"
             }
           />
         </AccordionItemTitle>
         <AccordionItemBody
-          aria-hidden={this.state.Organizations !== true}
+          aria-hidden={this.state.Funders !== true}
           className={
             this.state.Option1 === true
               ? "accordion-body top-level-accordion"
@@ -150,9 +150,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="CTF"
-                    to="/Organizations/CTF"
+                    to="/Funders-CTF"
                     onClick={() => {
-                      this.closeNavigation("/Organizations")
+                      this.closeNavigation("/Funders")
                     }}
                   >
                     CTF
@@ -167,9 +167,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="NTAP"
-                    to="/Organizations/NTAP"
+                    to="/Funders-NTAP"
                     onClick={() => {
-                      this.closeNavigation("/Organizations")
+                      this.closeNavigation("/Funders")
                     }}
                   >
                     NTAP
@@ -184,9 +184,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="NIH"
-                    to="/Organizations/NIH"
+                    to="/Funders-NIH"
                     onClick={() => {
-                      this.closeNavigation("/Organizations")
+                      this.closeNavigation("/Funders")
                     }}
                   >
                     NIH
@@ -250,6 +250,9 @@ class Header extends Component {
                         : "under-bar"
                     }
                   />
+                </li>
+                <li>
+                  <this.Option1Dropdown />
                 </li>
                 <li>
                   <Link

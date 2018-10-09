@@ -17,7 +17,7 @@ const NewDatasets = (props) => {
 }
 
 NewDatasets.propTypes = {
-  datasets: PropTypes.object.isRequired,
+  datasets: PropTypes.string.isRequired,
 }
 
 export default NewDatasets

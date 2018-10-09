@@ -12,6 +12,7 @@ const AsyncHome = asyncComponent(() => import("./components/Home"))
 const AsyncHeader = asyncComponent(() => import("./components/Header"))
 const AsyncAbout = asyncComponent(() => import("./components/About"))
 const AsyncOrganizations = asyncComponent(() => import("./components/Organizations"))
+const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF.js"))
 
 //ReactGA.initialize("UA-29804340-3")
 
@@ -99,6 +100,12 @@ class App extends Component {
     )
   };
 
+  ReturnCTF = () => {
+    return (
+      <AsyncOrgCTF />
+    )
+  }
+
   render() {
     return (
       <Router>
@@ -108,6 +115,7 @@ class App extends Component {
             <Route exact path="/" component={this.ReturnHome} />
             <Route path="/About" component={this.ReturnAbout} />
             <Route path="/Organizations" component={this.ReturnOrganizations} />
+            <Route path="/Funders-CTF" component={this.ReturnCTF} />
           </div>
 
           <footer>
