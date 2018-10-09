@@ -866,6 +866,12 @@ body.noScroll, html.noScroll {
     cursor: pointer;
   }
 
+  ///////// organizations page /////////
+  section.organizations {
+    margin-top: 35px;
+    min-height: 100vh;
+  }
+
   /////// media queries //////////
   @media screen and (max-width: 480px) {
     header.header img{

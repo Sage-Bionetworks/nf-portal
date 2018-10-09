@@ -6,13 +6,16 @@ import { getStaticJSON } from "../queries/queryForData"
 class CTF extends Component {
   state = {
     syn16858699_fundingAgency_CTF: "",
-    stories: "",
-    publications: "",
-    datasets: "",
+    syn16787123_fundingAgency_CTF: "",
+    syn16857542_fundingAgency_CTF: "",
+    syn16859580_fundingAgency_CTF: "",
   }
 
   componentDidMount() {
     getStaticJSON("syn16858699_fundingAgency_CTF", this.handleChanges)
+    getStaticJSON("syn16787123_fundingAgency_CTF", this.handleChanges)
+    getStaticJSON("syn16857542_fundingAgency_CTF", this.handleChanges)
+    getStaticJSON("syn16859580_fundingAgency_CTF", this.handleChanges)
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -26,17 +29,37 @@ class CTF extends Component {
       <section className="row organizations">
         <div className="container">
           <div className="row">
-            <h2>Organizations</h2>
+            <h2>Childrens Tumor Foundation</h2>
           </div>
         </div>
         <SynapseCards json={this.state.syn16858699_fundingAgency_CTF} cardType="FUNDER" />
+
+        <div className="container">
+          <div className="row">
+            <h2>Funded Studies</h2>
+          </div>
+        </div>
+        <SynapseCards json={this.state.syn16787123_fundingAgency_CTF} limit={50} cardType="STUDY" />
+
+        <div className="container">
+          <div className="row">
+            <h2>New Publications</h2>
+          </div>
+        </div>
+        <SynapseCards json={this.state.syn16857542_fundingAgency_CTF} limit={10} cardType="PUBLICATION" />
+
+        <div className="container">
+          <div className="row">
+            <h2>Datasets</h2>
+          </div>
+        </div>
+        <SynapseCards json={this.state.syn16859580_fundingAgency_CTF} cardType="DATASET" />
       </section>
     )
   }
 }
 
 CTF.propTypes = {
-  organizations: PropTypes.object.isRequired,
 }
 
 export default CTF

@@ -12,7 +12,9 @@ const AsyncHome = asyncComponent(() => import("./components/Home"))
 const AsyncHeader = asyncComponent(() => import("./components/Header"))
 const AsyncAbout = asyncComponent(() => import("./components/About"))
 const AsyncOrganizations = asyncComponent(() => import("./components/Organizations"))
-const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF.js"))
+const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF"))
+const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"))
+const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
 
 //ReactGA.initialize("UA-29804340-3")
 
@@ -106,6 +108,18 @@ class App extends Component {
     )
   }
 
+  ReturnNIH = () => {
+    return (
+      <AsyncOrgNIH />
+    )
+  }
+
+  ReturnNTAP = () => {
+    return (
+      <AsyncOrgNTAP />
+    )
+  }
+
   render() {
     return (
       <Router>
@@ -116,13 +130,15 @@ class App extends Component {
             <Route path="/About" component={this.ReturnAbout} />
             <Route path="/Organizations" component={this.ReturnOrganizations} />
             <Route path="/Funders-CTF" component={this.ReturnCTF} />
+            <Route path="/Funders-NIH" component={this.ReturnNIH} />
+            <Route path="/Funders-NTAP" component={this.ReturnNTAP} />
           </div>
 
           <footer>
             <div className="container">
               <div className="row">
                 <div className="nf-logo-footer col-md-9">
-                  <a href=""> NF Portal</a>
+                  <a href="#/"> NF Portal</a>
                 </div>
                 <div className="col-md-3 flex justify-end right-footer">
                   <a href="mailto:">Contact Us</a>

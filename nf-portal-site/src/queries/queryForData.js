@@ -42,7 +42,7 @@ const queryTable = (table, query, token) => {
 const host = "http://static.nf.synapse.org/"
 //const host = "http://localhost:3030/"
 
-const getStaticJSON = async (id, handleChanges) => {
+const getStaticJSON = async (id, handleChanges, alternateId = "") => {
   return fetch(`${host}${id}.json`, {
     method: "GET",
     mode: "cors",
@@ -54,7 +54,7 @@ const getStaticJSON = async (id, handleChanges) => {
     .then((data) => {
       //console.log(data)
       if (handleChanges !== undefined) {
-        handleChanges(id, data)
+        handleChanges(alternateId || id, data)
       }
       return data
     })

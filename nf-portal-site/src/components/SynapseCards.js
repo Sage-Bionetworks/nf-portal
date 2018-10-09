@@ -10,14 +10,14 @@ const SynapseCards = (props) => {
     >
       <SynapseComponents.SynapseTableCardView
         type={SynapseConstants[props.cardType]}
-        limit={3}
+        limit={props.limit ? props.limit : 3}
       />
     </SynapseComponents.StaticQueryWrapper>
   )
 }
 
 SynapseCards.propTypes = {
-  json: PropTypes.object.isRequired,
+  json: PropTypes.string.isRequired,
   cardType: PropTypes.string.isRequired,
 }
 
