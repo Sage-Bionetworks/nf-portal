@@ -37,6 +37,7 @@ const processError = error => {
 }
 
 const queryTable = (table, query) => {
+  console.log(query)
   return login("mikeybkats", "guinness")
     .then( token => {
       return getTable(table, token, query)  

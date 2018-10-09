@@ -12,8 +12,6 @@ import {
 
 import "react-accessible-accordion/dist/minimal-example.css"
 
-//const logoImage = require("../images/rectangle.svg")
-
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -40,6 +38,13 @@ class Header extends Component {
     if (location !== undefined) {
       this.props.handleChanges("hash", location)
     }
+
+    let activeUnderBar = window.location.hash
+
+    if (this.state.Open && location === undefined) {
+      activeUnderBar = this.state.activeUnderBar
+    }
+
     this.setState(
       {
         Funders: false,
@@ -47,7 +52,7 @@ class Header extends Component {
         Option3: false,
         Home: false,
         Open: false,
-        activeUnderBar: this.props.hash,
+        activeUnderBar,
       },
       () => {
         const body = document.querySelector("html")
@@ -87,8 +92,12 @@ class Header extends Component {
   dropdownMenuAction = (event) => {
     event.preventDefault()
     this.setOpenAccordion(event)
-
+    let hash
     if (this.state.Open === true) {
+      if (window.location.hash === "#/") {
+        hash = "Home"
+      }
+      console.log(event.target.href)
       this.closeNavigation()
     }
   };
@@ -106,6 +115,8 @@ class Header extends Component {
     return behavior
   };
 
+  handleOpenMouse
+
   Option1Dropdown = () => (
     <Accordion>
       <AccordionItem className="top-level-accordion-item">
@@ -114,7 +125,7 @@ class Header extends Component {
           aria-selected={this.state.Funders}
         >
           <a
-            href="/"
+            href="/Funders"
             className={
               this.props.hash.includes("/Funders")
                 ? "nav-item main-nav-item active"
@@ -209,7 +220,7 @@ class Header extends Component {
               className={!this.state.Open ? "menu-wall hidden" : "menu-wall"}
               type="button"
               onClick={() => {
-                this.closeNavigation(this.props.hash)
+                this.closeNavigation(window.location.hash)
               }}
             />
             <div className="logo col-md-9 col-sm-10 col-xs-12">

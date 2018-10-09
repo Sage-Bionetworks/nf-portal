@@ -12,10 +12,10 @@ class NIH extends Component {
   }
 
   componentDidMount() {
-    getStaticJSON("syn16858699_fundingAgency_NIH-NCI", this.handleChanges, "syn16858699_fundingAgency_NIHNCI")
-    getStaticJSON("syn16787123_fundingAgency_NIH-NCI", this.handleChanges, "syn16787123_fundingAgency_NIHNCI")
-    getStaticJSON("syn16857542_fundingAgency_NIH-NCI", this.handleChanges, "syn16857542_fundingAgency_NIHNCI")
-    getStaticJSON("syn16859580_fundingAgency_NIH-NCI", this.handleChanges, "syn16859580_fundingAgency_NIHNCI")
+    getStaticJSON("syn16858699_fundingAgency_NIHNCI", this.handleChanges, "syn16858699_fundingAgency_NIHNCI")
+    getStaticJSON("syn16787123_fundingAgency_NIHNCI", this.handleChanges, "syn16787123_fundingAgency_NIHNCI")
+    getStaticJSON("syn16857542_fundingAgency_NIHNCI", this.handleChanges, "syn16857542_fundingAgency_NIHNCI")
+    getStaticJSON("syn16859580_fundingAgency_NIHNCI", this.handleChanges, "syn16859580_fundingAgency_NIHNCI")
   }
 
   handleChanges = (KEY, NEWSTATE) => {

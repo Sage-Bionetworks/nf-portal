@@ -389,7 +389,8 @@ body.noScroll, html.noScroll {
     .accordion__title {
       background-color: $green;
     }
-    .accordion-title[aria-selected="true"] a{
+    .accordion-title[aria-selected="true"], .accordion-title[aria-selected="true"] a {
+      background-color: transparent;
     }
     .accordion-title.top-level-accordion[aria-selected="true"]{
       .under-bar {
