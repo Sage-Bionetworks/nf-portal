@@ -1,33 +1,89 @@
-import React from "react"
+import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
+import { BarLoader } from "react-spinners"
 
-const SynapseBarChart = (props) => {
-  const sql = `SELECT * FROM ${props.synId}`
-  const query = {
-    concreteType: "org.sagebionetworks.repo.model.table.QueryBundleRequest",
-    partMask:
-          SynapseConstants.BUNDLE_MASK_QUERY_COLUMN_MODELS
-          | SynapseConstants.BUNDLE_MASK_QUERY_FACETS
-          | SynapseConstants.BUNDLE_MASK_QUERY_RESULTS,
-    query: {
-      isConsistent: false,
-      sql,
-      limit: 25,
-      offset: 0,
-    },
+class SynapseBarChart extends Component {
+  state = {
   }
 
-  return (
-    <SynapseComponents.QueryWrapper
-      initQueryRequest={query}
-      token={props.token}
-      filter={props.filter}
-      RGB={props.RGB !== undefined ? props.RGB : ""}
-      showMenu={props.showMenu}
-    >
-      <SynapseComponents.StackedRowHomebrew />
-    </SynapseComponents.QueryWrapper>
-  )
+  buildQuery = () => {
+    const sql = `SELECT * FROM ${this.props.synId}`
+    return {
+      concreteType: "org.sagebionetworks.repo.model.table.QueryBundleRequest",
+      partMask:
+            SynapseConstants.BUNDLE_MASK_QUERY_COLUMN_MODELS
+            | SynapseConstants.BUNDLE_MASK_QUERY_FACETS
+            | SynapseConstants.BUNDLE_MASK_QUERY_RESULTS,
+      query: {
+        isConsistent: false,
+        sql,
+        limit: 25,
+        offset: 0,
+      },
+    }
+  }
+
+  returnFacets = (bool = this.props.facets) => {
+    return (
+      bool ? <SynapseComponents.Facets /> : <div />
+    )
+  }
+
+  returnBarChart = (bool = this.props.barChart) => {
+    return (
+      bool ? (
+        <SynapseComponents.StackedRowHomebrew
+          loadingScreen={<BarLoader color="#4DB7AD" loading />}
+        />
+      ) : <div />
+    )
+  }
+
+  returnTable = (bool = this.props.table) => {
+    return (
+      bool ? (
+        <SynapseComponents.SynapseTable
+          synapseId={this.props.synId}
+          visibleColumnCount={this.props.columns}
+        />
+      ) : <div />
+    )
+  }
+
+  render() {
+    return (
+      <SynapseComponents.QueryWrapper
+        initQueryRequest={this.buildQuery()}
+        token={this.props.token}
+        filter={this.props.filter}
+        RGB={this.props.RGB !== undefined ? this.props.RGB : ""}
+        showMenu={this.props.facets}
+      >
+        {this.returnBarChart()}
+        {this.returnFacets()}
+        {this.returnTable()}
+      </SynapseComponents.QueryWrapper>
+    )
+  }
+}
+
+SynapseBarChart.propTypes = {
+  token: PropTypes.object.isRequired,
+  filter: PropTypes.string.isRequired,
+  RGB: PropTypes.array.isRequired,
+  synId: PropTypes.string.isRequired,
+  barChart: PropTypes.bool,
+  facets: PropTypes.bool,
+  table: PropTypes.bool,
+  columns: PropTypes.number,
+}
+
+SynapseBarChart.defaultProps = {
+  barChart: false,
+  facets: false,
+  table: false,
+  columns: 1,
 }
 
 export default SynapseBarChart

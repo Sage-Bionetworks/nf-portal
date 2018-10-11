@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 import SynapseCards from "./SynapseCards"
 import { getStaticJSON } from "../queries/queryForData"
 
@@ -7,8 +6,6 @@ class NIH extends Component {
   state = {
     syn16858699_fundingAgency_NIHNCI: "",
     syn16787123_fundingAgency_NIHNCI: "",
-    syn16857542_fundingAgency_NIHNCI: "",
-    syn16859580_fundingAgency_NIHNCI: "",
   }
 
   componentDidMount() {
@@ -41,26 +38,9 @@ class NIH extends Component {
         </div>
         <SynapseCards json={this.state.syn16787123_fundingAgency_NIHNCI} limit={50} cardType="STUDY" />
 
-        <div className="container">
-          <div className="row">
-            <h2>New Publications</h2>
-          </div>
-        </div>
-        <SynapseCards json={this.state.syn16857542_fundingAgency_NIHNCI} limit={10} cardType="PUBLICATION" />
-
-        <div className="container">
-          <div className="row">
-            <h2>Datasets</h2>
-          </div>
-        </div>
-        <SynapseCards json={this.state.syn16859580_fundingAgency_NIHNCI} cardType="DATASET" />
       </section>
     )
   }
-}
-
-NIH.propTypes = {
-  organizations: PropTypes.object.isRequired,
 }
 
 export default NIH

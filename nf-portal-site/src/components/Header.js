@@ -17,7 +17,7 @@ class Header extends Component {
     super(props)
     this.state = {
       About: false,
-      Funders: false,
+      Organizations: false,
       Home: false,
       Open: false,
       activeUnderBar: "",
@@ -47,8 +47,8 @@ class Header extends Component {
 
     this.setState(
       {
-        Funders: false,
-        Option2: false,
+        Organizations: false,
+        Explore: false,
         Option3: false,
         Home: false,
         Open: false,
@@ -119,36 +119,38 @@ class Header extends Component {
 
   Option1Dropdown = () => (
     <Accordion>
-      <AccordionItem className="top-level-accordion-item">
+      <AccordionItem
+        className="top-level-accordion-item"
+        onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Organizations")
+        }
+        onMouseLeave={this.mouseLeaveBehavior()}
+      >
         <AccordionItemTitle
           className="accordion-title top-level-accordion"
-          aria-selected={this.state.Funders}
+          aria-selected={this.state.Organizations}
         >
           <a
-            href="/Funders"
+            href="/Organizations"
             className={
-              this.props.hash.includes("/Funders")
+              this.props.hash.includes("/Organizations")
                 ? "nav-item main-nav-item active"
                 : "nav-item main-nav-item"
             }
             onClick={this.dropdownMenuAction}
-            onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Funders")
-            }
-            onMouseLeave={this.mouseLeaveBehavior()}
           >
-            Funders
+            Organizations
           </a>
           <div
             className={
-              this.props.hash.includes("/Funders")
-              && this.state.activeUnderBar.includes("Funders")
+              this.props.hash.includes("/Organizations")
+              && this.state.activeUnderBar.includes("Organizations")
                 ? "under-bar active"
                 : "under-bar"
             }
           />
         </AccordionItemTitle>
         <AccordionItemBody
-          aria-hidden={this.state.Funders !== true}
+          aria-hidden={this.state.Organizations !== true}
           className={
             this.state.Option1 === true
               ? "accordion-body top-level-accordion"
@@ -161,9 +163,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="CTF"
-                    to="/Funders-CTF"
+                    to="/Organizations-CTF"
                     onClick={() => {
-                      this.closeNavigation("/Funders")
+                      this.closeNavigation("/Organizations")
                     }}
                   >
                     CTF
@@ -178,9 +180,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="NTAP"
-                    to="/Funders-NTAP"
+                    to="/Organizations-NTAP"
                     onClick={() => {
-                      this.closeNavigation("/Funders")
+                      this.closeNavigation("/Organizations")
                     }}
                   >
                     NTAP
@@ -195,9 +197,9 @@ class Header extends Component {
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
                     name="NIH"
-                    to="/Funders-NIH"
+                    to="/Organizations-NIH"
                     onClick={() => {
-                      this.closeNavigation("/Funders")
+                      this.closeNavigation("/Organizations")
                     }}
                   >
                     NIH
@@ -210,6 +212,7 @@ class Header extends Component {
       </AccordionItem>
     </Accordion>
   );
+
 
   render() {
     return (
@@ -257,6 +260,33 @@ class Header extends Component {
                     className={
                       this.props.hash === "#/"
                       && this.state.activeUnderBar.includes("#/")
+                        ? "under-bar active"
+                        : "under-bar"
+                    }
+                  />
+                </li>
+                <li>
+                  <Link
+                    to="/Explore"
+                    className={
+                      this.props.hash.includes("/Explore")
+                        ? "home nav-item main-nav-item active"
+                        : "home nav-item main-nav-item"
+                    }
+                    onClick={() => {
+                      this.closeNavigation("/Explore")
+                    }}
+                    onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Explore")
+                    }
+                    onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
+                    }
+                  >
+                    Explore
+                  </Link>
+                  <div
+                    className={
+                      this.props.hash.includes("/Explore")
+                      && this.state.activeUnderBar.includes("Explore")
                         ? "under-bar active"
                         : "under-bar"
                     }
