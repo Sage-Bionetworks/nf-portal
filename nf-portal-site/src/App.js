@@ -129,9 +129,9 @@ class App extends Component {
             <Route exact path="/" component={this.ReturnHome} />
             <Route path="/About" component={this.ReturnAbout} />
             <Route path="/Organizations" component={this.ReturnOrganizations} />
-            <Route path="/Funders-CTF" component={this.ReturnCTF} />
-            <Route path="/Funders-NIH" component={this.ReturnNIH} />
-            <Route path="/Funders-NTAP" component={this.ReturnNTAP} />
+            <Route path="/Organizations-CTF" component={this.ReturnCTF} />
+            <Route path="/Organizations-NIH" component={this.ReturnNIH} />
+            <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
           </div>
 
           <footer>
@@ -141,7 +141,7 @@ class App extends Component {
                   <a href="#/"> NF Portal</a>
                 </div>
                 <div className="col-md-3 flex justify-end right-footer">
-                  <a href="mailto:">Contact Us</a>
+                  <a href="https://www.synapse.org/#!Synapse:syn5702691/discussion/default" target="_blank">Contact Us</a>
                   <a
                     target="blank"
                     href="https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5"
