@@ -2,11 +2,11 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart"
 
-class ExploreContent extends Component {
+class Explore extends Component {
   state = {
     loading: true,
     activeButton: "syn16858331",
-    activeFilter: "diagnosis",
+    activeFilter: "assay",
   };
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -19,19 +19,19 @@ class ExploreContent extends Component {
     switch (id) {
     case "syn16859580":
       // datasets
-      return "diseaseFocus"
+      return "assay"
     case "syn16858699":
       // funder
-      return ""
+      return "assay"
     case "syn16858331":
       // files // data
       return "assay"
     case "syn16857542":
       // publications
-      return "diseaseFocus"
+      return "assay"
     case "syn16787123":
       // studies
-      return "diseaseFocus"
+      return "assay"
     default:
       return ""
     }
@@ -65,12 +65,12 @@ class ExploreContent extends Component {
 
   render() {
     return (
-      <section className="row explore-content">
+      <section className="page explore">
         <div className="container">
           <div className="row">
-            <h2>Explore Content</h2>
+            <h2>Explore</h2>
           </div>
-          <div className="row">
+          <div className="row explore-content">
             <div className="center-block selectors-container">
               <div className="selectors">
                 <button
@@ -112,7 +112,11 @@ class ExploreContent extends Component {
               synId={this.state.activeButton}
               filter={this.state.activeFilter}
               RGB={[91, 176, 181]}
+              showMenu
+              facets
               barChart
+              table
+              columns={9}
             />
           </div>
         </div>
@@ -121,8 +125,8 @@ class ExploreContent extends Component {
   }
 }
 
-ExploreContent.propTypes = {
+Explore.propTypes = {
   token: PropTypes.string.isRequired,
 }
 
-export default ExploreContent
+export default Explore

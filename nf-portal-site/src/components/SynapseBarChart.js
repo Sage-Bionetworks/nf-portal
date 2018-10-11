@@ -5,7 +5,6 @@ import { BarLoader } from "react-spinners"
 
 class SynapseBarChart extends Component {
   state = {
-    //isLoading: true,
   }
 
   buildQuery = () => {
@@ -25,6 +24,33 @@ class SynapseBarChart extends Component {
     }
   }
 
+  returnFacets = (bool = this.props.facets) => {
+    return (
+      bool ? <SynapseComponents.Facets /> : <div />
+    )
+  }
+
+  returnBarChart = (bool = this.props.barChart) => {
+    return (
+      bool ? (
+        <SynapseComponents.StackedRowHomebrew
+          loadingScreen={<BarLoader color="#4DB7AD" loading />}
+        />
+      ) : <div />
+    )
+  }
+
+  returnTable = (bool = this.props.table) => {
+    return (
+      bool ? (
+        <SynapseComponents.SynapseTable
+          synapseId={this.props.synId}
+          visibleColumnCount={this.props.columns}
+        />
+      ) : <div />
+    )
+  }
+
   render() {
     return (
       <SynapseComponents.QueryWrapper
@@ -32,11 +58,11 @@ class SynapseBarChart extends Component {
         token={this.props.token}
         filter={this.props.filter}
         RGB={this.props.RGB !== undefined ? this.props.RGB : ""}
-        showMenu={this.props.showMenu}
+        showMenu={this.props.facets}
       >
-        <SynapseComponents.StackedRowHomebrew
-          loadingScreen={<BarLoader color="#4DB7AD" loading />}
-        />
+        {this.returnBarChart()}
+        {this.returnFacets()}
+        {this.returnTable()}
       </SynapseComponents.QueryWrapper>
     )
   }
@@ -46,9 +72,18 @@ SynapseBarChart.propTypes = {
   token: PropTypes.object.isRequired,
   filter: PropTypes.string.isRequired,
   RGB: PropTypes.array.isRequired,
-  showMenu: PropTypes.bool.isRequired,
   synId: PropTypes.string.isRequired,
+  barChart: PropTypes.bool,
+  facets: PropTypes.bool,
+  table: PropTypes.bool,
+  columns: PropTypes.number,
 }
 
+SynapseBarChart.defaultProps = {
+  barChart: false,
+  facets: false,
+  table: false,
+  columns: 1,
+}
 
 export default SynapseBarChart

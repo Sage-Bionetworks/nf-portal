@@ -15,6 +15,7 @@ const AsyncOrganizations = asyncComponent(() => import("./components/Organizatio
 const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF"))
 const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"))
 const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
+const AsyncExplore = asyncComponent(() => import("./components/Explore.jsx"))
 
 //ReactGA.initialize("UA-29804340-3")
 
@@ -102,6 +103,12 @@ class App extends Component {
     )
   };
 
+  ReturnExplore = () => {
+    return (
+      <AsyncExplore />
+    )
+  }
+
   ReturnCTF = () => {
     return (
       <AsyncOrgCTF />
@@ -132,6 +139,7 @@ class App extends Component {
             <Route path="/Organizations-CTF" component={this.ReturnCTF} />
             <Route path="/Organizations-NIH" component={this.ReturnNIH} />
             <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
+            <Route path="/Explore" component={this.ReturnExplore} />
           </div>
 
           <footer>

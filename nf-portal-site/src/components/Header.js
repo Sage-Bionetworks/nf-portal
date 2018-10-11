@@ -48,7 +48,7 @@ class Header extends Component {
     this.setState(
       {
         Organizations: false,
-        Option2: false,
+        Explore: false,
         Option3: false,
         Home: false,
         Open: false,
@@ -213,6 +213,7 @@ class Header extends Component {
     </Accordion>
   );
 
+
   render() {
     return (
       <header className="header">
@@ -259,6 +260,33 @@ class Header extends Component {
                     className={
                       this.props.hash === "#/"
                       && this.state.activeUnderBar.includes("#/")
+                        ? "under-bar active"
+                        : "under-bar"
+                    }
+                  />
+                </li>
+                <li>
+                  <Link
+                    to="/Explore"
+                    className={
+                      this.props.hash.includes("/Explore")
+                        ? "home nav-item main-nav-item active"
+                        : "home nav-item main-nav-item"
+                    }
+                    onClick={() => {
+                      this.closeNavigation("/Explore")
+                    }}
+                    onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Explore")
+                    }
+                    onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
+                    }
+                  >
+                    Explore
+                  </Link>
+                  <div
+                    className={
+                      this.props.hash.includes("/Explore")
+                      && this.state.activeUnderBar.includes("Explore")
                         ? "under-bar active"
                         : "under-bar"
                     }
