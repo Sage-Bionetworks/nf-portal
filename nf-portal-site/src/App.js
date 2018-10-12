@@ -6,6 +6,7 @@ import { getStaticJSON } from "./queries/queryForData"
 //import createHistory from "history/createBrowserHistory"
 
 import asyncComponent from "./components/AsyncComponent"
+import synapseMarkup from "./components/synapseMarkup"
 
 // component js
 const AsyncHome = asyncComponent(() => import("./components/Home"))
@@ -140,6 +141,7 @@ class App extends Component {
             <Route path="/Organizations-NIH" component={this.ReturnNIH} />
             <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
             <Route path="/Explore" component={this.ReturnExplore} />
+            <Route path="/markup" component={synapseMarkup} />
           </div>
 
           <footer>
