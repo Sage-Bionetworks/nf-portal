@@ -4,7 +4,6 @@ import SynapseChart from "./SynapseBarChart"
 
 class Explore extends Component {
   state = {
-    loading: true,
     activeButton: "syn16858331",
     activeFilter: "assay",
   };
@@ -19,7 +18,7 @@ class Explore extends Component {
     switch (id) {
     case "syn16859580":
       // datasets
-      return "assay"
+      return "diseaseFocus"
     case "syn16858699":
       // funder
       return "assay"
@@ -28,10 +27,10 @@ class Explore extends Component {
       return "assay"
     case "syn16857542":
       // publications
-      return "assay"
+      return "id"
     case "syn16787123":
       // studies
-      return "assay"
+      return "projectStatus"
     default:
       return ""
     }
@@ -126,7 +125,6 @@ class Explore extends Component {
 }
 
 Explore.propTypes = {
-  token: PropTypes.string.isRequired,
 }
 
 export default Explore

@@ -864,7 +864,6 @@ body.noScroll, html.noScroll {
 }
 #root section.organizations {
   margin-top: 35px;
-  min-height: 100vh;
 }
 @media screen and (max-width: 480px) {
   #root header.header img {

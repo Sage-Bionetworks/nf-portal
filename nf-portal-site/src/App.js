@@ -105,7 +105,7 @@ class App extends Component {
 
   ReturnExplore = () => {
     return (
-      <AsyncExplore />
+      <AsyncExplore token={this.props.loginToken.sessionToken} />
     )
   }
 

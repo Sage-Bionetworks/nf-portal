@@ -69,7 +69,7 @@ class SynapseBarChart extends Component {
 }
 
 SynapseBarChart.propTypes = {
-  token: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
   RGB: PropTypes.array.isRequired,
   synId: PropTypes.string.isRequired,
