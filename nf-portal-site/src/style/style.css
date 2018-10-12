@@ -24,7 +24,7 @@ body.noScroll, html.noScroll {
 }
 
 #root .main {
-  min-height: 93%;
+  min-height: calc(100vh - 136px);
 }
 #root section div.row {
   margin: 0px auto;
@@ -557,7 +557,6 @@ body.noScroll, html.noScroll {
   width: 100%;
   margin-left: 0px !important;
   margin-right: 0px !important;
-  margin-top: 50px;
   padding-bottom: 56px;
   padding-top: 30px;
   display: flex;
@@ -577,7 +576,6 @@ body.noScroll, html.noScroll {
 }
 #root section.page {
   margin-top: 50px;
-  min-height: 80vh;
 }
 #root section.hero {
   position: relative;
