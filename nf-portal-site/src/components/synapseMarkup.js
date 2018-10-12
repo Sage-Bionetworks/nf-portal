@@ -11,7 +11,9 @@ class markup extends Component {
           <div className="row">
             <div className="col-xs-12">
 
-              <div>put new html here</div>
+              <div className="markup-synapse-card">
+                put new html here
+              </div>
 
             </div>
           </div>
