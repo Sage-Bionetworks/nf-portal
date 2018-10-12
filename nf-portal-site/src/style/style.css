@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700");
 body, button, h1, h2, h3, h4, h5, li, ul, p, a {
-  font-family: "Lato", sans-serif;
+  font-family: sans-serif;
 }
 
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+section {
+  font-family: "Lato", sans-serif;
 }
 
 section .container, footer .container, header .container, div.main .container {
