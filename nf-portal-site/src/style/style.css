@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700");
-@import "./_synapsecards.scss";
+.markup-synapse-card {
+  margin-top: 100px;
+}
+
+.SRC-facets.SRC-primary-background-hover strong {
+  padding: 0px 10px;
+}
+.SRC-facets.SRC-primary-background-hover svg {
+  margin: 0px 10px;
+}
+
 body, button, h1, h2, h3, h4, h5, li, ul, p, a {
   font-family: sans-serif;
 }
