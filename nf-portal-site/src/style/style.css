@@ -1,6 +1,141 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700");
-.markup-synapse-card {
-  margin-top: 100px;
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700, 900");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+.portalCard {
+  display: block;
+  color: #1A1C29;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  border: 1px solid #DDDDDF;
+  margin: 30px;
+}
+.portalCard a {
+  color: #C94281;
+}
+.portalCard h3 {
+  margin: 21px, 0, 10.5px, 0 !important;
+  padding: 0;
+}
+.portalCard h3 a {
+  margin: 0;
+  font-size: 18px !important;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.portalCard .type, .portalCard .cardThumbnail {
+  text-transform: uppercase;
+  color: #898989;
+}
+.portalCard .cardThumbnail {
+  display: inline-block;
+  width: 15%;
+  vertical-align: top;
+  padding-top: 21px;
+}
+.portalCard .cardThumbnail img {
+  vertical-align: top;
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+.portalCard .cardThumbnail > div {
+  margin-top: 10.5px;
+  text-align: center;
+}
+.portalCard .cardContent {
+  display: inline-block;
+  max-width: 80%;
+  padding-top: 21px;
+}
+.portalCard .cardContent .author {
+  font-style: italic;
+  padding-bottom: 10.5px;
+}
+.portalCard .cardContent .cardAnnotations {
+  margin: 10.5px 0;
+}
+.portalCard .cardContent .cardAnnotations span {
+  background: #3C4A63;
+  color: white;
+  display: inline-block;
+  padding: 2px 15px 4px 15px;
+  margin: 0 10px 5px 0;
+  border-radius: 15px;
+}
+.portalCard .cardAction {
+  display: inline-block;
+}
+.portalCard .cardAction button {
+  background-color: #C94281;
+  font-size: 16px;
+  color: white;
+  display: inline-block;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 20px;
+  padding: 5px 20px !important;
+}
+.portalCard .cardMetadata {
+  display: block;
+  background-color: #F9F9F9;
+  margin-top: 21px;
+  padding: 21px 21px 21px 15%;
+}
+.portalCard .cardMetadata .row {
+  margin: 5px !important;
+}
+.portalCard .cardMetadata .row > * {
+  min-width: 100px;
+}
+.portalCard .cardMetadata .row-label {
+  display: inline-block;
+  color: #898989;
+  text-transform: uppercase;
+}
+.portalCard .cardMetadata .row-data {
+  display: inline-block;
+  padding-left: 21px;
+}
+.portalCard .cardMetadata .row-data a {
+  font-size: 14px !important;
+}
+.portalCard.typeDataset .row {
+  display: inline-block;
+}
+.portalCard.typeDataset .row > * {
+  min-width: 0;
+}
+.portalCard.typeDataset .row-data {
+  padding-right: 42px;
+}
+.portalCard.typeDataset .cardAction {
+  margin-left: 15%;
+}
+.portalCard.typeFunder .cardThumbnail {
+  display: block;
+  float: right;
+  width: 25%;
+}
+.portalCard.typeFunder .cardThumbnail img {
+  width: 65%;
+}
+.portalCard.typeFunder .cardContent {
+  width: 70%;
+  margin-left: 42px;
+}
+.portalCard.typeFunder .cardContent .website a {
+  display: inline-block;
+  font-size: 14px;
+  padding-bottom: 10.5px;
+}
+.portalCard.typeFunder .description {
+  padding-bottom: 0;
+}
+.portalCard.typeFunder .cardAction {
+  margin: 21px 0 21px 42px;
+}
+.portalCard.typeTool .cardAction {
+  margin: 21px 0 21px 15%;
 }
 
 .SRC-facets.SRC-primary-background-hover strong {
