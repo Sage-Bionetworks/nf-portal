@@ -94,6 +94,8 @@ body.noScroll, html.noScroll {
 }
 #root button.btn-control {
   border-radius: 16px;
+  min-height: 53px;
+  min-width: 143px;
 }
 #root button.btn-control h5 {
   color: white;
@@ -632,7 +634,7 @@ body.noScroll, html.noScroll {
   filter: blur(5px);
 }
 #root section.explore-content .selectors-container, #root div.explore-content .selectors-container {
-  max-width: 650px;
+  max-width: 850px;
 }
 #root section.explore-content .selectors, #root div.explore-content .selectors {
   display: flex;
@@ -643,10 +645,11 @@ body.noScroll, html.noScroll {
   position: relative;
 }
 #root section.explore-content .selectors button:first-child, #root div.explore-content .selectors button:first-child {
-  background: #407BA0;
+  display: none;
+  background: #437C9E;
 }
 #root section.explore-content .selectors button:first-child:hover, #root div.explore-content .selectors button:first-child:hover {
-  background-color: #234357;
+  background-color: #254456;
 }
 #root section.explore-content .selectors button:first-child.active, #root div.explore-content .selectors button:first-child.active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -655,12 +658,13 @@ body.noScroll, html.noScroll {
   height: 0px;
   width: 0px;
   position: absolute;
+  bottom: -12px;
   z-index: 100;
   display: block;
   content: "";
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #407BA0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 12px solid #437C9E;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -668,13 +672,13 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:first-child.active:hover:after, #root div.explore-content .selectors button:first-child.active:hover:after {
   transition: all 400ms;
-  border-top: 10px solid #234357;
+  border-top: 12px solid #254456;
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
-  background: #5171C0;
+  background: #2A4688;
 }
 #root section.explore-content .selectors button:nth-child(2):hover, #root div.explore-content .selectors button:nth-child(2):hover {
-  background-color: #2d457e;
+  background-color: #121e3a;
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -683,12 +687,13 @@ body.noScroll, html.noScroll {
   height: 0px;
   width: 0px;
   position: absolute;
+  bottom: -12px;
   z-index: 100;
   display: block;
   content: "";
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #5171C0;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 12px solid #2A4688;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -696,13 +701,13 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(2).active:hover:after, #root div.explore-content .selectors button:nth-child(2).active:hover:after {
   transition: all 400ms;
-  border-top: 10px solid #2d457e;
+  border-top: 12px solid #121e3a;
 }
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
-  background: #3C4A63;
+  background: #5BA05B;
 }
 #root section.explore-content .selectors button:nth-child(3):hover, #root div.explore-content .selectors button:nth-child(3):hover {
-  background-color: #161b23;
+  background-color: #365f36;
 }
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -711,12 +716,13 @@ body.noScroll, html.noScroll {
   height: 0px;
   width: 0px;
   position: absolute;
+  bottom: -12px;
   z-index: 100;
   display: block;
   content: "";
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #3C4A63;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 12px solid #5BA05B;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -724,13 +730,13 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(3).active:hover:after, #root div.explore-content .selectors button:nth-child(3).active:hover:after {
   transition: all 400ms;
-  border-top: 10px solid #161b23;
+  border-top: 12px solid #365f36;
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
-  background: #109488;
+  background: #1D9488;
 }
 #root section.explore-content .selectors button:nth-child(4):hover, #root div.explore-content .selectors button:nth-child(4):hover {
-  background-color: #063833;
+  background-color: #0c3f3a;
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -739,12 +745,13 @@ body.noScroll, html.noScroll {
   height: 0px;
   width: 0px;
   position: absolute;
+  bottom: -12px;
   z-index: 100;
   display: block;
   content: "";
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #109488;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 12px solid #1D9488;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -752,13 +759,14 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(4).active:hover:after, #root div.explore-content .selectors button:nth-child(4).active:hover:after {
   transition: all 400ms;
-  border-top: 10px solid #063833;
+  border-top: 12px solid #0c3f3a;
 }
 #root section.explore-content .selectors button:nth-child(5), #root div.explore-content .selectors button:nth-child(5) {
-  background: #47337D;
+  display: none;
+  background: #5FB0B4;
 }
 #root section.explore-content .selectors button:nth-child(5):hover, #root div.explore-content .selectors button:nth-child(5):hover {
-  background-color: #1e1535;
+  background-color: #377376;
 }
 #root section.explore-content .selectors button:nth-child(5).active, #root div.explore-content .selectors button:nth-child(5).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -767,12 +775,13 @@ body.noScroll, html.noScroll {
   height: 0px;
   width: 0px;
   position: absolute;
+  bottom: -12px;
   z-index: 100;
   display: block;
   content: "";
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #47337D;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 12px solid #5FB0B4;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -780,7 +789,36 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(5).active:hover:after, #root div.explore-content .selectors button:nth-child(5).active:hover:after {
   transition: all 400ms;
-  border-top: 10px solid #1e1535;
+  border-top: 12px solid #377376;
+}
+#root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
+  background: #DC9931;
+}
+#root section.explore-content .selectors button:nth-child(6):hover, #root div.explore-content .selectors button:nth-child(6):hover {
+  background-color: #8f6018;
+}
+#root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
+#root section.explore-content .selectors button:nth-child(6).active::after, #root div.explore-content .selectors button:nth-child(6).active::after {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  bottom: -12px;
+  z-index: 100;
+  display: block;
+  content: "";
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 12px solid #DC9931;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 400ms;
+}
+#root section.explore-content .selectors button:nth-child(6).active:hover:after, #root div.explore-content .selectors button:nth-child(6).active:hover:after {
+  transition: all 400ms;
+  border-top: 12px solid #8f6018;
 }
 #root .about section {
   text-align: left;

@@ -25,6 +25,7 @@ module.exports = {
     "no-bitwise": 0,
     "prefer-template": 0,
     "import/extensions": 0,
+    "no-param-reassign": 0,
   },
   env: {
     browser: true,

@@ -57,7 +57,7 @@ class SynapseBarChart extends Component {
         initQueryRequest={this.buildQuery()}
         token={this.props.token}
         filter={this.props.filter}
-        RGB={this.props.RGB !== undefined ? this.props.RGB : ""}
+        rgbIndex={this.props.rgbIndex !== undefined ? this.props.rgbIndex : ""}
         showMenu={this.props.facets}
       >
         {this.returnBarChart()}
@@ -71,7 +71,7 @@ class SynapseBarChart extends Component {
 SynapseBarChart.propTypes = {
   token: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
-  RGB: PropTypes.array.isRequired,
+  rgbIndex: PropTypes.array.isRequired,
   synId: PropTypes.string.isRequired,
   barChart: PropTypes.bool,
   facets: PropTypes.bool,

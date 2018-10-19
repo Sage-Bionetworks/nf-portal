@@ -9,11 +9,23 @@ $greenGradientLeft: #109488;
 $greenGradientRight: #05635B;
 
 // explore content buttons 
-$button1: #407BA0; 
-$button2: #5171C0;
-$button3: #3C4A63;
-$button4: #109488;
-$button5: #47337D;
+$button1: #437C9E; 
+$funders: #437C9E; 
+
+$button2: #2A4688;
+$studies: #2A4688;
+
+$button3: #5BA05B;
+$files: #5BA05B;
+
+$button4: #1D9488;
+$datasets: #1D9488;
+
+$button5: #5FB0B4;
+$analysis: #5FB0B4;
+
+$button6: #DC9931;
+$publications: #DC9931;
 
 @mixin circle($size){
   width: $size;
@@ -125,6 +137,8 @@ body.noScroll, html.noScroll {
   button.btn-control {
     h5 { color: white; }
     border-radius: 16px;
+    min-height: 53px;
+    min-width: 143px;
   }
 
   button:focus, input:focus, select:focus, div:focus { outline:none; }
@@ -713,12 +727,13 @@ body.noScroll, html.noScroll {
     height: 0px;
     width: 0px;
     position: absolute;
+    bottom: -12px;
     z-index: 100;
     display: block;
     content: "";
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 10px solid $color;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-top: 12px solid $color;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -726,12 +741,12 @@ body.noScroll, html.noScroll {
   }
   &.active:hover:after {
     transition: all 400ms;
-    border-top: 10px solid darken($color, 20%);
+    border-top: 12px solid darken($color, 20%);
   }
 }
   section.explore-content, div.explore-content {
     .selectors-container {
-      max-width: 650px;
+      max-width: 850px;
     }
     .selectors {
       display: flex;
@@ -744,19 +759,24 @@ body.noScroll, html.noScroll {
       }
       margin: 20px 0px;
       button:first-child  {
-        @include hoverFade($button1);
+        display: none;
+        @include hoverFade($funders);
       }
       button:nth-child(2) {
-        @include hoverFade($button2);
+        @include hoverFade($studies);
       }
       button:nth-child(3) {
-        @include hoverFade($button3);
+        @include hoverFade($files);
       }
       button:nth-child(4) {
-        @include hoverFade($button4);
+        @include hoverFade($datasets);
       }
       button:nth-child(5) {
-        @include hoverFade($button5);
+        display: none;
+        @include hoverFade($analysis);
+      }
+      button:nth-child(6) {
+        @include hoverFade($publications);
       }
     }
 
