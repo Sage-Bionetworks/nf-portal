@@ -645,6 +645,12 @@ body.noScroll, html.noScroll {
 #root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
   margin-top: 18px;
 }
+#root section.explore-content .container .container-fluid, #root div.explore-content .container .container-fluid {
+  padding: 0px;
+}
+#root section.explore-content .container .container-fluid .col-xs-12, #root div.explore-content .container .container-fluid .col-xs-12 {
+  padding: 0px;
+}
 #root section.explore-content .selectors-container, #root div.explore-content .selectors-container {
   max-width: 850px;
 }

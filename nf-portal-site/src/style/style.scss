@@ -759,6 +759,13 @@ body.noScroll, html.noScroll {
     .col-xs-2 {
       margin-top: 18px;
     }
+    .container .container-fluid {
+      padding: 0px;
+      .col-xs-12 { 
+        padding: 0px;
+      }
+    }
+
     .selectors-container {
       max-width: 850px;
     }
