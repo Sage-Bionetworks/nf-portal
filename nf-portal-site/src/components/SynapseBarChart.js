@@ -34,7 +34,7 @@ class SynapseBarChart extends Component {
     return (
       bool ? (
         <SynapseComponents.StackedRowHomebrew
-          loadingScreen={<BarLoader color="#4DB7AD" loading />}
+          loadingScreen={<div className="bar-loader"><BarLoader color="#4DB7AD" loading /></div>}
         />
       ) : <div />
     )
