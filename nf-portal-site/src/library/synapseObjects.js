@@ -39,7 +39,6 @@ export const synapseObjects = [
 ]
 
 export const returnSynapseValue = (objectArray = synapseObjects, id, nameOfValue) => {
-  console.log(objectArray)
   const matchedObject = objectArray.filter(object => object.id === id)
   return matchedObject[0][nameOfValue]
 }

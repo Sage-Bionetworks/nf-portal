@@ -47,8 +47,8 @@ class App extends Component {
     getStaticJSON("syn16859580", this.handleChanges)
     getStaticJSON("syn16858699", this.handleChanges)
     getStaticJSON("syn16857542", this.handleChanges)
-    getStaticJSON("syn16787123", this.handleChanges)
     getStaticJSON("syn16859448", this.handleChanges)
+    getStaticJSON("syn16787123", this.handleChanges)
   }
 
   handleChanges = (KEY, NEWSTATE) => {
