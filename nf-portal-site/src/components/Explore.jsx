@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart"
-import { returnSynapseValue, setSynapseValue, synapseObjects } from "../library/synapseObjects"
+import { returnSynapseValue, setSynapseValue } from "../library/synapseObjects"
 
 const objectsArray = [
   {

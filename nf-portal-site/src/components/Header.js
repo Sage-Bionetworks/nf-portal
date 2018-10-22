@@ -92,11 +92,11 @@ class Header extends Component {
   dropdownMenuAction = (event) => {
     event.preventDefault()
     this.setOpenAccordion(event)
-    let hash
+    //let hash
     if (this.state.Open === true) {
-      if (window.location.hash === "#/") {
-        hash = "Home"
-      }
+      //if (window.location.hash === "#/") {
+      //hash = "Home"
+      //}
       console.log(event.target.href)
       this.closeNavigation()
     }
