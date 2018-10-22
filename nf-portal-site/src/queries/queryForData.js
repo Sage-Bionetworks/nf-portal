@@ -39,7 +39,7 @@ const queryTable = (table, query, token) => {
     .catch(processError)
 }
 
-const host = "http://static.nf.synapse.org/"
+const host = "https://static.nf.synapse.org/"
 //const host = "http://localhost:3030/"
 
 const getStaticJSON = async (id, handleChanges, alternateId = "") => {
