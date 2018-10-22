@@ -6,8 +6,8 @@ import { returnSynapseValue } from "../library/synapseObjects"
 class ExploreContent extends Component {
   state = {
     //loading: true,
-    activeButton: "",
-    activeFilter: "",
+    activeButton: "syn16859580",
+    activeFilter: "diseaseFocus",
     color: 0,
   };
 

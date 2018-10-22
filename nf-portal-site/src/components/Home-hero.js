@@ -6,7 +6,7 @@ const Hero = (props) => {
       <div className="container flex">
         <div className="row hero-message">
           <div className="col-sm-9">
-            <h1>NExUS/: A knowledge portal specifically focused on NF data</h1>
+            <h1>NF Data Portal: A knowledge portal specifically focused on NF data</h1>
             <p>
               This portal is intended to unite the results of experimental data
               collected across Neurofibromatosis Type 1, Neurofibromatosis Type
