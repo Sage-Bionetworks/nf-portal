@@ -51,19 +51,48 @@ class SynapseBarChart extends Component {
     )
   }
 
+  returnCardView = (limit = this.props.limit, json = "", type = this.props.type) => {
+    return (
+      limit > 0 ? (
+        <SynapseComponents.StaticQueryWrapper
+          json={json}
+        >
+          <SynapseComponents.SynapseTableCardView
+            type={SynapseConstants[type]}
+            limit={limit}
+          />
+        </SynapseComponents.StaticQueryWrapper>
+      ) : <div />
+    )
+  }
+
+  hideBarSection = () => {
+    const hash = window.location.hash
+
+    if (hash !== "#/Explore") {
+      return "hide"
+    }
+    return ""
+  }
+
   render() {
     return (
-      <SynapseComponents.QueryWrapper
-        initQueryRequest={this.buildQuery()}
-        token={this.props.token}
-        filter={this.props.filter}
-        rgbIndex={this.props.rgbIndex !== undefined ? this.props.rgbIndex : ""}
-        showMenu={this.props.facets}
-      >
-        {this.returnBarChart()}
-        {this.returnFacets()}
-        {this.returnTable()}
-      </SynapseComponents.QueryWrapper>
+      <div>
+        <div className={`bar-section ${this.hideBarSection()}`}>
+          <SynapseComponents.QueryWrapper
+            initQueryRequest={this.buildQuery()}
+            token={this.props.token}
+            filter={this.props.filter}
+            rgbIndex={this.props.rgbIndex !== undefined ? this.props.rgbIndex : ""}
+            showMenu={this.props.facets}
+          >
+            {this.returnBarChart()}
+            {this.returnFacets()}
+            {this.returnTable()}
+          </SynapseComponents.QueryWrapper>
+        </div>
+        {this.returnCardView(undefined, this.props.json, undefined)}
+      </div>
     )
   }
 }
@@ -77,6 +106,9 @@ SynapseBarChart.propTypes = {
   facets: PropTypes.bool,
   table: PropTypes.bool,
   columns: PropTypes.number,
+  limit: PropTypes.number.isRequired,
+  json: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired,
 }
 
 SynapseBarChart.defaultProps = {

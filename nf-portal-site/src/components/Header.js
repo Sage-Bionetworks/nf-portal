@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
+//import { slide as Menu } from "react-burger-menu"
+
 import "react-dropdown/style.css"
 import {
   Accordion,

@@ -9,36 +9,60 @@ const objectsArray = [
     id: "syn16858699",
     filter: "",
     color: 0,
+    limit: 3,
+    columns: 0,
+    table: false,
+    type: "FUNDER",
   },
   {
     name: "datasets",
     id: "syn16859580",
     filter: "diseaseFocus",
     color: 1,
+    limit: 40,
+    columns: 0,
+    table: false,
+    type: "DATASET",
   },
   {
     name: "data",
     id: "syn16858331",
     filter: "assay",
     color: 8,
+    limit: 0,
+    columns: 9,
+    table: true,
+    type: "",
   },
   {
     name: "studies",
     id: "syn16787123",
     filter: "diseaseFocus",
     color: 5,
+    limit: 40,
+    columns: 0,
+    table: false,
+    type: "STUDY",
   },
   {
     name: "analysis",
     id: "",
     filter: "",
     color: 0,
+    limit: 0,
+    columns: 9,
+    table: true,
+    type: "",
   },
   {
     name: "publications",
     id: "syn16857542",
     filter: "diseaseFocus",
     color: 7,
+    limit: 40,
+    columns: 0,
+    table: false,
+    type: "PUBLICATION",
   },
 ]
 
@@ -47,6 +71,10 @@ class Explore extends Component {
     activeButton: "",
     activeFilter: "",
     color: 0,
+    limit: 0,
+    columns: 0,
+    table: false,
+    type: "",
   };
 
   componentDidMount() {
@@ -67,10 +95,19 @@ class Explore extends Component {
   handleButtonPress = (id) => {
     const activeFilter = returnSynapseValue(objectsArray, id, "filter")
     const color = returnSynapseValue(objectsArray, id, "color")
+    const limit = returnSynapseValue(objectsArray, id, "limit")
+    const table = returnSynapseValue(objectsArray, id, "table")
+    const columns = returnSynapseValue(objectsArray, id, "columns")
+    const type = returnSynapseValue(objectsArray, id, "type")
+
     this.setState({
       activeButton: id,
       activeFilter,
       color,
+      limit,
+      table,
+      columns,
+      type,
     })
     return ""
   };
@@ -92,6 +129,15 @@ class Explore extends Component {
     )
   }
 
+  hideBarSection = () => {
+    const hash = window.location.hash
+
+    if (hash !== "#/Explore") {
+      return "hide"
+    }
+    return ""
+  }
+
   render() {
     return (
       <section className="page explore">
@@ -100,7 +146,7 @@ class Explore extends Component {
             <h2>Explore</h2>
           </div>
           <div className="row explore-content">
-            <div className="center-block selectors-container">
+            <div className={`center-block selectors-container ${this.hideBarSection()}`}>
               <div className="selectors">
                 <button
                   className={this.returnButtonClass("syn16858699")}
@@ -160,8 +206,11 @@ class Explore extends Component {
               showMenu
               facets
               barChart
-              table
-              columns={9}
+              table={this.state.table}
+              columns={this.state.columns}
+              json={this.props[this.state.activeButton]}
+              limit={this.state.limit}
+              type={this.state.type}
             />
           </div>
         </div>
