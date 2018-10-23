@@ -12,6 +12,8 @@ import {
 
 import "react-accessible-accordion/dist/minimal-example.css"
 
+const logo = require("../images/nf-portal-logo.svg")
+
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -226,17 +228,17 @@ class Header extends Component {
                 this.closeNavigation(window.location.hash)
               }}
             />
-            <div className="logo col-md-9 col-sm-10 col-xs-12">
+            <div className="logo col-md-2">
               <Link
                 to="/"
                 onClick={() => {
                   this.closeNavigation("#/")
                 }}
               >
-                NFPortal
+                <img src={logo} alt="nf portal logo" />
               </Link>
             </div>
-            <div className="nav-buttons col-md-3 flex justify-end">
+            <div className="nav-buttons col-md-10 flex justify-end">
               <ul className="nav row end-sm center-xs">
                 <li>
                   <Link
