@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import SynapseChart from "./SynapseBarChart"
+import SynapseChart from "./SynapseBarChart.jsx"
 import { returnSynapseValue, setSynapseValue } from "../library/synapseObjects"
 
 const objectsArray = [
@@ -132,7 +132,7 @@ class Explore extends Component {
   hideBarSection = () => {
     const hash = window.location.hash
 
-    if (hash !== "#/Explore") {
+    if (hash === "#/Explore") {
       return "hide"
     }
     return ""

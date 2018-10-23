@@ -1,11 +1,10 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import SynapseChart from "./SynapseBarChart"
+import SynapseChart from "./SynapseBarChart.jsx"
 import { returnSynapseValue } from "../library/synapseObjects"
 
 class ExploreContent extends Component {
   state = {
-    //loading: true,
     activeButton: "syn16859580",
     activeFilter: "diseaseFocus",
     color: 0,

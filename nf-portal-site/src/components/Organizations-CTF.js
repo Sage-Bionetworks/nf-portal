@@ -30,29 +30,29 @@ class CTF extends Component {
           <div className="row">
             <h2>Childrens Tumor Foundation</h2>
           </div>
-        </div>
-        <SynapseCards json={this.state.syn16858699_fundingAgency_CTF} cardType="FUNDER" />
+          <SynapseCards json={this.state.syn16858699_fundingAgency_CTF} cardType="FUNDER" />
 
-        <div className="container">
-          <div className="row">
-            <h2>Funded Studies</h2>
+          <div className="container">
+            <div className="row">
+              <h2>Funded Studies</h2>
+            </div>
           </div>
-        </div>
-        <SynapseCards json={this.state.syn16787123_fundingAgency_CTF} limit={50} cardType="STUDY" />
+          <SynapseCards json={this.state.syn16787123_fundingAgency_CTF} limit={50} cardType="STUDY" />
 
-        <div className="container">
-          <div className="row">
-            <h2>New Publications</h2>
+          <div className="container">
+            <div className="row">
+              <h2>New Publications</h2>
+            </div>
           </div>
-        </div>
-        <SynapseCards json={this.state.syn16857542_fundingAgency_CTF} limit={10} cardType="PUBLICATION" />
+          <SynapseCards json={this.state.syn16857542_fundingAgency_CTF} limit={10} cardType="PUBLICATION" />
 
-        <div className="container">
-          <div className="row">
-            <h2>Datasets</h2>
+          <div className="container">
+            <div className="row">
+              <h2>Datasets</h2>
+            </div>
           </div>
+          <SynapseCards json={this.state.syn16859580_fundingAgency_CTF} cardType="DATASET" />
         </div>
-        <SynapseCards json={this.state.syn16859580_fundingAgency_CTF} cardType="DATASET" />
       </section>
     )
   }

@@ -31,29 +31,29 @@ class NTAP extends Component {
           <div className="row">
             <h2>The Neurofibromatosis Therapeutic Acceleration Program</h2>
           </div>
-        </div>
-        <SynapseCards json={this.state.syn16858699_fundingAgency_NTAP} cardType="FUNDER" />
+          <SynapseCards json={this.state.syn16858699_fundingAgency_NTAP} cardType="FUNDER" />
 
-        <div className="container">
-          <div className="row">
-            <h2>Funded Studies</h2>
+          <div className="container">
+            <div className="row">
+              <h2>Funded Studies</h2>
+            </div>
           </div>
-        </div>
-        <SynapseCards json={this.state.syn16787123_fundingAgency_NTAP} limit={50} cardType="STUDY" />
+          <SynapseCards json={this.state.syn16787123_fundingAgency_NTAP} limit={50} cardType="STUDY" />
 
-        <div className="container">
-          <div className="row">
-            <h2>New Publications</h2>
+          <div className="container">
+            <div className="row">
+              <h2>New Publications</h2>
+            </div>
           </div>
-        </div>
-        <SynapseCards json={this.state.syn16857542_fundingAgency_NTAP} limit={10} cardType="PUBLICATION" />
+          <SynapseCards json={this.state.syn16857542_fundingAgency_NTAP} limit={10} cardType="PUBLICATION" />
 
-        <div className="container">
-          <div className="row">
-            <h2>Datasets</h2>
+          <div className="container">
+            <div className="row">
+              <h2>Datasets</h2>
+            </div>
           </div>
+          <SynapseCards json={this.state.syn16859580_fundingAgency_NTAP} cardType="DATASET" />
         </div>
-        <SynapseCards json={this.state.syn16859580_fundingAgency_NTAP} cardType="DATASET" />
       </section>
     )
   }

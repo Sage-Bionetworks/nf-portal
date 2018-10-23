@@ -53,7 +53,7 @@ class SynapseBarChart extends Component {
 
   returnCardView = (limit = this.props.limit, json = "", type = this.props.type) => {
     return (
-      limit > 0 ? (
+      limit > 1 ? (
         <SynapseComponents.StaticQueryWrapper
           json={json}
         >
@@ -69,16 +69,18 @@ class SynapseBarChart extends Component {
   hideBarSection = () => {
     const hash = window.location.hash
 
-    if (hash !== "#/Explore") {
-      return "hide"
+    if (hash === "#/Explore") {
+      //console.log(hash)
+      return "bar-section hide"
     }
-    return ""
+    //hash === "#/"
+    return "bar-section"
   }
 
   render() {
     return (
       <div>
-        <div className={`bar-section ${this.hideBarSection()}`}>
+        <div className={`${this.hideBarSection()}`}>
           <SynapseComponents.QueryWrapper
             initQueryRequest={this.buildQuery()}
             token={this.props.token}
@@ -106,9 +108,9 @@ SynapseBarChart.propTypes = {
   facets: PropTypes.bool,
   table: PropTypes.bool,
   columns: PropTypes.number,
-  limit: PropTypes.number.isRequired,
-  json: PropTypes.object.isRequired,
-  type: PropTypes.string.isRequired,
+  limit: PropTypes.number,
+  json: PropTypes.object,
+  type: PropTypes.string,
 }
 
 SynapseBarChart.defaultProps = {
@@ -116,6 +118,9 @@ SynapseBarChart.defaultProps = {
   facets: false,
   table: false,
   columns: 1,
+  limit: 0,
+  json: "",
+  type: "STUDY",
 }
 
 export default SynapseBarChart
