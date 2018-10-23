@@ -108,7 +108,15 @@ class App extends Component {
 
   ReturnExplore = () => {
     return (
-      <AsyncExplore token={this.props.loginToken.sessionToken} />
+      <AsyncExplore
+        token={this.props.loginToken.sessionToken}
+        syn16859580={this.state.syn16859580}
+        syn16858699={this.state.syn16858699}
+        syn16858331={this.state.syn16858331}
+        syn16857542={this.state.syn16857542}
+        syn16787123={this.state.syn16787123}
+        syn16859448={this.state.syn16859448}
+      />
     )
   }
 
@@ -142,7 +150,9 @@ class App extends Component {
             <Route path="/Organizations-CTF" component={this.ReturnCTF} />
             <Route path="/Organizations-NIH" component={this.ReturnNIH} />
             <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
+
             <Route path="/Explore" component={this.ReturnExplore} />
+
             <Route path="/markup" component={synapseMarkup} />
           </div>
 
