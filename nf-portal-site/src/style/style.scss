@@ -5,6 +5,7 @@
 $green: #4DB7AD;
 $purple: #4A5E81;
 $white: #ffffff;
+$lightGray: #DFDFDF;
 $greenGradientLeft: #109488;
 $greenGradientRight: #05635B;
 
@@ -147,6 +148,17 @@ body.noScroll, html.noScroll {
     min-width: 143px;
   }
 
+  button.btn-basic {
+    background-color: $lightGray;
+    height: 41px;
+    min-width: 130px;
+    border-radius: 24px;
+    h5 { 
+      color: black; 
+      font-size: 16px;
+    }
+  }
+
   button:focus, input:focus, select:focus, div:focus { outline:none; }
   button:hover, select:hover { cursor: pointer }
 
@@ -249,6 +261,11 @@ body.noScroll, html.noScroll {
       color: white;
       text-decoration: none;
     }
+    .header {
+      .container {
+
+      }
+    }
   }
 
   header.header {
@@ -283,7 +300,7 @@ body.noScroll, html.noScroll {
     img {
       transition: all 200ms ease;
       max-height: 49px;
-      margin-top: 5px;
+      //margin-top: 5px;
     }
     .Dropdown-control {
       height: 37px;
@@ -574,6 +591,7 @@ body.noScroll, html.noScroll {
     display: flex;
     align-items: center;
     align-content: center;
+    justify-content: space-around;
     li:hover{
       cursor: pointer;
     }
@@ -759,6 +777,13 @@ body.noScroll, html.noScroll {
     .col-xs-2 {
       margin-top: 18px;
     }
+    .container .container-fluid {
+      padding: 0px;
+      .col-xs-12 { 
+        padding: 0px;
+      }
+    }
+
     .selectors-container {
       max-width: 850px;
     }

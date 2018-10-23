@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
 
+import ButtonViewAll from "./Button.js"
+
 class NewStudies extends Component {
   componentDidMount() {
   }
@@ -36,6 +38,7 @@ class NewStudies extends Component {
           <div className="row">
             {this.returnNewStudies(this.props.studies)}
           </div>
+          <ButtonViewAll />
         </div>
       </section>
     )

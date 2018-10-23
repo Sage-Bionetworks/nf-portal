@@ -106,6 +106,16 @@ body.noScroll, html.noScroll {
 #root button.btn-control h5 {
   color: white;
 }
+#root button.btn-basic {
+  background-color: #DFDFDF;
+  height: 41px;
+  min-width: 130px;
+  border-radius: 24px;
+}
+#root button.btn-basic h5 {
+  color: black;
+  font-size: 16px;
+}
 #root button:focus, #root input:focus, #root select:focus, #root div:focus {
   outline: none;
 }
@@ -247,7 +257,6 @@ body.noScroll, html.noScroll {
 #root header.header img {
   transition: all 200ms ease;
   max-height: 49px;
-  margin-top: 5px;
 }
 #root header.header .Dropdown-control {
   height: 37px;
@@ -515,6 +524,7 @@ body.noScroll, html.noScroll {
   display: flex;
   align-items: center;
   align-content: center;
+  justify-content: space-around;
 }
 #root .nav li:hover {
   cursor: pointer;
@@ -644,6 +654,12 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
   margin-top: 18px;
+}
+#root section.explore-content .container .container-fluid, #root div.explore-content .container .container-fluid {
+  padding: 0px;
+}
+#root section.explore-content .container .container-fluid .col-xs-12, #root div.explore-content .container .container-fluid .col-xs-12 {
+  padding: 0px;
 }
 #root section.explore-content .selectors-container, #root div.explore-content .selectors-container {
   max-width: 850px;

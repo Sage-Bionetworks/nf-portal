@@ -43,12 +43,14 @@ class App extends Component {
     this.setState({
       hash: window.location.hash,
     })
-    getStaticJSON("syn16858331", this.handleChanges)
-    getStaticJSON("syn16859580", this.handleChanges)
-    getStaticJSON("syn16858699", this.handleChanges)
-    getStaticJSON("syn16857542", this.handleChanges)
-    getStaticJSON("syn16859448", this.handleChanges)
-    getStaticJSON("syn16787123", this.handleChanges)
+    Promise.all([
+      getStaticJSON("syn16787123", this.handleChanges),
+      getStaticJSON("syn16858331", this.handleChanges),
+      getStaticJSON("syn16859580", this.handleChanges),
+      getStaticJSON("syn16858699", this.handleChanges),
+      getStaticJSON("syn16857542", this.handleChanges),
+      getStaticJSON("syn16859448", this.handleChanges),
+    ])
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -151,7 +153,7 @@ class App extends Component {
                   <a href="#/"> NF Portal</a>
                 </div>
                 <div className="col-md-3 flex justify-end right-footer">
-                  <a href="https://www.synapse.org/#!Synapse:syn5702691/discussion/default" target="_blank">Contact Us</a>
+                  <a href="https://www.synapse.org/#!Synapse:syn5702691/discussion/default" rel="noopener noreferrer" target="_blank">Contact Us</a>
                   <a
                     target="blank"
                     href="https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5"
