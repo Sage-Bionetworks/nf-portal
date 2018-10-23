@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import SynapseCards from "./SynapseCards"
+import ButtonViewAll from "./Button.js"
 
 const NewPublications = (props) => {
   return (
@@ -11,6 +12,7 @@ const NewPublications = (props) => {
           <h2>New Publications</h2>
         </div>
         <SynapseCards json={props.publications} cardType="PUBLICATION" />
+        <ButtonViewAll url="Explore/Publications" />
       </div>
     </section>
   )

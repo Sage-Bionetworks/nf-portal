@@ -69,12 +69,12 @@ class SynapseBarChart extends Component {
   hideBarSection = () => {
     const hash = window.location.hash
 
-    if (hash === "#/Explore") {
-      //console.log(hash)
-      return "bar-section hide"
+    if (hash === "#/Explore" || hash === "#/") {
+      console.log(hash)
+      return "bar-section"
     }
     //hash === "#/"
-    return "bar-section"
+    return "bar-section hide"
   }
 
   render() {

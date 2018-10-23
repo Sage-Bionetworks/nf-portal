@@ -83,7 +83,30 @@ class Explore extends Component {
     // publications
     setSynapseValue(objectsArray, "syn16857542", "filter", "id")
 
-    this.handleButtonPress("syn16859580")
+    if (window.location.hash !== "#/Explore") {
+      this.setActiveValues(window.location.hash)
+    } else this.handleButtonPress("syn16859580")
+  }
+
+  setActiveValues = (hash) => {
+    let id
+    console.log(hash)
+    switch (hash) {
+    case "#/Explore/Studies":
+      id = "syn16787123"
+      break
+    case "#/Explore/Publications":
+      id = "syn16857542"
+      break
+    case "#/Explore/Datasets":
+      id = "syn16858699"
+      break
+    default:
+      id = ""
+    }
+    console.log(id)
+
+    this.handleButtonPress(id)
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -133,6 +156,9 @@ class Explore extends Component {
     const hash = window.location.hash
 
     if (hash === "#/Explore") {
+      return ""
+    }
+    if (hash !== "#/") {
       return "hide"
     }
     return ""

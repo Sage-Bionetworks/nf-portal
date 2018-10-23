@@ -38,7 +38,7 @@ class NewStudies extends Component {
           <div className="row">
             {this.returnNewStudies(this.props.studies)}
           </div>
-          <ButtonViewAll />
+          <ButtonViewAll url="Explore/Studies" />
         </div>
       </section>
     )
@@ -46,7 +46,6 @@ class NewStudies extends Component {
 }
 
 NewStudies.propTypes = {
-  token: PropTypes.string.isRequired,
   studies: PropTypes.object.isRequired,
 }
 

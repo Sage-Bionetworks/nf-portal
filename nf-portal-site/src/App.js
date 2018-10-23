@@ -1,12 +1,13 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { HashRouter as Router, Route } from "react-router-dom"
+import ReactGA from "react-ga"
+import createHistory from "history/createBrowserHistory"
 import { getStaticJSON } from "./queries/queryForData"
-//import ReactGA from "react-ga"
-//import createHistory from "history/createBrowserHistory"
 
 import asyncComponent from "./components/AsyncComponent"
 import synapseMarkup from "./components/synapseMarkup"
+import ScrollToTop from "./components/ScrollToTop"
 
 // component js
 const AsyncHome = asyncComponent(() => import("./components/Home"))
@@ -18,15 +19,15 @@ const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"
 const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
 const AsyncExplore = asyncComponent(() => import("./components/Explore.jsx"))
 
-//ReactGA.initialize("UA-29804340-3")
+ReactGA.initialize("UA-29804340-4")
 
-//const history = createHistory()
-//history.listen((location) => {
-//ReactGA.set({
-//page: location.pathname + location.hash + location.search,
-//})
-//ReactGA.pageview(location.pathname + location.hash + location.search)
-//})
+const history = createHistory()
+history.listen((location) => {
+  ReactGA.set({
+    page: location.pathname + location.hash + location.search,
+  })
+  ReactGA.pageview(location.pathname + location.hash + location.search)
+})
 
 class App extends Component {
   state = {
@@ -141,40 +142,42 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="row amp-ad">
-          <this.ReturnHeader />
-          <div className="main">
-            <Route exact path="/" component={this.ReturnHome} />
-            <Route path="/About" component={this.ReturnAbout} />
-            <Route path="/Organizations" component={this.ReturnOrganizations} />
-            <Route path="/Organizations-CTF" component={this.ReturnCTF} />
-            <Route path="/Organizations-NIH" component={this.ReturnNIH} />
-            <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
+        <ScrollToTop>
+          <div className="row amp-ad">
+            <this.ReturnHeader />
+            <div className="main">
+              <Route exact path="/" component={this.ReturnHome} />
+              <Route path="/About" component={this.ReturnAbout} />
+              <Route path="/Organizations" component={this.ReturnOrganizations} />
+              <Route path="/Organizations-CTF" component={this.ReturnCTF} />
+              <Route path="/Organizations-NIH" component={this.ReturnNIH} />
+              <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
 
-            <Route path="/Explore" component={this.ReturnExplore} />
+              <Route path="/Explore" component={this.ReturnExplore} />
 
-            <Route path="/markup" component={synapseMarkup} />
-          </div>
+              <Route path="/markup" component={synapseMarkup} />
+            </div>
 
-          <footer>
-            <div className="container">
-              <div className="row">
-                <div className="nf-logo-footer col-md-9">
-                  <a href="#/"> NF Portal</a>
-                </div>
-                <div className="col-md-3 flex justify-end right-footer">
-                  <a href="https://www.synapse.org/#!Synapse:syn5702691/discussion/default" rel="noopener noreferrer" target="_blank">Contact Us</a>
-                  <a
-                    target="blank"
-                    href="https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5"
-                  >
+            <footer>
+              <div className="container">
+                <div className="row">
+                  <div className="nf-logo-footer col-md-9">
+                    <a href="#/"> NF Portal</a>
+                  </div>
+                  <div className="col-md-3 flex justify-end right-footer">
+                    <a href="https://www.synapse.org/#!Synapse:syn5702691/discussion/default" rel="noopener noreferrer" target="_blank">Contact Us</a>
+                    <a
+                      target="blank"
+                      href="https://s3.amazonaws.com/static.synapse.org/governance/SageBionetworksSynapseTermsandConditionsofUse.pdf?v=5"
+                    >
                     Terms of Use
-                  </a>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </footer>
-        </div>
+            </footer>
+          </div>
+        </ScrollToTop>
       </Router>
     )
   }
