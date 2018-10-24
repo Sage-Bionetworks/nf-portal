@@ -53,6 +53,11 @@ var writeAllDataFile = function writeAllDataFile() {
     return "SELECT * FROM " + table + " WHERE ( ( \"fundingAgency\" = 'NIH-NCI' ) )";
   };
   runQueries(tables, query4, "fundingAgency_NIHNCI");
+
+  var query5 = function query5(table) {
+    return "SELECT * FROM " + table + " WHERE (  (  \"resourceType\" = 'experimentalData' ) )";
+  };
+  runQueries(["syn16858331"], query5, "files");
 };
 
 //app.all("/", function(req, res, next) {

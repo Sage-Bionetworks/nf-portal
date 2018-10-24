@@ -31,6 +31,10 @@ const writeAllDataFile = () => {
 
   let query4 = (table) => { return `SELECT * FROM ${table} WHERE ( ( "fundingAgency" = 'NIH-NCI' ) )` }
   runQueries(tables, query4, "fundingAgency_NIHNCI")
+
+  let query5 = (table) => { return `SELECT * FROM ${table} WHERE (  (  "resourceType" = 'experimentalData' ) )` }
+  runQueries(["syn16858331"], query5, "files")
+
 }
 
 //app.all("/", function(req, res, next) {
