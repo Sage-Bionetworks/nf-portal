@@ -90,7 +90,6 @@ class Explore extends Component {
 
   setActiveValues = (hash) => {
     let id
-    console.log(hash)
     switch (hash) {
     case "#/Explore/Studies":
       id = "syn16787123"
@@ -104,7 +103,6 @@ class Explore extends Component {
     default:
       id = ""
     }
-    console.log(id)
 
     this.handleButtonPress(id)
   }
@@ -196,7 +194,7 @@ class Explore extends Component {
                   onClick={() => this.handleButtonPress("syn16858331", this.props.token)
                   }
                 >
-                  <h5>DATA</h5>
+                  <h5>FILES</h5>
                 </button>
                 <button
                   className={this.returnButtonClass("syn16787123")}

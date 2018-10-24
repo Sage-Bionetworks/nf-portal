@@ -8,7 +8,12 @@ class SynapseBarChart extends Component {
   }
 
   buildQuery = () => {
-    const sql = `SELECT * FROM ${this.props.synId}`
+    let sql = `SELECT * FROM ${this.props.synId}`
+
+    if (this.props.synId === "syn16858331" && window.location.hash.includes("#/Explore")) {
+      sql = `SELECT * FROM ${this.props.synId} WHERE ( ( "resourceType" = 'experimentalData' ) )`
+    }
+
     return {
       concreteType: "org.sagebionetworks.repo.model.table.QueryBundleRequest",
       partMask:
@@ -53,7 +58,7 @@ class SynapseBarChart extends Component {
 
   returnCardView = (limit = this.props.limit, json = "", type = this.props.type) => {
     return (
-      limit > 1 ? (
+      limit >= 1 ? (
         <SynapseComponents.StaticQueryWrapper
           json={json}
         >
@@ -70,10 +75,8 @@ class SynapseBarChart extends Component {
     const hash = window.location.hash
 
     if (hash === "#/Explore" || hash === "#/") {
-      console.log(hash)
       return "bar-section"
     }
-    //hash === "#/"
     return "bar-section hide"
   }
 

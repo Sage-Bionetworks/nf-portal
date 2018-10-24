@@ -67,7 +67,7 @@ class ExploreContent extends Component {
                   onClick={() => this.handleButtonPress("syn16858331", this.props.token)
                   }
                 >
-                  <h5>DATA</h5>
+                  <h5>FILES</h5>
                 </button>
                 <button
                   className={this.returnButtonClass("syn16787123")}
