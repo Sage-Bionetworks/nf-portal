@@ -11,7 +11,8 @@ class SynapseBarChart extends Component {
     let sql = `SELECT * FROM ${this.props.synId}`
 
     if (this.props.synId === "syn16858331" && window.location.hash.includes("#/Explore")) {
-      sql = `SELECT * FROM ${this.props.synId} WHERE ( ( "resourceType" = 'experimentalData' ) )`
+      //sql = `SELECT * FROM ${this.props.synId} WHERE ( ( "resourceType" = 'experimentalData' ) )`
+      sql = `SELECT id, dataType, assay, diagnosis, tumorType, fileFormat, species, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name  FROM ${this.props.synId} where resourceType = 'experimentalData'`
     }
 
     return {

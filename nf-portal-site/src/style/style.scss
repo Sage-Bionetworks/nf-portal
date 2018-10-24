@@ -146,6 +146,7 @@ body.noScroll, html.noScroll {
     border-radius: 16px;
     min-height: 53px;
     min-width: 143px;
+    margin: 10px 5px;
   }
 
   button.btn-basic {
@@ -272,6 +273,32 @@ body.noScroll, html.noScroll {
     @media screen and (max-width: 1023px){
       max-height: fit-content;
     }
+    .burger-menu {
+      background: #666666;
+    }
+		.bm-burger-button {
+      @media screen and (min-width: 720px){
+        display: none;
+      }
+		}
+		.bm-item-list {
+			display: flex;
+			flex-direction: column;
+			a {
+				padding: 10px 0px;
+				font-size: 20px;
+				font-weight: 300;
+			}
+			.inset {
+				padding-left: 25px;
+			} 
+			h4 {
+				color: white;
+				font-size: 20px;
+				font-weight: 300;
+			}
+		}
+
     .nav li, .nav li a  {
       text-transform: uppercase;
       font-weight: bold;
@@ -288,6 +315,11 @@ body.noScroll, html.noScroll {
       letter-spacing: 2px;
       font-weight: bolder;
     }
+		.logo {
+			@media screen and (max-width: 720px) {
+				padding: 30px 0px;
+			}
+		}
     
     max-width: 100vw;
     width: 100%;
@@ -340,6 +372,9 @@ body.noScroll, html.noScroll {
   header { 
     .nav-buttons {
       height: 100%;
+      @media screen and (max-width: 720px){
+        display: none;
+      }
       nav.row {
         padding: 0px;
       }
@@ -359,6 +394,12 @@ body.noScroll, html.noScroll {
       cursor: pointer;
       border: none;
       height: 100%;
+			@media screen and (max-width: 720px) {
+				height: 150px;
+				.nav-item.main-nav-item {
+					padding: unset;
+				}
+			}
       .accordion-row {
         margin: 0px;
         display: block;
@@ -429,6 +470,9 @@ body.noScroll, html.noScroll {
     }
     .accordion__title {
       background-color: $green;
+			@media screen and (max-width: 720px) {
+				background-color: unset;
+			}
     }
     .accordion-title[aria-selected="true"], .accordion-title[aria-selected="true"] a {
       background-color: transparent;
@@ -584,7 +628,7 @@ body.noScroll, html.noScroll {
   }
   .nav {
     position: relative;
-    z-index: 1000;
+    z-index: 900;
     height: 100%;
     padding: 0px;
     //margin: 0px;
@@ -790,6 +834,10 @@ body.noScroll, html.noScroll {
     .selectors {
       display: flex;
       justify-content: space-around;
+			flex-direction: row;
+			@media screen and (max-width: 720px){
+				flex-direction: column;
+			}
       button {
         position: relative;
       }
