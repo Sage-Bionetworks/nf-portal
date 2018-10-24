@@ -200,13 +200,13 @@ class Header extends Component {
               <div className="row between-xs">
                 <div className="col-xs-12 accordion-sub-title">
                   <Link
-                    name="NIH"
-                    to="/Organizations-NIH"
+                    name="DHART SPORE"
+                    to="/Organizations-DHART-SPORE"
                     onClick={() => {
                       this.closeNavigation("/Organizations")
                     }}
                   >
-                    NIH
+                    DHART SPORE
                   </Link>
                 </div>
               </div>

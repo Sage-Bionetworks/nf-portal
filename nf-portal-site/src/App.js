@@ -150,7 +150,7 @@ class App extends Component {
               <Route path="/About" component={this.ReturnAbout} />
               <Route path="/Organizations" component={this.ReturnOrganizations} />
               <Route path="/Organizations-CTF" component={this.ReturnCTF} />
-              <Route path="/Organizations-NIH" component={this.ReturnNIH} />
+              <Route path="/Organizations-DHART-SPORE" component={this.ReturnNIH} />
               <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
 
               <Route path="/Explore" component={this.ReturnExplore} />
