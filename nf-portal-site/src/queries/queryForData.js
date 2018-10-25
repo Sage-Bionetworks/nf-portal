@@ -45,6 +45,7 @@ const host = "https://static.nf.synapse.org/"
 const getStaticJSON = async (id, handleChanges, alternateId = "") => {
   return fetch(`${host}${id}.json`, {
     method: "GET",
+    "cache-control": "no-cache",
   })
     .then((response) => {
       return response.json()

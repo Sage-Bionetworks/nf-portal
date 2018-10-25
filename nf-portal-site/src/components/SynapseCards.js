@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
+import json from "../defaultData/syn16858699.json"
+
 
 const SynapseCards = (props) => {
   return (
@@ -11,6 +12,7 @@ const SynapseCards = (props) => {
       <SynapseComponents.SynapseTableCardView
         type={SynapseConstants[props.cardType]}
         limit={props.limit ? props.limit : 3}
+        hideOrganizationLink={props.hideOrganizationalLink}
       />
     </SynapseComponents.StaticQueryWrapper>
   )
@@ -19,6 +21,11 @@ const SynapseCards = (props) => {
 SynapseCards.propTypes = {
   json: PropTypes.object.isRequired,
   cardType: PropTypes.string.isRequired,
+  hideOrganizationLink: PropTypes.bool,
+}
+
+SynapseCards.defaultProps = {
+  hideOrganizationLink: false,
 }
 
 export default SynapseCards

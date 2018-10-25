@@ -76,6 +76,7 @@ class Explore extends Component {
     columns: 0,
     table: false,
     type: "",
+    hideLink: false,
   };
 
   componentDidMount() {
@@ -128,6 +129,7 @@ class Explore extends Component {
     const columns = returnSynapseValue(objectsArray, id, "columns")
     const type = returnSynapseValue(objectsArray, id, "type")
     const name = returnSynapseValue(objectsArray, id, "name")
+    const hideLink = returnSynapseValue(objectsArray, id, "hideLink")
 
     this.setState({
       activeButton: id,
@@ -138,6 +140,7 @@ class Explore extends Component {
       columns,
       type,
       name,
+      hideLink: hideLink !== undefined ? hideLink : false,
     })
     return ""
   };
@@ -248,6 +251,7 @@ class Explore extends Component {
               json={this.props[this.state.activeButton]}
               limit={this.state.limit}
               type={this.state.type}
+              hideOrganizationLink={this.state.hideLink}
             />
           </div>
         </div>

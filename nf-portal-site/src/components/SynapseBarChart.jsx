@@ -10,9 +10,10 @@ class SynapseBarChart extends Component {
   buildQuery = () => {
     let sql = `SELECT * FROM ${this.props.synId}`
 
-    if (this.props.synId === "syn16858331" && window.location.hash.includes("#/Explore")) {
+    if (this.props.synId === "syn16858331") {
       //sql = `SELECT * FROM ${this.props.synId} WHERE ( ( "resourceType" = 'experimentalData' ) )`
-      sql = `SELECT id, dataType, assay, diagnosis, tumorType, fileFormat, species, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name  FROM ${this.props.synId} where resourceType = 'experimentalData'`
+      //sql = `SELECT id, dataType, assay, diagnosis, tumorType, fileFormat, species, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name  FROM ${this.props.synId} where resourceType = 'experimentalData'`
+      sql = `SELECT id, dataType, assay, diagnosis, tumorType, fileFormat, species, individualID, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name  FROM ${this.props.synId} where resourceType = 'experimentalData'`
     }
 
     return {
@@ -57,7 +58,7 @@ class SynapseBarChart extends Component {
     )
   }
 
-  returnCardView = (limit = this.props.limit, json = "", type = this.props.type) => {
+  returnCardView = (limit = this.props.limit, json = "", type = this.props.type, hideLink = false) => {
     return (
       limit >= 1 ? (
         <SynapseComponents.StaticQueryWrapper
@@ -66,6 +67,7 @@ class SynapseBarChart extends Component {
           <SynapseComponents.SynapseTableCardView
             type={SynapseConstants[type]}
             limit={limit}
+            hideOrganizationLink={hideLink}
           />
         </SynapseComponents.StaticQueryWrapper>
       ) : <div />
@@ -97,7 +99,7 @@ class SynapseBarChart extends Component {
             {this.returnTable()}
           </SynapseComponents.QueryWrapper>
         </div>
-        {this.returnCardView(undefined, this.props.json, undefined)}
+        {this.returnCardView(undefined, this.props.json, undefined, this.props.hideOrganizationLink)}
       </div>
     )
   }
@@ -115,6 +117,7 @@ SynapseBarChart.propTypes = {
   limit: PropTypes.number,
   json: PropTypes.object,
   type: PropTypes.string,
+  hideOrganizationLink: PropTypes.bool,
 }
 
 SynapseBarChart.defaultProps = {
@@ -125,6 +128,7 @@ SynapseBarChart.defaultProps = {
   limit: 0,
   json: "",
   type: "STUDY",
+  hideOrganizationLink: false,
 }
 
 export default SynapseBarChart

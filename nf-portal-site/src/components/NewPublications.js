@@ -11,8 +11,10 @@ const NewPublications = (props) => {
         <div className="row">
           <h2>New Publications</h2>
         </div>
-        <SynapseCards json={props.publications} cardType="PUBLICATION" />
-        <ButtonViewAll url="Explore/Publications" />
+        <div className="synapse-cards-col">
+          <SynapseCards json={props.publications} cardType="PUBLICATION" />
+          <ButtonViewAll url="Explore/Publications" />
+        </div>
       </div>
     </section>
   )

@@ -10,7 +10,7 @@ import Organizations from "./Organizations"
 
 const Home = (props) => {
   return (
-    <div>
+    <div className="home">
       <Hero />
       <ExploreContent token={props.token} />
       <NewStudies

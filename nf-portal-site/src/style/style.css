@@ -701,6 +701,32 @@ body.noScroll, html.noScroll {
 #root section.hero .hero-background:before {
   filter: blur(5px);
 }
+@media screen and (min-width: 720px) {
+  #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
+    width: 33%;
+    margin: 0px;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail {
+    width: 50%;
+    margin: 0px auto;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardContent, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardContent {
+    margin: 0px auto;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard:nth-child(2), #root .home .new-publications .synapse-cards-col .SRC-portalCard:nth-child(2) {
+    margin: 0px 10px;
+  }
+}
 #root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
   margin-top: 18px;
 }

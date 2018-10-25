@@ -788,6 +788,39 @@ body.noScroll, html.noScroll {
     }
   }
 
+	@media screen and (min-width: 720px) {
+		.home {
+			.tools, .new-publications {
+				.synapse-cards-col > div:first-child{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					margin-bottom: 30px;
+				}
+				.synapse-cards-col {
+					.SRC-portalCard {
+						width: 33%;
+						margin: 0px;
+						display: inline-block;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						.SRC-cardThumbnail {
+							width: 50%;
+							margin: 0px auto;
+						}
+						.SRC-cardContent {
+							margin: 0px auto;
+						}
+					}
+					.SRC-portalCard:nth-child(2) {
+						margin: 0px 10px;
+					}
+				}
+			}
+		}
+	}
+
 @mixin hoverFade($color){
   background: $color;
   &:hover {
