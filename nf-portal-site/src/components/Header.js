@@ -310,7 +310,7 @@ class Header extends Component {
                 this.closeNavigation(window.location.hash)
               }}
             />
-            <div className="logo col-md-2 col-xs-12">
+            <div className="logo col-md-2 col-sm-3 col-xs-12">
               <Link
                 to="/"
                 onClick={() => {
