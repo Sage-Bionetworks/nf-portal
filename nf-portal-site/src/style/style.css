@@ -685,6 +685,13 @@ body.noScroll, html.noScroll {
 #root section.hero p, #root section.hero h1 {
   color: white;
 }
+#root section.hero h1 {
+  font-weight: 700;
+}
+#root section.hero p {
+  font-size: 16px;
+  line-height: 130%;
+}
 #root section.hero .container {
   height: 100%;
   display: flex;

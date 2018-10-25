@@ -10,6 +10,7 @@ class ExploreContent extends Component {
     activeFilter: "diseaseFocus",
     color: 0,
     hash: "/Explore/Datasets",
+    name: "",
   };
 
   componentDidMount() {
@@ -26,12 +27,14 @@ class ExploreContent extends Component {
     const activeFilter = returnSynapseValue(undefined, id, "filter")
     const color = returnSynapseValue(undefined, id, "color")
     const hash = returnSynapseValue(undefined, id, "hash")
+    const name = returnSynapseValue(undefined, id, "name")
 
     this.setState({
       activeButton: id,
       activeFilter,
       color,
       hash,
+      name,
     })
     return ""
   };
@@ -108,7 +111,7 @@ class ExploreContent extends Component {
               barChart
             />
             <div className={this.state.activeButton === "syn16858331" ? "hide" : ""}>
-              <ButtonExplore url={this.state.hash} />
+              <ButtonExplore url={this.state.hash} label={this.state.name} />
             </div>
           </div>
         </div>

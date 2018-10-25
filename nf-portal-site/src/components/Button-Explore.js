@@ -12,7 +12,13 @@ class Button extends Component {
   render() {
     return (
       <div className="row flex justify-end">
-        <button type="button" className="btn-explore" onClick={() => this.changeRoute(this.props.url)}><h5>Explore Data</h5></button>
+        <button type="button" className="btn-explore" onClick={() => this.changeRoute(this.props.url)}>
+          <h5>
+            Explore
+            {" "}
+            {this.props.label}
+          </h5>
+        </button>
       </div>
     )
   }
@@ -21,6 +27,11 @@ class Button extends Component {
 Button.propTypes = {
   url: PropTypes.string.isRequired,
   history: PropTypes.string.isRequired,
+  label: PropTypes.string,
+}
+
+Button.defaultProps = {
+  label: "",
 }
 
 export default withRouter(Button)
