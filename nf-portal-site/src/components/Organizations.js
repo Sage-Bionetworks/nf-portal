@@ -9,7 +9,7 @@ const Organizations = (props) => {
         <div className="row">
           <h2>Organizations</h2>
         </div>
-        <SynapseCards json={props.organizations} cardType="FUNDER" />
+        <SynapseCards json={props.organizations} cardType="FUNDER" hideOrganizationLink />
       </div>
     </section>
   )

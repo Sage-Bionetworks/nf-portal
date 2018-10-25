@@ -102,6 +102,7 @@ body.noScroll, html.noScroll {
   border-radius: 16px;
   min-height: 53px;
   min-width: 143px;
+  margin: 10px 5px;
 }
 #root button.btn-control h5 {
   color: white;
@@ -238,6 +239,31 @@ body.noScroll, html.noScroll {
     max-height: fit-content;
   }
 }
+#root header.header .burger-menu {
+  background: #666666;
+}
+@media screen and (min-width: 720px) {
+  #root header.header .bm-burger-button {
+    display: none;
+  }
+}
+#root header.header .bm-item-list {
+  display: flex;
+  flex-direction: column;
+}
+#root header.header .bm-item-list a {
+  padding: 10px 0px;
+  font-size: 20px;
+  font-weight: 300;
+}
+#root header.header .bm-item-list .inset {
+  padding-left: 25px;
+}
+#root header.header .bm-item-list h4 {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
 #root header.header .nav li, #root header.header .nav li a {
   text-transform: uppercase;
   font-weight: bold;
@@ -253,6 +279,11 @@ body.noScroll, html.noScroll {
   text-align: left;
   letter-spacing: 2px;
   font-weight: bolder;
+}
+@media screen and (max-width: 720px) {
+  #root header.header .logo {
+    padding: 30px 0px;
+  }
 }
 #root header.header img {
   transition: all 200ms ease;
@@ -293,6 +324,11 @@ body.noScroll, html.noScroll {
 #root header .nav-buttons {
   height: 100%;
 }
+@media screen and (max-width: 720px) {
+  #root header .nav-buttons {
+    display: none;
+  }
+}
 #root header .nav-buttons nav.row {
   padding: 0px;
 }
@@ -311,6 +347,14 @@ body.noScroll, html.noScroll {
   cursor: pointer;
   border: none;
   height: 100%;
+}
+@media screen and (max-width: 720px) {
+  #root header .accordion {
+    height: 150px;
+  }
+  #root header .accordion .nav-item.main-nav-item {
+    padding: unset;
+  }
 }
 #root header .accordion .accordion-row {
   margin: 0px;
@@ -381,6 +425,11 @@ body.noScroll, html.noScroll {
 }
 #root header .accordion__title {
   background-color: #4DB7AD;
+}
+@media screen and (max-width: 720px) {
+  #root header .accordion__title {
+    background-color: unset;
+  }
 }
 #root header .accordion-title[aria-selected=true], #root header .accordion-title[aria-selected=true] a {
   background-color: transparent;
@@ -518,7 +567,7 @@ body.noScroll, html.noScroll {
 }
 #root .nav {
   position: relative;
-  z-index: 1000;
+  z-index: 900;
   height: 100%;
   padding: 0px;
   display: flex;
@@ -652,6 +701,32 @@ body.noScroll, html.noScroll {
 #root section.hero .hero-background:before {
   filter: blur(5px);
 }
+@media screen and (min-width: 720px) {
+  #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
+    width: 33%;
+    margin: 0px;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail {
+    width: 50%;
+    margin: 0px auto;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardContent, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardContent {
+    margin: 0px auto;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard:nth-child(2), #root .home .new-publications .synapse-cards-col .SRC-portalCard:nth-child(2) {
+    margin: 0px 10px;
+  }
+}
 #root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
   margin-top: 18px;
 }
@@ -667,7 +742,13 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors, #root div.explore-content .selectors {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
   margin: 20px 0px;
+}
+@media screen and (max-width: 720px) {
+  #root section.explore-content .selectors, #root div.explore-content .selectors {
+    flex-direction: column;
+  }
 }
 #root section.explore-content .selectors button, #root div.explore-content .selectors button {
   position: relative;

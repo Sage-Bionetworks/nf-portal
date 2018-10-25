@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
-//import { slide as Menu } from "react-burger-menu"
+import { slide as Menu } from "react-burger-menu"
 
 import "react-dropdown/style.css"
 import {
@@ -15,6 +15,44 @@ import {
 import "react-accessible-accordion/dist/minimal-example.css"
 
 const logo = require("../images/nf-portal-logo.svg")
+
+const styles = {
+  bmBurgerButton: {
+    position: "fixed",
+    width: "36px",
+    height: "30px",
+    left: "36px",
+    top: "36px",
+  },
+  bmBurgerBars: {
+    background: "#373a47",
+  },
+  bmCrossButton: {
+    height: "24px",
+    width: "24px",
+  },
+  bmCross: {
+    background: "#bdc3c7",
+  },
+  bmMenu: {
+    background: "#373a47",
+    padding: "2.5em 1.5em 0",
+    fontSize: "1.15em",
+  },
+  bmMorphShape: {
+    fill: "#373a47",
+  },
+  bmItemList: {
+    color: "#b8b7ad",
+    padding: "0.8em",
+  },
+  bmItem: {
+    display: "inline-block",
+  },
+  bmOverlay: {
+    background: "rgba(0, 0, 0, 0.3)",
+  },
+}
 
 class Header extends Component {
   constructor(props) {
@@ -96,12 +134,7 @@ class Header extends Component {
   dropdownMenuAction = (event) => {
     event.preventDefault()
     this.setOpenAccordion(event)
-    //let hash
     if (this.state.Open === true) {
-      //if (window.location.hash === "#/") {
-      //hash = "Home"
-      //}
-      console.log(event.target.href)
       this.closeNavigation()
     }
   };
@@ -118,8 +151,6 @@ class Header extends Component {
       : () => {}
     return behavior
   };
-
-  handleOpenMouse
 
   Option1Dropdown = () => (
     <Accordion>
@@ -249,10 +280,22 @@ class Header extends Component {
     )
   }
 
+  isMenuOpen = (state) => {
+    return state.isOpen
+  }
 
   render() {
     return (
       <header className="header">
+        <Menu className="burger-menu" styles={styles} onStateChange={this.isMenuOpen}>
+          <Link to="/">Home</Link>
+          <h4>Organizations</h4>
+          <Link className="inset" to="/Organizations-CTF">CTF</Link>
+          <Link className="inset" to="/Organizations-NTAP">NTAP</Link>
+          <Link className="inset" to="/Organizations-DHART-SPORE">DHART SPORE</Link>
+          <Link to="/About">About</Link>
+        </Menu>
+
         <div className="container">
           <div className="nav-row nav row">
             <button
@@ -262,7 +305,7 @@ class Header extends Component {
                 this.closeNavigation(window.location.hash)
               }}
             />
-            <div className="logo col-md-2">
+            <div className="logo col-md-2 col-xs-12">
               <Link
                 to="/"
                 onClick={() => {

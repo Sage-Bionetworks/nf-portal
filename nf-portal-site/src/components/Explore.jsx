@@ -25,12 +25,12 @@ const objectsArray = [
     type: "DATASET",
   },
   {
-    name: "data",
+    name: "files",
     id: "syn16858331",
     filter: "assay",
     color: 8,
     limit: 0,
-    columns: 9,
+    columns: 7,
     table: true,
     type: "",
   },
@@ -68,6 +68,7 @@ const objectsArray = [
 
 class Explore extends Component {
   state = {
+    name: "",
     activeButton: "",
     activeFilter: "",
     color: 0,
@@ -75,6 +76,7 @@ class Explore extends Component {
     columns: 0,
     table: false,
     type: "",
+    hideLink: false,
   };
 
   componentDidMount() {
@@ -98,7 +100,13 @@ class Explore extends Component {
       id = "syn16857542"
       break
     case "#/Explore/Datasets":
+      id = "syn16859580"
+      break
+    case "#/Explore/Funder":
       id = "syn16858699"
+      break
+    case "#/Explore/Files":
+      id = "syn16858331"
       break
     default:
       id = ""
@@ -120,6 +128,8 @@ class Explore extends Component {
     const table = returnSynapseValue(objectsArray, id, "table")
     const columns = returnSynapseValue(objectsArray, id, "columns")
     const type = returnSynapseValue(objectsArray, id, "type")
+    const name = returnSynapseValue(objectsArray, id, "name")
+    const hideLink = returnSynapseValue(objectsArray, id, "hideLink")
 
     this.setState({
       activeButton: id,
@@ -129,6 +139,8 @@ class Explore extends Component {
       table,
       columns,
       type,
+      name,
+      hideLink: hideLink !== undefined ? hideLink : false,
     })
     return ""
   };
@@ -167,7 +179,11 @@ class Explore extends Component {
       <section className="page explore">
         <div className="container">
           <div className="row">
-            <h2>Explore</h2>
+            <h2>
+                Explore
+              {" "}
+              {this.state.name}
+            </h2>
           </div>
           <div className="row explore-content">
             <div className={`center-block selectors-container ${this.hideBarSection()}`}>
@@ -235,6 +251,7 @@ class Explore extends Component {
               json={this.props[this.state.activeButton]}
               limit={this.state.limit}
               type={this.state.type}
+              hideOrganizationLink={this.state.hideLink}
             />
           </div>
         </div>

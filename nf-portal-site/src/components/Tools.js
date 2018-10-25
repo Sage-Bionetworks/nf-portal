@@ -10,7 +10,9 @@ const Tools = (props) => {
         <div className="row">
           <h2>Tools</h2>
         </div>
-        <SynapseCards json={props.tools} cardType="TOOL" />
+        <div className="synapse-cards-col">
+          <SynapseCards json={props.tools} cardType="TOOL" />
+        </div>
       </div>
     </section>
   )
