@@ -4,6 +4,7 @@
 
 $green: #4DB7AD;
 $purple: #4A5E81;
+$magenta: #C94281;
 $white: #ffffff;
 $lightGray: #DFDFDF;
 $greenGradientLeft: #109488;
@@ -158,8 +159,22 @@ body.noScroll, html.noScroll {
     h5 { 
       color: black; 
       font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: initial;
     }
   }
+  button.btn-explore {
+    background-color: $magenta;
+    height: 41px;
+    min-width: 257px;
+    border-radius: 24px;
+    h5 { 
+      color: white; 
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }
+
 
   button:focus, input:focus, select:focus, div:focus { outline:none; }
   button:hover, select:hover { cursor: pointer }

@@ -2,12 +2,14 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
 import { returnSynapseValue } from "../library/synapseObjects"
+import ButtonExplore from "./Button-Explore.js"
 
 class ExploreContent extends Component {
   state = {
     activeButton: "syn16859580",
     activeFilter: "diseaseFocus",
     color: 0,
+    hash: "/Explore/Datasets",
   };
 
   componentDidMount() {
@@ -23,10 +25,13 @@ class ExploreContent extends Component {
   handleButtonPress = (id) => {
     const activeFilter = returnSynapseValue(undefined, id, "filter")
     const color = returnSynapseValue(undefined, id, "color")
+    const hash = returnSynapseValue(undefined, id, "hash")
+
     this.setState({
       activeButton: id,
       activeFilter,
       color,
+      hash,
     })
     return ""
   };
@@ -102,6 +107,9 @@ class ExploreContent extends Component {
               rgbIndex={this.state.color}
               barChart
             />
+            <div className={this.state.activeButton === "syn16858331" ? "hide" : ""}>
+              <ButtonExplore url={this.state.hash} />
+            </div>
           </div>
         </div>
       </section>

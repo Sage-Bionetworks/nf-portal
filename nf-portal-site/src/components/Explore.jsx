@@ -13,6 +13,7 @@ const objectsArray = [
     columns: 0,
     table: false,
     type: "FUNDER",
+    hash: "/Explore/Funder",
   },
   {
     name: "datasets",
@@ -23,6 +24,7 @@ const objectsArray = [
     columns: 0,
     table: false,
     type: "DATASET",
+    hash: "/Explore/Datasets",
   },
   {
     name: "files",
@@ -33,6 +35,7 @@ const objectsArray = [
     columns: 7,
     table: true,
     type: "",
+    hash: "/Explore/Files",
   },
   {
     name: "studies",
@@ -43,6 +46,7 @@ const objectsArray = [
     columns: 0,
     table: false,
     type: "STUDY",
+    hash: "/Explore/Studies",
   },
   {
     name: "analysis",
@@ -53,6 +57,7 @@ const objectsArray = [
     columns: 9,
     table: true,
     type: "",
+    hash: "/Explore/Analysis",
   },
   {
     name: "publications",
@@ -63,6 +68,7 @@ const objectsArray = [
     columns: 0,
     table: false,
     type: "PUBLICATION",
+    hash: "/Explore/Publications",
   },
 ]
 
@@ -91,6 +97,7 @@ class Explore extends Component {
   }
 
   setActiveValues = (hash) => {
+    console.log(hash)
     let id
     switch (hash) {
     case "#/Explore/Studies":

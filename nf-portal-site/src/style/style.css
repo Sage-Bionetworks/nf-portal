@@ -117,6 +117,19 @@ body.noScroll, html.noScroll {
 #root button.btn-basic h5 {
   color: black;
   font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: initial;
+}
+#root button.btn-explore {
+  background-color: #C94281;
+  height: 41px;
+  min-width: 257px;
+  border-radius: 24px;
+}
+#root button.btn-explore h5 {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 #root button:focus, #root input:focus, #root select:focus, #root div:focus {
   outline: none;
