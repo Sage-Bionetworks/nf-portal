@@ -1,4 +1,3 @@
-
 export const synapseObjects = [
   {
     name: "funder",
@@ -67,6 +66,10 @@ export const synapseObjects = [
     hash: "/Explore/Publications",
   },
 ]
+
+Array.prototype.clone = function () {
+  return JSON.parse(JSON.stringify(this))
+}
 
 export const returnSynapseValue = (objectArray = synapseObjects, id, nameOfValue) => {
   const matchedObject = objectArray.filter(object => object.id === id)

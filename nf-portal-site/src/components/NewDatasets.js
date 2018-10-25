@@ -9,7 +9,7 @@ const NewDatasets = (props) => {
     <section className="row new-datasets">
       <div className="container">
         <div className="row">
-          <h2>New Datasets</h2>
+          <h2 className="header">New Datasets</h2>
         </div>
         <SynapseCards json={props.datasets} cardType="DATASET" />
         <ButtonViewAll url="Explore/Datasets" />

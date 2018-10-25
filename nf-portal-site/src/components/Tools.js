@@ -8,7 +8,7 @@ const Tools = (props) => {
     <section className="row tools">
       <div className="container">
         <div className="row">
-          <h2>Tools</h2>
+          <h2 className="header">Tools</h2>
         </div>
         <div className="synapse-cards-col">
           <SynapseCards json={props.tools} cardType="TOOL" />

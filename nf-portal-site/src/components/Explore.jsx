@@ -1,76 +1,11 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
-import { returnSynapseValue, setSynapseValue } from "../library/synapseObjects"
+import {
+  clone, synapseObjects, returnSynapseValue, setSynapseValue,
+} from "../library/synapseObjects"
 
-const objectsArray = [
-  {
-    name: "funder",
-    id: "syn16858699",
-    filter: "",
-    color: 0,
-    limit: 3,
-    columns: 0,
-    table: false,
-    type: "FUNDER",
-    hash: "/Explore/Funder",
-  },
-  {
-    name: "datasets",
-    id: "syn16859580",
-    filter: "diseaseFocus",
-    color: 1,
-    limit: 40,
-    columns: 0,
-    table: false,
-    type: "DATASET",
-    hash: "/Explore/Datasets",
-  },
-  {
-    name: "files",
-    id: "syn16858331",
-    filter: "assay",
-    color: 8,
-    limit: 0,
-    columns: 7,
-    table: true,
-    type: "",
-    hash: "/Explore/Files",
-  },
-  {
-    name: "studies",
-    id: "syn16787123",
-    filter: "diseaseFocus",
-    color: 5,
-    limit: 40,
-    columns: 0,
-    table: false,
-    type: "STUDY",
-    hash: "/Explore/Studies",
-  },
-  {
-    name: "analysis",
-    id: "",
-    filter: "",
-    color: 0,
-    limit: 0,
-    columns: 9,
-    table: true,
-    type: "",
-    hash: "/Explore/Analysis",
-  },
-  {
-    name: "publications",
-    id: "syn16857542",
-    filter: "diseaseFocus",
-    color: 7,
-    limit: 40,
-    columns: 0,
-    table: false,
-    type: "PUBLICATION",
-    hash: "/Explore/Publications",
-  },
-]
+let loadedObjects
 
 class Explore extends Component {
   state = {
@@ -86,10 +21,11 @@ class Explore extends Component {
   };
 
   componentDidMount() {
+    loadedObjects = synapseObjects.clone()
     // studies
-    setSynapseValue(objectsArray, "syn16787123", "filter", "projectStatus")
+    setSynapseValue(loadedObjects, "syn16787123", "filter", "projectStatus")
     // publications
-    setSynapseValue(objectsArray, "syn16857542", "filter", "id")
+    setSynapseValue(loadedObjects, "syn16857542", "filter", "id")
 
     if (window.location.hash !== "#/Explore") {
       this.setActiveValues(window.location.hash)
@@ -129,14 +65,14 @@ class Explore extends Component {
   };
 
   handleButtonPress = (id) => {
-    const activeFilter = returnSynapseValue(objectsArray, id, "filter")
-    const color = returnSynapseValue(objectsArray, id, "color")
-    const limit = returnSynapseValue(objectsArray, id, "limit")
-    const table = returnSynapseValue(objectsArray, id, "table")
-    const columns = returnSynapseValue(objectsArray, id, "columns")
-    const type = returnSynapseValue(objectsArray, id, "type")
-    const name = returnSynapseValue(objectsArray, id, "name")
-    const hideLink = returnSynapseValue(objectsArray, id, "hideLink")
+    const activeFilter = returnSynapseValue(loadedObjects, id, "filter")
+    const color = returnSynapseValue(loadedObjects, id, "color")
+    const limit = returnSynapseValue(loadedObjects, id, "limit")
+    const table = returnSynapseValue(loadedObjects, id, "table")
+    const columns = returnSynapseValue(loadedObjects, id, "columns")
+    const type = returnSynapseValue(loadedObjects, id, "type")
+    const name = returnSynapseValue(loadedObjects, id, "name")
+    const hideLink = returnSynapseValue(loadedObjects, id, "hideLink")
 
     this.setState({
       activeButton: id,
@@ -186,7 +122,7 @@ class Explore extends Component {
       <section className="page explore">
         <div className="container">
           <div className="row">
-            <h2>
+            <h2 className="header">
                 Explore
               {" "}
               {this.state.name}

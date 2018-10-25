@@ -9,7 +9,7 @@ const NewPublications = (props) => {
     <section className="row new-publications">
       <div className="container">
         <div className="row">
-          <h2>New Publications</h2>
+          <h2 className="header">New Publications</h2>
         </div>
         <div className="synapse-cards-col">
           <SynapseCards json={props.publications} cardType="PUBLICATION" />

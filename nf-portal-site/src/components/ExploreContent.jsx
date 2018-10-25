@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
-import { returnSynapseValue } from "../library/synapseObjects"
+import { clone, synapseObjects, returnSynapseValue } from "../library/synapseObjects"
 import ButtonExplore from "./Button-Explore.js"
+
+let loadedObject
 
 class ExploreContent extends Component {
   state = {
@@ -15,6 +17,7 @@ class ExploreContent extends Component {
 
   componentDidMount() {
     this.handleButtonPress("syn16859580")
+    loadedObject = synapseObjects.clone()
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -24,10 +27,10 @@ class ExploreContent extends Component {
   };
 
   handleButtonPress = (id) => {
-    const activeFilter = returnSynapseValue(undefined, id, "filter")
-    const color = returnSynapseValue(undefined, id, "color")
-    const hash = returnSynapseValue(undefined, id, "hash")
-    const name = returnSynapseValue(undefined, id, "name")
+    const activeFilter = returnSynapseValue(loadedObject, id, "filter")
+    const color = returnSynapseValue(loadedObject, id, "color")
+    const hash = returnSynapseValue(loadedObject, id, "hash")
+    const name = returnSynapseValue(loadedObject, id, "name")
 
     this.setState({
       activeButton: id,
@@ -48,7 +51,7 @@ class ExploreContent extends Component {
       <section className="row explore-content">
         <div className="container">
           <div className="row">
-            <h2>Explore Content</h2>
+            <h2 className="header">Explore Content</h2>
           </div>
           <div className="row">
             <div className="center-block selectors-container">

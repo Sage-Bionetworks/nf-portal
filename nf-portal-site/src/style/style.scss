@@ -42,6 +42,13 @@ $publications: #DC9931;
 body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 	font-family: sans-serif; 
 }
+.row h1.header {
+  font-weight: 900;
+  font-size: 30px;
+}
+.row h2.header {
+  font-weight: 700;
+}
 
 html, body {
   max-width: 100%;
@@ -73,6 +80,14 @@ body.noScroll, html.noScroll {
   width: 50px;
   margin: 20px auto;
   padding: 10px;
+}
+
+section.page {
+  margin-top: 50px;
+  //min-height: 80vh;
+  a {
+    color: $magenta; 
+  }
 }
 
 #root {
@@ -751,12 +766,6 @@ body.noScroll, html.noScroll {
     }
   }
 
-  section.page {
-    margin-top: 50px;
-    //min-height: 80vh;
-  }
-
-  
   .SRC-portalCard {
     margin: 30px 0px;
   }
