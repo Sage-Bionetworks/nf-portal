@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { SynapseComponents, SynapseConstants } from "synapse-react-client"
-import json from "../defaultData/syn16858699.json"
-
 
 const SynapseCards = (props) => {
   return (

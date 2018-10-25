@@ -46,6 +46,7 @@ body.noScroll, html.noScroll {
 
 #root .main {
   min-height: calc(100vh - 136px);
+  margin-top: 50px;
 }
 #root section div.row {
   margin: 0px auto;
@@ -701,6 +702,9 @@ body.noScroll, html.noScroll {
 #root section.hero .hero-background:before {
   filter: blur(5px);
 }
+#root .SRC-cardContent {
+  width: 80%;
+}
 @media screen and (min-width: 720px) {
   #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
     display: flex;
@@ -1007,15 +1011,17 @@ body.noScroll, html.noScroll {
   #root header.header img {
     max-height: 50px;
   }
-  #root .main {
-    margin-top: 305px;
-  }
   #root ul.nav {
     flex-direction: column;
     text-align: left;
   }
   #root ul.nav li {
     margin: 10px;
+  }
+}
+@media screen and (max-width: 720px) {
+  #root .main {
+    margin-top: 100px;
   }
 }
 

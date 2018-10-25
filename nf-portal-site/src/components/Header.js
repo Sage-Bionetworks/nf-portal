@@ -63,6 +63,7 @@ class Header extends Component {
       Home: false,
       Open: false,
       activeUnderBar: "",
+      isOpen: false,
     }
   }
 
@@ -280,20 +281,24 @@ class Header extends Component {
     )
   }
 
-  isMenuOpen = (state) => {
-    return state.isOpen
+  closeHamburger = () => {
+    this.setState({ menuOpen: false })
+  }
+
+  handleStateChange = (state) => {
+    this.setState({ menuOpen: state.isOpen })
   }
 
   render() {
     return (
       <header className="header">
-        <Menu className="burger-menu" styles={styles} onStateChange={this.isMenuOpen}>
-          <Link to="/">Home</Link>
+        <Menu className="burger-menu" isOpen={this.state.menuOpen} styles={styles} onStateChange={state => this.handleStateChange(state)}>
+          <Link to="/" onClick={() => this.closeHamburger()}>Home</Link>
           <h4>Organizations</h4>
-          <Link className="inset" to="/Organizations-CTF">CTF</Link>
-          <Link className="inset" to="/Organizations-NTAP">NTAP</Link>
-          <Link className="inset" to="/Organizations-DHART-SPORE">DHART SPORE</Link>
-          <Link to="/About">About</Link>
+          <Link className="inset" to="/Organizations-CTF" onClick={() => this.closeHamburger()}>CTF</Link>
+          <Link className="inset" to="/Organizations-NTAP" onClick={() => this.closeHamburger()}>NTAP</Link>
+          <Link className="inset" to="/Organizations-DHART-SPORE" onClick={() => this.closeHamburger()}>DHART SPORE</Link>
+          <Link to="/About" onClick={() => this.closeHamburger()}>About</Link>
         </Menu>
 
         <div className="container">

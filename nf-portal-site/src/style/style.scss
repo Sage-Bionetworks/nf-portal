@@ -77,6 +77,7 @@ body.noScroll, html.noScroll {
 #root {
   .main {
     min-height: calc(100vh - 136px);
+    margin-top: 50px;
   }
 
   section div.row {
@@ -788,6 +789,10 @@ body.noScroll, html.noScroll {
     }
   }
 
+  .SRC-cardContent {
+    width: 80%;
+  }
+  
 	@media screen and (min-width: 720px) {
 		.home {
 			.tools, .new-publications {
@@ -1011,15 +1016,17 @@ body.noScroll, html.noScroll {
     header.header img{
       max-height: 50px;
     }
-    .main {
-      margin-top: 305px;
-    }
     ul.nav {
       flex-direction: column;
       text-align: left;
       li {
         margin: 10px;
       }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .main {
+      margin-top: 100px;
     }
   }
 
