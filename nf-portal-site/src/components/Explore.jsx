@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
 import {
-  clone, synapseObjects, returnSynapseValue, setSynapseValue,
+  synapseObjects, returnSynapseValue, setSynapseValue,
 } from "../library/synapseObjects"
 
 let loadedObjects
@@ -33,7 +33,6 @@ class Explore extends Component {
   }
 
   setActiveValues = (hash) => {
-    console.log(hash)
     let id
     switch (hash) {
     case "#/Explore/Studies":

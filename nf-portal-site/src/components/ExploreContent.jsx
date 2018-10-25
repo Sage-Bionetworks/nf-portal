@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
-import { clone, synapseObjects, returnSynapseValue } from "../library/synapseObjects"
+import { synapseObjects, returnSynapseValue } from "../library/synapseObjects"
 import ButtonExplore from "./Button-Explore.js"
 
 let loadedObject
