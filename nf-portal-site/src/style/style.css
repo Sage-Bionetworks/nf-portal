@@ -984,7 +984,6 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
   position: absolute;
-  top: 100px;
   right: 0px;
   width: 100%;
 }
