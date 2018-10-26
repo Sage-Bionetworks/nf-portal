@@ -28,28 +28,28 @@ class CTF extends Component {
       <section className="row organizations">
         <div className="container">
           <div className="row">
-            <h2>Childrens Tumor Foundation</h2>
+            <h1 className="header">Childrens Tumor Foundation</h1>
           </div>
           <SynapseCards json={this.state.syn16858699_fundingAgency_CTF} cardType="FUNDER" />
+        </div>
 
-          <div className="container">
-            <div className="row">
-              <h2>Funded Studies</h2>
-            </div>
+        <div className="container">
+          <div className="row">
+            <h2 className="header">Funded Studies</h2>
           </div>
           <SynapseCards json={this.state.syn16787123_fundingAgency_CTF} limit={50} cardType="STUDY" />
+        </div>
 
-          <div className="container">
-            <div className="row">
-              <h2>New Publications</h2>
-            </div>
+        <div className="container">
+          <div className="row">
+            <h2 className="header">New Publications</h2>
           </div>
           <SynapseCards json={this.state.syn16857542_fundingAgency_CTF} limit={10} cardType="PUBLICATION" />
+        </div>
 
-          <div className="container">
-            <div className="row">
-              <h2>Datasets</h2>
-            </div>
+        <div className="container">
+          <div className="row">
+            <h2 className="header">Datasets</h2>
           </div>
           <SynapseCards json={this.state.syn16859580_fundingAgency_CTF} cardType="DATASET" />
         </div>

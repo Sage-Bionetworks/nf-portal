@@ -26,17 +26,16 @@ class NIH extends Component {
       <section className="row organizations">
         <div className="container">
           <div className="row">
-            <h2>The Developmental and Hyperactive RAS Tumor SPORE</h2>
+            <h1 className="header">The Developmental and Hyperactive RAS Tumor SPORE</h1>
           </div>
           <SynapseCards json={this.state.syn16858699_fundingAgency_NIHNCI} cardType="FUNDER" />
+        </div>
 
-          <div className="container">
-            <div className="row">
-              <h2>Funded Studies</h2>
-            </div>
+        <div className="container">
+          <div className="row">
+            <h2 className="header">Funded Studies</h2>
           </div>
           <SynapseCards json={this.state.syn16787123_fundingAgency_NIHNCI} limit={50} cardType="STUDY" />
-
         </div>
       </section>
     )

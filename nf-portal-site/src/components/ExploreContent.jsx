@@ -1,17 +1,23 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
-import { returnSynapseValue } from "../library/synapseObjects"
+import { synapseObjects, returnSynapseValue } from "../library/synapseObjects"
+import ButtonExplore from "./Button-Explore.js"
+
+let loadedObject
 
 class ExploreContent extends Component {
   state = {
     activeButton: "syn16859580",
     activeFilter: "diseaseFocus",
     color: 0,
+    hash: "/Explore/Datasets",
+    name: "",
   };
 
   componentDidMount() {
     this.handleButtonPress("syn16859580")
+    loadedObject = synapseObjects.clone()
   }
 
   handleChanges = (KEY, NEWSTATE) => {
@@ -21,12 +27,17 @@ class ExploreContent extends Component {
   };
 
   handleButtonPress = (id) => {
-    const activeFilter = returnSynapseValue(undefined, id, "filter")
-    const color = returnSynapseValue(undefined, id, "color")
+    const activeFilter = returnSynapseValue(loadedObject, id, "filter")
+    const color = returnSynapseValue(loadedObject, id, "color")
+    const hash = returnSynapseValue(loadedObject, id, "hash")
+    const name = returnSynapseValue(loadedObject, id, "name")
+
     this.setState({
       activeButton: id,
       activeFilter,
       color,
+      hash,
+      name,
     })
     return ""
   };
@@ -40,7 +51,7 @@ class ExploreContent extends Component {
       <section className="row explore-content">
         <div className="container">
           <div className="row">
-            <h2>Explore Content</h2>
+            <h2 className="header">Explore Content</h2>
           </div>
           <div className="row">
             <div className="center-block selectors-container">
@@ -102,6 +113,9 @@ class ExploreContent extends Component {
               rgbIndex={this.state.color}
               barChart
             />
+            <div className={this.state.activeButton === "syn16858331" ? "hide" : ""}>
+              <ButtonExplore url={this.state.hash} label={this.state.name} />
+            </div>
           </div>
         </div>
       </section>

@@ -4,29 +4,24 @@
 
 $green: #4DB7AD;
 $purple: #4A5E81;
+$magenta: #C94281;
 $white: #ffffff;
 $lightGray: #DFDFDF;
 $greenGradientLeft: #109488;
 $greenGradientRight: #05635B;
 
 // explore content buttons 
-$button1: #437C9E; 
 $funders: #437C9E; 
 
-$button2: #2A4688;
-$studies: #2A4688;
+$studies: #387096;
 
-$button3: #5BA05B;
-$files: #5BA05B;
+$files: #4E974E;
 
-$button4: #1D9488;
-$datasets: #1D9488;
+$datasets: #11897D;
 
-$button5: #5FB0B4;
 $analysis: #5FB0B4;
 
-$button6: #DC9931;
-$publications: #DC9931;
+$publications: #51A7AC;
 
 @mixin circle($size){
   width: $size;
@@ -41,6 +36,21 @@ $publications: #DC9931;
 body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 	font-family: sans-serif; 
 }
+.row h1.header {
+  font-weight: 900;
+  font-size: 30px;
+}
+.row h2.header {
+  font-weight: 700;
+}
+
+a {
+  color: $magenta; 
+  &:hover {
+    color: $magenta; 
+  }
+} 
+
 
 html, body {
   max-width: 100%;
@@ -74,9 +84,18 @@ body.noScroll, html.noScroll {
   padding: 10px;
 }
 
+section.page {
+  margin-top: 50px;
+  //min-height: 80vh;
+  a {
+    color: $magenta; 
+  }
+}
+
 #root {
   .main {
     min-height: calc(100vh - 136px);
+    margin-top: 50px;
   }
 
   section div.row {
@@ -157,8 +176,22 @@ body.noScroll, html.noScroll {
     h5 { 
       color: black; 
       font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: initial;
     }
   }
+  button.btn-explore {
+    background-color: $magenta;
+    height: 41px;
+    min-width: 257px;
+    border-radius: 24px;
+    h5 { 
+      color: white; 
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  }
+
 
   button:focus, input:focus, select:focus, div:focus { outline:none; }
   button:hover, select:hover { cursor: pointer }
@@ -735,12 +768,6 @@ body.noScroll, html.noScroll {
     }
   }
 
-  section.page {
-    margin-top: 50px;
-    //min-height: 80vh;
-  }
-
-  
   .SRC-portalCard {
     margin: 30px 0px;
   }
@@ -753,6 +780,20 @@ body.noScroll, html.noScroll {
     background: linear-gradient(to right, $greenGradientLeft, $greenGradientRight);
     p, h1 {
       color: white;
+    }
+    h1 {
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px; 
+      line-height: 130%
+    }
+    a {
+      color: white;
+      text-decoration: underline;
+      &:hover {
+        color: white;
+      }
     }
     .container {
       height: 100%;
@@ -788,6 +829,10 @@ body.noScroll, html.noScroll {
     }
   }
 
+  .SRC-cardContent {
+    width: 80%;
+  }
+  
 	@media screen and (min-width: 720px) {
 		.home {
 			.tools, .new-publications {
@@ -883,13 +928,13 @@ body.noScroll, html.noScroll {
         @include hoverFade($funders);
       }
       button:nth-child(2) {
-        @include hoverFade($studies);
+        @include hoverFade($datasets);
       }
       button:nth-child(3) {
         @include hoverFade($files);
       }
       button:nth-child(4) {
-        @include hoverFade($datasets);
+        @include hoverFade($studies);
       }
       button:nth-child(5) {
         display: none;
@@ -1011,15 +1056,17 @@ body.noScroll, html.noScroll {
     header.header img{
       max-height: 50px;
     }
-    .main {
-      margin-top: 305px;
-    }
     ul.nav {
       flex-direction: column;
       text-align: left;
       li {
         margin: 10px;
       }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .main {
+      margin-top: 100px;
     }
   }
 

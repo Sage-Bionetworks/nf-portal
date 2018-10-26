@@ -33,7 +33,7 @@ class NewStudies extends Component {
       <section className="row new-studies">
         <div className="container">
           <div className="row">
-            <h2>New Studies</h2>
+            <h2 className="header">New Studies</h2>
           </div>
           <div className="row">
             {this.returnNewStudies(this.props.studies)}

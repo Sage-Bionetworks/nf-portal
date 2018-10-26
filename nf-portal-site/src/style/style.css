@@ -14,6 +14,22 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
   font-family: sans-serif;
 }
 
+.row h1.header {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.row h2.header {
+  font-weight: 700;
+}
+
+a {
+  color: #C94281;
+}
+a:hover {
+  color: #C94281;
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -44,8 +60,16 @@ body.noScroll, html.noScroll {
   padding: 10px;
 }
 
+section.page {
+  margin-top: 50px;
+}
+section.page a {
+  color: #C94281;
+}
+
 #root .main {
   min-height: calc(100vh - 136px);
+  margin-top: 50px;
 }
 #root section div.row {
   margin: 0px auto;
@@ -116,6 +140,19 @@ body.noScroll, html.noScroll {
 #root button.btn-basic h5 {
   color: black;
   font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: initial;
+}
+#root button.btn-explore {
+  background-color: #C94281;
+  height: 41px;
+  min-width: 257px;
+  border-radius: 24px;
+}
+#root button.btn-explore h5 {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 #root button:focus, #root input:focus, #root select:focus, #root div:focus {
   outline: none;
@@ -656,9 +693,6 @@ body.noScroll, html.noScroll {
 #root footer .right-footer a:first-child {
   margin-right: 15px;
 }
-#root section.page {
-  margin-top: 50px;
-}
 #root .SRC-portalCard {
   margin: 30px 0px;
 }
@@ -669,6 +703,20 @@ body.noScroll, html.noScroll {
   background: linear-gradient(to right, #109488, #05635B);
 }
 #root section.hero p, #root section.hero h1 {
+  color: white;
+}
+#root section.hero h1 {
+  font-weight: 700;
+}
+#root section.hero p {
+  font-size: 16px;
+  line-height: 130%;
+}
+#root section.hero a {
+  color: white;
+  text-decoration: underline;
+}
+#root section.hero a:hover {
   color: white;
 }
 #root section.hero .container {
@@ -700,6 +748,9 @@ body.noScroll, html.noScroll {
 }
 #root section.hero .hero-background:before {
   filter: blur(5px);
+}
+#root .SRC-cardContent {
+  width: 80%;
 }
 @media screen and (min-width: 720px) {
   #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
@@ -780,7 +831,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
-  background: #2A4688;
+  background: #11897D;
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -795,7 +846,7 @@ body.noScroll, html.noScroll {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #2A4688;
+  border-top: 12px solid #11897D;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -805,7 +856,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
-  background: #5BA05B;
+  background: #4E974E;
 }
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -820,7 +871,7 @@ body.noScroll, html.noScroll {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #5BA05B;
+  border-top: 12px solid #4E974E;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -830,7 +881,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
-  background: #1D9488;
+  background: #387096;
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -845,7 +896,7 @@ body.noScroll, html.noScroll {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #1D9488;
+  border-top: 12px solid #387096;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -881,7 +932,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
-  background: #DC9931;
+  background: #51A7AC;
 }
 #root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -896,7 +947,7 @@ body.noScroll, html.noScroll {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #DC9931;
+  border-top: 12px solid #51A7AC;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -1007,15 +1058,17 @@ body.noScroll, html.noScroll {
   #root header.header img {
     max-height: 50px;
   }
-  #root .main {
-    margin-top: 305px;
-  }
   #root ul.nav {
     flex-direction: column;
     text-align: left;
   }
   #root ul.nav li {
     margin: 10px;
+  }
+}
+@media screen and (max-width: 720px) {
+  #root .main {
+    margin-top: 100px;
   }
 }
 

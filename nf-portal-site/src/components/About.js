@@ -20,7 +20,7 @@ class About extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <h2>About</h2>
+              <h1 className="header">About</h1>
               <BarLoader color="#4DB7AD" loading={this.state.isLoading} />
               <SynapseComponents.Markdown
                 token={this.props.token.sessionToken}
