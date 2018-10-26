@@ -161,11 +161,15 @@ body.noScroll, html.noScroll {
   }
 
   button.btn-control {
-    h5 { color: white; }
+    h5 { 
+      font-size: 15px;
+      color: white; 
+    }
     border-radius: 16px;
-    min-height: 53px;
-    min-width: 143px;
-    margin: 10px 5px;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 0px 15px;
+    margin: 10px 15px;
   }
 
   button.btn-basic {
@@ -909,7 +913,7 @@ body.noScroll, html.noScroll {
     }
 
     .selectors-container {
-      max-width: 850px;
+      max-width: fit-content;
     }
     .selectors {
       display: flex;

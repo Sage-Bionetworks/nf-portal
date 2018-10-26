@@ -124,11 +124,13 @@ body.noScroll, html.noScroll {
 }
 #root button.btn-control {
   border-radius: 16px;
-  min-height: 53px;
-  min-width: 143px;
-  margin: 10px 5px;
+  min-height: 40px;
+  min-width: 100px;
+  padding: 0px 15px;
+  margin: 10px 15px;
 }
 #root button.btn-control h5 {
+  font-size: 15px;
   color: white;
 }
 #root button.btn-basic {
@@ -793,7 +795,7 @@ body.noScroll, html.noScroll {
   padding: 0px;
 }
 #root section.explore-content .selectors-container, #root div.explore-content .selectors-container {
-  max-width: 850px;
+  max-width: fit-content;
 }
 #root section.explore-content .selectors, #root div.explore-content .selectors {
   display: flex;
