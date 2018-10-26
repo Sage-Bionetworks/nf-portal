@@ -23,6 +23,13 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
   font-weight: 700;
 }
 
+a {
+  color: #C94281;
+}
+a:hover {
+  color: #C94281;
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -705,6 +712,13 @@ section.page a {
   font-size: 16px;
   line-height: 130%;
 }
+#root section.hero a {
+  color: white;
+  text-decoration: underline;
+}
+#root section.hero a:hover {
+  color: white;
+}
 #root section.hero .container {
   height: 100%;
   display: flex;
@@ -817,7 +831,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
-  background: #2A4688;
+  background: #11897D;
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -832,7 +846,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #2A4688;
+  border-top: 12px solid #11897D;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -842,7 +856,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
-  background: #5BA05B;
+  background: #4E974E;
 }
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -857,7 +871,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #5BA05B;
+  border-top: 12px solid #4E974E;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -867,7 +881,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
-  background: #1D9488;
+  background: #387096;
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -882,7 +896,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #1D9488;
+  border-top: 12px solid #387096;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -918,7 +932,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
-  background: #DC9931;
+  background: #51A7AC;
 }
 #root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -933,7 +947,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #DC9931;
+  border-top: 12px solid #51A7AC;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);

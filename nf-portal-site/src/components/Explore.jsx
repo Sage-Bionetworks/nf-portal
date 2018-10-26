@@ -121,11 +121,11 @@ class Explore extends Component {
       <section className="page explore">
         <div className="container">
           <div className="row">
-            <h2 className="header">
+            <h1 className="header">
                 Explore
               {" "}
               {this.state.name}
-            </h2>
+            </h1>
           </div>
           <div className="row explore-content">
             <div className={`center-block selectors-container ${this.hideBarSection()}`}>

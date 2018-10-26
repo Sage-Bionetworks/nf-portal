@@ -11,23 +11,17 @@ $greenGradientLeft: #109488;
 $greenGradientRight: #05635B;
 
 // explore content buttons 
-$button1: #437C9E; 
 $funders: #437C9E; 
 
-$button2: #2A4688;
-$studies: #2A4688;
+$studies: #387096;
 
-$button3: #5BA05B;
-$files: #5BA05B;
+$files: #4E974E;
 
-$button4: #1D9488;
-$datasets: #1D9488;
+$datasets: #11897D;
 
-$button5: #5FB0B4;
 $analysis: #5FB0B4;
 
-$button6: #DC9931;
-$publications: #DC9931;
+$publications: #51A7AC;
 
 @mixin circle($size){
   width: $size;
@@ -49,6 +43,14 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 .row h2.header {
   font-weight: 700;
 }
+
+a {
+  color: $magenta; 
+  &:hover {
+    color: $magenta; 
+  }
+} 
+
 
 html, body {
   max-width: 100%;
@@ -786,6 +788,13 @@ section.page {
       font-size: 16px; 
       line-height: 130%
     }
+    a {
+      color: white;
+      text-decoration: underline;
+      &:hover {
+        color: white;
+      }
+    }
     .container {
       height: 100%;
       display: flex;
@@ -919,13 +928,13 @@ section.page {
         @include hoverFade($funders);
       }
       button:nth-child(2) {
-        @include hoverFade($studies);
+        @include hoverFade($datasets);
       }
       button:nth-child(3) {
         @include hoverFade($files);
       }
       button:nth-child(4) {
-        @include hoverFade($datasets);
+        @include hoverFade($studies);
       }
       button:nth-child(5) {
         display: none;
