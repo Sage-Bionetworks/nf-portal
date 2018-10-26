@@ -108,7 +108,7 @@ class SynapseBarChart extends Component {
 SynapseBarChart.propTypes = {
   token: PropTypes.string.isRequired,
   filter: PropTypes.string.isRequired,
-  rgbIndex: PropTypes.array.isRequired,
+  rgbIndex: PropTypes.number.isRequired,
   synId: PropTypes.string.isRequired,
   barChart: PropTypes.bool,
   facets: PropTypes.bool,
@@ -126,7 +126,7 @@ SynapseBarChart.defaultProps = {
   table: false,
   columns: 1,
   limit: 0,
-  json: "",
+  json: {},
   type: "STUDY",
   hideOrganizationLink: false,
 }

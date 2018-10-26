@@ -4,8 +4,8 @@ import { getStaticJSON } from "../queries/queryForData"
 
 class NIH extends Component {
   state = {
-    syn16858699_fundingAgency_NIHNCI: "",
-    syn16787123_fundingAgency_NIHNCI: "",
+    syn16858699_fundingAgency_NIHNCI: {},
+    syn16787123_fundingAgency_NIHNCI: {},
   }
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class NIH extends Component {
 
   render() {
     return (
-      <section className="row organizations">
+      <section className="page row organizations">
         <div className="container">
           <div className="row">
             <h1 className="header">The Developmental and Hyperactive RAS Tumor SPORE</h1>

@@ -26,7 +26,7 @@ class Button extends Component {
 
 Button.propTypes = {
   url: PropTypes.string.isRequired,
-  history: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired,
   label: PropTypes.string,
 }
 

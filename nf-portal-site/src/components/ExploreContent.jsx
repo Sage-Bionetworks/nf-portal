@@ -106,13 +106,15 @@ class ExploreContent extends Component {
                 </button>
               </div>
             </div>
-            <SynapseChart
-              token={this.props.token}
-              synId={this.state.activeButton}
-              filter={this.state.activeFilter}
-              rgbIndex={this.state.color}
-              barChart
-            />
+            <div className="synapse-chart">
+              <SynapseChart
+                token={this.props.token}
+                synId={this.state.activeButton}
+                filter={this.state.activeFilter}
+                rgbIndex={this.state.color}
+                barChart
+              />
+            </div>
             <div className={this.state.activeButton === "syn16858331" ? "hide" : "explore-button-row"}>
               <ButtonExplore url={this.state.hash} label={this.state.name} />
             </div>
