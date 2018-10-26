@@ -3,7 +3,7 @@
 @import "./_synapseTempStyles.scss";
 
 $green: #4DB7AD;
-$navigation: #FEFEFEE6;
+$navigation: unquote('#FEFEFEE6');
 $navigationText: #404B63;
 $purple: #4A5E81;
 $magenta: #C94281;
