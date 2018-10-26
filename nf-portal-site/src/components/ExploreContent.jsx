@@ -53,7 +53,7 @@ class ExploreContent extends Component {
           <div className="row">
             <h2 className="header">Explore Content</h2>
           </div>
-          <div className="row">
+          <div className="row bar-chart">
             <div className="center-block selectors-container">
               <div className="selectors">
                 <button
@@ -113,7 +113,7 @@ class ExploreContent extends Component {
               rgbIndex={this.state.color}
               barChart
             />
-            <div className={this.state.activeButton === "syn16858331" ? "hide" : ""}>
+            <div className={this.state.activeButton === "syn16858331" ? "hide" : "explore-button-row"}>
               <ButtonExplore url={this.state.hash} label={this.state.name} />
             </div>
           </div>

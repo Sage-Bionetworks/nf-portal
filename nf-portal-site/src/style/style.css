@@ -267,9 +267,9 @@ section.page a {
   margin: 0 auto;
   position: fixed;
   left: 0px;
-  background-color: #4DB7AD;
+  background-color: #F1F7F6;
   z-index: 1000;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 1023px) {
   #root header.header {
@@ -304,11 +304,12 @@ section.page a {
 #root header.header .nav li, #root header.header .nav li a {
   text-transform: uppercase;
   font-weight: bold;
+  color: #404B63;
 }
 #root header.header .nav > li > a:hover, #root header.header .nav > li > a:focus, #root header.header a:hover {
   background-color: unset;
   text-decoration: none;
-  color: white;
+  color: #404B63;
 }
 #root header.header .logo a {
   font-size: 18px;
@@ -447,7 +448,7 @@ section.page a {
   display: block;
   z-index: 1000;
   margin-top: 0px;
-  margin-left: auto;
+  margin-left: 20px;
   min-width: 230px;
   max-width: 400px;
 }
@@ -461,7 +462,7 @@ section.page a {
   padding: 14px 40px;
 }
 #root header .accordion__title {
-  background-color: #4DB7AD;
+  background-color: #F1F7F6;
 }
 @media screen and (max-width: 720px) {
   #root header .accordion__title {
@@ -642,8 +643,8 @@ section.page a {
 }
 #root .nav div.under-bar {
   position: absolute;
-  background-color: #4A5E81;
-  height: 5px;
+  background-color: #C94281;
+  height: 3px;
   width: 100%;
   left: 0;
   bottom: 0;
@@ -955,6 +956,33 @@ section.page a {
 }
 #root section.explore-content .selectors button:nth-child(6).active:hover:after, #root div.explore-content .selectors button:nth-child(6).active:hover:after {
   transition: all 400ms;
+}
+#root section.explore-content .bar-chart, #root div.explore-content .bar-chart {
+  position: relative;
+  height: 220px;
+}
+@media screen and (max-width: 720px) {
+  #root section.explore-content .bar-chart, #root div.explore-content .bar-chart {
+    height: 450px;
+  }
+}
+@media screen and (max-width: 520px) {
+  #root section.explore-content .bar-chart, #root div.explore-content .bar-chart {
+    height: 480px;
+  }
+}
+#root section.explore-content .bar-chart .explore-button-row, #root div.explore-content .bar-chart .explore-button-row {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+}
+#root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+}
+#root section.explore-content .SRC-grayBackground, #root div.explore-content .SRC-grayBackground {
+  background: unset;
 }
 #root .about section {
   text-align: left;

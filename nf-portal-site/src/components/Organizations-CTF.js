@@ -28,7 +28,7 @@ class CTF extends Component {
       <section className="row organizations">
         <div className="container">
           <div className="row">
-            <h1 className="header">Childrens Tumor Foundation</h1>
+            <h1 className="header">Children's Tumor Foundation</h1>
           </div>
           <SynapseCards json={this.state.syn16858699_fundingAgency_CTF} cardType="FUNDER" />
         </div>

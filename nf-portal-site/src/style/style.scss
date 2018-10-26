@@ -3,6 +3,8 @@
 @import "./_synapseTempStyles.scss";
 
 $green: #4DB7AD;
+$navigation: #F1F7F6;
+$navigationText: #404B63;
 $purple: #4A5E81;
 $magenta: #C94281;
 $white: #ffffff;
@@ -335,11 +337,12 @@ section.page {
     .nav li, .nav li a  {
       text-transform: uppercase;
       font-weight: bold;
+      color: $navigationText;
     }
     .nav > li > a:hover, .nav > li > a:focus, a:hover {
       background-color: unset;
       text-decoration: none;
-      color: white;
+      color: $navigationText;
     }
     .logo a {
       font-size: 18px;
@@ -359,9 +362,9 @@ section.page {
     margin: 0 auto;
     position: fixed;
     left: 0px;
-    background-color: $green;
+    background-color: $navigation;
     z-index: 1000;
-    box-shadow: 0 1px 5px 0 rgba(0,0,0,.5);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
     img {
       transition: all 200ms ease;
       max-height: 49px;
@@ -488,7 +491,7 @@ section.page {
       display: block;
       z-index: 1000;
       margin-top: 0px;
-      margin-left: auto;
+      margin-left: 20px;
       min-width: 230px;
       max-width: 400px;
     }
@@ -502,7 +505,7 @@ section.page {
       padding: 14px 40px; 
     }
     .accordion__title {
-      background-color: $green;
+      background-color: $navigation;
 			@media screen and (max-width: 720px) {
 				background-color: unset;
 			}
@@ -703,8 +706,8 @@ section.page {
 
     div.under-bar {
       position: absolute;
-      background-color: $purple;
-      height: 5px;
+      background-color: $magenta;
+      height: 3px;
       width: 100%;
       left: 0;
       bottom: 0;
@@ -943,6 +946,30 @@ section.page {
       button:nth-child(6) {
         @include hoverFade($publications);
       }
+    }
+
+    .bar-chart {
+      position: relative;
+      height: 220px;
+      @media screen and (max-width: 720px){
+        height: 450px;
+      }
+      @media screen and (max-width: 520px){
+        height: 480px;
+      }
+      .explore-button-row {
+        position: absolute;
+        bottom: -25px;
+        right: 0;
+      }
+      .synapse-chart {
+        position: absolute;
+        top: 100px;
+        right: 0px;
+      }
+    }
+    .SRC-grayBackground {
+      background: unset; 
     }
   }
 

@@ -12808,7 +12808,7 @@ symbol.prototype.description@^1.0.0:
   dependencies:
     has-symbols "^1.0.0"
 
-synapse-react-client@^1.6.1:
+synapse-react-client@^1.8.2:
   version "1.8.2"
   resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.8.2.tgz#cee8e52baf20d03c9257ae2d936e13cd40cceab1"
   dependencies:
