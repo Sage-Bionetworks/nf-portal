@@ -11,7 +11,7 @@ class Button extends Component {
 
   render() {
     return (
-      <div className="row flex justify-end">
+      <div className="row flex justify-end explore-button">
         <button type="button" className="btn-explore" onClick={() => this.changeRoute(this.props.url)}>
           <h5>
             Explore
