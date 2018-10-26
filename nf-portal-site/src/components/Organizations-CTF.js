@@ -4,10 +4,10 @@ import { getStaticJSON } from "../queries/queryForData"
 
 class CTF extends Component {
   state = {
-    syn16858699_fundingAgency_CTF: "",
-    syn16787123_fundingAgency_CTF: "",
-    syn16857542_fundingAgency_CTF: "",
-    syn16859580_fundingAgency_CTF: "",
+    syn16858699_fundingAgency_CTF: {},
+    syn16787123_fundingAgency_CTF: {},
+    syn16857542_fundingAgency_CTF: {},
+    syn16859580_fundingAgency_CTF: {},
   }
 
   componentDidMount() {
@@ -25,7 +25,7 @@ class CTF extends Component {
 
   render() {
     return (
-      <section className="row organizations">
+      <section className="page row organizations">
         <div className="container">
           <div className="row">
             <h1 className="header">Children's Tumor Foundation</h1>

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900');
 @import "./_synapsecards.scss";
 @import "./_synapseTempStyles.scss";
 
 $green: #4DB7AD;
-$navigation: #F1F7F6;
+$navigation: unquote('#FEFEFEE6');
 $navigationText: #404B63;
 $purple: #4A5E81;
 $magenta: #C94281;
@@ -15,15 +15,15 @@ $greenGradientRight: #05635B;
 // explore content buttons 
 $funders: #437C9E; 
 
-$studies: #387096;
+$studies: #407BA0;
 
-$files: #4E974E;
+$files: #58A058;
 
-$datasets: #11897D;
+$datasets: #119488;
 
 $analysis: #5FB0B4;
 
-$publications: #51A7AC;
+$publications: #5BB0B5;
 
 @mixin circle($size){
   width: $size;
@@ -53,10 +53,16 @@ a {
   }
 } 
 
-
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+section.page {
+  margin-top: 70px;
+  a {
+    color: $magenta; 
+  }
 }
 
 section {
@@ -86,18 +92,10 @@ body.noScroll, html.noScroll {
   padding: 10px;
 }
 
-section.page {
-  margin-top: 50px;
-  //min-height: 80vh;
-  a {
-    color: $magenta; 
-  }
-}
-
 #root {
   .main {
     min-height: calc(100vh - 136px);
-    margin-top: 50px;
+    margin-top: 0px;
   }
 
   section div.row {
@@ -163,11 +161,15 @@ section.page {
   }
 
   button.btn-control {
-    h5 { color: white; }
+    h5 { 
+      font-size: 15px;
+      color: white; 
+    }
     border-radius: 16px;
-    min-height: 53px;
-    min-width: 143px;
-    margin: 10px 5px;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 0px 15px;
+    margin: 10px 15px;
   }
 
   button.btn-basic {
@@ -368,7 +370,9 @@ section.page {
     img {
       transition: all 200ms ease;
       max-height: 49px;
-      //margin-top: 5px;
+      @media screen and (min-width: 1220px){
+        margin-left: -40px;
+      }
     }
     .Dropdown-control {
       height: 37px;
@@ -449,7 +453,7 @@ section.page {
       }
       .accordion__title {
         width: 100%;
-        margin: -1px 0px;
+        margin: 0px;
         padding: 15px 0px;
         .row {
           padding-left: 10px;
@@ -665,7 +669,7 @@ section.page {
   .nav {
     position: relative;
     z-index: 900;
-    height: 100%;
+    height: 75px;
     padding: 0px;
     //margin: 0px;
     display: flex;
@@ -778,8 +782,7 @@ section.page {
   /////////// home screen //////////////
   section.hero {
     position: relative;
-    margin-top: 35px;
-    height: 400px;
+    height: 481px;
     background: linear-gradient(to right, $greenGradientLeft, $greenGradientRight);
     p, h1 {
       color: white;
@@ -818,11 +821,11 @@ section.page {
       }
     }
     .hero-background {
-      background-image: url('../images/molecules-light.svg');
+      background-image: url('../images/molecule-back.svg');
       background-repeat: no-repeat;
       background-size: contain;
-      width: 100%;
-      height: 100%;
+      width: 120%;
+      height: 85%;
       position: absolute;
       z-index: 50;
       bottom: 0;
@@ -910,7 +913,7 @@ section.page {
     }
 
     .selectors-container {
-      max-width: 850px;
+      max-width: fit-content;
     }
     .selectors {
       display: flex;
@@ -966,6 +969,7 @@ section.page {
         position: absolute;
         top: 100px;
         right: 0px;
+        width: 100%;
       }
     }
     .SRC-grayBackground {
@@ -1075,7 +1079,7 @@ section.page {
 
   ///////// organizations page /////////
   section.organizations {
-    margin-top: 35px;
+    //margin-top: 70px;
   }
 
   /////// media queries //////////
@@ -1093,7 +1097,7 @@ section.page {
   }
   @media screen and (max-width: 720px) {
     .main {
-      margin-top: 100px;
+      margin-top: 69px;
     }
   }
 

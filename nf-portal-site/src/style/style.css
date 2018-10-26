@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900");
 .markup-synapse-card {
   margin-top: 100px;
 }
@@ -35,6 +35,13 @@ html, body {
   overflow-x: hidden;
 }
 
+section.page {
+  margin-top: 70px;
+}
+section.page a {
+  color: #C94281;
+}
+
 section {
   font-family: "Lato", sans-serif;
 }
@@ -60,16 +67,9 @@ body.noScroll, html.noScroll {
   padding: 10px;
 }
 
-section.page {
-  margin-top: 50px;
-}
-section.page a {
-  color: #C94281;
-}
-
 #root .main {
   min-height: calc(100vh - 136px);
-  margin-top: 50px;
+  margin-top: 0px;
 }
 #root section div.row {
   margin: 0px auto;
@@ -124,11 +124,13 @@ section.page a {
 }
 #root button.btn-control {
   border-radius: 16px;
-  min-height: 53px;
-  min-width: 143px;
-  margin: 10px 5px;
+  min-height: 40px;
+  min-width: 100px;
+  padding: 0px 15px;
+  margin: 10px 15px;
 }
 #root button.btn-control h5 {
+  font-size: 15px;
   color: white;
 }
 #root button.btn-basic {
@@ -267,7 +269,7 @@ section.page a {
   margin: 0 auto;
   position: fixed;
   left: 0px;
-  background-color: #F1F7F6;
+  background-color: #FEFEFEE6;
   z-index: 1000;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
@@ -326,6 +328,11 @@ section.page a {
 #root header.header img {
   transition: all 200ms ease;
   max-height: 49px;
+}
+@media screen and (min-width: 1220px) {
+  #root header.header img {
+    margin-left: -40px;
+  }
 }
 #root header.header .Dropdown-control {
   height: 37px;
@@ -407,7 +414,7 @@ section.page a {
 }
 #root header .accordion .accordion__title {
   width: 100%;
-  margin: -1px 0px;
+  margin: 0px;
   padding: 15px 0px;
 }
 #root header .accordion .accordion__title .row {
@@ -462,7 +469,7 @@ section.page a {
   padding: 14px 40px;
 }
 #root header .accordion__title {
-  background-color: #F1F7F6;
+  background-color: #FEFEFEE6;
 }
 @media screen and (max-width: 720px) {
   #root header .accordion__title {
@@ -606,7 +613,7 @@ section.page a {
 #root .nav {
   position: relative;
   z-index: 900;
-  height: 100%;
+  height: 75px;
   padding: 0px;
   display: flex;
   align-items: center;
@@ -699,8 +706,7 @@ section.page a {
 }
 #root section.hero {
   position: relative;
-  margin-top: 35px;
-  height: 400px;
+  height: 481px;
   background: linear-gradient(to right, #109488, #05635B);
 }
 #root section.hero p, #root section.hero h1 {
@@ -738,11 +744,11 @@ section.page a {
   margin-bottom: 30px;
 }
 #root section.hero .hero-background {
-  background-image: url("../images/molecules-light.svg");
+  background-image: url("../images/molecule-back.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 85%;
   position: absolute;
   z-index: 50;
   bottom: 0;
@@ -789,7 +795,7 @@ section.page a {
   padding: 0px;
 }
 #root section.explore-content .selectors-container, #root div.explore-content .selectors-container {
-  max-width: 850px;
+  max-width: fit-content;
 }
 #root section.explore-content .selectors, #root div.explore-content .selectors {
   display: flex;
@@ -832,7 +838,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
-  background: #11897D;
+  background: #119488;
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -847,7 +853,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #11897D;
+  border-top: 12px solid #119488;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -857,7 +863,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
-  background: #4E974E;
+  background: #58A058;
 }
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -872,7 +878,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #4E974E;
+  border-top: 12px solid #58A058;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -882,7 +888,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
-  background: #387096;
+  background: #407BA0;
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -897,7 +903,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #387096;
+  border-top: 12px solid #407BA0;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -933,7 +939,7 @@ section.page a {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
-  background: #51A7AC;
+  background: #5BB0B5;
 }
 #root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -948,7 +954,7 @@ section.page a {
   content: "";
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
-  border-top: 12px solid #51A7AC;
+  border-top: 12px solid #5BB0B5;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -980,6 +986,7 @@ section.page a {
   position: absolute;
   top: 100px;
   right: 0px;
+  width: 100%;
 }
 #root section.explore-content .SRC-grayBackground, #root div.explore-content .SRC-grayBackground {
   background: unset;
@@ -1079,9 +1086,6 @@ section.page a {
 #root .modal-x-background-circle:hover {
   cursor: pointer;
 }
-#root section.organizations {
-  margin-top: 35px;
-}
 @media screen and (max-width: 480px) {
   #root header.header img {
     max-height: 50px;
@@ -1096,7 +1100,7 @@ section.page a {
 }
 @media screen and (max-width: 720px) {
   #root .main {
-    margin-top: 100px;
+    margin-top: 69px;
   }
 }
 

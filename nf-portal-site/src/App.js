@@ -32,12 +32,12 @@ history.listen((location) => {
 class App extends Component {
   state = {
     hash: "",
-    syn16859580: "",
-    syn16858699: "",
-    syn16858331: "",
-    syn16857542: "",
-    syn16787123: "",
-    syn16859448: "",
+    syn16859580: {},
+    syn16858699: {},
+    syn16858331: {},
+    syn16857542: {},
+    syn16787123: {},
+    syn16859448: {},
   };
 
   componentDidMount() {

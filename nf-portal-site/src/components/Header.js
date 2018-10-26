@@ -310,7 +310,7 @@ class Header extends Component {
                 this.closeNavigation(window.location.hash)
               }}
             />
-            <div className="logo col-md-2 col-sm-3 col-xs-12">
+            <div className="logo col-md-3 col-sm-3 col-xs-12">
               <Link
                 to="/"
                 onClick={() => {
@@ -320,7 +320,7 @@ class Header extends Component {
                 <img src={logo} alt="nf portal logo" />
               </Link>
             </div>
-            <div className="nav-buttons col-md-10 flex justify-end">
+            <div className="nav-buttons col-md-10 col-sm-9 flex justify-end">
               <ul className="nav row end-sm center-xs">
                 <li>
                   <Link

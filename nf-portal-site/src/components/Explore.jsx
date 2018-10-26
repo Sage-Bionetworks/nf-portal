@@ -193,7 +193,7 @@ class Explore extends Component {
               json={this.props[this.state.activeButton]}
               limit={this.state.limit}
               type={this.state.type}
-              hideOrganizationLink={this.state.hideLink}
+              hideOrganizationlink={this.state.hideLink}
             />
           </div>
         </div>

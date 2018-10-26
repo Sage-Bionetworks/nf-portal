@@ -5,10 +5,10 @@ import { getStaticJSON } from "../queries/queryForData"
 
 class NTAP extends Component {
   state = {
-    syn16858699_fundingAgency_NTAP: "",
-    syn16787123_fundingAgency_NTAP: "",
-    syn16857542_fundingAgency_NTAP: "",
-    syn16859580_fundingAgency_NTAP: "",
+    syn16858699_fundingAgency_NTAP: {},
+    syn16787123_fundingAgency_NTAP: {},
+    syn16857542_fundingAgency_NTAP: {},
+    syn16859580_fundingAgency_NTAP: {},
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class NTAP extends Component {
 
   render() {
     return (
-      <section className="row organizations">
+      <section className="page row organizations">
         <div className="container">
           <div className="row">
             <h1 className="header">The Neurofibromatosis Therapeutic Acceleration Program</h1>
