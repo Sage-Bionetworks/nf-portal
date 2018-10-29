@@ -17,6 +17,7 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 .row h1.header {
   font-weight: 900;
   font-size: 30px;
+  text-transform: capitalize;
 }
 
 .row h2.header {
@@ -114,10 +115,17 @@ body.noScroll, html.noScroll {
 #root ul.jumbo-list a {
   position: relative;
 }
+#root .SRC-cardAction button:hover:hover {
+  background: #C94281;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root button {
   padding: 0px 10px;
   transition: all 400ms;
   border: none;
+}
+#root button h5 {
+  transition: all 400ms;
 }
 #root button.btn-default {
   border-radius: 24px;
@@ -145,6 +153,13 @@ body.noScroll, html.noScroll {
   letter-spacing: 1px;
   text-transform: initial;
 }
+#root button.btn-basic:hover h5 {
+  color: white;
+}
+#root button.btn-basic:hover {
+  background: #C94281;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root button.btn-explore {
   background-color: #C94281;
   height: 41px;
@@ -155,6 +170,10 @@ body.noScroll, html.noScroll {
   color: white;
   font-size: 16px;
   letter-spacing: 1px;
+}
+#root button.btn-explore:hover {
+  background: #C94281;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root button:focus, #root input:focus, #root select:focus, #root div:focus {
   outline: none;
@@ -496,7 +515,12 @@ body.noScroll, html.noScroll {
   display: none;
 }
 #root header .accordion__title:hover {
-  background-color: #cacaca;
+  background-color: #C94281;
+  transition: all ease 400ms;
+}
+#root header .accordion__title:hover .row .accordion-sub-title a {
+  transition: all ease 400ms;
+  color: white;
 }
 @media only screen and (min-width: 48em) {
   #root .col-sm-9 {
@@ -667,6 +691,11 @@ body.noScroll, html.noScroll {
 #root .nav div.side-bar {
   background-color: #4DB7AD;
 }
+@media screen and (max-width: 720px) {
+  #root .nav {
+    height: 95px;
+  }
+}
 #root .title-row {
   padding: 20px 0px;
 }
@@ -693,10 +722,15 @@ body.noScroll, html.noScroll {
   margin: 10px;
   display: inline-block;
   margin: 0px;
+  margin-top: -10px;
   font-size: 16px;
   font-weight: bold;
-  line-height: 19px;
   text-transform: uppercase;
+  min-height: 50px;
+  line-height: 50px;
+}
+#root footer a img {
+  margin-top: -25px;
 }
 #root footer .right-footer a:first-child {
   margin-right: 15px;
@@ -813,7 +847,7 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:first-child, #root div.explore-content .selectors button:first-child {
   display: none;
-  background: #437C9E;
+  background-color: #437C9E;
 }
 #root section.explore-content .selectors button:first-child.active, #root div.explore-content .selectors button:first-child.active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -838,7 +872,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
-  background: #119488;
+  background-color: #119488;
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -863,7 +897,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
-  background: #58A058;
+  background-color: #58A058;
 }
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -888,7 +922,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
-  background: #407BA0;
+  background-color: #407BA0;
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -914,7 +948,7 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(5), #root div.explore-content .selectors button:nth-child(5) {
   display: none;
-  background: #5FB0B4;
+  background-color: #5FB0B4;
 }
 #root section.explore-content .selectors button:nth-child(5).active, #root div.explore-content .selectors button:nth-child(5).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -939,7 +973,7 @@ body.noScroll, html.noScroll {
   transition: all 400ms;
 }
 #root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
-  background: #5BB0B5;
+  background-color: #5BB0B5;
 }
 #root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);

@@ -41,6 +41,7 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 .row h1.header {
   font-weight: 900;
   font-size: 30px;
+  text-transform: capitalize;
 }
 .row h2.header {
   font-weight: 700;
@@ -150,11 +151,58 @@ body.noScroll, html.noScroll {
     }
   }
 
+  @mixin hoverFade($color){
+    background-color: $color;
+    &:hover {
+      //background-color: darken($color, 20%);
+    }
+    &.active{
+      box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+    }
+    &.active::after {
+      height: 0px;
+      width: 0px;
+      position: absolute;
+      bottom: -12px;
+      z-index: 100;
+      display: block;
+      content: "";
+      border-left: 13px solid transparent;
+      border-right: 13px solid transparent;
+      border-top: 12px solid $color;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      transition: all 400ms;
+    }
+    &.active:hover:after {
+      transition: all 400ms;
+      //border-top: 12px solid darken($color, 20%);
+    }
+  }
+
+  @mixin hoverFadeNoCheck($color){
+    &:hover {
+      background: $color;
+      box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+    }
+  }
+
+  .SRC-cardAction button {
+    &:hover {
+      @include hoverFadeNoCheck($magenta);
+    }
+  }
+
   button {
     padding: 0px 10px;
     transition: all 400ms;
     border: none;
+    h5 {
+      transition: all 400ms;
+    }
   }
+
 
   button.btn-default {
     border-radius: 24px;
@@ -183,6 +231,12 @@ body.noScroll, html.noScroll {
       letter-spacing: 1px;
       text-transform: initial;
     }
+    &:hover {
+      h5 {
+        color: white;
+      }
+    }
+    @include hoverFadeNoCheck($magenta);
   }
   button.btn-explore {
     background-color: $magenta;
@@ -194,6 +248,7 @@ body.noScroll, html.noScroll {
       font-size: 16px;
       letter-spacing: 1px;
     }
+    @include hoverFadeNoCheck($magenta);
   }
 
 
@@ -536,7 +591,12 @@ body.noScroll, html.noScroll {
       display: none;
     }
     .accordion__title:hover {
-      background-color: darken(#e3e3e3, 10%);
+      background-color: $magenta;
+      transition: all ease 400ms;
+      .row .accordion-sub-title a {
+        transition: all ease 400ms;
+        color: white;
+      }
     }
   }
 
@@ -735,6 +795,11 @@ body.noScroll, html.noScroll {
       background-color: $green;
     }
   }
+  @media screen and (max-width: 720px){
+    .nav {
+      height: 95px;
+    }
+  }
 
   .title-row {
     padding: 20px 0px;
@@ -763,10 +828,15 @@ body.noScroll, html.noScroll {
       margin: 10px;
       display: inline-block;
       margin: 0px;
+      margin-top: -10px;
       font-size: 16px;
       font-weight: bold;
-      line-height: 19px;
       text-transform: uppercase;
+      min-height: 50px;
+      line-height: 50px;
+      img {
+       margin-top: -25px;
+      }
     }
     .right-footer {
       a:first-child {
@@ -879,35 +949,6 @@ body.noScroll, html.noScroll {
 		}
 	}
 
-@mixin hoverFade($color){
-  background: $color;
-  &:hover {
-    //background-color: darken($color, 20%);
-  }
-  &.active{
-    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
-  }
-  &.active::after {
-    height: 0px;
-    width: 0px;
-    position: absolute;
-    bottom: -12px;
-    z-index: 100;
-    display: block;
-    content: "";
-    border-left: 13px solid transparent;
-    border-right: 13px solid transparent;
-    border-top: 12px solid $color;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    transition: all 400ms;
-  }
-  &.active:hover:after {
-    transition: all 400ms;
-    //border-top: 12px solid darken($color, 20%);
-  }
-}
   section.explore-content, div.explore-content {
     .col-xs-2 {
       margin-top: 18px;
