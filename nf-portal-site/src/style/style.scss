@@ -3,7 +3,7 @@
 @import "./_synapseTempStyles.scss";
 
 $green: #4DB7AD;
-$navigation: unquote('#FEFEFEE6');
+$navigation: RGBA(254, 254, 254, .90);
 $navigationText: #404B63;
 $purple: #4A5E81;
 $magenta: #C94281;
@@ -212,6 +212,8 @@ body.noScroll, html.noScroll {
     h5 { 
       font-size: 15px;
       color: white; 
+      font-weight: 700; 
+      letter-spacing: 0.5px;
     }
     //border-radius: 16px;
     //min-height: 40px;
