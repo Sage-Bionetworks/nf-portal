@@ -131,11 +131,11 @@ body.noScroll, html.noScroll {
   border-radius: 24px;
 }
 #root button.btn-control {
-  border-radius: 16px;
+  border-radius: 10px;
   min-height: 40px;
-  min-width: 100px;
-  padding: 0px 15px;
-  margin: 10px 15px;
+  padding: 7px 25px;
+  margin: 10px 23px;
+  min-width: 125px;
 }
 #root button.btn-control h5 {
   font-size: 15px;
@@ -477,6 +477,7 @@ body.noScroll, html.noScroll {
   margin-left: 20px;
   min-width: 230px;
   max-width: 400px;
+  box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.5);
 }
 #root header .about-dropdown {
   margin-right: 15px;
@@ -738,6 +739,26 @@ body.noScroll, html.noScroll {
 #root .SRC-portalCard {
   margin: 30px 0px;
 }
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata {
+  padding: 10px;
+  padding-left: 30px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata .row > * {
+  min-width: 60px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardThumbnail {
+  width: 80%;
+  margin-bottom: 10px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardThumbnail img {
+  width: 30px;
+  margin: unset;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardContent {
+  padding-top: 0px;
+  position: relative;
+  height: 270px;
+}
 #root section.hero {
   position: relative;
   height: 481px;
@@ -849,6 +870,9 @@ body.noScroll, html.noScroll {
   display: none;
   background-color: #437C9E;
 }
+#root section.explore-content .selectors button:first-child:hover, #root div.explore-content .selectors button:first-child:hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root section.explore-content .selectors button:first-child.active, #root div.explore-content .selectors button:first-child.active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -873,6 +897,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
   background-color: #119488;
+}
+#root section.explore-content .selectors button:nth-child(2):hover, #root div.explore-content .selectors button:nth-child(2):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -899,6 +926,9 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
   background-color: #58A058;
 }
+#root section.explore-content .selectors button:nth-child(3):hover, #root div.explore-content .selectors button:nth-child(3):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -923,6 +953,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
   background-color: #407BA0;
+}
+#root section.explore-content .selectors button:nth-child(4):hover, #root div.explore-content .selectors button:nth-child(4):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -950,6 +983,9 @@ body.noScroll, html.noScroll {
   display: none;
   background-color: #5FB0B4;
 }
+#root section.explore-content .selectors button:nth-child(5):hover, #root div.explore-content .selectors button:nth-child(5):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root section.explore-content .selectors button:nth-child(5).active, #root div.explore-content .selectors button:nth-child(5).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -974,6 +1010,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
   background-color: #5BB0B5;
+}
+#root section.explore-content .selectors button:nth-child(6):hover, #root div.explore-content .selectors button:nth-child(6):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
