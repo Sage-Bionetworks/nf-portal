@@ -41,7 +41,6 @@ body, button, h1, h2, h3, h4, h5, li, ul, p, a {
 .row h1.header {
   font-weight: 900;
   font-size: 30px;
-  text-transform: capitalize;
 }
 .row h2.header {
   font-weight: 700;
@@ -200,6 +199,16 @@ body.noScroll, html.noScroll {
     border: none;
     h5 {
       transition: all 400ms;
+    }
+  }
+
+  .bar-section svg {
+    transition: all 400ms;
+    &:hover {
+      filter: unset;
+      rect {
+        box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
+      }
     }
   }
 
@@ -586,6 +595,10 @@ body.noScroll, html.noScroll {
         padding: 15px;
         display: inline-block;
       }
+      a, a.nav-item.dropdown:hover {
+        transition: all ease 400ms;
+        color: white;
+      }
     }
     .accordion-body[aria-hidden="true"] {
       display: none;
@@ -593,10 +606,6 @@ body.noScroll, html.noScroll {
     .accordion__title:hover {
       background-color: $magenta;
       transition: all ease 400ms;
-      .row .accordion-sub-title a {
-        transition: all ease 400ms;
-        color: white;
-      }
     }
   }
 
