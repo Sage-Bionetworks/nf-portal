@@ -163,10 +163,10 @@ class App extends Component {
             <footer>
               <div className="container">
                 <div className="row">
-                  <div className="nf-logo-footer col-md-9 col-sm-10 col-xs-12">
+                  <div className="nf-logo-footer col-md-8 col-sm-8 col-xs-12">
                     <a href="#/"><img src={logoWhite} alt="nf portal logo" /></a>
                   </div>
-                  <div className="col-md-3 col-sm-2 col-xs-12 flex justify-end right-footer">
+                  <div className="col-md-4 col-sm-4 col-xs-12 flex justify-end right-footer">
                     <a href="https://www.synapse.org/#!Synapse:syn5702691/discussion/default" rel="noopener noreferrer" target="_blank">Contact Us</a>
                     <a
                       target="blank"
