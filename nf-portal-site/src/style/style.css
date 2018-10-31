@@ -796,6 +796,11 @@ body.noScroll, html.noScroll {
   right: 0;
   bottom: 20px;
 }
+@media screen and (max-width: 1265px) {
+  #root section.hero .container {
+    left: 5%;
+  }
+}
 #root section.hero .hero-message div {
   background-color: #ffffff10;
   margin-bottom: 30px;
@@ -1054,7 +1059,7 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .bar-chart .explore-button-row, #root div.explore-content .bar-chart .explore-button-row {
   position: absolute;
-  bottom: -25px;
+  bottom: -59px;
   right: 0;
 }
 #root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
@@ -1064,6 +1069,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .SRC-grayBackground, #root div.explore-content .SRC-grayBackground {
   background: unset;
+}
+#root section.new-studies {
+  margin-top: 50px;
 }
 #root .about section {
   text-align: left;

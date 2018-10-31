@@ -918,6 +918,11 @@ body.noScroll, html.noScroll {
       right: 0;
       bottom: 20px;
     }
+    @media screen and (max-width: 1265px){
+      .container {
+        left: 5%;
+      }
+    }
     .hero-message {
       div {
         background-color: unquote('#ffffff10');
@@ -1044,7 +1049,7 @@ body.noScroll, html.noScroll {
       }
       .explore-button-row {
         position: absolute;
-        bottom: -25px;
+        bottom: -59px;
         right: 0;
       }
       .synapse-chart {
@@ -1057,6 +1062,10 @@ body.noScroll, html.noScroll {
     .SRC-grayBackground {
       background: unset; 
     }
+  }
+
+  section.new-studies {
+    margin-top: 50px;
   }
 
   .about {
