@@ -167,6 +167,7 @@ body.noScroll, html.noScroll {
   height: 41px;
   min-width: 257px;
   border-radius: 24px;
+  margin-right: 10px;
 }
 #root button.btn-explore h5 {
   color: white;
@@ -348,7 +349,7 @@ body.noScroll, html.noScroll {
 }
 #root header.header img {
   transition: all 200ms ease;
-  max-height: 49px;
+  max-height: 70px;
 }
 @media screen and (min-width: 1220px) {
   #root header.header img {
@@ -741,16 +742,10 @@ body.noScroll, html.noScroll {
 #root .SRC-portalCard {
   margin: 30px 0px;
 }
-#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata {
-  padding: 10px;
-  padding-left: 30px;
-}
-#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata .row > * {
-  min-width: 60px;
-}
 #root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardThumbnail {
   width: 80%;
   margin-bottom: 10px;
+  padding-left: 20px;
 }
 #root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardThumbnail img {
   width: 30px;
@@ -759,7 +754,15 @@ body.noScroll, html.noScroll {
 #root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardContent {
   padding-top: 0px;
   position: relative;
-  height: 270px;
+  height: 300px;
+  padding-left: 20px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata {
+  padding: 10px;
+  padding-left: 50px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata .row > * {
+  min-width: 60px;
 }
 #root section.hero {
   position: relative;
