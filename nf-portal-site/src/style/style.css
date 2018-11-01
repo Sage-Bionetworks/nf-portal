@@ -131,15 +131,17 @@ body.noScroll, html.noScroll {
   border-radius: 24px;
 }
 #root button.btn-control {
-  border-radius: 16px;
+  border-radius: 10px;
   min-height: 40px;
-  min-width: 100px;
-  padding: 0px 15px;
-  margin: 10px 15px;
+  padding: 7px 25px;
+  margin: 10px 23px;
+  min-width: 125px;
 }
 #root button.btn-control h5 {
   font-size: 15px;
   color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 #root button.btn-basic {
   background-color: #DFDFDF;
@@ -165,6 +167,7 @@ body.noScroll, html.noScroll {
   height: 41px;
   min-width: 257px;
   border-radius: 24px;
+  margin-right: 10px;
 }
 #root button.btn-explore h5 {
   color: white;
@@ -288,7 +291,7 @@ body.noScroll, html.noScroll {
   margin: 0 auto;
   position: fixed;
   left: 0px;
-  background-color: #FEFEFEE6;
+  background-color: RGBA(254, 254, 254, 0.9);
   z-index: 1000;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
@@ -346,7 +349,7 @@ body.noScroll, html.noScroll {
 }
 #root header.header img {
   transition: all 200ms ease;
-  max-height: 49px;
+  max-height: 70px;
 }
 @media screen and (min-width: 1220px) {
   #root header.header img {
@@ -477,6 +480,7 @@ body.noScroll, html.noScroll {
   margin-left: 20px;
   min-width: 230px;
   max-width: 400px;
+  box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.5);
 }
 #root header .about-dropdown {
   margin-right: 15px;
@@ -488,7 +492,7 @@ body.noScroll, html.noScroll {
   padding: 14px 40px;
 }
 #root header .accordion__title {
-  background-color: #FEFEFEE6;
+  background-color: RGBA(254, 254, 254, 0.9);
 }
 @media screen and (max-width: 720px) {
   #root header .accordion__title {
@@ -715,7 +719,7 @@ body.noScroll, html.noScroll {
   margin-right: 0px !important;
   padding-bottom: 56px;
   padding-top: 30px;
-  display: flex;
+  display: block;
 }
 #root footer a {
   color: #ffffff;
@@ -735,8 +739,36 @@ body.noScroll, html.noScroll {
 #root footer .right-footer a:first-child {
   margin-right: 15px;
 }
+#root footer .row {
+  background-color: #4DB7AD;
+}
 #root .SRC-portalCard {
   margin: 30px 0px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata {
+  min-width: 380px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardThumbnail {
+  width: 80%;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardThumbnail img {
+  width: 30px;
+  margin: unset;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardContent {
+  padding-top: 0px;
+  position: relative;
+  height: 300px;
+  padding-left: 20px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata {
+  padding: 10px;
+  padding-left: 50px;
+}
+#root .new-publications .synapse-cards-col .SRC-typePublication.SRC-portalCard.SRC-showMetadata .SRC-cardMetadata .row > * {
+  min-width: 60px;
 }
 #root section.hero {
   position: relative;
@@ -773,6 +805,11 @@ body.noScroll, html.noScroll {
   right: 0;
   bottom: 20px;
 }
+@media screen and (max-width: 1265px) {
+  #root section.hero .container {
+    left: 5%;
+  }
+}
 #root section.hero .hero-message div {
   background-color: #ffffff10;
   margin-bottom: 30px;
@@ -793,30 +830,56 @@ body.noScroll, html.noScroll {
 #root .SRC-cardContent {
   width: 80%;
 }
-@media screen and (min-width: 720px) {
+#root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+#root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
+  width: 33%;
+  margin: 0px;
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail {
+  width: 50%;
+  margin: 0px auto;
+}
+#root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardContent, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardContent {
+  margin: 0px auto;
+}
+#root .home .tools .synapse-cards-col .SRC-portalCard:nth-child(2), #root .home .new-publications .synapse-cards-col .SRC-portalCard:nth-child(2) {
+  margin: 0px 10px;
+}
+@media screen and (max-width: 1100px) {
   #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-  #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
-    width: 33%;
-    margin: 0px;
-    display: inline-block;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  #root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardThumbnail {
-    width: 50%;
-    margin: 0px auto;
-  }
-  #root .home .tools .synapse-cards-col .SRC-portalCard .SRC-cardContent, #root .home .new-publications .synapse-cards-col .SRC-portalCard .SRC-cardContent {
-    margin: 0px auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   #root .home .tools .synapse-cards-col .SRC-portalCard:nth-child(2), #root .home .new-publications .synapse-cards-col .SRC-portalCard:nth-child(2) {
-    margin: 0px 10px;
+    margin-bottom: 20px;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 720px) {
+  #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
+    width: 100%;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard:nth-child(2), #root .home .new-publications .synapse-cards-col .SRC-portalCard:nth-child(2) {
+    margin-bottom: 20px;
+  }
+  #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
+    margin-bottom: 20px;
   }
 }
 #root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
@@ -849,6 +912,9 @@ body.noScroll, html.noScroll {
   display: none;
   background-color: #437C9E;
 }
+#root section.explore-content .selectors button:first-child:hover, #root div.explore-content .selectors button:first-child:hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root section.explore-content .selectors button:first-child.active, #root div.explore-content .selectors button:first-child.active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -873,6 +939,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
   background-color: #119488;
+}
+#root section.explore-content .selectors button:nth-child(2):hover, #root div.explore-content .selectors button:nth-child(2):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -899,6 +968,9 @@ body.noScroll, html.noScroll {
 #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
   background-color: #58A058;
 }
+#root section.explore-content .selectors button:nth-child(3):hover, #root div.explore-content .selectors button:nth-child(3):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -923,6 +995,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
   background-color: #407BA0;
+}
+#root section.explore-content .selectors button:nth-child(4):hover, #root div.explore-content .selectors button:nth-child(4):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -950,6 +1025,9 @@ body.noScroll, html.noScroll {
   display: none;
   background-color: #5FB0B4;
 }
+#root section.explore-content .selectors button:nth-child(5):hover, #root div.explore-content .selectors button:nth-child(5):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
 #root section.explore-content .selectors button:nth-child(5).active, #root div.explore-content .selectors button:nth-child(5).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -974,6 +1052,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .selectors button:nth-child(6), #root div.explore-content .selectors button:nth-child(6) {
   background-color: #5BB0B5;
+}
+#root section.explore-content .selectors button:nth-child(6):hover, #root div.explore-content .selectors button:nth-child(6):hover {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 #root section.explore-content .selectors button:nth-child(6).active, #root div.explore-content .selectors button:nth-child(6).active {
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
@@ -1013,7 +1094,7 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .bar-chart .explore-button-row, #root div.explore-content .bar-chart .explore-button-row {
   position: absolute;
-  bottom: -25px;
+  bottom: -59px;
   right: 0;
 }
 #root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
@@ -1023,6 +1104,9 @@ body.noScroll, html.noScroll {
 }
 #root section.explore-content .SRC-grayBackground, #root div.explore-content .SRC-grayBackground {
   background: unset;
+}
+#root section.new-studies {
+  margin-top: 50px;
 }
 #root .about section {
   text-align: left;

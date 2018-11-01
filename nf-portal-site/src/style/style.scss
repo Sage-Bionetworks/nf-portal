@@ -3,7 +3,7 @@
 @import "./_synapseTempStyles.scss";
 
 $green: #4DB7AD;
-$navigation: unquote('#FEFEFEE6');
+$navigation: RGBA(254, 254, 254, .90);
 $navigationText: #404B63;
 $purple: #4A5E81;
 $magenta: #C94281;
@@ -98,6 +98,10 @@ body.noScroll, html.noScroll {
     min-height: calc(100vh - 136px);
     margin-top: 0px;
   }
+  @media screen and (min-width: 720px){
+    .main {
+    }
+  }
 
   section div.row {
     margin: 0px auto;
@@ -154,7 +158,7 @@ body.noScroll, html.noScroll {
   @mixin hoverFade($color){
     background-color: $color;
     &:hover {
-      //background-color: darken($color, 20%);
+      box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
     }
     &.active{
       box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.5);
@@ -212,12 +216,19 @@ body.noScroll, html.noScroll {
     h5 { 
       font-size: 15px;
       color: white; 
+      font-weight: 700; 
+      letter-spacing: 0.5px;
     }
-    border-radius: 16px;
+    //border-radius: 16px;
+    //min-height: 40px;
+    //min-width: 100px;
+    //padding: 0px 15px;
+    //margin: 10px 15px;
+    border-radius: 10px;
     min-height: 40px;
-    min-width: 100px;
-    padding: 0px 15px;
-    margin: 10px 15px;
+    padding: 7px 25px;
+    margin: 10px 23px;
+    min-width: 125px;
   }
 
   button.btn-basic {
@@ -243,6 +254,7 @@ body.noScroll, html.noScroll {
     height: 41px;
     min-width: 257px;
     border-radius: 24px;
+    margin-right: 10px;
     h5 { 
       color: white; 
       font-size: 16px;
@@ -424,7 +436,7 @@ body.noScroll, html.noScroll {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
     img {
       transition: all 200ms ease;
-      max-height: 49px;
+      max-height: 70px;
       @media screen and (min-width: 1220px){
         margin-left: -40px;
       }
@@ -553,6 +565,7 @@ body.noScroll, html.noScroll {
       margin-left: 20px;
       min-width: 230px;
       max-width: 400px;
+      box-shadow: 2px 3px 4px 0px rgba(0, 0, 0, 0.5);
     }
     .about-dropdown {
       margin-right: 15px;
@@ -822,7 +835,7 @@ body.noScroll, html.noScroll {
     margin-right: 0px !important;
     padding-bottom: 56px;
     padding-top: 30px;
-    display: flex;
+    display: block;
     a {
       color: $white;
       margin: 10px;
@@ -843,10 +856,42 @@ body.noScroll, html.noScroll {
         margin-right: 15px;
       }
     }
+    .row {
+      background-color: $green;
+    }
   }
 
   .SRC-portalCard {
     margin: 30px 0px;
+  }
+  .new-publications {
+    .synapse-cards-col {
+      .SRC-typePublication.SRC-portalCard.SRC-showMetadata {
+        min-width: 380px;
+        .SRC-cardThumbnail {
+          width: 80%;
+          margin-bottom: 10px;
+          padding-left: 20px;
+          img {
+            width: 30px;
+            margin: unset; 
+          }
+        }
+        .SRC-cardContent {
+          padding-top: 0px;
+          position: relative;
+          height: 300px;
+          padding-left: 20px;
+        }
+        .SRC-cardMetadata {
+          padding: 10px;
+          padding-left: 50px;
+          .row > * {
+            min-width: 60px;
+          }
+        }
+      }
+    }
   }
 
   /////////// home screen //////////////
@@ -884,6 +929,11 @@ body.noScroll, html.noScroll {
       right: 0;
       bottom: 20px;
     }
+    @media screen and (max-width: 1265px){
+      .container {
+        left: 5%;
+      }
+    }
     .hero-message {
       div {
         background-color: unquote('#ffffff10');
@@ -916,38 +966,76 @@ body.noScroll, html.noScroll {
     width: 80%;
   }
   
-	@media screen and (min-width: 720px) {
-		.home {
-			.tools, .new-publications {
-				.synapse-cards-col > div:first-child{
-					display: flex;
-					flex-direction: row;
-					justify-content: space-between;
-					margin-bottom: 30px;
-				}
-				.synapse-cards-col {
-					.SRC-portalCard {
-						width: 33%;
-						margin: 0px;
-						display: inline-block;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-between;
-						.SRC-cardThumbnail {
-							width: 50%;
-							margin: 0px auto;
-						}
-						.SRC-cardContent {
-							margin: 0px auto;
-						}
-					}
-					.SRC-portalCard:nth-child(2) {
-						margin: 0px 10px;
-					}
-				}
-			}
-		}
-	}
+  .home {
+    .tools, .new-publications {
+      .synapse-cards-col > div:first-child{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .synapse-cards-col {
+        .SRC-portalCard {
+          width: 33%;
+          margin: 0px;
+          display: inline-block;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .SRC-cardThumbnail {
+            width: 50%;
+            margin: 0px auto;
+          }
+          .SRC-cardContent {
+            margin: 0px auto;
+          }
+        }
+        .SRC-portalCard:nth-child(2) {
+          margin: 0px 10px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1100px){
+    .home {
+      .tools, .new-publications {
+        .synapse-cards-col > div:first-child{
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+        .synapse-cards-col {
+          .SRC-portalCard:nth-child(2) {
+            margin-bottom: 20px;
+          }
+          .SRC-portalCard {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 720px){
+    .home {
+      .tools, .new-publications {
+        .synapse-cards-col > div:first-child{
+          flex-direction: column;
+          justify-content: space-around;
+          flex-wrap: nowrap;
+        }
+        .synapse-cards-col {
+          .SRC-portalCard {
+            width: 100%;
+          }
+          .SRC-portalCard:nth-child(2) {
+            margin-bottom: 20px;
+          }
+          .SRC-portalCard {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
 
   section.explore-content, div.explore-content {
     .col-xs-2 {
@@ -1010,7 +1098,7 @@ body.noScroll, html.noScroll {
       }
       .explore-button-row {
         position: absolute;
-        bottom: -25px;
+        bottom: -59px;
         right: 0;
       }
       .synapse-chart {
@@ -1023,6 +1111,10 @@ body.noScroll, html.noScroll {
     .SRC-grayBackground {
       background: unset; 
     }
+  }
+
+  section.new-studies {
+    margin-top: 50px;
   }
 
   .about {
