@@ -813,6 +813,7 @@ body.noScroll, html.noScroll {
 #root section.hero .hero-message div {
   background-color: #ffffff10;
   margin-bottom: 30px;
+  padding: 10px 21px;
 }
 #root section.hero .hero-background {
   background-image: url("../images/molecule-back.svg");
@@ -835,6 +836,9 @@ body.noScroll, html.noScroll {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 30px;
+}
+#root .home .tools .synapse-cards-col, #root .home .new-publications .synapse-cards-col {
+  margin-top: 30px;
 }
 #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
   width: 33%;
@@ -881,6 +885,11 @@ body.noScroll, html.noScroll {
   #root .home .tools .synapse-cards-col .SRC-portalCard, #root .home .new-publications .synapse-cards-col .SRC-portalCard {
     margin-bottom: 20px;
   }
+}
+#root section.explore .synapse-card-view {
+  max-width: 883px;
+  margin-right: 45px;
+  float: right;
 }
 #root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
   margin-top: 18px;
