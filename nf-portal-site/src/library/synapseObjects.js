@@ -37,7 +37,7 @@ export const synapseObjects = [
     id: "syn16787123",
     filter: "diseaseFocus",
     color: 1,
-    limit: 40,
+    limit: 100,
     columns: 0,
     table: false,
     type: "STUDY",

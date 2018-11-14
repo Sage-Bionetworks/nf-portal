@@ -61,15 +61,17 @@ class SynapseBarChart extends Component {
   returnCardView = (limit = this.props.limit, json = "", type = this.props.type, hideLink = false) => {
     return (
       limit >= 1 ? (
-        <SynapseComponents.StaticQueryWrapper
-          json={json}
-        >
-          <SynapseComponents.SynapseTableCardView
-            type={SynapseConstants[type]}
-            limit={limit}
-            hideOrganizationLink={hideLink}
-          />
-        </SynapseComponents.StaticQueryWrapper>
+        <div className={window.location.hash !== "#/Explore" ? "" : "synapse-card-view"}>
+          <SynapseComponents.StaticQueryWrapper
+            json={json}
+          >
+            <SynapseComponents.SynapseTableCardView
+              type={SynapseConstants[type]}
+              limit={limit}
+              hideOrganizationLink={hideLink}
+            />
+          </SynapseComponents.StaticQueryWrapper>
+        </div>
       ) : <div />
     )
   }

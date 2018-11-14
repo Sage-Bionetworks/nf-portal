@@ -938,6 +938,7 @@ body.noScroll, html.noScroll {
       div {
         background-color: unquote('#ffffff10');
         margin-bottom: 30px;
+        padding: 10px 21px;
       }
     }
     .hero-background {
@@ -975,6 +976,7 @@ body.noScroll, html.noScroll {
         margin-bottom: 30px;
       }
       .synapse-cards-col {
+        margin-top: 30px;
         .SRC-portalCard {
           width: 33%;
           margin: 0px;
@@ -1034,6 +1036,14 @@ body.noScroll, html.noScroll {
           }
         }
       }
+    }
+  }
+
+  section.explore {
+    .synapse-card-view {
+			max-width: 883px;
+			margin-right: 45px;
+			float: right;
     }
   }
 
