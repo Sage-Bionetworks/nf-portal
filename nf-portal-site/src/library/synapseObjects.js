@@ -44,6 +44,17 @@ export const synapseObjects = [
     hash: "/Explore/Studies",
   },
   {
+    name: "tools",
+    id: "",
+    filter: "",
+    color: 0,
+    limit: 0,
+    columns: 0,
+    table: false,
+    type: "",
+    hash: "/Explore/Tools",
+  },
+  {
     name: "analysis",
     id: "",
     filter: "",

@@ -9,6 +9,12 @@ import asyncComponent from "./components/AsyncComponent"
 import synapseMarkup from "./components/synapseMarkup"
 import ScrollToTop from "./components/ScrollToTop"
 
+import * as SynapseClient from "./synapse/SynapseClient"
+
+const login = async () => SynapseClient.login("mikeybkats", "guinness").then((keys) => {
+  return keys
+})
+
 // component js
 const AsyncHome = asyncComponent(() => import("./components/Home"))
 const AsyncHeader = asyncComponent(() => import("./components/Header"))
@@ -18,6 +24,7 @@ const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF"
 const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"))
 const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
 const AsyncExplore = asyncComponent(() => import("./components/Explore.jsx"))
+const AsyncToolsPage = asyncComponent(() => import("./components/Tools.js"))
 
 ReactGA.initialize("UA-29804340-4")
 
@@ -34,6 +41,7 @@ history.listen((location) => {
 class App extends Component {
   state = {
     hash: "",
+    loginToken: "",
     syn16859580: {},
     syn16858699: {},
     syn16858331: {},
@@ -43,6 +51,10 @@ class App extends Component {
   };
 
   componentDidMount() {
+    login().then((token) => {
+      this.handleChanges("loginToken", token)
+    })
+
     this.setState({
       hash: window.location.hash,
     })
@@ -74,7 +86,7 @@ class App extends Component {
   ReturnHome = () => {
     return (
       <AsyncHome
-        token={this.props.loginToken.sessionToken}
+        token={this.state.loginToken.sessionToken}
         handleChanges={this.handleChanges}
         studies={this.state.syn16787123}
         publications={this.state.syn16857542}
@@ -112,7 +124,7 @@ class App extends Component {
   ReturnExplore = () => {
     return (
       <AsyncExplore
-        token={this.props.loginToken.sessionToken}
+        token={this.state.loginToken.sessionToken}
         syn16859580={this.state.syn16859580}
         syn16858699={this.state.syn16858699}
         syn16858331={this.state.syn16858331}
@@ -141,6 +153,15 @@ class App extends Component {
     )
   }
 
+  ReturnToolsPage = () => {
+    return (
+      <AsyncToolsPage
+        token={this.state.loginToken}
+        tools={this.state.syn16859448}
+      />
+    )
+  }
+
   render() {
     return (
       <Router>
@@ -156,6 +177,7 @@ class App extends Component {
               <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
 
               <Route path="/Explore" component={this.ReturnExplore} />
+              <Route path="/Explore/Tools" component={this.ReturnToolsPage} />
 
               <Route path="/markup" component={synapseMarkup} />
             </div>
