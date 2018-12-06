@@ -6,7 +6,6 @@ const app = express()
 
 const runQueries = (tableArray, query, appendToName = "") => {
   tableArray.map((table) => {
-    //console.log(query(table))
     queryTable(table, query(table)).then( data => {
       fs.writeFile(`public/${table}${appendToName !== "" ? "_" : ""}${appendToName}.json`, data, err => {
         if (err) throw err
@@ -34,6 +33,9 @@ const writeAllDataFile = () => {
 
   let query5 = (table) => { return `SELECT * FROM ${table} WHERE (  (  "resourceType" = 'experimentalData' ) )` }
   runQueries(["syn16858331"], query5, "files")
+
+  let query6 = (table) => { return `SELECT * FROM ${table} where ( ( "featured" = 'yes' ) )` }
+  runQueries(tables, query6, "s")
 
 }
 

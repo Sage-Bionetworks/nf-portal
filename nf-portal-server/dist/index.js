@@ -20,7 +20,6 @@ var runQueries = function runQueries(tableArray, query) {
   var appendToName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "";
 
   tableArray.map(function (table) {
-    //console.log(query(table))
     (0, _queryForData2.default)(table, query(table)).then(function (data) {
       _fs2.default.writeFile("public/" + table + (appendToName !== "" ? "_" : "") + appendToName + ".json", data, function (err) {
         if (err) throw err;
@@ -58,6 +57,11 @@ var writeAllDataFile = function writeAllDataFile() {
     return "SELECT * FROM " + table + " WHERE (  (  \"resourceType\" = 'experimentalData' ) )";
   };
   runQueries(["syn16858331"], query5, "files");
+
+  var query6 = function query6(table) {
+    return "SELECT * FROM " + table + " where ( ( \"featured\" = 'yes' ) )";
+  };
+  runQueries(tables, query6, "s");
 };
 
 //app.all("/", function(req, res, next) {

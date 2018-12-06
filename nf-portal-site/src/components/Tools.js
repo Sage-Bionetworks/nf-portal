@@ -24,7 +24,7 @@ const Tools = (props) => {
           <h2 className="header">{window.location.hash.includes("/Explore") ? "" : "Tools"}</h2>
         </div>
         <div className="synapse-cards-col">
-          <SynapseCards json={props.tools} cardType="TOOL" />
+          <SynapseCards json={props.tools} limit={10} cardType="TOOL" />
         </div>
         <ViewAll />
       </div>

@@ -43,11 +43,17 @@ class App extends Component {
     hash: "",
     loginToken: "",
     syn16859580: {},
+    syn16859580_s: {},
     syn16858699: {},
+    syn16858699_s: {},
     syn16858331: {},
+    syn16858331_s: {},
     syn16857542: {},
+    syn16857542_s: {},
     syn16787123: {},
+    syn16787123_s: {},
     syn16859448: {},
+    syn16859448_s: {},
   };
 
   componentDidMount() {
@@ -60,11 +66,17 @@ class App extends Component {
     })
     Promise.all([
       getStaticJSON("syn16787123", this.handleChanges),
+      getStaticJSON("syn16787123_s", this.handleChanges, "syn16787123_s"),
       getStaticJSON("syn16858331", this.handleChanges),
+      getStaticJSON("syn16858331_s", this.handleChanges, "syn16858331_s"),
       getStaticJSON("syn16859580", this.handleChanges),
+      getStaticJSON("syn16859580_s", this.handleChanges, "syn16859580_s"),
       getStaticJSON("syn16858699", this.handleChanges),
+      getStaticJSON("syn16858699_s", this.handleChanges, "syn16858699_s"),
       getStaticJSON("syn16857542", this.handleChanges),
+      getStaticJSON("syn16857542_s", this.handleChanges, "syn16857542_s"),
       getStaticJSON("syn16859448", this.handleChanges),
+      getStaticJSON("syn16859448_s", this.handleChanges, "syn16859448_s"),
     ])
   }
 
@@ -88,11 +100,11 @@ class App extends Component {
       <AsyncHome
         token={this.state.loginToken.sessionToken}
         handleChanges={this.handleChanges}
-        studies={this.state.syn16787123}
-        publications={this.state.syn16857542}
-        datasets={this.state.syn16859580}
-        tools={this.state.syn16859448}
-        organizations={this.state.syn16858699}
+        studies={this.state.syn16787123_s}
+        publications={this.state.syn16857542_s}
+        datasets={this.state.syn16859580_s}
+        tools={this.state.syn16859448_s}
+        organizations={this.state.syn16858699_s}
       />
     )
   };
