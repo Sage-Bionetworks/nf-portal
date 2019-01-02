@@ -104,7 +104,7 @@ class App extends Component {
         publications={this.state.syn16857542_s}
         datasets={this.state.syn16859580_s}
         tools={this.state.syn16859448_s}
-        organizations={this.state.syn16858699_s}
+        organizations={this.state.syn16858699}
       />
     )
   };
