@@ -38,43 +38,38 @@
             └── ./nf-portal-site/build/static/media 
 ```
 
-## ./amp-server 
+## ./nf-portal-server 
 contains node scripts which are used to update amp-ad static server. **note:** js files are written in es6 syntax and then compiled for node compatibility
 
 #### how to compile with gulp
-`example scenario:` changes are made to ./amp-server/src/index.js
+`example scenario:` changes are made to ./nf-portal-server/src/index.js
 
 ```  
 $ gulp 
-[11:56:01] Working directory changed to ~/sites/amp-ad/amp-server  
-[11:56:01] Using gulpfile ~/sites/amp-ad/amp-server/gulpfile.js  
-[11:56:01] Starting 'default'...  
-[11:56:02] Finished 'default' after 259 ms  
+[15:20:17] Working directory changed to ~/sites/nf-portal/nf-portal-server
+[15:20:18] Using gulpfile ~/sites/nf-portal/nf-portal-server/gulpfile.js
+[15:20:18] Starting 'default'...
+[15:20:18] Finished 'default' after 212 ms
 ```
 
 #### how to update static server with new files  
 go to gulp output directory and run index.js. 
 
 ``` 
-$ cd amp-ad/amp-server/dist
-$ node index.js  
-SELECT * FROM syn17024173
-SELECT * FROM syn17024229
-SELECT * FROM syn17024229 where ( ( "Program" = 'AMP-AD' ) )
-SELECT * FROM syn17024229 where ( ( "Program" = 'MODEL-AD' ) )
-SELECT * FROM syn17024229 where ( ( "Program" = 'M2OVE-AD' ) )
-SELECT * FROM syn17024229 where ( ( "Program" = 'Resilience-AD' ) )
-tools.json has been saved
-whatsNew.json has been saved
-programResilienceAD_wiki.json has been saved
-programModelAD_wiki.json has been saved
-programModelAD_wiki.json has been saved
-about.json has been saved
-programM2OVEAD_wiki.json has been saved
+$ cd nf-portal-server/dist
+$ node index.js
+SELECT * FROM syn16859580
+SELECT * FROM syn16858699
+SELECT * FROM syn16858331
+SELECT * FROM syn16857542
+SELECT * FROM syn16787123
+SELECT * FROM syn16859448
+SELECT * FROM syn16859580 WHERE ( ( "fundingAgency" = 'CTF' ) )
+SELECT * FROM syn16858699 WHERE ( ( "fundingAgency" = 'CTF' ) )
 ...
 ```
 
-## ./amp-ad-portal  
+## ./nf-portal-site
 **Node packages to be aware of:** 
 
 - [ReactGA](https://github.com/react-ga/react-ga) - used to interface with google analytics. This was chosen because of the ease integration with google analytics. 
@@ -84,12 +79,53 @@ programM2OVEAD_wiki.json has been saved
 - [React Accessible Accordion](https://github.com/springload/react-accessible-accordion) - all the dropdowns in the main navigation use the accordion package.  
  
 
+### how to build and deploy
+
+**to build** 
+
+```
+$ cd nf-portal/nf-portal-site 
+$ yarn build
+File sizes after gzip:
+
+  839.81 KB  build/static/js/4.fd57c941.chunk.js
+  437.59 KB  build/static/js/main.01e61786.js
+  39.19 KB   build/static/js/3.d8104305.chunk.js
+  17.33 KB   build/static/js/0.161958e2.chunk.js
+  16.11 KB   build/static/js/1.11afe167.chunk.js
+  14.07 KB   build/static/js/2.4e9374a4.chunk.js
+  10.33 KB   build/static/css/main.def1ea16.css
+  1.32 KB    build/static/js/7.5ea3a65f.chunk.js
+  1.28 KB    build/static/js/9.cd4902cb.chunk.js
+  1.26 KB    build/static/js/5.a7135f4f.chunk.js
+  1.25 KB    build/static/js/8.23176ad5.chunk.js
+  500 B      build/static/js/6.1d570e65.chunk.js   
+...
+```
+**to deploy to staging:**  
+
+``` 
+$ aws s3 sync --delete --cache-control max-age=0 ./build s3://staging.nf.synapse.org
+```
+
+or
+
+```
+$ ./sync-with-s3-staging
+```
 
 
 
+**to deploy to production:**  
 
+```
+$ aws s3 sync --delete --cache-control max-age=3000 ./build s3://prod.nf.synapse.org
+```
+or
 
-
+``` 
+$ ./WARNING-sync-with-s3-production
+```
 
 
 
