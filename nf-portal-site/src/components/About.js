@@ -37,7 +37,11 @@ class About extends Component {
 }
 
 About.propTypes = {
-  token: PropTypes.object.isRequired,
+  token: PropTypes.object,
+}
+
+About.defaultProps = {
+  token: "",
 }
 
 export default About

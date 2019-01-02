@@ -9,6 +9,12 @@ import asyncComponent from "./components/AsyncComponent"
 import synapseMarkup from "./components/synapseMarkup"
 import ScrollToTop from "./components/ScrollToTop"
 
+import * as SynapseClient from "./synapse/SynapseClient"
+
+const login = async () => SynapseClient.login("mikeybkats", "guinness").then((keys) => {
+  return keys
+})
+
 // component js
 const AsyncHome = asyncComponent(() => import("./components/Home"))
 const AsyncHeader = asyncComponent(() => import("./components/Header"))
@@ -18,6 +24,7 @@ const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF"
 const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"))
 const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
 const AsyncExplore = asyncComponent(() => import("./components/Explore.jsx"))
+const AsyncToolsPage = asyncComponent(() => import("./components/Tools.js"))
 
 ReactGA.initialize("UA-29804340-4")
 
@@ -34,25 +41,42 @@ history.listen((location) => {
 class App extends Component {
   state = {
     hash: "",
+    loginToken: "",
     syn16859580: {},
+    syn16859580_s: {},
     syn16858699: {},
+    syn16858699_s: {},
     syn16858331: {},
+    syn16858331_s: {},
     syn16857542: {},
+    syn16857542_s: {},
     syn16787123: {},
+    syn16787123_s: {},
     syn16859448: {},
+    syn16859448_s: {},
   };
 
   componentDidMount() {
+    login().then((token) => {
+      this.handleChanges("loginToken", token)
+    })
+
     this.setState({
       hash: window.location.hash,
     })
     Promise.all([
       getStaticJSON("syn16787123", this.handleChanges),
+      getStaticJSON("syn16787123_s", this.handleChanges, "syn16787123_s"),
       getStaticJSON("syn16858331", this.handleChanges),
+      getStaticJSON("syn16858331_s", this.handleChanges, "syn16858331_s"),
       getStaticJSON("syn16859580", this.handleChanges),
+      getStaticJSON("syn16859580_s", this.handleChanges, "syn16859580_s"),
       getStaticJSON("syn16858699", this.handleChanges),
+      getStaticJSON("syn16858699_s", this.handleChanges, "syn16858699_s"),
       getStaticJSON("syn16857542", this.handleChanges),
+      getStaticJSON("syn16857542_s", this.handleChanges, "syn16857542_s"),
       getStaticJSON("syn16859448", this.handleChanges),
+      getStaticJSON("syn16859448_s", this.handleChanges, "syn16859448_s"),
     ])
   }
 
@@ -74,12 +98,12 @@ class App extends Component {
   ReturnHome = () => {
     return (
       <AsyncHome
-        token={this.props.loginToken.sessionToken}
+        token={this.state.loginToken.sessionToken}
         handleChanges={this.handleChanges}
-        studies={this.state.syn16787123}
-        publications={this.state.syn16857542}
-        datasets={this.state.syn16859580}
-        tools={this.state.syn16859448}
+        studies={this.state.syn16787123_s}
+        publications={this.state.syn16857542_s}
+        datasets={this.state.syn16859580_s}
+        tools={this.state.syn16859448_s}
         organizations={this.state.syn16858699}
       />
     )
@@ -112,7 +136,7 @@ class App extends Component {
   ReturnExplore = () => {
     return (
       <AsyncExplore
-        token={this.props.loginToken.sessionToken}
+        token={this.state.loginToken.sessionToken}
         syn16859580={this.state.syn16859580}
         syn16858699={this.state.syn16858699}
         syn16858331={this.state.syn16858331}
@@ -141,6 +165,15 @@ class App extends Component {
     )
   }
 
+  ReturnToolsPage = () => {
+    return (
+      <AsyncToolsPage
+        token={this.state.loginToken}
+        tools={this.state.syn16859448}
+      />
+    )
+  }
+
   render() {
     return (
       <Router>
@@ -156,6 +189,7 @@ class App extends Component {
               <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
 
               <Route path="/Explore" component={this.ReturnExplore} />
+              <Route path="/Explore/Tools" component={this.ReturnToolsPage} />
 
               <Route path="/markup" component={synapseMarkup} />
             </div>
