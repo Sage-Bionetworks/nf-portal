@@ -39,10 +39,11 @@
 ```
 
 ## ./nf-portal-server 
-contains node scripts which are used to update amp-ad static server. **note:** js files are written in es6 syntax and then compiled for node compatibility
+This project contains node scripts which are used to update amp-ad static server. **note:** js files are written in es6 syntax and then compiled for node compatibility. **Also note that this is not an actual server!** – it is merely a collection of scripts which are used to update the s3 bucket. The s3 bucket is the server which contains the static files.
 
 #### how to compile with gulp
-`example scenario:` changes are made to ./nf-portal-server/src/index.js
+`example scenario:` changes are made to ./nf-portal-server/src/index.js 
+Compiling is now required for the changes to be reflected in the node compatible js file (location: nf-portal-server/dist/index.js)
 
 ```  
 $ gulp 
@@ -53,7 +54,9 @@ $ gulp
 ```
 
 #### how to update static server with new files
-1) after the gulp command above has been run it will output index.js to the dist director. this index.js has been compiled to es5 and can now be run by node.
+In order to complete this operation and update the server we must run the scripts with node:  
+
+1) Only after compiling (compile with the gulp command above) can you run the index.js with node. Gulp automatically outputs to the dist folder. When the index.js is compiled to es5 it can then be run by node.
   
 2) go to the dist folder and run index.js. 
 
@@ -134,6 +137,7 @@ $ ./WARNING-sync-with-s3-production
 ```
 ├── Explore.js
 	 ├── SelectorRow.js
+	 │		└── Button.js
 	 ├── SynapseChartAndCards.js
 	 │		├── SynapseComponents (Synapse React Client) 
 	 │		└── SynapseConstants (Synapse React Client)
@@ -145,10 +149,8 @@ $ ./WARNING-sync-with-s3-production
 - **synapseObjects.js** - contains all the data required to power the Synapse React Client, this includes the SQL needed to set up all the queryWrapperMenus in the SRC.
 
 
-Explore.js reads the url. It automatically selects the synId based on the url path with a switch statement. Then it routes the synapseId and the synapseObject to the SynapseChartAndCards.js. 
+**what does explore.js do? how does it work?**  
+Explore.js reads the url. It automatically selects the synId based on the url path with a switch statement. Then it routes the synapseId and the synapseObject to the SynapseChartAndCards.js. The selected synapseObject is passed into the SynapseChartAndCards as a single prop.
 
-
-
-
-
-
+**what does selectorRow.js do? how does it work?**  
+selectorRow.js has the synIds hardcoded into each

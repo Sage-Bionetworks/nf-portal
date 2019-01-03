@@ -127,6 +127,7 @@ class Explore extends Component {
               {this.state.name}
             </h1>
           </div>
+          {/* TODO: Break the buttons into its own component called Selectors.js */}
           <div className="row explore-content">
             <div className={`center-block selectors-container ${this.hideBarSection()}`}>
               <div className="selectors">
@@ -180,6 +181,9 @@ class Explore extends Component {
                 </button>
               </div>
             </div>
+
+            {/* TODO: update to the newest version of the SRC */}
+            {/* TODO: instead of passing in all the synapseObject properties seperately pass them in as a single object */}
             <SynapseChart
               token={this.props.token}
               synId={this.state.activeButton}
