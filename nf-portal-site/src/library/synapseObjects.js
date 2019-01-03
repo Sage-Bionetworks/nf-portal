@@ -1,3 +1,5 @@
+// TODO: update synapseObjects for compatibility with new version of SRC
+// ADD sql ect
 export const synapseObjects = [
   {
     name: "funder",
@@ -94,3 +96,7 @@ export const setSynapseValue = (objectArray = synapseObjects, id, key, newValue)
     }
   })
 }
+
+// TODO: add new function returnSynapseObject
+// This function will return the synapseObject by id
+// export const returnSynapseObject = () => {}

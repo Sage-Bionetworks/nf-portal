@@ -55,6 +55,7 @@ class ExploreContent extends Component {
           </div>
           <div className="row bar-chart">
             <div className="center-block selectors-container">
+              {/* TODO: move selectors into its own component. this component will be used in explore.js and exploreContent.jsx */}
               <div className="selectors">
                 <button
                   className={this.returnButtonClass("syn16858699")}

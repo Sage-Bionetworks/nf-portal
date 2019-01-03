@@ -64,6 +64,7 @@ class Explore extends Component {
   };
 
   handleButtonPress = (id) => {
+    // TODO: remove all the constants below
     const activeFilter = returnSynapseValue(loadedObjects, id, "filter")
     const color = returnSynapseValue(loadedObjects, id, "color")
     const limit = returnSynapseValue(loadedObjects, id, "limit")
@@ -72,6 +73,14 @@ class Explore extends Component {
     const type = returnSynapseValue(loadedObjects, id, "type")
     const name = returnSynapseValue(loadedObjects, id, "name")
     const hideLink = returnSynapseValue(loadedObjects, id, "hideLink")
+
+    // TODO: add the correct synapseObject from synapseObjects.js
+    // use the id to select the correct object
+
+
+    // TODO: Update setState by:
+    // deleting the constants that were removed above
+    // adding the activeObject const that was added
 
     this.setState({
       activeButton: id,
@@ -127,6 +136,7 @@ class Explore extends Component {
               {this.state.name}
             </h1>
           </div>
+          {/* TODO: Break the buttons into its own component called Selectors.js */}
           <div className="row explore-content">
             <div className={`center-block selectors-container ${this.hideBarSection()}`}>
               <div className="selectors">
@@ -180,6 +190,9 @@ class Explore extends Component {
                 </button>
               </div>
             </div>
+
+            {/* TODO: update to the newest version of the SRC */}
+            {/* TODO: instead of passing in all the synapseObject properties seperately pass them in as a single object */}
             <SynapseChart
               token={this.props.token}
               synId={this.state.activeButton}
