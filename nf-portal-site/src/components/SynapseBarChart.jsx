@@ -7,6 +7,8 @@ class SynapseBarChart extends Component {
   state = {
   }
 
+  // TODO: Update build query to use the SQL from the synapseObjects Active Object
+  // TODO: Remove sql statements below and pass in sql from the synapse activeObject
   buildQuery = () => {
     let sql = `SELECT * FROM ${this.props.synId}`
 
@@ -29,12 +31,16 @@ class SynapseBarChart extends Component {
     }
   }
 
+  // TODO: Delete returnFacets
+  //
   returnFacets = (bool = this.props.facets) => {
     return (
       bool ? <SynapseComponents.Facets /> : <div />
     )
   }
 
+  // TODO: Delete returnBarChart
+  //
   returnBarChart = (bool = this.props.barChart) => {
     return (
       bool ? (
@@ -45,6 +51,8 @@ class SynapseBarChart extends Component {
     )
   }
 
+  // TODO: Delete returnTable
+  //
   returnTable = (bool = this.props.table) => {
     return (
       bool ? (
@@ -56,6 +64,8 @@ class SynapseBarChart extends Component {
     )
   }
 
+  // TODO: Delete returnCardView
+  //
   returnCardView = (limit = this.props.limit, json = "", type = this.props.type, hideLink = false) => {
     return (
       limit >= 1 ? (
@@ -74,9 +84,15 @@ class SynapseBarChart extends Component {
     )
   }
 
+  returnQueryWrapperMenu = () => {
+    // TODO: return a queryWrapperMenu given the active synapseObject
+    // // Add functionality to select correct case:
+    // // // Case 1: chart with side menu, bar chart, facets and table
+    // // // Case 2: chart with side menu, bar chart , facets and cards
+  }
+
   hideBarSection = () => {
     const hash = window.location.hash
-
     if (hash === "#/Explore" || hash === "#/") {
       return "bar-section"
     }
@@ -87,6 +103,7 @@ class SynapseBarChart extends Component {
     return (
       <div>
         <div className={`${this.hideBarSection()}`}>
+          {/* TODO: delete QueryWrapper and all its contents */}
           <SynapseComponents.QueryWrapper
             initQueryRequest={this.buildQuery()}
             token={this.props.token}
@@ -99,7 +116,9 @@ class SynapseBarChart extends Component {
             {this.returnTable()}
           </SynapseComponents.QueryWrapper>
         </div>
+        {/* TODO: remove returnCardView */}
         {this.returnCardView(undefined, this.props.json, undefined, this.props.hideOrganizationLink)}
+        {/* TODO: add returnQueryWrapperMenu */}
       </div>
     )
   }

@@ -94,3 +94,7 @@ export const setSynapseValue = (objectArray = synapseObjects, id, key, newValue)
     }
   })
 }
+
+// TODO: add new function returnSynapseObject
+// This function will return the synapseObject by id
+// export const returnSynapseObject = () => {}

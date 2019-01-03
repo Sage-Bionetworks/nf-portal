@@ -64,6 +64,7 @@ class Explore extends Component {
   };
 
   handleButtonPress = (id) => {
+    // TODO: remove all the constants below
     const activeFilter = returnSynapseValue(loadedObjects, id, "filter")
     const color = returnSynapseValue(loadedObjects, id, "color")
     const limit = returnSynapseValue(loadedObjects, id, "limit")
@@ -72,6 +73,14 @@ class Explore extends Component {
     const type = returnSynapseValue(loadedObjects, id, "type")
     const name = returnSynapseValue(loadedObjects, id, "name")
     const hideLink = returnSynapseValue(loadedObjects, id, "hideLink")
+
+    // TODO: add the correct synapseObject from synapseObjects.js
+    // use the id to select the correct object
+
+
+    // TODO: Update setState by:
+    // deleting the constants that were removed above
+    // adding the activeObject const that was added
 
     this.setState({
       activeButton: id,
