@@ -52,8 +52,10 @@ $ gulp
 [15:20:18] Finished 'default' after 212 ms
 ```
 
-#### how to update static server with new files  
-go to gulp output directory and run index.js. 
+#### how to update static server with new files
+1) after the gulp command above has been run it will output index.js to the dist director. this index.js has been compiled to es5 and can now be run by node.
+  
+2) go to the dist folder and run index.js. 
 
 ``` 
 $ cd nf-portal-server/dist
@@ -127,16 +129,23 @@ or
 $ ./WARNING-sync-with-s3-production
 ```
 
+### how is data routed do the the synapse react client?  
+
+```
+├── Explore.js
+	 ├── SelectorRow.js
+	 ├── SynapseChartAndCards.js
+	 │		├── SynapseComponents (Synapse React Client) 
+	 │		└── SynapseConstants (Synapse React Client)
+	 └── synapseObjects.js
+
+```
+- **Explore.js** - is the explore page. It's loaded by the application when the user visits any explore page.  
+- **SelectorRow.js** - the row of buttons above the explore charts, tables and cards.
+- **synapseObjects.js** - contains all the data required to power the Synapse React Client, this includes the SQL needed to set up all the queryWrapperMenus in the SRC.
 
 
-
-
-
-
-
-
-
-
+Explore.js reads the url. It automatically selects the synId based on the url path with a switch statement. Then it routes the synapseId and the synapseObject to the SynapseChartAndCards.js. 
 
 
 
