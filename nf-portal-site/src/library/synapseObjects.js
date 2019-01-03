@@ -1,3 +1,5 @@
+// TODO: update synapseObjects for compatibility with new version of SRC
+// ADD sql ect
 export const synapseObjects = [
   {
     name: "funder",
