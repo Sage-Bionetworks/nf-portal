@@ -1,12 +1,14 @@
 import { SynapseConstants } from "synapse-react-client"
 
 const sql = "SELECT * FROM syn16787123"
+const type = "study"
 // studies
 const syn16787123 = {
   name: "studies",
   id: "syn16787123",
   rgbIndex: 1,
-  type: "study",
+  sql,
+  type,
   hash: "/Explore/Studies",
   homePageParams: {
     initQueryRequest: {

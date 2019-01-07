@@ -717,6 +717,9 @@ body.noScroll, html.noScroll {
 #root .SRC-cardContent {
   width: 80%; }
 
+#root .SRC-portalCard.SRC-typeDataset .row > * {
+  min-width: 57px; }
+
 #root .home .tools .synapse-cards-col > div:first-child, #root .home .new-publications .synapse-cards-col > div:first-child {
   display: flex;
   flex-direction: row;

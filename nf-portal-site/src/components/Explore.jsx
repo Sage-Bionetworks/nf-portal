@@ -33,6 +33,9 @@ class Explore extends Component {
     case "#/Explore/Funder":
       id = "syn16858699"
       break
+    case "#/Explore/Tools":
+      id = "syn16859448"
+      break
     case "#/Explore/Files":
       id = "syn16858331"
       // TODO: Fix this
@@ -86,10 +89,9 @@ class Explore extends Component {
     if (window.location.hash !== "#/Explore") {
       const id = this.getActiveSubPathSynId()
       const {
-        homePageParams,
+        sql,
         type,
       } = synapseObjects[id]
-      const { sql } = homePageParams.initQueryRequest.query
       return (
         <SynapseComponents.StaticQueryWrapper
           sql={sql}
