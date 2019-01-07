@@ -1,52 +1,36 @@
 import React, { Component } from "react"
+import { SynapseComponents } from "synapse-react-client"
+import { BarLoader } from "react-spinners"
 import PropTypes from "prop-types"
-import SynapseChart from "./SynapseBarChart.jsx"
-import { synapseObjects, returnSynapseValue } from "../library/synapseObjects"
+import Selectors from "./Selectors"
+import synapseObjects from "../library/synapseObjects"
 import ButtonExplore from "./Button-Explore.js"
-
-let loadedObject
 
 class ExploreContent extends Component {
   state = {
-    activeButton: "syn16859580",
-    activeFilter: "diseaseFocus",
-    color: 0,
+    activeSynObjectId: "syn16859580",
     hash: "/Explore/Datasets",
     name: "",
   };
 
-  componentDidMount() {
-    this.handleButtonPress("syn16859580")
-    loadedObject = synapseObjects.clone()
-  }
-
-  handleChanges = (KEY, NEWSTATE) => {
-    this.setState({
-      [KEY]: NEWSTATE,
-    })
-  };
-
   handleButtonPress = (id) => {
-    const activeFilter = returnSynapseValue(loadedObject, id, "filter")
-    const color = returnSynapseValue(loadedObject, id, "color")
-    const hash = returnSynapseValue(loadedObject, id, "hash")
-    const name = returnSynapseValue(loadedObject, id, "name")
+    const {
+      hash,
+      name,
+    } = synapseObjects[id]
 
     this.setState({
-      activeButton: id,
-      activeFilter,
-      color,
+      activeSynObjectId: id,
       hash,
       name,
     })
     return ""
   };
 
-  returnButtonClass = (id) => {
-    return `btn-control ${this.state.activeButton === id ? "active" : ""}`
-  };
-
   render() {
+    const { activeSynObjectId } = this.state
+    const { homePageParams, rgbIndex } = synapseObjects[activeSynObjectId]
+    const { facetName, unitDescription, initQueryRequest } = homePageParams
     return (
       <section className="row explore-content">
         <div className="container">
@@ -55,68 +39,25 @@ class ExploreContent extends Component {
           </div>
           <div className="row bar-chart">
             <div className="center-block selectors-container">
-              {/* TODO: move selectors into its own component. this component will be used in explore.js and exploreContent.jsx */}
-              <div className="selectors">
-                <button
-                  className={this.returnButtonClass("syn16858699")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16858699", this.props.token)
-                  }
-                >
-                  <h5>FUNDERS</h5>
-                </button>
-                <button
-                  className={this.returnButtonClass("syn16859580")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16859580", this.props.token)
-                  }
-                >
-                  <h5>DATASETS</h5>
-                </button>
-                <button
-                  className={this.returnButtonClass("syn16858331")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16858331", this.props.token)
-                  }
-                >
-                  <h5>FILES</h5>
-                </button>
-                <button
-                  className={this.returnButtonClass("syn16787123")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16787123", this.props.token)
-                  }
-                >
-                  <h5>STUDIES</h5>
-                </button>
-                <button
-                  className={this.returnButtonClass("")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("", this.props.token)
-                  }
-                >
-                  <h5>ANALYSIS</h5>
-                </button>
-                <button
-                  className={this.returnButtonClass("syn16857542")}
-                  type="button"
-                  onClick={() => this.handleButtonPress("syn16857542", this.props.token)
-                  }
-                >
-                  <h5>PUBLICATIONS</h5>
-                </button>
-              </div>
-            </div>
-            <div className="synapse-chart">
-              <SynapseChart
-                token={this.props.token}
-                synId={this.state.activeButton}
-                filter={this.state.activeFilter}
-                rgbIndex={this.state.color}
-                barChart
+              <Selectors
+                activeButtonId={activeSynObjectId}
+                handleButtonPress={this.handleButtonPress}
               />
             </div>
-            <div className={this.state.activeButton === "syn16858331" ? "hide" : "explore-button-row"}>
+            <div className="synapse-chart">
+              <SynapseComponents.QueryWrapper
+                initQueryRequest={initQueryRequest}
+                rgbIndex={rgbIndex}
+                token={this.props.token}
+                facetName={facetName}
+                unitDescription={unitDescription}
+              >
+                <SynapseComponents.StackedRowHomebrew
+                  loadingScreen={<div className="bar-loader"><BarLoader color="#4DB7AD" loading /></div>}
+                />
+              </SynapseComponents.QueryWrapper>
+            </div>
+            <div className={this.state.activeSynObjectId === "syn16858331" ? "hide" : "explore-button-row"}>
               <ButtonExplore url={this.state.hash} label={this.state.name} />
             </div>
           </div>
