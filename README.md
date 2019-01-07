@@ -38,10 +38,19 @@
             └── ./nf-portal-site/build/static/media 
 ```
 
-## ./nf-portal-server 
+## ./nf-portal-server (not actually a server)
 This project contains node scripts which are used to update amp-ad static server. **note:** js files are written in es6 syntax and then compiled for node compatibility. **Also note that this is not an actual server!** – it is merely a collection of scripts which are used to update the s3 bucket. The s3 bucket is the server which contains the static files.
 
 #### how to compile with gulp
+
+**[if you don't know what gulp is, first go to gulp website to learn more and install](https://gulpjs.com/)** 
+
+or install like this...
+
+```
+$ npm install gulp-cli -g
+```
+
 `example scenario:` changes are made to ./nf-portal-server/src/index.js 
 Compiling is now required for the changes to be reflected in the node compatible js file (location: nf-portal-server/dist/index.js)
 
@@ -54,7 +63,11 @@ $ gulp
 ```
 
 #### how to update static server with new files
-In order to complete this operation and update the server we must run the scripts with node:  
+In order to complete this operation and update the server a series of scripts must be run with node. These scripts will download the json files to the public local directory.
+
+The nf-portal-server/dist/index.js contains the scripts that will pull down the json files already in use on the portal from synapse.
+
+`example scenario:` users update a synapse table already in use on the portal site.
 
 1) Only after compiling (compile with the gulp command above) can you run the index.js with node. Gulp automatically outputs to the dist folder. When the index.js is compiled to es5 it can then be run by node.
   
