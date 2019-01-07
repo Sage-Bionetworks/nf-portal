@@ -137,12 +137,6 @@ class App extends Component {
     return (
       <AsyncExplore
         token={this.state.loginToken.sessionToken}
-        syn16859580={this.state.syn16859580}
-        syn16858699={this.state.syn16858699}
-        syn16858331={this.state.syn16858331}
-        syn16857542={this.state.syn16857542}
-        syn16787123={this.state.syn16787123}
-        syn16859448={this.state.syn16859448}
       />
     )
   }
