@@ -938,7 +938,7 @@ body.noScroll, html.noScroll {
       height: 480px; } }
   #root section.explore-content .bar-chart .explore-button-row, #root div.explore-content .bar-chart .explore-button-row {
     position: absolute;
-    bottom: -59px;
+    bottom: -50px;
     right: 0; }
   #root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
     position: absolute;
