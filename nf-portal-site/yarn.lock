@@ -538,6 +538,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/sinon@^7.0.2":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-7.0.3.tgz#f8647e883d873962130f906a6114a4e187755696"
+
 "@types/sizzle@*":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
@@ -13502,9 +13506,9 @@ symbol.prototype.description@^1.0.0:
   dependencies:
     has-symbols "^1.0.0"
 
-synapse-react-client@1.10.7:
-  version "1.10.7"
-  resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.10.7.tgz#4edcfd3742d3dfe1ee640c7b909c15b8d4aa4815"
+synapse-react-client@latest:
+  version "1.10.8"
+  resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.10.8.tgz#1a1345bf4749174293a15fcce0fa04a8a191670f"
   dependencies:
     "@babel/runtime" "^7.1.5"
     "@fortawesome/fontawesome-svg-core" "^1.2.4"
@@ -13518,6 +13522,7 @@ synapse-react-client@1.10.7:
     "@types/react-plotly.js" "^2.2.2"
     "@types/react-router-dom" "^4.3.1"
     "@types/react-tooltip" "^3.3.6"
+    "@types/sinon" "^7.0.2"
     bootswatch "git+https://git@github.com/thomaspark/bootswatch.git#95a134434fd0955182e9a938b5e50624e8e143c6"
     es6-promise "^4.2.5"
     gh-pages "^2.0.0"

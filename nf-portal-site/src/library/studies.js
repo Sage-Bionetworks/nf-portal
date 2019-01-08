@@ -3,7 +3,7 @@ import { SynapseConstants } from "synapse-react-client"
 const sql = "SELECT * FROM syn16787123"
 const type = "study"
 // studies
-const syn16787123 = {
+const study = {
   name: "studies",
   id: "syn16787123",
   rgbIndex: 1,
@@ -59,4 +59,4 @@ const syn16787123 = {
   ],
 }
 
-export default syn16787123
+export default study

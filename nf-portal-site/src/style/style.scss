@@ -1086,23 +1086,16 @@ body.noScroll, html.noScroll {
       }
       margin: 20px 0px;
       button:first-child  {
-        display: none;
-        @include hoverFade($funders);
-      }
-      button:nth-child(2) {
         @include hoverFade($datasets);
       }
-      button:nth-child(3) {
+
+      button:nth-child(2) {
         @include hoverFade($files);
       }
-      button:nth-child(4) {
+      button:nth-child(3) {
         @include hoverFade($studies);
       }
-      button:nth-child(5) {
-        display: none;
-        @include hoverFade($analysis);
-      }
-      button:nth-child(6) {
+      button:nth-child(4) {
         @include hoverFade($publications);
       }
     }
