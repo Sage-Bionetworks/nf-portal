@@ -765,9 +765,6 @@ body.noScroll, html.noScroll {
   margin-right: 45px;
   float: right; }
 
-#root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
-  margin-top: 18px; }
-
 #root section.explore-content .container .container-fluid, #root div.explore-content .container .container-fluid {
   padding: 0px; }
   #root section.explore-content .container .container-fluid .col-xs-12, #root div.explore-content .container .container-fluid .col-xs-12 {
@@ -938,7 +935,7 @@ body.noScroll, html.noScroll {
       height: 480px; } }
   #root section.explore-content .bar-chart .explore-button-row, #root div.explore-content .bar-chart .explore-button-row {
     position: absolute;
-    bottom: -59px;
+    bottom: -50px;
     right: 0; }
   #root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
     position: absolute;
