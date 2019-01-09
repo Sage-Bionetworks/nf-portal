@@ -38,11 +38,11 @@
             └── ./nf-portal-site/build/static/media 
 ```
 
-## ./nf-portal-server (not actually a server)
-This project contains node scripts which are used to update amp-ad static server. **note:** js files are written in es6 syntax and then compiled for node compatibility. **Also note that this is not an actual server!** – it is merely a collection of scripts which are used to update the s3 bucket. The s3 bucket is the server which contains the static files.
+## ./nf-portal-server (not actually a server) 
+This project contains node scripts which are used to update nf-portal static server amazon s3 bucket. **note:** js files are written in es6 syntax and then compiled for node compatibility. **Also note that this is not an actual server!** – it is merely a collection of scripts which are used to update the s3 bucket. The s3 bucket is the server which contains the static files.
 
 #### how to compile with gulp
-
+First install gulp if you don't have it already:  
 **[if you don't know what gulp is, first go to gulp website to learn more and install](https://gulpjs.com/)** 
 
 or install like this...
@@ -95,6 +95,8 @@ SELECT * FROM syn16858699 WHERE ( ( "fundingAgency" = 'CTF' ) )
 - [Source Map Explorer](https://www.npmjs.com/package/source-map-explorer) - used to examine js files for code bloat. installed after several warnings after building project that the output files were too large.
 - [React Markdown](https://github.com/rexxars/react-markdown) - the first version of the AMP-AD site (V0) used this to process markdown. The site has since switched to using the [Synapse React Client](https://www.npmjs.com/package/synapse-react-client) to process all markdown. The React Markdown package has been retained because there are still functions in the project that use it... however none of those functions are being used. These could be eliminated in future releases. See src/model/HandleMarkdown.js to look at some of the functions using React Markdown. 
 - [React Accessible Accordion](https://github.com/springload/react-accessible-accordion) - all the dropdowns in the main navigation use the accordion package.  
+- [React Burger Menu](https://github.com/negomi/react-burger-menu) - burger menu on mobile view 
+- [React Spinners](https://www.npmjs.com/package/react-spinners) - loading bar and other "spinners". [see all the different options here](http://www.davidhu.io/react-spinners/)  
  
 
 ### how to build and deploy
@@ -145,7 +147,7 @@ or run the script that already exists
 $ ./WARNING-sync-with-s3-production
 ```
 
-### how is data routed to the synapse react client?  
+### how is data (data meaning SRC props) routed to the synapse react client?  
 
 ```
 ├── Explore.js
@@ -157,6 +159,7 @@ $ ./WARNING-sync-with-s3-production
 	 └── synapseObjects.js
 
 ```
+
 - **Explore.js** - is the explore page. It's loaded by the application when the user visits any explore page.  
 - **SelectorRow.js** - the row of buttons above the explore charts, tables and cards.
 - **synapseObjects.js** - contains all the data required to power the Synapse React Client, this includes the SQL needed to set up all the queryWrapperMenus in the SRC.
