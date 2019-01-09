@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-import SynapseCards from "./SynapseCards"
+import { SynapseComponents, SynapseConstants } from "synapse-react-client"
+import { publications } from "../library"
 import ButtonViewAll from "./Button.js"
 
-const NewPublications = (props) => {
+const NewPublications = ({ token }) => {
   return (
     <section className="row new-publications">
       <div className="container">
@@ -12,7 +12,15 @@ const NewPublications = (props) => {
           <h2 className="header">New Publications</h2>
         </div>
         <div className="synapse-cards-col">
-          <SynapseCards json={props.publications} cardType="PUBLICATION" />
+          <SynapseComponents.StaticQueryWrapper
+            sql={publications.sql}
+            token={token}
+          >
+            <SynapseComponents.SynapseTableCardView
+              type={SynapseConstants.PUBLICATION}
+              limit={3}
+            />
+          </SynapseComponents.StaticQueryWrapper>
           <ButtonViewAll url="Explore/Publications" />
         </div>
       </div>
@@ -21,7 +29,7 @@ const NewPublications = (props) => {
 }
 
 NewPublications.propTypes = {
-  publications: PropTypes.object.isRequired,
+  token: PropTypes.string.isRequired,
 }
 
 export default NewPublications

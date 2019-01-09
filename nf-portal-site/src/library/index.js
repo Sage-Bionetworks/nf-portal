@@ -3,6 +3,7 @@ import files from "./files"
 import publications from "./publications"
 import studies from "./studies"
 import tools from "./tools"
+import funders from "./funders"
 
 export {
   studies,
@@ -10,4 +11,5 @@ export {
   files,
   publications,
   tools,
+  funders,
 }
