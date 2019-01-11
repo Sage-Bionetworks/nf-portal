@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { SynapseComponents } from "synapse-react-client"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
-import synapseObjects from "../library/synapseObjects"
+import * as synapseObjects from "../library"
 import Selectors from "./Selectors"
 
 class Explore extends Component {
@@ -10,56 +10,52 @@ class Explore extends Component {
     super()
     this.state = {
       name: "",
-      activeSynObjectId: "syn16859580",
+      activeSynapseTableName: "datasets",
     }
     this.handleButtonPress = this.handleButtonPress.bind(this)
     this.renderChartOrCards = this.renderChartOrCards.bind(this)
   }
 
-  getActiveSubPathSynId = () => {
+  getActiveTableName = () => {
     const hash = window.location.hash
-    let id
+    let tableName
 
     switch (hash) {
     case "#/Explore/Studies":
-      id = "syn16787123"
+      tableName = "studies"
       break
     case "#/Explore/Publications":
-      id = "syn16857542"
+      tableName = "publications"
       break
     case "#/Explore/Datasets":
-      id = "syn16859580"
+      tableName = "datasets"
       break
     case "#/Explore/Funder":
-      id = "syn16858699"
+      tableName = "funders"
       break
     case "#/Explore/Tools":
-      id = "syn16859448"
+      tableName = "tools"
       break
     case "#/Explore/Files":
-      id = "syn16858331"
+      tableName = "files"
       // TODO: Fix this
       break
     default:
-      id = ""
+      tableName = ""
     }
 
-    return id
+    return tableName
   }
 
-  handleButtonPress = (id) => {
+  handleButtonPress = (tableName) => {
     const {
       name,
-    } = synapseObjects[id]
+    } = synapseObjects[tableName]
 
     this.setState({
-      activeSynObjectId: id,
+      activeSynapseTableName: tableName,
       name,
     })
-  };
-
-  returnButtonClass = (id) => {
-    return `btn-control ${this.state.activeButton === id ? "active" : ""}`
   };
 
   hideBarSection = () => {
@@ -87,11 +83,11 @@ class Explore extends Component {
     // If on the /Explore/{<section>} then show cards
     // otherwise show bar chart
     if (window.location.hash !== "#/Explore") {
-      const id = this.getActiveSubPathSynId()
+      const tableName = this.getActiveTableName()
       const {
         sql,
         type,
-      } = synapseObjects[id]
+      } = synapseObjects[tableName]
       return (
         <SynapseComponents.StaticQueryWrapper
           sql={sql}
@@ -103,12 +99,12 @@ class Explore extends Component {
         </SynapseComponents.StaticQueryWrapper>
       )
     }
-    const { activeSynObjectId } = this.state
+    const { activeSynapseTableName } = this.state
     const {
       menuConfig,
       rgbIndex,
       type,
-    } = synapseObjects[activeSynObjectId]
+    } = synapseObjects[activeSynapseTableName]
     return (
       <SynapseChart
         token={this.props.token}
@@ -134,7 +130,7 @@ class Explore extends Component {
           <div className="row explore-content">
             <div className={`center-block selectors-container ${this.hideBarSection()}`}>
               <Selectors
-                activeButtonId={this.state.activeSynObjectId}
+                activeSynapseTableName={this.state.activeSynapseTableName}
                 handleButtonPress={this.handleButtonPress}
               />
             </div>

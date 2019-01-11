@@ -1,39 +1,60 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Hero from "./Home-hero"
-import NewPublications from "./NewPublications"
-import NewStudies from "./NewStudies"
-import NewDatasets from "./NewDatasets"
 import ExploreContent from "./ExploreContent.jsx"
-import Tools from "./Tools"
-import Organizations from "./Organizations"
+import NewCardContent from "./NewCardContent"
 
 const Home = (props) => {
   return (
     <div className="home">
       <Hero />
       <ExploreContent token={props.token} />
-      <NewStudies
+
+      <NewCardContent
         token={props.token}
-        handleChanges={props.handleChanges}
-        studies={props.studies}
+        url="Explore/Studies"
+        name="Studies"
+        tableName="studies"
       />
-      <NewPublications token={props.token} publications={props.publications} />
-      <NewDatasets token={props.token} datasets={props.datasets} />
-      <Tools token={props.token} tools={props.tools} />
-      <Organizations token={props.token} organizations={props.organizations} />
+
+      <NewCardContent
+        token={props.token}
+        url="Explore/Publications"
+        name="Publications"
+        tableName="publications"
+      />
+
+      <NewCardContent
+        token={props.token}
+        url="Explore/Datasets"
+        name="Studies"
+        tableName="studies"
+      />
+
+      <NewCardContent
+        token={props.token}
+        url="Explore/Publications"
+        tableName="publications"
+      />
+
+      <NewCardContent
+        token={props.token}
+        url="Explore/Tools"
+        tableName="tools"
+      />
+
+      <NewCardContent
+        token={props.token}
+        url="Explore/Organization"
+        tableName="funders"
+        hideViewAll
+      />
     </div>
   )
 }
 
 Home.propTypes = {
   token: PropTypes.string.isRequired,
-  handleChanges: PropTypes.func.isRequired,
-  studies: PropTypes.object.isRequired,
-  publications: PropTypes.object.isRequired,
-  datasets: PropTypes.object.isRequired,
-  tools: PropTypes.object.isRequired,
-  organizations: PropTypes.object.isRequired,
 }
 
 export default Home

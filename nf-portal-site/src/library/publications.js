@@ -1,15 +1,16 @@
 import { SynapseConstants } from "synapse-react-client"
 
-const sql = "SELECT * FROM syn16787123"
-const type = "study"
-// studies
-const syn16787123 = {
-  name: "studies",
-  id: "syn16787123",
-  rgbIndex: 1,
+const sql = "SELECT * FROM syn16857542"
+const type = "publication"
+
+// publications
+const publications = {
+  name: "publications",
+  id: "syn16857542",
+  rgbIndex: 0,
   sql,
   type,
-  hash: "/Explore/Studies",
+  hash: "/Explore/Publications",
   homePageParams: {
     initQueryRequest: {
       concreteType: "org.sagebionetworks.repo.model.table.QueryBundleRequest",
@@ -30,33 +31,27 @@ const syn16787123 = {
   menuConfig: [
     {
       sql,
-      facetName: "projectStatus",
+      facetName: "id",
       unitDescription: "files",
-    },
-    {
-      sql,
-      facetName: "dataStatus",
-      unitDescription: "files",
-      synapseId: "syn16787123",
     },
     {
       sql,
       facetName: "fundingAgency",
       unitDescription: "files",
-      synapseId: "syn16787123",
+      synapseId: "syn16857542",
     },
     {
       sql,
       facetName: "tumorType",
       unitDescription: "files",
-      synapseId: "syn16787123",
+      synapseId: "syn16857542",
     },
     {
       sql,
       facetName: "diseaseFocus",
-      synapseId: "syn16787123",
+      synapseId: "syn16857542",
     },
   ],
 }
 
-export default syn16787123
+export default publications

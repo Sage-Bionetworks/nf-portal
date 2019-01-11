@@ -3,12 +3,12 @@ import { SynapseComponents } from "synapse-react-client"
 import { BarLoader } from "react-spinners"
 import PropTypes from "prop-types"
 import Selectors from "./Selectors"
-import synapseObjects from "../library/synapseObjects"
+import * as synapseObjects from "../library"
 import ButtonExplore from "./Button-Explore.js"
 
 class ExploreContent extends Component {
   state = {
-    activeSynObjectId: "syn16859580",
+    activeTableName: "datasets",
     hash: "/Explore/Datasets",
     name: "",
   };
@@ -20,7 +20,7 @@ class ExploreContent extends Component {
     } = synapseObjects[id]
 
     this.setState({
-      activeSynObjectId: id,
+      activeTableName: id,
       hash,
       name,
     })
@@ -28,8 +28,8 @@ class ExploreContent extends Component {
   };
 
   render() {
-    const { activeSynObjectId } = this.state
-    const { homePageParams, rgbIndex } = synapseObjects[activeSynObjectId]
+    const { activeTableName } = this.state
+    const { homePageParams, rgbIndex } = synapseObjects[activeTableName]
     const { facetName, unitDescription, initQueryRequest } = homePageParams
     return (
       <section className="row explore-content">
@@ -40,7 +40,7 @@ class ExploreContent extends Component {
           <div className="row bar-chart">
             <div className="center-block selectors-container">
               <Selectors
-                activeButtonId={activeSynObjectId}
+                activeButtonId={activeTableName}
                 handleButtonPress={this.handleButtonPress}
               />
             </div>
@@ -57,7 +57,7 @@ class ExploreContent extends Component {
                 />
               </SynapseComponents.QueryWrapper>
             </div>
-            <div className={this.state.activeSynObjectId === "syn16858331" ? "hide" : "explore-button-row"}>
+            <div className={this.state.activeTableName === "file" ? "hide" : "explore-button-row"}>
               <ButtonExplore url={this.state.hash} label={this.state.name} />
             </div>
           </div>

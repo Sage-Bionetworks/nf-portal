@@ -5,53 +5,37 @@ const getButtonClass = (activeButtonId, id) => {
   return `btn-control ${activeButtonId === id ? "active" : ""}`
 }
 
-const Selectors = ({ activeButtonId, handleButtonPress }) => {
+const Selectors = ({ activeSynapseTableName, handleButtonPress }) => {
   return (
     <div className="selectors">
       <button
-        className={getButtonClass(activeButtonId, "syn16858699")}
+        className={getButtonClass(activeSynapseTableName, "datasets")}
         type="button"
-        onClick={() => handleButtonPress("syn16858699")
-        }
-      >
-        <h5>FUNDERS</h5>
-      </button>
-      <button
-        className={getButtonClass(activeButtonId, "syn16859580")}
-        type="button"
-        onClick={() => handleButtonPress("syn16859580")
+        onClick={() => handleButtonPress("datasets")
         }
       >
         <h5>DATASETS</h5>
       </button>
       <button
-        className={getButtonClass(activeButtonId, "syn16858331")}
+        className={getButtonClass(activeSynapseTableName, "files")}
         type="button"
-        onClick={() => handleButtonPress("syn16858331")
+        onClick={() => handleButtonPress("files")
         }
       >
         <h5>FILES</h5>
       </button>
       <button
-        className={getButtonClass(activeButtonId, "syn16787123")}
+        className={getButtonClass(activeSynapseTableName, "studies")}
         type="button"
-        onClick={() => handleButtonPress("syn16787123")
+        onClick={() => handleButtonPress("studies")
         }
       >
         <h5>STUDIES</h5>
       </button>
       <button
-        className={getButtonClass(activeButtonId, "syn16858699")}
+        className={getButtonClass(activeSynapseTableName, "publications")}
         type="button"
-        onClick={() => handleButtonPress("")
-        }
-      >
-        <h5>ANALYSIS</h5>
-      </button>
-      <button
-        className={getButtonClass(activeButtonId, "syn16857542")}
-        type="button"
-        onClick={() => handleButtonPress("syn16857542")
+        onClick={() => handleButtonPress("publications")
         }
       >
         <h5>PUBLICATIONS</h5>
@@ -63,7 +47,7 @@ const Selectors = ({ activeButtonId, handleButtonPress }) => {
 
 Selectors.propTypes = {
   handleButtonPress: PropTypes.func.isRequired,
-  activeButtonId: PropTypes.string.isRequired,
+  activeSynapseTableName: PropTypes.string.isRequired,
 }
 
 export default Selectors
