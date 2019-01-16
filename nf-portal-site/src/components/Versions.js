@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import packageJson from '../../package.json'
+import packageJson from '../.package.json'
 
 const getAllDependencyNames = ({ dependencies, devDependencies }) => [
   ...Object.entries(dependencies),
