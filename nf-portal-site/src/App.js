@@ -25,6 +25,7 @@ const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"
 const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
 const AsyncExplore = asyncComponent(() => import("./components/Explore.jsx"))
 const AsyncToolsPage = asyncComponent(() => import("./components/Tools.js"))
+const AsyncVersions = asyncComponent(() => import("./components/Versions"))
 
 ReactGA.initialize("UA-29804340-4")
 
@@ -167,6 +168,11 @@ class App extends Component {
       />
     )
   }
+  ReturnVersions = () => {
+    return (
+      <AsyncVersions hash={this.state.hash} />
+    )
+  };
 
   render() {
     return (
@@ -186,6 +192,7 @@ class App extends Component {
               <Route path="/Explore/Tools" component={this.ReturnToolsPage} />
 
               <Route path="/markup" component={synapseMarkup} />
+              <Route path="/Versions" component={this.ReturnVersions} />
             </div>
 
             <footer>
