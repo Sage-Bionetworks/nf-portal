@@ -5,14 +5,14 @@ import PropTypes from "prop-types"
 class Button extends Component {
   state = {}
 
-  changeRoute = (url) => {
-    this.props.history.push(url)
+  changeRoute = () => {
+    this.props.history.push(this.props.url)
   }
 
   render() {
     return (
       <div className="row flex justify-end explore-button">
-        <button type="button" className="btn-explore" onClick={() => this.changeRoute(this.props.url)}>
+        <button type="button" className="btn-explore" onClick={() => this.changeRoute()}>
           <h5>
             Explore
             {" "}

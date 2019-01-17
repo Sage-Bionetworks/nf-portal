@@ -8,28 +8,24 @@ import ButtonExplore from "./Button-Explore.js"
 
 class ExploreContent extends Component {
   state = {
-    activeTableName: "datasets",
-    hash: "/Explore/Datasets",
-    name: "",
+    activeTableName: "Datasets",
   };
 
   handleButtonPress = (id) => {
-    const {
-      hash,
-      name,
-    } = synapseObjects[id]
-
     this.setState({
       activeTableName: id,
-      hash,
-      name,
     })
     return ""
   };
 
   render() {
     const { activeTableName } = this.state
-    const { homePageParams, rgbIndex } = synapseObjects[activeTableName]
+    const {
+      homePageParams,
+      rgbIndex,
+      name,
+      hash,
+    } = synapseObjects[activeTableName]
     const { facetName, unitDescription, initQueryRequest } = homePageParams
     return (
       <section className="row explore-content">
@@ -40,7 +36,7 @@ class ExploreContent extends Component {
           <div className="row bar-chart">
             <div className="center-block selectors-container">
               <Selectors
-                activeButtonId={activeTableName}
+                activeTableName={activeTableName}
                 handleButtonPress={this.handleButtonPress}
               />
             </div>
@@ -58,7 +54,7 @@ class ExploreContent extends Component {
               </SynapseComponents.QueryWrapper>
             </div>
             <div className={this.state.activeTableName === "file" ? "hide" : "explore-button-row"}>
-              <ButtonExplore url={this.state.hash} label={this.state.name} />
+              <ButtonExplore url={hash} label={name} />
             </div>
           </div>
         </div>

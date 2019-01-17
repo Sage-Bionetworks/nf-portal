@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { SynapseComponents } from "synapse-react-client"
+import { withRouter } from "react-router-dom"
 import PropTypes from "prop-types"
 import SynapseChart from "./SynapseBarChart.jsx"
 import * as synapseObjects from "../library"
@@ -8,10 +9,6 @@ import Selectors from "./Selectors"
 class Explore extends Component {
   constructor() {
     super()
-    this.state = {
-      name: "",
-      activeSynapseTableName: "datasets",
-    }
     this.handleButtonPress = this.handleButtonPress.bind(this)
     this.renderChartOrCards = this.renderChartOrCards.bind(this)
   }
@@ -48,29 +45,17 @@ class Explore extends Component {
   }
 
   handleButtonPress = (tableName) => {
-    const {
-      name,
-    } = synapseObjects[tableName]
-
-    this.setState({
-      activeSynapseTableName: tableName,
-      name,
-    })
+    this.props.history.push(`/Explore/${tableName}`)
   };
 
-  hideBarSection = () => {
-    const hash = window.location.hash
-
-    if (hash === "#/Explore") {
-      return ""
-    }
-    if (hash !== "#/") {
+  hideBarSection = (subPathName) => {
+    if (subPathName === "Tools") {
       return "hide"
     }
     return ""
   }
 
-  renderSubPathName = () => {
+  getSubPathName = () => {
     if (window.location.hash !== "#/Explore") {
       const hash = window.location.hash
       const exploreLength = "#/Explore/".length
@@ -79,15 +64,14 @@ class Explore extends Component {
     return ""
   }
 
-  renderChartOrCards() {
+  renderChartOrCards(subPathName) {
     // If on the /Explore/{<section>} then show cards
     // otherwise show bar chart
-    if (window.location.hash !== "#/Explore") {
-      const tableName = this.getActiveTableName()
+    if (subPathName === "tools") {
       const {
         sql,
         type,
-      } = synapseObjects[tableName]
+      } = synapseObjects[subPathName]
       return (
         <SynapseComponents.StaticQueryWrapper
           sql={sql}
@@ -99,12 +83,11 @@ class Explore extends Component {
         </SynapseComponents.StaticQueryWrapper>
       )
     }
-    const { activeSynapseTableName } = this.state
     const {
       menuConfig,
       rgbIndex,
       type,
-    } = synapseObjects[activeSynapseTableName]
+    } = synapseObjects[subPathName]
     return (
       <SynapseChart
         token={this.props.token}
@@ -116,6 +99,8 @@ class Explore extends Component {
   }
 
   render() {
+    const subPathName = this.getSubPathName()
+    const hideIfToolsSection = subPathName === "Tools" ? "hide" : ""
     return (
       <section className="page explore">
         <div className="container">
@@ -123,19 +108,18 @@ class Explore extends Component {
             <h1 className="header">
                 Explore
               {" "}
-              {this.state.name || this.renderSubPathName()}
+              {subPathName}
             </h1>
           </div>
-          {/* TODO: Break the buttons into its own component called Selectors.js */}
           <div className="row explore-content">
-            <div className={`center-block selectors-container ${this.hideBarSection()}`}>
+            <div className={`center-block selectors-container ${hideIfToolsSection}`}>
               <Selectors
-                activeSynapseTableName={this.state.activeSynapseTableName}
+                activeTableName={subPathName}
                 handleButtonPress={this.handleButtonPress}
               />
             </div>
             {
-              this.renderChartOrCards()
+              this.renderChartOrCards(subPathName)
             }
           </div>
         </div>
@@ -148,4 +132,4 @@ Explore.propTypes = {
   token: PropTypes.string.isRequired,
 }
 
-export default Explore
+export default withRouter(Explore)

@@ -11,42 +11,33 @@ const Home = (props) => {
       <ExploreContent token={props.token} />
 
       <NewCardContent
-        token={props.token}
         url="Explore/Studies"
-        name="Studies"
-        tableName="studies"
+        name="New Studies"
+        tableName="Studies"
       />
 
       <NewCardContent
-        token={props.token}
         url="Explore/Publications"
-        name="Publications"
-        tableName="publications"
+        name="New Publications"
+        tableName="Publications"
       />
 
       <NewCardContent
-        token={props.token}
         url="Explore/Datasets"
-        name="Studies"
-        tableName="studies"
+        name="New Datasets"
+        tableName="Datasets"
       />
 
       <NewCardContent
-        token={props.token}
-        url="Explore/Publications"
-        tableName="publications"
-      />
-
-      <NewCardContent
-        token={props.token}
         url="Explore/Tools"
-        tableName="tools"
+        name={"Tools"}
+        tableName="Tools"
       />
 
       <NewCardContent
-        token={props.token}
         url="Explore/Organization"
-        tableName="funders"
+        tableName="Funders"
+        name="organizations"
         hideViewAll
       />
     </div>
