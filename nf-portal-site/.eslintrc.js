@@ -5,7 +5,7 @@ module.exports = {
     indent: [2, 2],
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "linebreak-style": ["error", "unix"],
-    quotes: ["error", "double"],
+    quotes: ["error", "double", { "allowTemplateLiterals": true }],
     semi: ["error", "never"],
     "no-console": 0,
     "react/forbid-prop-types": [

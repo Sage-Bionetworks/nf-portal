@@ -6,7 +6,7 @@ import ButtonViewAll from "./Button.js"
 
 const NewCardContent = (
   {
-    token, url, tableName, hideViewAll = false,
+    token, url, tableName, name, hideViewAll = false,
   },
 ) => {
   const { sql, type } = synapseObjects[tableName]
@@ -15,7 +15,7 @@ const NewCardContent = (
       <div className="container">
         <div className="row">
           <h2 className="header">
-            {`New ${tableName}`}
+            {name}
           </h2>
         </div>
         <div className="row">
@@ -39,6 +39,7 @@ NewCardContent.propTypes = {
   token: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   tableName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   hideViewAll: PropTypes.bool,
 }
 

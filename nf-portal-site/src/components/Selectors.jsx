@@ -5,37 +5,37 @@ const getButtonClass = (activeButtonId, id) => {
   return `btn-control ${activeButtonId === id ? "active" : ""}`
 }
 
-const Selectors = ({ activeSynapseTableName, handleButtonPress }) => {
+const Selectors = ({ activeTableName, handleButtonPress }) => {
   return (
     <div className="selectors">
       <button
-        className={getButtonClass(activeSynapseTableName, "datasets")}
+        className={getButtonClass(activeTableName, "Datasets")}
         type="button"
-        onClick={() => handleButtonPress("datasets")
+        onClick={() => handleButtonPress("Datasets")
         }
       >
         <h5>DATASETS</h5>
       </button>
       <button
-        className={getButtonClass(activeSynapseTableName, "files")}
+        className={getButtonClass(activeTableName, "Files")}
         type="button"
-        onClick={() => handleButtonPress("files")
+        onClick={() => handleButtonPress("Files")
         }
       >
         <h5>FILES</h5>
       </button>
       <button
-        className={getButtonClass(activeSynapseTableName, "studies")}
+        className={getButtonClass(activeTableName, "Studies")}
         type="button"
-        onClick={() => handleButtonPress("studies")
+        onClick={() => handleButtonPress("Studies")
         }
       >
         <h5>STUDIES</h5>
       </button>
       <button
-        className={getButtonClass(activeSynapseTableName, "publications")}
+        className={getButtonClass(activeTableName, "Publications")}
         type="button"
-        onClick={() => handleButtonPress("publications")
+        onClick={() => handleButtonPress("Publications")
         }
       >
         <h5>PUBLICATIONS</h5>
@@ -47,7 +47,7 @@ const Selectors = ({ activeSynapseTableName, handleButtonPress }) => {
 
 Selectors.propTypes = {
   handleButtonPress: PropTypes.func.isRequired,
-  activeSynapseTableName: PropTypes.string.isRequired,
+  activeTableName: PropTypes.string.isRequired,
 }
 
 export default Selectors
