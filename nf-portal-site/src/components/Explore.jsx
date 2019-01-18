@@ -67,7 +67,7 @@ class Explore extends Component {
   renderChartOrCards(subPathName) {
     // If on the /Explore/{<section>} then show cards
     // otherwise show bar chart
-    if (subPathName === "tools") {
+    if (subPathName === "Tools") {
       const {
         sql,
         type,
