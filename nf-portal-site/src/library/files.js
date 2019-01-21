@@ -1,6 +1,5 @@
 import { SynapseConstants } from "synapse-react-client"
 // files
-const sql = "SELECT id, dataType, assay, diagnosis, tumorType, fileFormat, species, individualID, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name  FROM syn16858331 where resourceType = 'experimentalData'"
 
 const syn16858331 = {
   name: "files",
@@ -18,7 +17,9 @@ const syn16858331 = {
         isConsistent: false,
         limit: 25,
         offset: 0,
-        sql,
+        sql: `
+          SELECT id, assay, dataType, diagnosis, tumorType, species, individualID, fileFormat, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+        `,
       },
     },
     facetName: "assay",
@@ -26,7 +27,9 @@ const syn16858331 = {
   },
   menuConfig: [
     {
-      sql,
+      sql: `
+        SELECT id, assay, dataType, diagnosis, tumorType, species, individualID, fileFormat, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "assay",
       title: "files",
       visibleColumnCount: 7,
@@ -34,7 +37,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, dataType, assay, diagnosis, tumorType, species, individualID, fileFormat, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "dataType",
       title: "files",
       visibleColumnCount: 7,
@@ -42,15 +47,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
-      facetName: "diagnosis",
-      title: "files",
-      visibleColumnCount: 7,
-      unitDescription: "files",
-      synapseId: "syn16858331",
-    },
-    {
-      sql,
+      sql: `
+        SELECT id, tumorType, diagnosis, species, individualID, nf1Genotype, nf2Genotype, dataType, assay, fileFormat, dataSubtype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "tumorType",
       title: "files",
       visibleColumnCount: 7,
@@ -58,7 +57,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, fileFormat, dataType, assay, diagnosis, tumorType, species, individualID, dataSubtype, nf1Genotype, nf2Genotype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "fileFormat",
       title: "files",
       visibleColumnCount: 7,
@@ -66,7 +67,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, fundingAgency, consortium, dataType, assay, diagnosis, tumorType, species, fileFormat, individualID, dataSubtype, nf1Genotype, nf2Genotype, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "fundingAgency",
       title: "files",
       visibleColumnCount: 7,
@@ -74,7 +77,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, nf1Genotype, diagnosis, tumorType, species, individualID, dataType, assay, fileFormat, dataSubtype, fundingAgency, consortium, name, nf2Genotype FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "nf1Genotype",
       title: "files",
       visibleColumnCount: 7,
@@ -82,7 +87,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, nf2Genotype, diagnosis, tumorType, species, individualID, dataType, assay, fileFormat, dataSubtype, fundingAgency, consortium, name,  nf1Genotype FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "nf2Genotype",
       title: "files",
       visibleColumnCount: 7,
@@ -90,7 +97,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, species, diagnosis, tumorType, individualID, nf1Genotype, nf2Genotype, dataType, assay, fileFormat, dataSubtype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "species",
       title: "files",
       visibleColumnCount: 7,
@@ -98,7 +107,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id, isCellLine, species, diagnosis, tumorType, individualID, nf1Genotype, nf2Genotype, dataType, assay, fileFormat, dataSubtype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "isCellLine",
       title: "files",
       visibleColumnCount: 7,
@@ -106,7 +117,9 @@ const syn16858331 = {
       synapseId: "syn16858331",
     },
     {
-      sql,
+      sql: `
+        SELECT id,isMultiSpecimen, species, diagnosis, tumorType, individualID, nf1Genotype, nf2Genotype, dataType, assay, fileFormat, dataSubtype, fundingAgency, consortium, name FROM syn16858331 where resourceType = 'experimentalData'
+      `,
       facetName: "isMultiSpecimen",
       title: "files",
       visibleColumnCount: 7,
