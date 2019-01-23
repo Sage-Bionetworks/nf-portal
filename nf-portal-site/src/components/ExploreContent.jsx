@@ -26,7 +26,7 @@ class ExploreContent extends Component {
       name,
       hash,
     } = synapseObjects[activeTableName]
-    const { facetName, unitDescription, initQueryRequest } = homePageParams
+    const { facetName, unitDescription, initQueryRequest, facetAliases } = homePageParams
     return (
       <section className="row explore-content">
         <div className="container">
@@ -47,8 +47,9 @@ class ExploreContent extends Component {
                 token={this.props.token}
                 facetName={facetName}
                 unitDescription={unitDescription}
+                facetAliases={facetAliases}
               >
-                <SynapseComponents.StackedRowHomebrew
+                <SynapseComponents.StackedBarChart
                   loadingScreen={<div className="bar-loader"><BarLoader color="#4DB7AD" loading /></div>}
                 />
               </SynapseComponents.QueryWrapper>
