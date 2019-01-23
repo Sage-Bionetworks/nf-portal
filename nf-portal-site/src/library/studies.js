@@ -1,6 +1,15 @@
 import { SynapseConstants } from "synapse-react-client"
 
 const sql = "SELECT * FROM syn16787123"
+
+const facetAliases = {
+  projectStatus: "Project Status",
+  dataStatus: "Data Status",
+  fundingAgency: "Funding Agency",
+  tumorType: "Tumor Type",
+  diseaseFocus: "Disease Focus",
+}
+
 const type = "study"
 // studies
 const study = {
@@ -32,29 +41,34 @@ const study = {
       sql,
       facetName: "projectStatus",
       unitDescription: "files",
+      facetAliases,
     },
     {
       sql,
       facetName: "dataStatus",
       unitDescription: "files",
       synapseId: "syn16787123",
+      facetAliases,
     },
     {
       sql,
       facetName: "fundingAgency",
       unitDescription: "files",
       synapseId: "syn16787123",
+      facetAliases,
     },
     {
       sql,
       facetName: "tumorType",
       unitDescription: "files",
       synapseId: "syn16787123",
+      facetAliases,
     },
     {
       sql,
       facetName: "diseaseFocus",
       synapseId: "syn16787123",
+      facetAliases,
     },
   ],
 }
