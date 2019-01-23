@@ -35,6 +35,9 @@ const publications = {
     },
     facetName: "diseaseFocus",
     unitDescription: "files",
+    facetAliases: {
+      diseaseFocus: "Disease Focus",
+    },
   },
   menuConfig: [
     // {

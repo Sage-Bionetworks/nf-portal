@@ -33,6 +33,9 @@ const syn16859580 = {
     },
     facetName: "diseaseFocus",
     unitDescription: "files",
+    facetAliases: {
+      diseaseFocus: "Disease Focus",
+    },
   },
   menuConfig: [
     {
