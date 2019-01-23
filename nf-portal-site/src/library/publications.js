@@ -37,12 +37,12 @@ const publications = {
     unitDescription: "files",
   },
   menuConfig: [
-    {
-      sql,
-      facetName: "id",
-      unitDescription: "files",
-      facetAliases,
-    },
+    // {
+    //   sql,
+    //   facetName: "id",
+    //   unitDescription: "files",
+    //   facetAliases,
+    // },
     {
       sql,
       facetName: "fundingAgency",
