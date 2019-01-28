@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
-import { slide as Menu } from "react-burger-menu"
-
 import "react-dropdown/style.css"
 import {
   Accordion,
@@ -16,44 +14,6 @@ import "react-accessible-accordion/dist/minimal-example.css"
 
 const logo = require("../images/nf-portal-logo.svg")
 
-const styles = {
-  bmBurgerButton: {
-    position: "fixed",
-    width: "36px",
-    height: "30px",
-    left: "36px",
-    top: "36px",
-  },
-  bmBurgerBars: {
-    background: "#373a47",
-  },
-  bmCrossButton: {
-    height: "24px",
-    width: "24px",
-  },
-  bmCross: {
-    background: "#bdc3c7",
-  },
-  bmMenu: {
-    background: "#373a47",
-    padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
-  },
-  bmMorphShape: {
-    fill: "#373a47",
-  },
-  bmItemList: {
-    color: "#b8b7ad",
-    padding: "0.8em",
-  },
-  bmItem: {
-    display: "inline-block",
-  },
-  bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
-  },
-}
-
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -63,8 +23,10 @@ class Header extends Component {
       Home: false,
       Open: false,
       activeUnderBar: "",
-      isOpen: false,
     }
+    this.handleLogoClick = this.handleLogoClick.bind(this)
+    this.handleHomeClick = this.handleHomeClick.bind(this)
+    this.scrollToTop = this.scrollToTop.bind(this)
   }
 
   componentDidMount() {
@@ -281,26 +243,27 @@ class Header extends Component {
     )
   }
 
-  closeHamburger = () => {
-    this.setState({ menuOpen: false })
+  handleLogoClick = (_event) => {
+    this.scrollToTop()
   }
 
-  handleStateChange = (state) => {
-    this.setState({ menuOpen: state.isOpen })
+  scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    })
+  }
+
+  handleHomeClick = (_event) => {
+    this.scrollToTop()
+    this.closeNavigation("#/")
   }
 
   render() {
     return (
       <header className="header">
-        <Menu className="burger-menu" isOpen={this.state.menuOpen} styles={styles} onStateChange={state => this.handleStateChange(state)}>
-          <Link to="/" onClick={() => this.closeHamburger()}>Home</Link>
-          <h4>Organizations</h4>
-          <Link className="inset" to="/Organizations-CTF" onClick={() => this.closeHamburger()}>CTF</Link>
-          <Link className="inset" to="/Organizations-NTAP" onClick={() => this.closeHamburger()}>NTAP</Link>
-          <Link className="inset" to="/Organizations-DHART-SPORE" onClick={() => this.closeHamburger()}>DHART SPORE</Link>
-          <Link to="/About" onClick={() => this.closeHamburger()}>About</Link>
-        </Menu>
-
         <div className="container">
           <div className="nav-row nav row">
             <button
@@ -317,7 +280,9 @@ class Header extends Component {
                   this.closeNavigation("#/")
                 }}
               >
-                <img src={logo} alt="nf portal logo" />
+                <span style={{ outline: "none" }} tabIndex={0} onClick={this.handleLogoClick} role="menu" onKeyPress={this.handleLogoClick}>
+                  <img src={logo} alt="nf portal logo" />
+                </span>
               </Link>
             </div>
             <div className="nav-buttons col-md-10 col-sm-9 flex justify-end">
@@ -330,9 +295,7 @@ class Header extends Component {
                         ? "home nav-item main-nav-item active"
                         : "home nav-item main-nav-item"
                     }
-                    onClick={() => {
-                      this.closeNavigation("#/")
-                    }}
+                    onClick={this.handleHomeClick}
                     onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Home")
                     }
                     onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)

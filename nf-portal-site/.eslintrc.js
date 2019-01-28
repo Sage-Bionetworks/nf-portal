@@ -14,6 +14,7 @@ module.exports = {
         forbid: ["any"]
       }
     ],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "jsx-a11y/heading-has-content": 0,
     "prefer-destructuring": 0,
     "arrow-body-style": 0,
