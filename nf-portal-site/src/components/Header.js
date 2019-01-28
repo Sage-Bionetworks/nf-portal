@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
-import { slide as Menu } from "react-burger-menu"
-
 import "react-dropdown/style.css"
 import {
   Accordion,
@@ -16,44 +14,6 @@ import "react-accessible-accordion/dist/minimal-example.css"
 
 const logo = require("../images/nf-portal-logo.svg")
 
-const styles = {
-  bmBurgerButton: {
-    position: "fixed",
-    width: "36px",
-    height: "30px",
-    left: "36px",
-    top: "36px",
-  },
-  bmBurgerBars: {
-    background: "#373a47",
-  },
-  bmCrossButton: {
-    height: "24px",
-    width: "24px",
-  },
-  bmCross: {
-    background: "#bdc3c7",
-  },
-  bmMenu: {
-    background: "#373a47",
-    padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
-  },
-  bmMorphShape: {
-    fill: "#373a47",
-  },
-  bmItemList: {
-    color: "#b8b7ad",
-    padding: "0.8em",
-  },
-  bmItem: {
-    display: "inline-block",
-  },
-  bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
-  },
-}
-
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -65,6 +25,8 @@ class Header extends Component {
       activeUnderBar: "",
     }
     this.handleLogoClick = this.handleLogoClick.bind(this)
+    this.handleHomeClick = this.handleHomeClick.bind(this)
+    this.scrollToTop = this.scrollToTop.bind(this)
   }
 
   componentDidMount() {
@@ -282,6 +244,10 @@ class Header extends Component {
   }
 
   handleLogoClick = (_event) => {
+    this.scrollToTop()
+  }
+
+  scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -290,20 +256,14 @@ class Header extends Component {
     })
   }
 
+  handleHomeClick = (_event) => {
+    this.scrollToTop()
+    this.closeNavigation("#/")
+  }
+
   render() {
     return (
       <header className="header">
-        <Menu className="burger-menu" styles={styles}>
-          <Link to="/">
-            Home
-          </Link>
-          <h4>Organizations</h4>
-          <Link className="inset" to="/Organizations-CTF">CTF</Link>
-          <Link className="inset" to="/Organizations-NTAP">NTAP</Link>
-          <Link className="inset" to="/Organizations-DHART-SPORE">DHART SPORE</Link>
-          <Link to="/About">About</Link>
-        </Menu>
-
         <div className="container">
           <div className="nav-row nav row">
             <button
@@ -335,9 +295,7 @@ class Header extends Component {
                         ? "home nav-item main-nav-item active"
                         : "home nav-item main-nav-item"
                     }
-                    onClick={() => {
-                      this.closeNavigation("#/")
-                    }}
+                    onClick={this.handleHomeClick}
                     onMouseEnter={() => this.handleLocalChanges("activeUnderBar", "Home")
                     }
                     onMouseLeave={() => this.handleLocalChanges("activeUnderBar", this.props.hash)
