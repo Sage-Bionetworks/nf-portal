@@ -17,6 +17,7 @@ const login = async () => SynapseClient.login("mikeybkats", "guinness").then((ke
 
 // component js
 const AsyncHome = asyncComponent(() => import("./components/Home"))
+const AsyncLogin = asyncComponent(() => import("./components/LoginExample"))
 const AsyncHeader = asyncComponent(() => import("./components/Header"))
 const AsyncAbout = asyncComponent(() => import("./components/About"))
 const AsyncOrganizations = asyncComponent(() => import("./components/Organizations"))
@@ -175,6 +176,12 @@ class App extends Component {
     )
   };
 
+  ReturnLogin = () => {
+    return (
+      <AsyncLogin hash={this.state.hash} />
+    )
+  };
+
   render() {
     return (
       <Router>
@@ -194,6 +201,7 @@ class App extends Component {
 
               <Route path="/markup" component={synapseMarkup} />
               <Route path="/Versions" component={this.ReturnVersions} />
+              <Route path="/Login" component={this.ReturnLogin} />
             </div>
 
             <footer>
