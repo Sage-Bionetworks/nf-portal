@@ -167,21 +167,21 @@
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.8.2.tgz#576ff7fb1230185b619a75d258cbc98f0867a8dc"
 
-"@fortawesome/fontawesome-common-types@^0.2.12":
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.12.tgz#42baa71f97ca06faeb0b6718fa5ed20c5eefdf07"
+"@fortawesome/fontawesome-common-types@^0.2.13":
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.13.tgz#17f3d30c53732f07a765199c3cf93b4834e8cfde"
 
 "@fortawesome/fontawesome-svg-core@^1.2.4":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.12.tgz#9732617b1e484435f6946645d7f9ad248f12c437"
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.13.tgz#1d0923b9692fc10b9a4fa047d504da5d9941639e"
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.12"
+    "@fortawesome/fontawesome-common-types" "^0.2.13"
 
 "@fortawesome/free-solid-svg-icons@^5.3.1":
-  version "5.6.3"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.6.3.tgz#1d7f6669ccd6a1ea673699e41f7e32c81401a260"
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.7.0.tgz#a5cc69f1b99ed50e78a8bd75c4b6bf74c8224b6a"
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.12"
+    "@fortawesome/fontawesome-common-types" "^0.2.13"
 
 "@fortawesome/react-fontawesome@^0.1.3":
   version "0.1.4"
@@ -463,8 +463,8 @@
     "@types/enzyme" "*"
 
 "@types/enzyme@*", "@types/enzyme@^3.1.15":
-  version "3.1.15"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.15.tgz#fc9a9695ba9f90cd50c4967e64a8c66ec96913d1"
+  version "3.1.16"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.16.tgz#b29e1d7148e4e15a773a9b9f2149ea4c42d3a91d"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
@@ -536,15 +536,15 @@
     "@types/react" "*"
 
 "@types/react@*":
-  version "16.7.20"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.20.tgz#13ae752c012710d0fa800985ca809814b51d3b58"
+  version "16.7.22"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.22.tgz#5bc6d166d5ac34b835756f0b736c7b1af0043e81"
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
 "@types/sinon@^7.0.2":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-7.0.4.tgz#bf641dd1c3a7fce5f30d60a008251e831ff36095"
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/@types/sinon/-/sinon-7.0.5.tgz#f7dea19400c193a3b36a804a7f1f4b26dacf452b"
 
 "@types/sizzle@*":
   version "2.3.2"
@@ -812,8 +812,8 @@ ajv-keywords@^2.0.0:
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.1.tgz#617997fc5f60576894c435f940d819e135b80762"
 
 ajv-keywords@^3.0.0, ajv-keywords@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.3.0.tgz#cb6499da9b83177af8bc1732b2f0a1a1a3aacf8c"
 
 ajv@^5.0.0, ajv@^5.1.5, ajv@^5.2.0:
   version "5.5.2"
@@ -884,8 +884,8 @@ ansi-escapes@^1.4.0:
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
 
 ansi-escapes@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.1.0.tgz#f73207bb81207d75fd6c83f125af26eea378ca30"
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
 
 ansi-html@0.0.7:
   version "0.0.7"
@@ -1245,7 +1245,7 @@ axobject-query@^0.1.0:
   dependencies:
     ast-types-flow "0.0.7"
 
-axobject-query@^2.0.1:
+axobject-query@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.0.2.tgz#ea187abe5b9002b377f925d8bf7d1c561adf38f9"
   dependencies:
@@ -2939,12 +2939,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000929"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000929.tgz#f18c557b9cbf33e2787134c915b82e3ed3331b87"
+  version "1.0.30000932"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000932.tgz#5f8958b18985aaab007f766648f6f9c2f4cc7b9d"
 
 caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844:
-  version "1.0.30000929"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000929.tgz#7b391b781a9c3097ecc39ea053301aea8ea16317"
+  version "1.0.30000932"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000932.tgz#d01763e9ce77810962ca7391ff827b5949ce4272"
 
 canvas-fit@^1.5.0:
   version "1.5.0"
@@ -2968,8 +2968,8 @@ case-sensitive-paths-webpack-plugin@2.1.1:
   resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.1.1.tgz#3d29ced8c1f124bf6f53846fb3f5894731fdc909"
 
 case-sensitive-paths-webpack-plugin@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.1.2.tgz#c899b52175763689224571dad778742e133f0192"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.2.0.tgz#3371ef6365ef9c25fa4b81c16ace0e9c7dc58c3e"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -3860,8 +3860,8 @@ cssstyle@^1.0.0:
     cssom "0.3.x"
 
 csstype@^2.2.0, csstype@^2.5.2:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.1.tgz#4cfbf637a577497036ebcd7e32647ef19a0b8076"
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.2.tgz#3043d5e065454579afc7478a18de41909c8a2f01"
 
 cubic-hermite@^1.0.0:
   version "1.0.0"
@@ -3916,8 +3916,8 @@ d3-dispatch@1:
   resolved "https://registry.yarnpkg.com/d3-dispatch/-/d3-dispatch-1.0.5.tgz#e25c10a186517cd6c82dd19ea018f07e01e39015"
 
 d3-force@^1.0.6:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-1.1.2.tgz#16664d0ac71d8727ef5effe0b374feac8050d6cd"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-1.2.0.tgz#60713f7efe8764f53e685d69433c06914dc4ea4c"
   dependencies:
     d3-collection "1"
     d3-dispatch "1"
@@ -4390,8 +4390,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
-  version "1.3.105"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.105.tgz#73907fb2c97b01febe0572e3c550117537fbce59"
+  version "1.3.109"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.109.tgz#ee04a55a5157a5580a5ea88e526b02c84a3a7bc8"
 
 element-size@^1.1.1:
   version "1.1.1"
@@ -4413,9 +4413,13 @@ email-addresses@^3.0.1:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/email-addresses/-/email-addresses-3.0.3.tgz#fc3c6952f68da24239914e982c8a7783bc2ed96d"
 
-emoji-regex@^6.1.0, emoji-regex@^6.5.1:
+emoji-regex@^6.1.0:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-6.5.1.tgz#9baea929b155565c11ea41c6626eaa65cef992c2"
+
+emoji-regex@^7.0.2:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -4706,8 +4710,8 @@ eslint-plugin-import@2.8.0:
     read-pkg-up "^2.0.0"
 
 eslint-plugin-import@^2.13.0:
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.15.0.tgz#d8f3c28b8988ccde5df964706faa7c1e52f0602a"
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.16.0.tgz#97ac3e75d0791c4fac0e15ef388510217be7f66f"
   dependencies:
     contains-path "^0.1.0"
     debug "^2.6.9"
@@ -4733,15 +4737,15 @@ eslint-plugin-jsx-a11y@5.1.1:
     jsx-ast-utils "^1.4.0"
 
 eslint-plugin-jsx-a11y@^6.0.3:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.2.tgz#69bca4890b36dcf0fe16dd2129d2d88b98f33f88"
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.0.tgz#0db5a0efad21b815849c7783abe8379eb8fa1ca6"
   dependencies:
     aria-query "^3.0.0"
     array-includes "^3.0.3"
     ast-types-flow "^0.0.7"
-    axobject-query "^2.0.1"
+    axobject-query "^2.0.2"
     damerau-levenshtein "^1.0.4"
-    emoji-regex "^6.5.1"
+    emoji-regex "^7.0.2"
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
@@ -5730,9 +5734,9 @@ gh-pages@^2.0.0:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-gl-axes3d@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/gl-axes3d/-/gl-axes3d-1.4.3.tgz#03d896e12c10c3c7cca2d0d0733dcb3fce9ab646"
+gl-axes3d@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/gl-axes3d/-/gl-axes3d-1.4.4.tgz#741ac7c6875048c31372461e144435cc12c2dc7e"
   dependencies:
     bit-twiddle "^1.0.2"
     dup "^1.0.0"
@@ -5746,7 +5750,7 @@ gl-axes3d@^1.4.3:
     glslify "^7.0.0"
     robust-orientation "^1.1.3"
     split-polygon "^1.0.0"
-    vectorize-text "^3.2.0"
+    vectorize-text "^3.2.1"
 
 gl-buffer@^2.0.3, gl-buffer@^2.0.6, gl-buffer@^2.0.8, gl-buffer@^2.1.1, gl-buffer@^2.1.2:
   version "2.1.2"
@@ -5854,9 +5858,9 @@ gl-matrix-invert@^1.0.0:
     gl-mat3 "^1.0.0"
     gl-mat4 "^1.0.0"
 
-gl-mesh3d@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/gl-mesh3d/-/gl-mesh3d-2.0.5.tgz#65bd6eae1d09652bc7b666483a6f16abbecfc6c3"
+gl-mesh3d@^2.0.6:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/gl-mesh3d/-/gl-mesh3d-2.0.7.tgz#db8faddd0197af04990d722a2bbe64e88118c543"
   dependencies:
     barycentric "^1.0.1"
     colormap "^2.1.0"
@@ -5874,9 +5878,9 @@ gl-mesh3d@^2.0.5:
     simplicial-complex-contour "^1.0.0"
     typedarray-pool "^1.1.0"
 
-gl-plot2d@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/gl-plot2d/-/gl-plot2d-1.4.1.tgz#8d06d04c61b5e6e99701315123c52ab3651bf338"
+gl-plot2d@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/gl-plot2d/-/gl-plot2d-1.4.2.tgz#9da4ec97c489d6885deb835842da7888c1a2dff9"
   dependencies:
     binary-search-bounds "^2.0.4"
     gl-buffer "^2.1.2"
@@ -5884,15 +5888,15 @@ gl-plot2d@^1.4.1:
     gl-shader "^4.2.1"
     glsl-inverse "^1.0.0"
     glslify "^7.0.0"
-    text-cache "^4.2.0"
+    text-cache "^4.2.1"
 
-gl-plot3d@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/gl-plot3d/-/gl-plot3d-1.6.2.tgz#2eccddf478e2afedc4fecff7a3eeacae32d9b2aa"
+gl-plot3d@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/gl-plot3d/-/gl-plot3d-1.6.3.tgz#17e1420fa6da178d447f9ef5a82be34b86cb60d7"
   dependencies:
     "3d-view-controls" "^2.2.2"
     a-big-triangle "^1.0.3"
-    gl-axes3d "^1.4.3"
+    gl-axes3d "^1.4.4"
     gl-fbo "^2.0.5"
     gl-mat4 "^1.2.0"
     gl-select-static "^2.0.4"
@@ -5920,9 +5924,9 @@ gl-quat@^1.0.0:
     gl-vec3 "^1.0.3"
     gl-vec4 "^1.0.0"
 
-gl-scatter3d@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/gl-scatter3d/-/gl-scatter3d-1.1.3.tgz#b66a9b16d91e5690379dc1fdc18531d93af3b9ca"
+gl-scatter3d@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/gl-scatter3d/-/gl-scatter3d-1.1.4.tgz#3796fbbeb0f22b82d5dc854b6ca78a2644f98d09"
   dependencies:
     gl-buffer "^2.0.6"
     gl-mat4 "^1.0.0"
@@ -5932,7 +5936,7 @@ gl-scatter3d@^1.1.3:
     glslify "^7.0.0"
     is-string-blank "^1.0.1"
     typedarray-pool "^1.0.2"
-    vectorize-text "^3.2.0"
+    vectorize-text "^3.2.1"
 
 gl-select-box@^1.0.3:
   version "1.0.3"
@@ -6716,8 +6720,8 @@ humps@^2.0.1:
   resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 hyphenate-style-name@^1.0.1, hyphenate-style-name@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
 
 i@^0.3.6:
   version "0.3.6"
@@ -6776,8 +6780,8 @@ image-palette@^2.1.0:
     quantize "^1.0.2"
 
 immutability-helper@^2.7.1:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.9.0.tgz#04a1c646300cd3a68aa5dc1daa7758da2ca75292"
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.9.1.tgz#71c423ba387e67b6c6ceba0650572f2a2a6727df"
   dependencies:
     invariant "^2.2.0"
 
@@ -7019,7 +7023,7 @@ is-blob@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/is-blob/-/is-blob-2.0.1.tgz#7fde57ef8782a154bc0f3bdcaa0ffdccb6c33767"
 
-is-browser@^2.0.1:
+is-browser@^2.0.1, is-browser@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-browser/-/is-browser-2.1.0.tgz#fc084d59a5fced307d6708c59356bad7007371a9"
 
@@ -9786,8 +9790,8 @@ planar-graph-to-polyline@^1.0.0:
     uniq "^1.0.0"
 
 plotly.js@^1.42.5:
-  version "1.44.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.44.0.tgz#50584270c076d4923ff6eae2a370afdc4c59523f"
+  version "1.44.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-1.44.1.tgz#a3507f91c1bac06664ba8cdc0e45fce2721d9fb9"
   dependencies:
     "3d-view" "^2.0.0"
     "@plotly/d3-sankey" "^0.5.1"
@@ -9809,11 +9813,11 @@ plotly.js@^1.42.5:
     gl-heatmap2d "^1.0.5"
     gl-line3d "^1.1.8"
     gl-mat4 "^1.2.0"
-    gl-mesh3d "^2.0.5"
-    gl-plot2d "^1.4.1"
-    gl-plot3d "^1.6.2"
+    gl-mesh3d "^2.0.6"
+    gl-plot2d "^1.4.2"
+    gl-plot3d "^1.6.3"
     gl-pointcloud2d "^1.0.2"
-    gl-scatter3d "^1.1.3"
+    gl-scatter3d "^1.1.4"
     gl-select-box "^1.0.3"
     gl-spikes2d "^1.0.2"
     gl-streamtube3d "^1.1.2"
@@ -10380,12 +10384,13 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
 
 pxls@^2.0.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/pxls/-/pxls-2.3.1.tgz#c48bb5e2f2449d19dc7f62b0949e2a217a746318"
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/pxls/-/pxls-2.3.2.tgz#79100d2cc95089fc6e00053a9d93c1ddddb2c7b4"
   dependencies:
     arr-flatten "^1.1.0"
     compute-dims "^1.1.0"
     flip-pixels "^1.0.2"
+    is-browser "^2.1.0"
     is-buffer "^2.0.3"
     to-uint8 "^1.4.1"
 
@@ -10532,8 +10537,8 @@ react-async-component@^2.0.0:
   resolved "https://registry.yarnpkg.com/react-async-component/-/react-async-component-2.0.0.tgz#a56c1278ac588291fce6cd5cf033eb97eb36483c"
 
 react-burger-menu@^2.5.4:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.6.1.tgz#bd23aa62baa084feb0506e7fda8397d62ae2268f"
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/react-burger-menu/-/react-burger-menu-2.6.2.tgz#205cbb8383482981c0c2d4ebce4f7bf7ca08964a"
   dependencies:
     browserify-optional "^1.0.0"
     classnames "^2.2.6"
@@ -10565,8 +10570,8 @@ react-dev-utils@^5.0.0, react-dev-utils@^5.0.1, react-dev-utils@^5.0.2:
     text-table "0.2.0"
 
 react-docgen@^3.0.0-beta11:
-  version "3.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-3.0.0-rc.2.tgz#5939c64699fd9959da6d97d890f7b648e542dbcc"
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-3.0.0.tgz#79c6e1b1870480c3c2bc1a65bede0577a11c38cd"
   dependencies:
     "@babel/parser" "^7.1.3"
     "@babel/runtime" "^7.0.0"
@@ -10586,8 +10591,8 @@ react-dom@^16.4.1, react-dom@^16.6.0, react-dom@^16.6.3:
     scheduler "^0.12.0"
 
 react-dropdown@^1.5.0:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/react-dropdown/-/react-dropdown-1.6.3.tgz#1421046856520960a78993e45c332ec362c73b57"
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/react-dropdown/-/react-dropdown-1.6.4.tgz#8dce141bb26fb6b3c3696d16e06f4517728c57f4"
   dependencies:
     classnames "^2.2.3"
 
@@ -10659,8 +10664,8 @@ react-markdown@^3.3.2:
     xtend "^4.0.1"
 
 react-measure@^2.1.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.2.2.tgz#881a7fc29db9f4eb2694a94dd16f60baadf6025a"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.2.3.tgz#9ddd4c6f9ab8af2bf8f4b9f79434b64385dc40f3"
   dependencies:
     "@babel/runtime" "^7.2.0"
     get-node-dimensions "^1.2.1"
@@ -11977,9 +11982,9 @@ slice-ansi@1.0.0:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
 
-slice-ansi@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-2.0.0.tgz#5373bdb8559b45676e8541c66916cdd6251612e7"
+slice-ansi@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-2.1.0.tgz#cacd7693461a637a5788d92a7dd4fba068e81636"
   dependencies:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
@@ -12252,8 +12257,8 @@ srcset@^1.0.0:
     number-is-nan "^1.0.0"
 
 sshpk@^1.7.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.16.0.tgz#1d4963a2fbffe58050aa9084ca20be81741c07de"
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/sshpk/-/sshpk-1.16.1.tgz#fb661c0bef29b39db40769ee39fa70093d6f6877"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
@@ -12630,8 +12635,8 @@ surface-nets@^1.0.0, surface-nets@^1.0.2:
     zero-crossings "^1.0.0"
 
 svg-arc-to-cubic-bezier@^3.0.0:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/svg-arc-to-cubic-bezier/-/svg-arc-to-cubic-bezier-3.1.2.tgz#24247fafa14c426a134a2c25b438d686e7931a54"
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/svg-arc-to-cubic-bezier/-/svg-arc-to-cubic-bezier-3.1.3.tgz#7b5f76445310ef03238964c39ae7dbc761fda879"
 
 svg-path-bounds@^1.0.1:
   version "1.0.1"
@@ -12712,9 +12717,9 @@ symbol.prototype.description@^1.0.0:
   dependencies:
     has-symbols "^1.0.0"
 
-synapse-react-client@1.10.12:
-  version "1.10.12"
-  resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.10.12.tgz#18ae95f09e0d1836a95c6e0f20b6c421c8722638"
+synapse-react-client@1.10.13:
+  version "1.10.13"
+  resolved "https://registry.yarnpkg.com/synapse-react-client/-/synapse-react-client-1.10.13.tgz#d150461366bca6d71ace4e4b8eb63d122d21b6bd"
   dependencies:
     "@babel/runtime" "^7.1.5"
     "@fortawesome/fontawesome-svg-core" "^1.2.4"
@@ -12776,12 +12781,12 @@ table@^4.0.1:
     string-width "^2.1.1"
 
 table@^5.0.2:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/table/-/table-5.2.1.tgz#e78463702b1be9f7131c39860bcfb1b81114c2a1"
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/table/-/table-5.2.2.tgz#61d474c9e4d8f4f7062c98c7504acb3c08aa738f"
   dependencies:
     ajv "^6.6.1"
     lodash "^4.17.11"
-    slice-ansi "2.0.0"
+    slice-ansi "^2.0.0"
     string-width "^2.1.1"
 
 tapable@^0.2.7:
@@ -12874,11 +12879,11 @@ test-exclude@^4.2.1:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
-text-cache@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/text-cache/-/text-cache-4.2.0.tgz#2822114d50de72c7d5845a4f3204f7b21fd104c7"
+text-cache@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/text-cache/-/text-cache-4.2.1.tgz#c89e2407827c288f668b3a3454912511c2364245"
   dependencies:
-    vectorize-text "^3.2.0"
+    vectorize-text "^3.2.1"
 
 text-table@0.2.0, text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
@@ -13677,9 +13682,9 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
-vectorize-text@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/vectorize-text/-/vectorize-text-3.2.0.tgz#bf400b39ad25d369bee27fc42c7a49d9aefd46ef"
+vectorize-text@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/vectorize-text/-/vectorize-text-3.2.1.tgz#85921abd9685af775fd20a01041a2837fe51bdb5"
   dependencies:
     cdt2d "^1.0.0"
     clean-pslg "^1.1.0"
@@ -14133,8 +14138,8 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
 write-file-atomic@^2.0.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.4.0.tgz#cf0f9bc37c2d26c455161c3b75f407f5bd1cad64"
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/write-file-atomic/-/write-file-atomic-2.4.2.tgz#a7181706dfba17855d221140a9c06e15fcdd87b9"
   dependencies:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
