@@ -20,7 +20,7 @@ export default class LoginExample extends React.Component {
       (sessionToken) => {
         this.setState({ token: sessionToken })
       },
-    ).catch((_err) => { console.log("no token from cookie could be fetched") })
+    ).catch((_err) => { console.log("no token from cookie could be fetched ", _err) })
   }
 
   /**
