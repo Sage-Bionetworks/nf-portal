@@ -6,10 +6,6 @@ export default class LoginExample extends React.Component {
     super(props)
     this.state = {
       token: "",
-      wikiId: "",
-      ownerId: "",
-      usedWikiId: "",
-      usedOwnerId: "",
       showMarkdown: false,
     }
     this.handleChange = this.handleChange.bind(this)
@@ -73,31 +69,6 @@ export default class LoginExample extends React.Component {
         <div>
           <a href="https://www.synapse.org/#!Synapse:syn17100797/wiki/587923"> Take me to Synapse with credentials!</a>
         </div>
-
-        {/* <form onSubmit={this.handleSubmit}>
-          <label>
-          ownerId
-            <input
-              name="ownerId"
-              type="text"
-              value={this.state.ownerId}
-              onChange={this.handleInputChange}
-            />
-          </label>
-          <br />
-          <label>
-          wikiId
-            <input
-              name="wikiId"
-              type="text"
-              value={this.state.wikiId}
-              onChange={this.handleInputChange}
-            />
-          </label>
-          <div>
-            <input type="submit" value="Update Markdown" />
-          </div>
-        </form> */}
 
         <div>
           <button className="btn btn-primary" type="button" onClick={this.handleSubmit}>
