@@ -77,7 +77,7 @@ class Explore extends Component {
           sql={sql}
           token={this.props.token}
         >
-          <SynapseComponents.SynapseTableCardView
+          <SynapseComponents.CardContainer
             type={type}
           />
         </SynapseComponents.StaticQueryWrapper>
