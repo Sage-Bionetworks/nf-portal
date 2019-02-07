@@ -7,7 +7,7 @@ const SynapseCards = (props) => {
     <SynapseComponents.StaticQueryWrapper
       json={props.json}
     >
-      <SynapseComponents.SynapseTableCardView
+      <SynapseComponents.CardContainer
         type={SynapseConstants[props.cardType]}
         limit={props.limit ? props.limit : 3}
         hideOrganizationLink={props.hideOrganizationalLink}

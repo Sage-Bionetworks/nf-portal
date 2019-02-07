@@ -18,7 +18,7 @@ const NewStudies = ({ token }) => {
             sql={studies.sql}
             token={token}
           >
-            <SynapseComponents.SynapseTableCardView
+            <SynapseComponents.CardContainer
               type={SynapseConstants.STUDY}
               limit={3}
             />

@@ -19,15 +19,11 @@ const NewCardContent = (
           </h2>
         </div>
         <div className="row">
-          <SynapseComponents.StaticQueryWrapper
+          <SynapseComponents.CardContainerLogic
             sql={sql}
-            token={token}
-          >
-            <SynapseComponents.SynapseTableCardView
-              type={type}
-              limit={3}
-            />
-          </SynapseComponents.StaticQueryWrapper>
+            type={type}
+            limit={3}
+          />
           {!hideViewAll && <ButtonViewAll url={url} />}
         </div>
       </div>
