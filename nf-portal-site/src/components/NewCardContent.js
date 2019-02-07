@@ -24,15 +24,6 @@ const NewCardContent = (
             type={type}
             limit={3}
           />
-          {/* <SynapseComponents.StaticQueryWrapper
-            sql={sql}
-            token={token}
-          >
-            <SynapseComponents.CardContainer
-              type={type}
-              limit={3}
-            />
-          </SynapseComponents.StaticQueryWrapper> */}
           {!hideViewAll && <ButtonViewAll url={url} />}
         </div>
       </div>
