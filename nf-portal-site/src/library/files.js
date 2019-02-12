@@ -16,6 +16,7 @@ const facetAliases = {
   fundingAgency: "Funding Agency",
   consortium: "Consortium",
   name: "File Name",
+  studyName: "Study Name",
 }
 
 const syn16858331 = {
