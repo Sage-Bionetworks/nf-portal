@@ -25,7 +25,6 @@ const AsyncOrgCTF = asyncComponent(() => import("./components/Organizations-CTF"
 const AsyncOrgNIH = asyncComponent(() => import("./components/Organizations-NIH"))
 const AsyncOrgNTAP = asyncComponent(() => import("./components/Organizations-NTAP"))
 const AsyncExplore = asyncComponent(() => import("./components/Explore.jsx"))
-const AsyncToolsPage = asyncComponent(() => import("./components/Tools.js"))
 const AsyncVersions = asyncComponent(() => import("./components/Versions"))
 
 ReactGA.initialize("UA-29804340-4")
@@ -105,7 +104,6 @@ class App extends Component {
         studies={this.state.syn16787123_s}
         publications={this.state.syn16857542_s}
         datasets={this.state.syn16859580_s}
-        tools={this.state.syn16859448_s}
         organizations={this.state.syn16858699}
       />
     )
@@ -161,14 +159,6 @@ class App extends Component {
     )
   }
 
-  ReturnToolsPage = () => {
-    return (
-      <AsyncToolsPage
-        token={this.state.loginToken}
-        tools={this.state.syn16859448}
-      />
-    )
-  }
 
   ReturnVersions = () => {
     return (
@@ -197,7 +187,6 @@ class App extends Component {
               <Route path="/Organizations-NTAP" component={this.ReturnNTAP} />
 
               <Route path="/Explore" component={this.ReturnExplore} />
-              <Route path="/Explore/Tools" component={this.ReturnToolsPage} />
 
               <Route path="/markup" component={synapseMarkup} />
               <Route path="/Versions" component={this.ReturnVersions} />
