@@ -13,6 +13,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-accessible-accordion": "^2.4.3",
+    "react-app-polyfill": "^0.2.1",
     "react-async-component": "^2.0.0",
     "react-burger-menu": "^2.5.4",
     "react-dom": "^16.4.1",
