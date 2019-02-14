@@ -6,7 +6,7 @@ import ButtonViewAll from "./Button.js"
 
 const NewCardContent = (
   {
-    token, url, tableName, name, hideViewAll = false,
+    url, tableName, name, hideViewAll = false,
   },
 ) => {
   const { sql, type } = synapseObjects[tableName]

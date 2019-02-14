@@ -30,7 +30,7 @@ const Home = (props) => {
 
       <NewCardContent
         url="Explore/Tools"
-        name={"Tools"}
+        name="Tools"
         tableName="Tools"
       />
 

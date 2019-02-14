@@ -73,14 +73,10 @@ class Explore extends Component {
         type,
       } = synapseObjects[subPathName]
       return (
-        <SynapseComponents.StaticQueryWrapper
+        <SynapseComponents.CardContainerLogic
           sql={sql}
-          token={this.props.token}
-        >
-          <SynapseComponents.CardContainer
-            type={type}
-          />
-        </SynapseComponents.StaticQueryWrapper>
+          type={type}
+        />
       )
     }
     const {
