@@ -1,3 +1,4 @@
+import "core-js/fn/symbol/iterator.js"
 import "./ie11support/polyfills"
 import "react-app-polyfill/ie11"
 import React from "react"
