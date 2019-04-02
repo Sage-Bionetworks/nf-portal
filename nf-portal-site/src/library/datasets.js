@@ -32,7 +32,7 @@ const syn16859580 = {
       },
     },
     facetName: "diseaseFocus",
-    unitDescription: "files",
+    unitDescription: "datasets",
     facetAliases: {
       diseaseFocus: "Disease Focus",
     },
@@ -41,21 +41,21 @@ const syn16859580 = {
     {
       sql,
       facetName: "diseaseFocus",
-      unitDescription: "files",
+      unitDescription: "datasets",
       synapseId: "syn16859580",
       facetAliases,
     },
     {
       sql,
       facetName: "tumorType",
-      unitDescription: "files",
+      unitDescription: "datasets",
       synapseId: "syn16859580",
       facetAliases,
     },
     {
       sql,
       facetName: "fundingAgency",
-      unitDescription: "files",
+      unitDescription: "datasets",
       synapseId: "syn16859580",
       facetAliases,
     },
