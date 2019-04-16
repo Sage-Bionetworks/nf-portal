@@ -70,12 +70,6 @@ section {
 	font-family: 'Lato', sans-serif; 
 }
 
-section, footer, header, div.main {
-  .container {
-    max-width: 1195px;
-  }
-}
-
 div.row.amp-ad {
   max-width: 100%;
 	margin: 0px;
@@ -106,21 +100,6 @@ body.noScroll, html.noScroll {
     .main {
     }
   }
-
-  section div.row {
-    margin: 0px auto;
-  }
-
-  
-
-  section {
-    padding: 25px 50px;
-    //border: 1px solid black;
-    >* {
-      //border: 1px solid black;
-    }
-  }
-
   section.child-page-hero {
     padding-top: 80px;
   }
@@ -217,15 +196,10 @@ body.noScroll, html.noScroll {
   button.btn-control {
     h5 { 
       font-size: 15px;
-      color: white; 
       font-weight: 700; 
+      color: white;
       letter-spacing: 0.5px;
     }
-    //border-radius: 16px;
-    //min-height: 40px;
-    //min-width: 100px;
-    //padding: 0px 15px;
-    //margin: 10px 15px;
     border-radius: 10px;
     min-height: 40px;
     padding: 7px 25px;
@@ -277,9 +251,6 @@ body.noScroll, html.noScroll {
   }
   .justify-start {
     justify-content: flex-start;
-  }
-  .container {
-    width: 100%;
   }
 
   table {
@@ -367,11 +338,6 @@ body.noScroll, html.noScroll {
     a {
       color: white;
       text-decoration: none;
-    }
-    .header {
-      .container {
-
-      }
     }
   }
 
@@ -795,16 +761,11 @@ body.noScroll, html.noScroll {
     }
     li:hover { 
       div.under-bar {
-        //height: 5px;
         opacity: 1;
       }
     }
     div.under-bar.active{
-      //height: 5px;
       opacity: 1;
-    }
-    div.under-bar.squish {
-      //top: 35px;
     }
     div.side-bar {
       background-color: $green;
@@ -924,24 +885,6 @@ body.noScroll, html.noScroll {
         color: white;
       }
     }
-    .container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      position: absolute;
-      z-index: 100;
-      margin-left: auto;
-      margin-right: auto;
-      left: 0;
-      right: 0;
-      bottom: 20px;
-    }
-    @media screen and (max-width: 1265px){
-      .container {
-        left: 5%;
-      }
-    }
     .hero-message {
       height: fit-content;
       padding: 30px;
@@ -969,8 +912,6 @@ body.noScroll, html.noScroll {
       .synapse-cards-col {
         margin-top: 30px;
         .SRC-portalCard {
-          // width: 33%;
-          // margin: 0px;
           display: inline-block;
           display: flex;
           flex-direction: column;
@@ -983,9 +924,6 @@ body.noScroll, html.noScroll {
             margin: 0px auto;
           }
         }
-        // .SRC-portalCard:nth-child(2) {
-        //   margin: 0px 10px;
-        // }
       }
     }
   }
@@ -1038,17 +976,6 @@ body.noScroll, html.noScroll {
     }
   }
 
-  section.explore-content, div.explore-content {
-    .col-xs-2 {
-      margin-top: 18px;
-    }
-    .container .container-fluid {
-      padding: 0px;
-      .col-xs-12 { 
-        padding: 0px;
-      }
-    }
-
     .selectors-container {
       max-width: fit-content;
     }
@@ -1061,9 +988,6 @@ body.noScroll, html.noScroll {
 			}
       button {
         position: relative;
-      }
-      button.active {
-        
       }
       margin: 20px 0px;
       button:first-child  {
@@ -1097,7 +1021,6 @@ body.noScroll, html.noScroll {
       }
       .synapse-chart {
         position: absolute;
-        //top: 100px;
         right: 0px;
         width: 100%;
       }
@@ -1136,7 +1059,6 @@ body.noScroll, html.noScroll {
       margin-bottom: inherit;
     }
     .expand-section.hide {
-      //max-height: 150px;
       margin-bottom: -10px;
     }
     input[type=checkbox]{
@@ -1211,11 +1133,6 @@ body.noScroll, html.noScroll {
     cursor: pointer;
   }
 
-  ///////// organizations page /////////
-  section.organizations {
-    //margin-top: 70px;
-  }
-
   /////// media queries //////////
   @media screen and (max-width: 480px) {
     header.header img{
@@ -1234,5 +1151,3 @@ body.noScroll, html.noScroll {
       margin-top: 0px;
     }
   }
-
-}

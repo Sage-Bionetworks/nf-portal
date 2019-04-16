@@ -106,8 +106,6 @@ class Explore extends Component {
               {" "}
               {subPathName}
             </h1>
-          </div>
-          <div className="row explore-content">
             <div className={`center-block selectors-container ${hideIfToolsSection}`}>
               <Selectors
                 activeTableName={subPathName}

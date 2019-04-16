@@ -34,9 +34,6 @@ section.page {
 section {
   font-family: 'Lato', sans-serif; }
 
-section .container, footer .container, header .container, div.main .container {
-  max-width: 1195px; }
-
 div.row.amp-ad {
   max-width: 100%;
   margin: 0px; }
@@ -57,12 +54,6 @@ body.noScroll, html.noScroll {
 #root .main {
   min-height: calc(100vh - 136px);
   margin-top: 0px; }
-
-#root section div.row {
-  margin: 0px auto; }
-
-#root section {
-  padding: 25px 50px; }
 
 #root section.child-page-hero {
   padding-top: 80px; }
@@ -118,8 +109,8 @@ body.noScroll, html.noScroll {
   min-width: 125px; }
   #root button.btn-control h5 {
     font-size: 15px;
-    color: white;
     font-weight: 700;
+    color: white;
     letter-spacing: 0.5px; }
 
 #root button.btn-basic {
@@ -166,9 +157,6 @@ body.noScroll, html.noScroll {
 
 #root .justify-start {
   justify-content: flex-start; }
-
-#root .container {
-  width: 100%; }
 
 #root table {
   font-size: 16px;
@@ -684,21 +672,6 @@ body.noScroll, html.noScroll {
     text-decoration: underline; }
     #root section.hero a:hover {
       color: white; }
-  #root section.hero .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: absolute;
-    z-index: 100;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 20px; }
-  @media screen and (max-width: 1265px) {
-    #root section.hero .container {
-      left: 5%; } }
   #root section.hero .hero-message {
     height: fit-content;
     padding: 30px;
@@ -756,34 +729,26 @@ body.noScroll, html.noScroll {
   margin-right: 45px;
   float: right; }
 
-#root section.explore-content .col-xs-2, #root div.explore-content .col-xs-2 {
-  margin-top: 18px; }
-
-#root section.explore-content .container .container-fluid, #root div.explore-content .container .container-fluid {
-  padding: 0px; }
-  #root section.explore-content .container .container-fluid .col-xs-12, #root div.explore-content .container .container-fluid .col-xs-12 {
-    padding: 0px; }
-
-#root section.explore-content .selectors-container, #root div.explore-content .selectors-container {
+#root .selectors-container {
   max-width: fit-content; }
 
-#root section.explore-content .selectors, #root div.explore-content .selectors {
+#root .selectors {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   margin: 20px 0px; }
   @media screen and (max-width: 720px) {
-    #root section.explore-content .selectors, #root div.explore-content .selectors {
+    #root .selectors {
       flex-direction: column; } }
-  #root section.explore-content .selectors button, #root div.explore-content .selectors button {
+  #root .selectors button {
     position: relative; }
-  #root section.explore-content .selectors button:first-child, #root div.explore-content .selectors button:first-child {
+  #root .selectors button:first-child {
     background-color: #119488; }
-    #root section.explore-content .selectors button:first-child:hover, #root div.explore-content .selectors button:first-child:hover {
+    #root .selectors button:first-child:hover {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:first-child.active, #root div.explore-content .selectors button:first-child.active {
+    #root .selectors button:first-child.active {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:first-child.active::after, #root div.explore-content .selectors button:first-child.active::after {
+    #root .selectors button:first-child.active::after {
       height: 0px;
       width: 0px;
       position: absolute;
@@ -798,15 +763,15 @@ body.noScroll, html.noScroll {
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       transition: all 400ms; }
-    #root section.explore-content .selectors button:first-child.active:hover:after, #root div.explore-content .selectors button:first-child.active:hover:after {
+    #root .selectors button:first-child.active:hover:after {
       transition: all 400ms; }
-  #root section.explore-content .selectors button:nth-child(2), #root div.explore-content .selectors button:nth-child(2) {
+  #root .selectors button:nth-child(2) {
     background-color: #58A058; }
-    #root section.explore-content .selectors button:nth-child(2):hover, #root div.explore-content .selectors button:nth-child(2):hover {
+    #root .selectors button:nth-child(2):hover {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:nth-child(2).active, #root div.explore-content .selectors button:nth-child(2).active {
+    #root .selectors button:nth-child(2).active {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:nth-child(2).active::after, #root div.explore-content .selectors button:nth-child(2).active::after {
+    #root .selectors button:nth-child(2).active::after {
       height: 0px;
       width: 0px;
       position: absolute;
@@ -821,15 +786,15 @@ body.noScroll, html.noScroll {
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       transition: all 400ms; }
-    #root section.explore-content .selectors button:nth-child(2).active:hover:after, #root div.explore-content .selectors button:nth-child(2).active:hover:after {
+    #root .selectors button:nth-child(2).active:hover:after {
       transition: all 400ms; }
-  #root section.explore-content .selectors button:nth-child(3), #root div.explore-content .selectors button:nth-child(3) {
+  #root .selectors button:nth-child(3) {
     background-color: #407BA0; }
-    #root section.explore-content .selectors button:nth-child(3):hover, #root div.explore-content .selectors button:nth-child(3):hover {
+    #root .selectors button:nth-child(3):hover {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:nth-child(3).active, #root div.explore-content .selectors button:nth-child(3).active {
+    #root .selectors button:nth-child(3).active {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:nth-child(3).active::after, #root div.explore-content .selectors button:nth-child(3).active::after {
+    #root .selectors button:nth-child(3).active::after {
       height: 0px;
       width: 0px;
       position: absolute;
@@ -844,15 +809,15 @@ body.noScroll, html.noScroll {
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       transition: all 400ms; }
-    #root section.explore-content .selectors button:nth-child(3).active:hover:after, #root div.explore-content .selectors button:nth-child(3).active:hover:after {
+    #root .selectors button:nth-child(3).active:hover:after {
       transition: all 400ms; }
-  #root section.explore-content .selectors button:nth-child(4), #root div.explore-content .selectors button:nth-child(4) {
+  #root .selectors button:nth-child(4) {
     background-color: #5BB0B5; }
-    #root section.explore-content .selectors button:nth-child(4):hover, #root div.explore-content .selectors button:nth-child(4):hover {
+    #root .selectors button:nth-child(4):hover {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:nth-child(4).active, #root div.explore-content .selectors button:nth-child(4).active {
+    #root .selectors button:nth-child(4).active {
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5); }
-    #root section.explore-content .selectors button:nth-child(4).active::after, #root div.explore-content .selectors button:nth-child(4).active::after {
+    #root .selectors button:nth-child(4).active::after {
       height: 0px;
       width: 0px;
       position: absolute;
@@ -867,58 +832,58 @@ body.noScroll, html.noScroll {
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
       transition: all 400ms; }
-    #root section.explore-content .selectors button:nth-child(4).active:hover:after, #root div.explore-content .selectors button:nth-child(4).active:hover:after {
+    #root .selectors button:nth-child(4).active:hover:after {
       transition: all 400ms; }
 
-#root section.explore-content .bar-chart, #root div.explore-content .bar-chart {
+#root .bar-chart {
   position: relative;
   height: 220px; }
   @media screen and (max-width: 720px) {
-    #root section.explore-content .bar-chart, #root div.explore-content .bar-chart {
+    #root .bar-chart {
       height: 450px; } }
   @media screen and (max-width: 520px) {
-    #root section.explore-content .bar-chart, #root div.explore-content .bar-chart {
+    #root .bar-chart {
       height: 480px; } }
-  #root section.explore-content .bar-chart .explore-button-row, #root div.explore-content .bar-chart .explore-button-row {
+  #root .bar-chart .explore-button-row {
     position: absolute;
     bottom: -50px;
     right: 0; }
-  #root section.explore-content .bar-chart .synapse-chart, #root div.explore-content .bar-chart .synapse-chart {
+  #root .bar-chart .synapse-chart {
     position: absolute;
     right: 0px;
     width: 100%; }
 
-#root section.explore-content .SRC-grayBackground, #root div.explore-content .SRC-grayBackground {
+#root .SRC-grayBackground {
   background: unset; }
 
-#root section.new-studies {
+section.new-studies {
   margin-top: 50px; }
 
-#root .about section {
+.about section {
   text-align: left; }
 
-#root .about p {
+.about p {
   font-size: 16px; }
 
-#root section.about-section-content {
+section.about-section-content {
   padding-top: 0px;
   padding-bottom: 0px;
   text-align: left; }
-  #root section.about-section-content .program-row {
+  section.about-section-content .program-row {
     border-bottom: 1px solid #BDBDBD;
     padding-bottom: 30px; }
 
-#root .expand-section {
+.expand-section {
   height: fit-content;
   margin-bottom: inherit; }
 
-#root .expand-section.hide {
+.expand-section.hide {
   margin-bottom: -10px; }
 
-#root input[type=checkbox] {
+input[type=checkbox] {
   visibility: hidden; }
 
-#root .expand-icon {
+.expand-icon {
   height: 50px;
   width: 50px;
   max-width: 65px;
@@ -926,24 +891,24 @@ body.noScroll, html.noScroll {
   top: 70px;
   background-repeat: no-repeat;
   background-position: center; }
-  #root .expand-icon.plus {
+  .expand-icon.plus {
     background-image: url(../images/plus-icon.svg); }
-  #root .expand-icon.minus {
+  .expand-icon.minus {
     background-image: url(../images/minus-icon.svg); }
 
-#root .expand-icon:hover {
+.expand-icon:hover {
   cursor: pointer; }
 
-#root .content {
+.content {
   overflow-y: hidden;
   transition: max-height 1s ease-out;
   max-height: fit-content;
   height: auto; }
 
-#root .content.hide {
+.content.hide {
   max-height: 160px; }
 
-#root .modal-container {
+.modal-container {
   width: 80%;
   position: relative;
   margin: 0px auto;
@@ -951,10 +916,10 @@ body.noScroll, html.noScroll {
   left: 0;
   right: 0;
   bottom: 0px; }
-  #root .modal-container table {
+  .modal-container table {
     box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.35); }
 
-#root .modal-x {
+.modal-x {
   background-image: url(../images/modalX.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -966,10 +931,10 @@ body.noScroll, html.noScroll {
   top: 9px;
   left: 9px; }
 
-#root .modal-x:hover {
+.modal-x:hover {
   cursor: pointer; }
 
-#root .modal-x-background-circle {
+.modal-x-background-circle {
   background-color: white;
   width: 48px;
   height: 48px;
@@ -982,18 +947,18 @@ body.noScroll, html.noScroll {
   right: 30px;
   box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.35); }
 
-#root .modal-x-background-circle:hover {
+.modal-x-background-circle:hover {
   cursor: pointer; }
 
 @media screen and (max-width: 480px) {
-  #root header.header img {
+  header.header img {
     max-height: 50px; }
-  #root ul.nav {
+  ul.nav {
     flex-direction: column;
     text-align: left; }
-    #root ul.nav li {
+    ul.nav li {
       margin: 10px; } }
 
 @media screen and (max-width: 720px) {
-  #root .main {
+  .main {
     margin-top: 0px; } }
