@@ -101,20 +101,24 @@ class Explore extends Component {
       <section className="page explore">
         <div className="container">
           <div className="row">
-            <h1 className="header">
-                Explore
-              {" "}
-              {subPathName}
-            </h1>
-            <div className={`center-block selectors-container ${hideIfToolsSection}`}>
-              <Selectors
-                activeTableName={subPathName}
-                handleButtonPress={this.handleButtonPress}
-              />
+            <div className="col-xs-12">
+              <h1 className="header">
+                  Explore
+                {" "}
+                {subPathName}
+              </h1>
+              <div className={`center-block selectors-container ${hideIfToolsSection}`}>
+                <Selectors
+                  activeTableName={subPathName}
+                  handleButtonPress={this.handleButtonPress}
+                />
+              </div>
+              <div className="row">
+                {
+                  this.renderChartOrCards(subPathName)
+                }
+              </div>
             </div>
-            {
-              this.renderChartOrCards(subPathName)
-            }
           </div>
         </div>
       </section>
