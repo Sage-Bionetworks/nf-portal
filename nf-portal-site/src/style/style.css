@@ -29,7 +29,7 @@ html, body {
   overflow-x: hidden; }
 
 section.page {
-  margin-top: 70px; }
+  margin-top: 100px; }
 
 section {
   font-family: 'Lato', sans-serif; }
@@ -734,8 +734,7 @@ body.noScroll, html.noScroll {
 
 #root .selectors {
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+  justify-content: center;
   margin: 20px 0px; }
   @media screen and (max-width: 720px) {
     #root .selectors {
@@ -848,10 +847,6 @@ body.noScroll, html.noScroll {
     position: absolute;
     bottom: -50px;
     right: 0; }
-  #root .bar-chart .synapse-chart {
-    position: absolute;
-    right: 0px;
-    width: 100%; }
 
 #root .SRC-grayBackground {
   background: unset; }
@@ -962,3 +957,11 @@ input[type=checkbox] {
 @media screen and (max-width: 720px) {
   .main {
     margin-top: 0px; } }
+
+.explore-button {
+  position: absolute;
+  bottom: 10px;
+  right: 30px; }
+
+.synapse-chart {
+  position: relative; }

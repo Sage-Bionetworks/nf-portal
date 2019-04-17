@@ -54,8 +54,6 @@ class ExploreContent extends Component {
               loadingScreen={<div className="bar-loader"><BarLoader color="#4DB7AD" loading /></div>}
             />
           </SynapseComponents.QueryWrapper>
-        </div>
-        <div className={this.state.activeTableName === "file" ? "hide" : "explore-button-row"}>
           <ButtonExplore url={hash} label={name} />
         </div>
       </section>

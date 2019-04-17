@@ -107,7 +107,7 @@ class Explore extends Component {
                 {" "}
                 {subPathName}
               </h1>
-              <div className={`center-block selectors-container ${hideIfToolsSection}`}>
+              <div className={`${hideIfToolsSection}`}>
                 <Selectors
                   activeTableName={subPathName}
                   handleButtonPress={this.handleButtonPress}

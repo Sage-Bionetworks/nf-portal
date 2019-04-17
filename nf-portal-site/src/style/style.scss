@@ -60,10 +60,7 @@ html, body {
 }
 
 section.page {
-  margin-top: 70px;
-  // a {
-  //   color: $magenta; 
-  // }
+  margin-top: 100px;
 }
 
 section {
@@ -981,8 +978,7 @@ body.noScroll, html.noScroll {
     }
     .selectors {
       display: flex;
-      justify-content: space-around;
-			flex-direction: row;
+      justify-content: center;
 			@media screen and (max-width: 720px){
 				flex-direction: column;
 			}
@@ -1018,11 +1014,6 @@ body.noScroll, html.noScroll {
         position: absolute;
         bottom: -50px;
         right: 0;
-      }
-      .synapse-chart {
-        position: absolute;
-        right: 0px;
-        width: 100%;
       }
     }
     .SRC-grayBackground {
@@ -1150,4 +1141,14 @@ body.noScroll, html.noScroll {
     .main {
       margin-top: 0px;
     }
+  }
+
+  .explore-button {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+  }
+
+  .synapse-chart {
+    position: relative;
   }
