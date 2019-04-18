@@ -965,3 +965,6 @@ input[type=checkbox] {
 
 .synapse-chart {
   position: relative; }
+
+.SRC-primary-background-color-hover:hover {
+  color: white; }
