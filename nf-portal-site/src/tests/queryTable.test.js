@@ -3,7 +3,6 @@ import * as SynapseClient from "../synapse/SynapseClient"
 
 const fetch = require("node-fetch")
 
-const login = async () => SynapseClient.login("mikeybkats", "guinness")
 const expectedOutput = {}
 
 //fetch.mockResponse({hello: "hello"})
