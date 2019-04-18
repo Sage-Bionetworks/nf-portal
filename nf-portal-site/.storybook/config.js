@@ -22,12 +22,3 @@ function loadStories(token) {
   const Organizations = require("../src/stories/Organizations.js");
   Organizations.token = token;
 }
-
-const login = async () =>
-  SynapseClient.login("mikeybkats", "guinness").then(keys => {
-    return keys;
-  });
-
-login().then(keys => {
-  configure(() => loadStories(keys), module);
-});

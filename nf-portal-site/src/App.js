@@ -1,19 +1,11 @@
 import React, { Component } from "react"
-import PropTypes from "prop-types"
 import { HashRouter as Router, Route } from "react-router-dom"
 import ReactGA from "react-ga"
 import createHistory from "history/createBrowserHistory"
-import { getStaticJSON } from "./queries/queryForData"
 
 import asyncComponent from "./components/AsyncComponent"
 import synapseMarkup from "./components/synapseMarkup"
 import ScrollToTop from "./components/ScrollToTop"
-
-import * as SynapseClient from "./synapse/SynapseClient"
-
-const login = async () => SynapseClient.login("mikeybkats", "guinness").then((keys) => {
-  return keys
-})
 
 // component js
 const AsyncHome = asyncComponent(() => import("./components/Home"))
@@ -57,30 +49,6 @@ class App extends Component {
     syn16859448_s: {},
   };
 
-  componentDidMount() {
-    login().then((token) => {
-      this.handleChanges("loginToken", token)
-    })
-
-    this.setState({
-      hash: window.location.hash,
-    })
-    Promise.all([
-      getStaticJSON("syn16787123", this.handleChanges),
-      getStaticJSON("syn16787123_s", this.handleChanges, "syn16787123_s"),
-      getStaticJSON("syn16858331", this.handleChanges),
-      getStaticJSON("syn16858331_s", this.handleChanges, "syn16858331_s"),
-      getStaticJSON("syn16859580", this.handleChanges),
-      getStaticJSON("syn16859580_s", this.handleChanges, "syn16859580_s"),
-      getStaticJSON("syn16858699", this.handleChanges),
-      getStaticJSON("syn16858699_s", this.handleChanges, "syn16858699_s"),
-      getStaticJSON("syn16857542", this.handleChanges),
-      getStaticJSON("syn16857542_s", this.handleChanges, "syn16857542_s"),
-      getStaticJSON("syn16859448", this.handleChanges),
-      getStaticJSON("syn16859448_s", this.handleChanges, "syn16859448_s"),
-    ])
-  }
-
   handleChanges = (KEY, NEWSTATE) => {
     this.setState({
       [KEY]: NEWSTATE,
@@ -99,7 +67,6 @@ class App extends Component {
   ReturnHome = () => {
     return (
       <AsyncHome
-        token={this.state.loginToken.sessionToken}
         handleChanges={this.handleChanges}
         studies={this.state.syn16787123_s}
         publications={this.state.syn16857542_s}
@@ -112,7 +79,6 @@ class App extends Component {
   ReturnAbout = () => {
     return (
       <AsyncAbout
-        token={this.props.loginToken}
         handleChanges={this.handleChanges}
       />
     )
@@ -121,7 +87,6 @@ class App extends Component {
   ReturnOrganizations = () => {
     return (
       <AsyncOrganizations
-        token={this.props.loginToken}
         handleChanges={this.handleChanges}
       />
     )
@@ -135,9 +100,7 @@ class App extends Component {
 
   ReturnExplore = () => {
     return (
-      <AsyncExplore
-        token={this.state.loginToken.sessionToken}
-      />
+      <AsyncExplore />
     )
   }
 
@@ -216,10 +179,6 @@ class App extends Component {
       </Router>
     )
   }
-}
-
-App.propTypes = {
-  loginToken: PropTypes.object.isRequired,
 }
 
 export default App
