@@ -964,7 +964,8 @@ input[type=checkbox] {
   right: 30px; }
 
 .synapse-chart {
-  position: relative; }
+  position: relative;
+  min-height: 189px; }
 
 .SRC-primary-background-color-hover:hover {
   color: white; }
