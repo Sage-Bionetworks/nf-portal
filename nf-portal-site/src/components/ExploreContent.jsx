@@ -26,38 +26,35 @@ class ExploreContent extends Component {
       name,
       hash,
     } = synapseObjects[activeTableName]
-    const { facetName, unitDescription, initQueryRequest, facetAliases } = homePageParams
+    const {
+      facetName,
+      unitDescription,
+      initQueryRequest,
+      facetAliases,
+    } = homePageParams
     return (
-      <section className="row explore-content">
-        <div className="container">
-          <div className="row">
-            <h2 className="header">Explore Content</h2>
-          </div>
-          <div className="row bar-chart">
-            <div className="center-block selectors-container">
-              <Selectors
-                activeTableName={activeTableName}
-                handleButtonPress={this.handleButtonPress}
-              />
-            </div>
-            <div className="synapse-chart">
-              <SynapseComponents.QueryWrapper
-                initQueryRequest={initQueryRequest}
-                rgbIndex={rgbIndex}
-                token={this.props.token}
-                facetName={facetName}
-                unitDescription={unitDescription}
-                facetAliases={facetAliases}
-              >
-                <SynapseComponents.StackedBarChart
-                  loadingScreen={<div className="bar-loader"><BarLoader color="#4DB7AD" loading /></div>}
-                />
-              </SynapseComponents.QueryWrapper>
-            </div>
-            <div className={this.state.activeTableName === "file" ? "hide" : "explore-button-row"}>
-              <ButtonExplore url={hash} label={name} />
-            </div>
-          </div>
+      <section className="explore-content">
+        <h2 className="header">Explore Content</h2>
+        <div className="center-block selectors-container">
+          <Selectors
+            activeTableName={activeTableName}
+            handleButtonPress={this.handleButtonPress}
+          />
+        </div>
+        <div className="synapse-chart">
+          <SynapseComponents.QueryWrapper
+            initQueryRequest={initQueryRequest}
+            rgbIndex={rgbIndex}
+            token={this.props.token}
+            facetName={facetName}
+            unitDescription={unitDescription}
+            facetAliases={facetAliases}
+          >
+            <SynapseComponents.StackedBarChart
+              loadingScreen={<div className="bar-loader"><BarLoader color="#4DB7AD" loading /></div>}
+            />
+          </SynapseComponents.QueryWrapper>
+          <ButtonExplore url={hash} label={name} />
         </div>
       </section>
     )

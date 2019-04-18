@@ -11,22 +11,16 @@ const NewCardContent = (
 ) => {
   const { sql, type } = synapseObjects[tableName]
   return (
-    <section className="row new-studies">
-      <div className="container">
-        <div className="row">
-          <h2 className="header">
-            {name}
-          </h2>
-        </div>
-        <div className="row">
-          <SynapseComponents.CardContainerLogic
-            sql={sql}
-            type={type}
-            limit={3}
-          />
-          {!hideViewAll && <ButtonViewAll url={url} />}
-        </div>
-      </div>
+    <section className="new-studies">
+      <h2 className="header">
+        {name}
+      </h2>
+      <SynapseComponents.CardContainerLogic
+        sql={sql}
+        type={type}
+        limit={3}
+      />
+      {!hideViewAll && <ButtonViewAll url={url} />}
     </section>
   )
 }

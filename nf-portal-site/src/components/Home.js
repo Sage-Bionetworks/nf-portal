@@ -8,38 +8,43 @@ const Home = (props) => {
   return (
     <div className="home">
       <Hero />
-      <ExploreContent token={props.token} />
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            <ExploreContent token={props.token} />
+            <NewCardContent
+              url="Explore/Studies"
+              name="New Studies"
+              tableName="Studies"
+            />
 
-      <NewCardContent
-        url="Explore/Studies"
-        name="New Studies"
-        tableName="Studies"
-      />
+            <NewCardContent
+              url="Explore/Publications"
+              name="New Publications"
+              tableName="Publications"
+            />
 
-      <NewCardContent
-        url="Explore/Publications"
-        name="New Publications"
-        tableName="Publications"
-      />
+            <NewCardContent
+              url="Explore/Datasets"
+              name="New Datasets"
+              tableName="Datasets"
+            />
 
-      <NewCardContent
-        url="Explore/Datasets"
-        name="New Datasets"
-        tableName="Datasets"
-      />
+            <NewCardContent
+              url="Explore/Tools"
+              name="Tools"
+              tableName="Tools"
+            />
 
-      <NewCardContent
-        url="Explore/Tools"
-        name="Tools"
-        tableName="Tools"
-      />
-
-      <NewCardContent
-        url="Explore/Organization"
-        tableName="Funders"
-        name="organizations"
-        hideViewAll
-      />
+            <NewCardContent
+              url="Explore/Organization"
+              tableName="Funders"
+              name="organizations"
+              hideViewAll
+            />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
