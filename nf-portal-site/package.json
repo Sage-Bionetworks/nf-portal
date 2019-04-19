@@ -20,7 +20,7 @@
     "react-router-dom": "^4.3.1",
     "react-spinners": "^0.3.2",
     "source-map-explorer": "^1.6.0",
-    "synapse-react-client": "1.11.24"
+    "synapse-react-client": "1.11.26"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
